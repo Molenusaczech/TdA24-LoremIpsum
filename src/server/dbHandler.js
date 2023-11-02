@@ -1,5 +1,7 @@
 import Database from "better-sqlite3";
+import crypto from "crypto";
 const db = new Database('database.sqlite', { verbose: console.log });
+
 
 function getLectors() { // vypíše všechny lektory
 
@@ -43,7 +45,7 @@ function getLectors() { // vypíše všechny lektory
 }
 
 function createLector(input) { // vytvoří lektora
-    return (input)  
+    //return (input)  
 
 
     // #region Očekávaný input
@@ -76,7 +78,41 @@ function createLector(input) { // vytvoří lektora
 */
 //#endregion
 
+  // create lector record in database
+
+  let uuid = crypto.randomUUID();
+
+  db.prepare(/*sql*/`
+  INSERT INTO Lectors (UUID, title_before, first_name, middle_name, last_name, title_after, picture_url, location, claim, bio, price_per_hour)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+  `).run(uuid, input.title_before, input.first_name, input.middle_name, input.last_name, input.title_after, input.picture_url, input.location, input.claim, input.bio, input.price_per_hour)
     
+  // create tags
+  input.tags.forEach(tag => {
+    let tag_uuid = crypto.randomUUID();
+    db.prepare(/*sql*/`
+    INSERT INTO tags (uuid, name, lector_uuid)
+    VALUES (?, ?, ?)
+    `).run(tag_uuid, tag.name, uuid)
+  })
+
+  // create telephone numbers
+  input.contact.telephone_numbers.forEach(telephone_number => {
+    let telephone_uuid = crypto.randomUUID();
+    db.prepare(/*sql*/`
+    INSERT INTO telephone_numbers (telephone_uuid, number, lector_uuid)
+    VALUES (?, ?, ?)
+    `).run(telephone_uuid, telephone_number, uuid)
+  })
+
+  // create emails
+  input.contact.emails.forEach(email => {
+    let email_uuid = crypto.randomUUID();
+    db.prepare(/*sql*/`
+    INSERT INTO email (email_uuid, email, lector_uuid)
+    VALUES (?, ?, ?)
+    `).run(email_uuid, email, uuid)
+  })
 
     //#region Očekávaný output: (kopie aktuálního stavu záznamu lektora)
 /*
@@ -110,11 +146,49 @@ function createLector(input) { // vytvoří lektora
 
     */
     //#endregion
-}
+
+    return getLectorById(uuid);
+  }
 
 function getLectorById(uuid) { // vypíše lektora podle id
 
-    
+
+  // get lector record from database
+
+  let lector = db.prepare(/*sql*/`
+  SELECT * FROM Lectors WHERE UUID = ?
+  `).get(uuid)
+
+  if (!lector) {
+    return {
+      code: 404,
+      message: "User not found"
+    }
+  }
+
+  // get tags
+  let tags = db.prepare(/*sql*/`
+  SELECT * FROM tags WHERE lector_uuid = ?
+  `).all(uuid)
+
+  // get telephone numbers
+  let telephone_numbers = db.prepare(/*sql*/`
+  SELECT * FROM telephone_numbers WHERE lector_uuid = ?
+  `).all(uuid)
+
+  // get emails
+  let emails = db.prepare(/*sql*/`
+  SELECT * FROM email WHERE lector_uuid = ?
+  `).all(uuid)
+
+  // create output
+  lector.tags = tags;
+  lector.contact = {
+    telephone_numbers: telephone_numbers.map(telephone_number => telephone_number.number),
+    emails: emails.map(email => email.email)
+  }
+  
+  return lector;
     //#region Očekávaný output
 /*
     {
@@ -155,7 +229,6 @@ function getLectorById(uuid) { // vypíše lektora podle id
 
     */
 //#endregion
-  return {}; // placeholder, jakmile tady něco bude odebrat
 }
 
 function editLector(uuid, input) {
