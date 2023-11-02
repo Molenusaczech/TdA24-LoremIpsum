@@ -28,6 +28,49 @@ app.post("/lecturers", (req, res) => {
   res.send(result);
 });
 
+app.get("/lecturers", (req, res) => {
+  const result = getLectors();
+
+  res.send(result);
+});
+
+app.get("/lecturers/:uuid", (req, res) => {
+  const uuid = req.params.uuid;
+
+  console.log(uuid);
+
+  const result = getLectorById(uuid);
+
+  if (result.code) {
+    res.status(404);
+  }
+
+  res.send(result);
+});
+
+app.put("/lecturers/:uuid", (req, res) => {
+  const uuid = req.params.uuid;
+  const input = req.body;
+
+  const result = editLector(uuid, input);
+
+  if (result.code) {
+    res.status(404);
+  }
+
+  res.send(result);
+});
+
+app.delete("/lecturers/:uuid", (req, res) => {
+  const uuid = req.params.uuid;
+
+  const result = deleteLector(uuid);
+
+  res.status(result.code);
+
+  //res.send(result);
+});
+
 ViteExpress.listen(app, 8080, () =>
   console.log("Server is listening on port 8080...")
 );

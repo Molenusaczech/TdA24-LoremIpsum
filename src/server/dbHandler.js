@@ -74,6 +74,7 @@ function createLector(input) { // vytvoří lektora
 */
 //#endregion
 
+    
 
     //#region Očekávaný output: (kopie aktuálního stavu záznamu lektora)
 /*
@@ -152,6 +153,7 @@ function getLectorById(uuid) { // vypíše lektora podle id
 
     */
 //#endregion
+  return {}; // placeholder, jakmile tady něco bude odebrat
 }
 
 function editLector(uuid, input) {
