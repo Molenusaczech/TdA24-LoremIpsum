@@ -43,7 +43,9 @@ function getLectors() { // vypíše všechny lektory
 }
 
 function createLector(input) { // vytvoří lektora
-    
+    return (input)  
+
+
     // #region Očekávaný input
 /*
     {
