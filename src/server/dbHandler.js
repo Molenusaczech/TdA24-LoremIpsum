@@ -42,6 +42,28 @@ function getLectors() { // vypíše všechny lektory
 
     //copilot návrh
     //return db.prepare(`SELECT * FROM Lectors`).all();
+
+    let lectors = db.prepare(/*sql*/`
+    SELECT * FROM Lectors
+    `).all()
+
+    lectors.forEach(lector => {
+      lector.tags = db.prepare(/*sql*/`
+      SELECT * FROM tags WHERE lector_uuid = ?
+      `).all(lector.UUID)
+
+      lector.contact = {
+        telephone_numbers: db.prepare(/*sql*/`
+        SELECT * FROM telephone_numbers WHERE lector_uuid = ?
+        `).all(lector.UUID).map(telephone_number => telephone_number.number),
+        emails: db.prepare(/*sql*/`
+        SELECT * FROM email WHERE lector_uuid = ?
+        `).all(lector.UUID).map(email => email.email)
+      }
+
+    })
+
+    return lectors;
 }
 
 function createLector(input) { // vytvoří lektora
