@@ -10,9 +10,15 @@ import { defaultLecturer } from "./defaultLecturer";
 
 import { renderMain } from "./pages/main/renderer";
 import { mainAfter } from "./pages/main/afterRender";
+import { changeFavicon } from "./setFavicon.js";
+import { getLectorName } from "./getLectorName.js";
+
+import faviconUrl from "./img/favicon.png";
 
 const currentUrl = window.location.pathname;
 console.log(currentUrl);
+
+changeFavicon(faviconUrl);
 
 switch (currentUrl) {
 
@@ -24,38 +30,7 @@ switch (currentUrl) {
   case "/lecturer":
     document.getElementById("mainPage").innerHTML = renderLecturer(defaultLecturer);
     lecturerAfter();
+    changeFavicon(defaultLecturer.picture_url);
+    document.title = getLectorName(defaultLecturer);
     break;
 }
-
-/*document.getElementById("register-btn").addEventListener("click", () => {
-  fetch("/initDb",{
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({a: 1, b: 2})
-  })
-    .then((res) => res.text())
-    .then((data) => {
-      console.log(data);
-    });
-});
-
-document.getElementById("register-btn").addEventListener("click", () => {
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
-  fetch("/createAccount",{
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({username: username, password: password})
-  })
-    .then((res) => res.text())
-    .then((data) => {
-      console.log(data);
-    });
-});
-
-console.log(JsxTest("test"));
-document.getElementById("jsx").innerHTML = JsxTest("test2");*/

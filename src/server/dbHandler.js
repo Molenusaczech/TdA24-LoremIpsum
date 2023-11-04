@@ -2,6 +2,7 @@ import Database from "better-sqlite3";
 import crypto from "crypto";
 const db = new Database('database.sqlite', { verbose: console.log });
 
+let cachedLectors = null;
 
 function getLectors() { // vypíše všechny lektory
 
@@ -43,6 +44,10 @@ function getLectors() { // vypíše všechny lektory
     //copilot návrh
     //return db.prepare(`SELECT * FROM Lectors`).all();
 
+    if (cachedLectors != null) {
+      return cachedLectors;
+    }
+
     let lectors = db.prepare(/*sql*/`
     SELECT * FROM Lectors
     `).all()
@@ -63,12 +68,14 @@ function getLectors() { // vypíše všechny lektory
 
     })
 
+    cachedLectors = lectors;
     return lectors;
 }
 
 function createLector(input) { // vytvoří lektora
     //return (input)  
 
+    cachedLectors = null;
 
     // #region Očekávaný input
 /*
@@ -255,6 +262,7 @@ function getLectorById(uuid) { // vypíše lektora podle id
 
 function editLector(uuid, input) {
 
+  cachedLectors = null;
      
     //#region Očekávaný input: (POZOR! Ne všechny atributy musí být vyplněné, pokud není atributa vyplněná, zůstává na předchozí hodnotě)
 /*
@@ -331,6 +339,7 @@ function editLector(uuid, input) {
 
 function deleteLector(uuid) {
 
+  cachedLectors = null;
     
     //#region Očekávaný output:
 /*
