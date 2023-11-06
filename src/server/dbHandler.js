@@ -293,6 +293,78 @@ function editLector(uuid, input) {
 }*/
 //#endregion
 
+  let lector = db.prepare(/*sql*/`
+  SELECT * FROM Lectors WHERE UUID = ?
+  `).get(uuid)
+
+  if (!lector) {
+    return {
+      code: 404,
+      message: "User not found"
+    }
+  }
+
+  //Edit lector
+  db.prepare(/*sql*/`
+  UPDATE Lectors SET title_before = coalesce(NULLIF(?, ''), title_before), 
+  first_name = coalesce(NULLIF(?, ''), first_name),
+  middle_name = coalesce(NULLIF(?, ''), middle_name),
+  last_name = coalesce(NULLIF(?, ''), last_name),
+  title_after = coalesce(NULLIF(?, ''), title_after),
+  picture_url = coalesce(NULLIF(?, ''), picture_url),
+  location = coalesce(NULLIF(?, ''), location),
+  claim = coalesce(NULLIF(?, ''), claim),  
+  bio = coalesce(NULLIF(?, ''), bio),
+  price_per_hour = coalesce(NULLIF(?, ''), price_per_hour) 
+  WHERE UUID = ?
+  `).run(input.title_before, input.first_name, input.middle_name, input.last_name, input.title_after, input.picture_url, input.location, input.claim, input.bio, input.price_per_hour, uuid)
+
+  //Edit tags
+  if(input.tags[0].name != ""){
+    db.prepare(/*sql*/`
+    DELETE FROM tags WHERE lector_uuid = ?
+    `).run(uuid)
+
+    input.tags.forEach(tag => {
+        let tag_uuid = crypto.randomUUID();
+        db.prepare(/*sql*/`
+        INSERT INTO tags (uuid, name, lector_uuid)
+        VALUES (?, ?, ?)
+        `).run(tag_uuid, tag.name, uuid)
+    })
+  }
+
+  //Edit telephone
+  if(input.contact.telephone_numbers[0] != ""){
+    db.prepare(/*sql*/`
+    DELETE FROM telephone_numbers WHERE lector_uuid = ?
+    `).run(uuid)
+
+    input.contact.telephone_numbers.forEach(telephone_number => {
+      let telephone_uuid = crypto.randomUUID();
+      db.prepare(/*sql*/`
+      INSERT INTO telephone_numbers (telephone_uuid, number, lector_uuid)
+      VALUES (?, ?, ?)
+      `).run(telephone_uuid, telephone_number, uuid)
+    })
+  }
+    
+  //Edit Emails
+  if(input.contact.emails[0] != ""){
+    db.prepare(/*sql*/`
+    DELETE FROM email WHERE lector_uuid = ?
+    `).run(uuid)
+
+    input.contact.emails.forEach(email => {
+      let email_uuid = crypto.randomUUID();
+      db.prepare(/*sql*/`
+      INSERT INTO email (email_uuid, email, lector_uuid)
+      VALUES (?, ?, ?)
+      `).run(email_uuid, email, uuid)
+    })
+  }
+
+  return getLectorById(uuid);
 
     //#region Očekávaný output: (kopie aktuálního stavu záznamu lektora)
 /*
