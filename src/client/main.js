@@ -1,8 +1,5 @@
 import "./style.css";
 
-import { setupCounter } from "./counter.js";
-import javascriptLogo from "./javascript.svg";
-import { JsxTest } from "./component";
 
 import { changeFavicon } from "./setFavicon.js";
 
