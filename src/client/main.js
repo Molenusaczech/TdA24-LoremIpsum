@@ -17,35 +17,17 @@ import { renderNotFoundPage } from "./pages/notFound/renderer.js";
 import { notFoundAfter } from "./pages/notFound/afterRender.js";
 import { renderLoading } from "./pages/loading/renderer.js";
 
+import { renderPage } from "./routing.js";
+
 import faviconUrl from "./img/favicon.png";
 
 const currentUrl = window.location.pathname;
+const uuidRegex = /^\/lecturer\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
+
 console.log(currentUrl);
 
 changeFavicon(faviconUrl);
 
-renderLoading();
+renderPage(currentUrl);
 
-switch (currentUrl) {
 
-  case "/":
-    console.log("home");
-
-    fetch("/lecturers")
-      .then((response) => response.json())
-      .then((data) => {
-        document.getElementById("mainPage").innerHTML = renderMain(data);
-        mainAfter(data);
-      });
-    break;
-  case "/lecturer":
-    document.getElementById("mainPage").innerHTML = renderLecturer(defaultLecturer);
-    lecturerAfter();
-    changeFavicon(defaultLecturer.picture_url);
-    document.title = getLectorName(defaultLecturer);
-    break;
-  default:
-    document.getElementById("mainPage").innerHTML = renderNotFoundPage();
-    notFoundAfter();
-    break;
-}

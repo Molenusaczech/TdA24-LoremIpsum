@@ -1,5 +1,6 @@
 function renderLecturer(lecturer) {
     return /*html */`
+    <button id="backButton">Back</button>
     <h1> Lecturer </h1>
     <ul>
         <li> ${lecturer.UUID} </li>
@@ -14,7 +15,7 @@ function renderLecturer(lecturer) {
         <li> ${lecturer.price_per_hour} </li>
     </ul>
 
-    Tags:¨
+    Tags:
     <ul>
     ${lecturer.tags.map(renderTag).join("")}
     </ul>
