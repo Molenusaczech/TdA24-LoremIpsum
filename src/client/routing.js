@@ -21,6 +21,7 @@ function renderPage(currentUrl) {
     if (currentUrl == "/") {
         console.log("home");
         changeFavicon(faviconUrl);
+        document.title = "Teacher Digital Agency"
 
         fetch("/lecturers")
             .then((response) => response.json())
