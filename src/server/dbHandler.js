@@ -320,7 +320,7 @@ function editLector(uuid, input) {
   `).run(input.title_before, input.first_name, input.middle_name, input.last_name, input.title_after, input.picture_url, input.location, input.claim, input.bio, input.price_per_hour, uuid)
 
   //Edit tags
-  if(input.tags[0].name != ""){
+  if(input.hasOwnProperty("tags")){
     db.prepare(/*sql*/`
     DELETE FROM tags WHERE lector_uuid = ?
     `).run(uuid)
@@ -335,7 +335,7 @@ function editLector(uuid, input) {
   }
 
   //Edit telephone
-  if(input.contact.telephone_numbers[0] != ""){
+  if(input.hasOwnProperty("contact") && input.contact.hasOwnProperty("telephone_numbers")){
     db.prepare(/*sql*/`
     DELETE FROM telephone_numbers WHERE lector_uuid = ?
     `).run(uuid)
@@ -350,7 +350,7 @@ function editLector(uuid, input) {
   }
     
   //Edit Emails
-  if(input.contact.emails[0] != ""){
+  if(input.hasOwnProperty("contact") && input.contact.hasOwnProperty("emails")){
     db.prepare(/*sql*/`
     DELETE FROM email WHERE lector_uuid = ?
     `).run(uuid)
@@ -412,7 +412,39 @@ function editLector(uuid, input) {
 function deleteLector(uuid) {
 
   cachedLectors = null;
-    
+  
+  let lector = db.prepare(/*sql*/`
+  SELECT * FROM Lectors WHERE UUID = ?
+  `).get(uuid)
+
+  if (!lector) {
+    return {
+      code: 404,
+      message: "User not found"
+    }
+  }
+
+  db.prepare(/*sql*/`
+  DELETE FROM Lectors WHERE UUID = ?
+  `).run(uuid)
+
+  db.prepare(/*sql*/`
+  DELETE FROM telephone_numbers WHERE lector_uuid = ?
+  `).run(uuid)
+
+  db.prepare(/*sql*/`
+  DELETE FROM email WHERE lector_uuid = ?
+  `).run(uuid)
+
+  db.prepare(/*sql*/`
+  DELETE FROM tags WHERE lector_uuid = ?
+  `).run(uuid)
+
+  return {
+    code: 200,
+    message: "User deleted"
+  }
+
     //#region Očekávaný output:
 /*
     {
