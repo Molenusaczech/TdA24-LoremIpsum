@@ -10,6 +10,8 @@ import { getLectorName } from "./getLectorName.js";
 import { renderNotFoundPage } from "./pages/notFound/renderer.js";
 import { notFoundAfter } from "./pages/notFound/afterRender.js";
 import { renderLoading } from "./pages/loading/renderer.js";
+import { getAllTags } from "./getAllTags.js";
+import { getAllLocations } from "./getAllLocations.js";
 
 import faviconUrl from "./img/favicon.png";
 
@@ -26,7 +28,9 @@ function renderPage(currentUrl) {
         fetch("/lecturers")
             .then((response) => response.json())
             .then((data) => {
-                document.getElementById("mainPage").innerHTML = renderMain(data);
+                let tags = getAllTags(data);
+                let locations = getAllLocations(data);
+                document.getElementById("mainPage").innerHTML = renderMain(data, tags, locations);
                 mainAfter(data);
             });
     } else if (currentUrl == "/lecturer") {

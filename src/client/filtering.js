@@ -1,0 +1,5 @@
+function filterLectors() {
+
+}
+
+export { filterLectors };
