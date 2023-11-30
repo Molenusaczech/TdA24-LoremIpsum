@@ -1,3 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #292d2f;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
 .lectorSmall {
     cursor: pointer;
+}
+
+.vlevoDole {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 50vmax;
+}
+
+.vpravoDole {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 20vmax;
+}
+
+.vpravoNahore {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60vmax;
+}
+
+.lectorContainer {
+    /*display: flex;*/
+    border: red solid 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vmax;
+    z-index: 10;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lectorLeftBox {
+    width: 40%;
+    border: green solid 1px;
+}
+
+.lectorRightBox {
+    width: 60%;
+    border: blue solid 1px;
+}
+
+.lectorPicture {
+    width: 100%;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.lectorPicture:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+    box-shadow: #fff 0 0 1vw;
+}
+
+.lectorTags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: yellow solid 1px;
+}
+
+.lectorTag {
+    margin: 0.1vw;
+    padding: 0.3vw;
+    border-radius: 5vw;
+    background-color: #74C7D3;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.lectorTag:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+    color:#333333;
+    background-color: #74C7D3;
+    box-shadow: #fff 0 0 0.5vw;
+}
+
+.lectorName {
+    font-size: 2vw;
+    font-weight: 500;
+    margin: 0.5vw;
+    font-family: "Lalezar", sans-serif;
+    font-size: 3vw;
+}
+
+hr {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    height: 0.2vw;
+    border-radius: 1vw;
+    background-color: #fff;
+}
+
+.lectorLocation {
+    font-size: 2vmax;
+    font-weight: 700;
+    margin: 0.5vw;
+}
+
+.lectorClaim {
+    font-size: 1.1vmax;
+    font-weight: 700;
+    margin: 0.5vw;
+}
+
+.lectorBio {
+    font-size: 1.1vmax;
+    font-weight: 600;
+    margin: 0.5vw;
+}
+
+b {
+    font-weight: 700;
+    color: #FECB2E;
+}
+
+.lectorPrice {
+    margin: 0.1vw;
+    padding: 0.3vw;
+    border-radius: 5vw;
+    background-color: #74C7D3;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.2s;
+    position: relative;
+    text-align: right;
+    left: 1%;
+}
+
+.lectorPrice:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+    color:#333333;
+    background-color: #74C7D3;
+    box-shadow: #fff 0 0 0.5vw;
+}
+
+.lectorContactOption {
+    margin: 0.1vw;
+    padding: 0.3vw;
+    border-radius: 1vw;
+    background-color: #74C7D3;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.2s;
+    font-size: 1.5vw;
+}
+
+.lectorContactOption:hover {
+    transition: 0.2s;
+    color:#333333;
+    background-color: #74C7D3;
+    box-shadow: #fff 0 0 0.5vw;
+}
+
+.contactBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: yellow solid 1px;
+    gap: 1vw;
+    padding: 0.4vw;
+}
+
+a {
+    text-decoration: none;    
+}
+
+@media screen and (max-width: 600px) {
+    .lectorContainer {
+        width: 100%;
+    }
+
+    .vlevoDole {
+        width: 100%;
+    }
+
+    .lectorLeftBox {
+        width: 100vw;
+    }
+
+    .lectorRightBox {
+        width: 100vw;
+    }
+
+    .flexbox {
+        flex-direction: column;
+    }
+
+    .lectorPicture {
+        width: 50%;
+        position: relative;
+        left: 50vw;
+        transform: translate(-50%, 0);
+    }
+
+    .lectorPicture:hover {
+        transform: scale(1.1), translate(-50%, 0);
+        transition: 0.2s;
+    }
+
+    .lectorName {
+        font-size: 5vw;
+    }
+    
 }
