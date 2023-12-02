@@ -1,12 +1,13 @@
 import vlevoDole from "../../img/Tvar_vlevo_dole.png";
 import vpravoDole from "../../img/Tvar_vpravo_dole.png";
 import vpravoNahore from "../../img/Tvar_pravo_nahore.png";
+import whiteLogo from "../../img/LOGO_white.svg?url";
 import { getLectorName } from "../../getLectorName";
 
 function renderLecturer(lecturer) {
     return /*html */`
     <div class="lecturerPage">
-    <button id="backButton">Back</button>
+    <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
     <div class="lectorContainer">
     <div class="flexbox">
 

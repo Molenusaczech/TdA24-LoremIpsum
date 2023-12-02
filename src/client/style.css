@@ -31,17 +31,17 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    width: 60vmax;
+    width: 70vmax;
 }
 
 .lectorContainer {
     /*display: flex;*/
-    border: red solid 1px;
+    /*border: red solid 1px;*/
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70vmax;
+    width: 60vmax;
     z-index: 10;
 }
 
@@ -52,33 +52,35 @@ body {
 }
 
 .lectorLeftBox {
-    width: 40%;
-    border: green solid 1px;
+    width: 30%;
+    /*border: green solid 1px;*/
 }
 
 .lectorRightBox {
-    width: 60%;
-    border: blue solid 1px;
+    width: 70%;
+    /*border: blue solid 1px;*/
+    padding-left: 2vw;
 }
 
 .lectorPicture {
     width: 100%;
     border-radius: 50%;
     transition: 0.2s;
+    margin-bottom: 1vw;
 }
 
 .lectorPicture:hover {
     transform: scale(1.1);
     transition: 0.2s;
-    box-shadow: #fff 0 0 1vw;
+    /*box-shadow: #fff 0 0 1vw;*/
 }
 
 .lectorTags {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     flex-wrap: wrap;
-    border: yellow solid 1px;
+    /*border: yellow solid 1px;*/
 }
 
 .lectorTag {
@@ -89,6 +91,7 @@ body {
     color: #fff;
     font-weight: 700;
     transition: 0.2s;
+    font-size: 0.7vw;
 }
 
 .lectorTag:hover {
@@ -96,7 +99,7 @@ body {
     transition: 0.2s;
     color:#333333;
     background-color: #74C7D3;
-    box-shadow: #fff 0 0 0.5vw;
+    /*box-shadow: #fff 0 0 0.5vw;*/
 }
 
 .lectorName {
@@ -105,10 +108,16 @@ body {
     margin: 0.5vw;
     font-family: "Lalezar", sans-serif;
     font-size: 3vw;
+    transition: 0.2s;
+}
+
+.lectorName:hover {
+    transform: translate(0, -0.25vw);
+    transition: 0.2s;
 }
 
 hr {
-    margin-left: 1vw;
+    margin-left: 0.5vw;
     margin-right: 1vw;
     height: 0.2vw;
     border-radius: 1vw;
@@ -116,21 +125,26 @@ hr {
 }
 
 .lectorLocation {
-    font-size: 2vmax;
+    font-size: 1.5vmax;
     font-weight: 700;
     margin: 0.5vw;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
 }
 
 .lectorClaim {
     font-size: 1.1vmax;
     font-weight: 700;
     margin: 0.5vw;
+    margin-bottom: 2vw;
 }
 
 .lectorBio {
-    font-size: 1.1vmax;
+    font-size: 0.8vmax;
     font-weight: 600;
     margin: 0.5vw;
+    text-align: left;
+    margin-bottom: 2vw;
 }
 
 b {
@@ -156,7 +170,7 @@ b {
     transition: 0.2s;
     color:#333333;
     background-color: #74C7D3;
-    box-shadow: #fff 0 0 0.5vw;
+    /*box-shadow: #fff 0 0 0.5vw;*/
 }
 
 .lectorContactOption {
@@ -167,22 +181,22 @@ b {
     color: #fff;
     font-weight: 700;
     transition: 0.2s;
-    font-size: 1.5vw;
+    font-size: 1vw;
 }
 
 .lectorContactOption:hover {
     transition: 0.2s;
     color:#333333;
     background-color: #74C7D3;
-    box-shadow: #fff 0 0 0.5vw;
+    /*box-shadow: #fff 0 0 0.5vw;*/
 }
 
 .contactBox {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     flex-wrap: wrap;
-    border: yellow solid 1px;
+    /*border: yellow solid 1px;*/
     gap: 1vw;
     padding: 0.4vw;
 }
@@ -191,7 +205,23 @@ a {
     text-decoration: none;    
 }
 
-@media screen and (max-width: 600px) {
+.backButton {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6vmax;
+    padding: 2vmax;
+    transition: 0.2s;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.backButton:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+@media screen and (max-width: 700px) {
     .lectorContainer {
         width: 100%;
     }
@@ -225,7 +255,31 @@ a {
     }
 
     .lectorName {
+        font-size: 7vw;
+    }
+
+    .lectorBio {
+        font-size: 3vw;
+    }
+
+    .lectorLocation {
         font-size: 5vw;
     }
     
+    .lectorClaim {
+        font-size: 3vw;
+    }
+
+    .lectorTag {
+        font-size: 3vw;
+    }
+
+    .lectorContactOption {
+        font-size: 3vw;
+    }
+
+    .vlevoDole {
+        display: none;
+    }
+
 }
