@@ -25,7 +25,7 @@ function renderPage(currentUrl) {
         changeFavicon(faviconUrl);
         document.title = "Teacher Digital Agency"
 
-        fetch("/lecturers")
+        fetch("/api/lecturers")
             .then((response) => response.json())
             .then((data) => {
                 let tags = getAllTags(data);
@@ -39,7 +39,7 @@ function renderPage(currentUrl) {
         changeFavicon(defaultLecturer.picture_url);
         document.title = getLectorName(defaultLecturer);
     } else if (currentUrl.match(uuidRegex)) {
-        fetch("/lecturers/" + currentUrl.split("/")[2])
+        fetch("/api/lecturers/" + currentUrl.split("/")[2])
             .then((response) => response.json())
             .then((data) => {
                 document.getElementById("mainPage").innerHTML = renderLecturer(data);

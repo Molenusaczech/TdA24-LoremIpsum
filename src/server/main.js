@@ -21,7 +21,7 @@ app.get("/api", cors(), (req, res) => {
   res.send({ secret: "The cake is a lie" });
 });
 
-app.post("/lecturers", cors(), (req, res) => {
+app.post("/api/lecturers", cors(), (req, res) => {
   const input = req.body;
 
   const result = createLector(input);
@@ -29,13 +29,13 @@ app.post("/lecturers", cors(), (req, res) => {
   res.send(result);
 });
 
-app.get("/lecturers", cors(), (req, res) => {
+app.get("/api/lecturers", cors(), (req, res) => {
   const result = getLectors();
 
   res.send(result);
 });
 
-app.get("/lecturers/:uuid", cors(), (req, res) => {
+app.get("/api/lecturers/:uuid", cors(), (req, res) => {
   const uuid = req.params.uuid;
 
   console.log(uuid);
@@ -49,7 +49,7 @@ app.get("/lecturers/:uuid", cors(), (req, res) => {
   res.send(result);
 });
 
-app.put("/lecturers/:uuid", cors(), (req, res) => {
+app.put("/api/lecturers/:uuid", cors(), (req, res) => {
   const uuid = req.params.uuid;
   const input = req.body;
 
@@ -62,7 +62,7 @@ app.put("/lecturers/:uuid", cors(), (req, res) => {
   res.send(result);
 });
 
-app.delete("/lecturers/:uuid", cors(), (req, res) => {
+app.delete("/api/lecturers/:uuid", cors(), (req, res) => {
   const uuid = req.params.uuid;
 
   const result = deleteLector(uuid);
