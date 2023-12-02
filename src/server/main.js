@@ -72,6 +72,14 @@ app.delete("/lecturers/:uuid", cors(), (req, res) => {
   //res.send(result);
 });
 
+if (process.argv[2] == "prod") {
+  ViteExpress.config(
+    {
+      mode: "production"
+    }
+  );
+}
+
 ViteExpress.listen(app, 8080, () =>
   console.log("Server is listening on port 8080...")
 );

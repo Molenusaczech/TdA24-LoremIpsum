@@ -15,4 +15,4 @@ EXPOSE 24678
 
 COPY . .
 ENV ENV=prod
-CMD ["npm", "run", "mole"]
+CMD ["npm", "run", "prod"]
