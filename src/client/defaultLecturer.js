@@ -1,5 +1,5 @@
 const defaultLecturer = {
-    "UUID": "67fda282-2bca-41ef-9caf-039cc5c8dd69",
+    "uuid": "67fda282-2bca-41ef-9caf-039cc5c8dd69",
     "title_before": "Mgr.",
     "first_name": "Petra",
     "middle_name": "Swil",

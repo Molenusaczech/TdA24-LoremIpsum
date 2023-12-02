@@ -59,7 +59,7 @@ function renderTag(tag) {
 
 function lectorMetadata(lector) {
     return /*html */`
-    data-uuid="${lector.UUID}"  data-price_per_hour="${lector.price_per_hour}" ${lector.tags.map(tagMetadata).join("")}
+    data-uuid="${lector.uuid}"  data-price_per_hour="${lector.price_per_hour}" ${lector.tags.map(tagMetadata).join("")}
     `;
 }
 

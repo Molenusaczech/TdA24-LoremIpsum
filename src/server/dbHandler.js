@@ -68,6 +68,11 @@ function getLectors() { // vypíše všechny lektory
 
     })
 
+    lectors.forEach(lector => {
+      lector.uuid = lector.UUID;
+      delete lector.UUID;
+    })
+
     cachedLectors = lectors;
     return lectors;
 }
@@ -216,6 +221,9 @@ function getLectorById(uuid) { // vypíše lektora podle id
     telephone_numbers: telephone_numbers.map(telephone_number => telephone_number.number),
     emails: emails.map(email => email.email)
   }
+
+  lector.uuid = lector.UUID;
+  delete lector.UUID;
   
   return lector;
     //#region Očekávaný output

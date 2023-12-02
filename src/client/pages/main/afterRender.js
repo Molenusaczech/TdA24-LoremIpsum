@@ -4,10 +4,10 @@ function mainAfter(lectors) {
     console.log("mainAfter");
 
     lectors.forEach(element => {
-        document.querySelector(`[data-uuid="${element.UUID}"]`).addEventListener("click", () => {
-            console.log(element.UUID);
+        document.querySelector(`[data-uuid="${element.uuid}"]`).addEventListener("click", () => {
+            console.log(element.uuid);
             //window.location.href = "/lecturer/" + element.UUID;
-            linkClick("/lecturer/" + element.UUID);
+            linkClick("/lecturer/" + element.uuid);
         });
     });
 }
