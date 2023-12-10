@@ -129,6 +129,13 @@ async function getLectorById(uuid) { // vypíše lektora podle id
     ],
   });
 
+  if (!result) {
+    return {
+      code: 404,
+      message: "User not found"
+    }
+  }
+
   let tags = await result.getTags()
   let emails = await result.getEmails()
   let telephone_numbers = await result.getPhones()

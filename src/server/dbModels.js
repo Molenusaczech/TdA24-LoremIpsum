@@ -111,17 +111,17 @@ Lecturer.hasMany(Phone);
 Email.belongsTo(Lecturer);
 Lecturer.hasMany(Email);
 
-Lecturer.sync({ force: true});
+/*Lecturer.sync({ force: true});
 Tag.sync({ force: true});
 Phone.sync({ force: true});
 Email.sync({ force: true});
-LecturerTag.sync({ force: true});
-/*
+LecturerTag.sync({ force: true});*/
+
 Lecturer.sync();
 Tag.sync();
 Phone.sync();
 Email.sync();
 LecturerTag.sync();
-*/
+
 
 export { sequelize, Lecturer, Tag, Phone, Email };
