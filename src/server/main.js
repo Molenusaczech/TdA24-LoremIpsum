@@ -6,12 +6,7 @@ import cors from "cors";
 
 const app = express();
 
-import { db } from "./dbHandler.js";
-import { initDb } from "./initdb.js";
 import { getLectors, createLector, getLectorById, editLector, deleteLector } from "./dbHandler.js";
-
-initDb();
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -21,26 +16,26 @@ app.get("/api", cors(), (req, res) => {
   res.send({ secret: "The cake is a lie" });
 });
 
-app.post("/api/lecturers", cors(), (req, res) => {
+app.post("/api/lecturers", cors(), async (req, res) => {
   const input = req.body;
 
-  const result = createLector(input);
+  const result = await createLector(input);
 
   res.send(result);
 });
 
-app.get("/api/lecturers", cors(), (req, res) => {
-  const result = getLectors();
+app.get("/api/lecturers", cors(), async (req, res) => {
+  const result = await getLectors();
 
   res.send(result);
 });
 
-app.get("/api/lecturers/:uuid", cors(), (req, res) => {
+app.get("/api/lecturers/:uuid", cors(), async (req, res) => {
   const uuid = req.params.uuid;
 
   console.log(uuid);
 
-  const result = getLectorById(uuid);
+  const result = await getLectorById(uuid);
 
   if (result.code) {
     res.status(404);
