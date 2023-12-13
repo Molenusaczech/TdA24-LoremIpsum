@@ -72,6 +72,20 @@ async function getLectors() { // vypíše všechny lektory
 async function createLector(input) { // vytvoří lektora
   //return (input)  
 
+  if (input.first_name == null || input.first_name == "" || !input.hasOwnProperty("first_name")) {
+    return {
+      code: 400,
+      message: "First name is required"
+    }
+  }
+
+  if (input.last_name == null || input.last_name == "" || !input.hasOwnProperty("last_name")) {
+    return {
+      code: 400,
+      message: "Last name is required"
+    }
+  }
+
   let lector = await Lecturer.create({
     title_before: input.title_before,
     first_name: input.first_name,
@@ -85,7 +99,7 @@ async function createLector(input) { // vytvoří lektora
     price_per_hour: input.price_per_hour,
   });
 
-  if (input.hasOwnProperty("tags")) {
+  if (input.hasOwnProperty("tags") && input.tags != null) {
     for (let tag of input.tags) {
       /*let finalTag = await Tag.create({
         //uuid: crypto.randomUUID(),
@@ -105,8 +119,8 @@ async function createLector(input) { // vytvoří lektora
     };
   }
 
-  if (input.hasOwnProperty("contact")) {
-    if (input.contact.hasOwnProperty("telephone_numbers")) {
+  if (input.hasOwnProperty("contact") && input.contact != null) {
+    if (input.contact.hasOwnProperty("telephone_numbers") && input.contact.telephone_numbers != null) {
       //input.contact.telephone_numbers.forEach(async (telephone_number) => {
 
 
@@ -118,7 +132,7 @@ async function createLector(input) { // vytvoří lektora
       };
     }
 
-    if (input.contact.hasOwnProperty("emails")) {
+    if (input.contact.hasOwnProperty("emails") && input.contact.emails != null) {
       //input.contact.emails.forEach(async (email) => {
       for (let email of input.contact.emails) {
         let finalEmail = await Email.create({
@@ -182,6 +196,20 @@ async function getLectorById(uuid) { // vypíše lektora podle id
 }
 
 async function editLector(uuid, input) {
+
+  if (input.first_name == null || input.first_name == "") {
+    return {
+      code: 400,
+      message: "First name is required"
+    }
+  }
+
+  if (input.last_name == null || input.last_name == "") {
+    return {
+      code: 400,
+      message: "Last name is required"
+    }
+  }
 
   let lector = await Lecturer.findOne({
     where: {

@@ -11,6 +11,15 @@ import { getLectors, createLector, getLectorById, editLector, deleteLector } fro
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+function clientErrorHandler (err, req, res, next) {
+  if (req.xhr) {
+     res.status(500).send({ error: 'Something failed!' })
+   } else {
+     next(err)
+  }
+} 
+
+app.use(clientErrorHandler);
 
 app.get("/api", cors(), (req, res) => {
   res.send({ secret: "The cake is a lie" });
