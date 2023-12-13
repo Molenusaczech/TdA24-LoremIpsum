@@ -25,29 +25,37 @@ const Tag = sequelize.define("Tag", {
 
 const Phone = sequelize.define("Phone", {
     uuid: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
-        defaultValue: DataTypes.UUIDV4,
+        autoIncrement: true,
     },
     number: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-});
+},
+    {
+        timestamps: false,
+    }
+);
 
 const Email = sequelize.define("Email", {
     uuid: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
-        defaultValue: DataTypes.UUIDV4,
+        autoIncrement: true,
     },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-});
+},
+    {
+        timestamps: false,
+    }
+);
 
 const Lecturer = sequelize.define("Lecturer", {
 
@@ -97,7 +105,10 @@ const Lecturer = sequelize.define("Lecturer", {
         type: DataTypes.STRING,
         allowNull: true,
     }
-});
+},
+    {
+        timestamps: false,
+    });
 
 const LecturerTag = sequelize.define("LecturerTag", {}, { timestamps: false });
 
