@@ -44,11 +44,11 @@ app.get("/api/lecturers/:uuid", cors(), async (req, res) => {
   res.send(result);
 });
 
-app.put("/api/lecturers/:uuid", cors(), (req, res) => {
+app.put("/api/lecturers/:uuid", cors(), async (req, res) => {
   const uuid = req.params.uuid;
   const input = req.body;
 
-  const result = editLector(uuid, input);
+  const result = await editLector(uuid, input);
 
   if (result.code) {
     res.status(404);
@@ -57,14 +57,14 @@ app.put("/api/lecturers/:uuid", cors(), (req, res) => {
   res.send(result);
 });
 
-app.delete("/api/lecturers/:uuid", cors(), (req, res) => {
+app.delete("/api/lecturers/:uuid", cors(), async (req, res) => {
   const uuid = req.params.uuid;
 
-  const result = deleteLector(uuid);
+  const result = await deleteLector(uuid);
 
   res.status(result.code);
 
-  //res.send(result);
+  res.send(result);
 });
 
 if (process.argv[2] == "prod") {

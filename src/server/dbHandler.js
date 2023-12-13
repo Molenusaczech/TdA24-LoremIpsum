@@ -2,6 +2,22 @@ import crypto from "crypto";
 
 import { Lecturer, Tag, Phone, Email } from "./dbModels.js";
 
+async function cleanup() {
+  let tags = await Tag.findAll({
+    include: [
+      Lecturer
+    ]
+  });
+
+  tags.forEach(async (tag) => {
+    let lecturers = await tag.Lecturers;
+
+    if (lecturers.length == 0) {
+      await tag.destroy();
+    }
+  });
+}
+
 async function getLectors() { // vypíše všechny lektory
 
 
@@ -30,8 +46,8 @@ async function getLectors() { // vypíše všechny lektory
         uuid: tag.uuid,
         name: tag.name,
       };
-    
-    }) 
+
+    })
     else lector.tags = [];
 
     if (lector.hasOwnProperty("Phones")) lector.contact.telephone_numbers = lector.Phones.map((phone) => phone.number)
@@ -46,7 +62,7 @@ async function getLectors() { // vypíše všechny lektory
     delete lector.Tags;
 
     return lector;
-    });
+  });
 
 
   console.log(final);
@@ -70,7 +86,6 @@ async function createLector(input) { // vytvoří lektora
   });
 
   if (input.hasOwnProperty("tags")) {
-    //input.tags.forEach(async (tag) => {
     for (let tag of input.tags) {
       /*let finalTag = await Tag.create({
         //uuid: crypto.randomUUID(),
@@ -92,21 +107,25 @@ async function createLector(input) { // vytvoří lektora
 
   if (input.hasOwnProperty("contact")) {
     if (input.contact.hasOwnProperty("telephone_numbers")) {
-      input.contact.telephone_numbers.forEach(async (telephone_number) => {
+      //input.contact.telephone_numbers.forEach(async (telephone_number) => {
+
+
+      for (let telephone_number of input.contact.telephone_numbers) {
         let finalPhone = await Phone.create({
           number: telephone_number
         });
         lector.addPhone(finalPhone);
-      });
+      };
     }
 
     if (input.contact.hasOwnProperty("emails")) {
-      input.contact.emails.forEach(async (email) => {
+      //input.contact.emails.forEach(async (email) => {
+      for (let email of input.contact.emails) {
         let finalEmail = await Email.create({
           email: email
         });
         lector.addEmail(finalEmail);
-      });
+      };
     }
   }
 
@@ -162,42 +181,19 @@ async function getLectorById(uuid) { // vypíše lektora podle id
 
 }
 
-function editLector(uuid, input) {
+async function editLector(uuid, input) {
 
-  cachedLectors = null;
-
-  //#region Očekávaný input: (POZOR! Ne všechny atributy musí být vyplněné, pokud není atributa vyplněná, zůstává na předchozí hodnotě)
-  /*
-      {
-    "title_before": "Mgr.",
-    "first_name": "Petra",
-    "middle_name": "Swil",
-    "last_name": "Plachá",
-    "title_after": "MBA",
-    "picture_url": "https://picsum.photos/200",
-    "location": "Brno",
-    "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
-    "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
-    "tags": [
-      {
-        "name": "Marketing"
-      }
-    ],
-    "price_per_hour": 720,
-    "contact": {
-      "telephone_numbers": [
-        "+123 777 338 111"
-      ],
-      "emails": [
-        "user@example.com"
-      ]
+  let lector = await Lecturer.findOne({
+    where: {
+      uuid: uuid,
     }
-  }*/
-  //#endregion
-
-  let lector = db.prepare(/*sql*/`
-  SELECT * FROM Lectors WHERE UUID = ?
-  `).get(uuid)
+  },
+    {
+      include: [
+        Tag, Phone, Email
+      ],
+    }
+  )
 
   if (!lector) {
     return {
@@ -206,118 +202,104 @@ function editLector(uuid, input) {
     }
   }
 
-  //Edit lector
-  db.prepare(/*sql*/`
-  UPDATE Lectors SET title_before = coalesce(NULLIF(?, ''), title_before), 
-  first_name = coalesce(NULLIF(?, ''), first_name),
-  middle_name = coalesce(NULLIF(?, ''), middle_name),
-  last_name = coalesce(NULLIF(?, ''), last_name),
-  title_after = coalesce(NULLIF(?, ''), title_after),
-  picture_url = coalesce(NULLIF(?, ''), picture_url),
-  location = coalesce(NULLIF(?, ''), location),
-  claim = coalesce(NULLIF(?, ''), claim),  
-  bio = coalesce(NULLIF(?, ''), bio),
-  price_per_hour = coalesce(NULLIF(?, ''), price_per_hour) 
-  WHERE UUID = ?
-  `).run(input.title_before, input.first_name, input.middle_name, input.last_name, input.title_after, input.picture_url, input.location, input.claim, input.bio, input.price_per_hour, uuid)
+  //lector = JSON.parse(JSON.stringify(lector));
 
-  //Edit tags
+  if (input.hasOwnProperty("title_before")) lector.title_before = input.title_before;
+  if (input.hasOwnProperty("first_name")) lector.first_name = input.first_name;
+  if (input.hasOwnProperty("middle_name")) lector.middle_name = input.middle_name;
+  if (input.hasOwnProperty("last_name")) lector.last_name = input.last_name;
+  if (input.hasOwnProperty("title_after")) lector.title_after = input.title_after;
+  if (input.hasOwnProperty("picture_url")) lector.picture_url = input.picture_url;
+  if (input.hasOwnProperty("location")) lector.location = input.location;
+  if (input.hasOwnProperty("claim")) lector.claim = input.claim;
+  if (input.hasOwnProperty("bio")) lector.bio = input.bio;
+  if (input.hasOwnProperty("price_per_hour")) lector.price_per_hour = input.price_per_hour;
+
   if (input.hasOwnProperty("tags")) {
-    db.prepare(/*sql*/`
-    DELETE FROM tags WHERE lector_uuid = ?
-    `).run(uuid)
+    lector.setTags([]);
 
-    input.tags.forEach(tag => {
-      let tag_uuid = crypto.randomUUID();
-      db.prepare(/*sql*/`
-        INSERT INTO tags (uuid, name, lector_uuid)
-        VALUES (?, ?, ?)
-        `).run(tag_uuid, tag.name, uuid)
-    })
+    for (let tag of input.tags) {
+      let [finalTag, created] = await Tag.findOrCreate({
+        where: {
+          name: tag.name
+        },
+        defaults: {
+          name: tag.name
+        }
+      });
+
+      await lector.addTag(finalTag);
+    };
   }
 
-  //Edit telephone
-  if (input.hasOwnProperty("contact") && input.contact.hasOwnProperty("telephone_numbers")) {
-    db.prepare(/*sql*/`
-    DELETE FROM telephone_numbers WHERE lector_uuid = ?
-    `).run(uuid)
+  if (input.hasOwnProperty("contact")) {
+    if (input.contact.hasOwnProperty("telephone_numbers")) {
+      
+      // delete all phones
+      let oldPhones = await lector.getPhones();
 
-    input.contact.telephone_numbers.forEach(telephone_number => {
-      let telephone_uuid = crypto.randomUUID();
-      db.prepare(/*sql*/`
-      INSERT INTO telephone_numbers (telephone_uuid, number, lector_uuid)
-      VALUES (?, ?, ?)
-      `).run(telephone_uuid, telephone_number, uuid)
-    })
-  }
-
-  //Edit Emails
-  if (input.hasOwnProperty("contact") && input.contact.hasOwnProperty("emails")) {
-    db.prepare(/*sql*/`
-    DELETE FROM email WHERE lector_uuid = ?
-    `).run(uuid)
-
-    input.contact.emails.forEach(email => {
-      let email_uuid = crypto.randomUUID();
-      db.prepare(/*sql*/`
-      INSERT INTO email (email_uuid, email, lector_uuid)
-      VALUES (?, ?, ?)
-      `).run(email_uuid, email, uuid)
-    })
-  }
-
-  return getLectorById(uuid);
-
-  //#region Očekávaný output: (kopie aktuálního stavu záznamu lektora)
-  /*
-  {
-    "uuid": "67fda282-2bca-41ef-9caf-039cc5c8dd69",
-    "title_before": "Mgr.",
-    "first_name": "Petra",
-    "middle_name": "Swil",
-    "last_name": "Plachá",
-    "title_after": "MBA",
-    "picture_url": "https://picsum.photos/200",
-    "location": "Brno",
-    "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
-    "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
-    "tags": [
-      {
-        "uuid": "c20b98dd-f37e-4fa7-aac1-73300abf086e",
-        "name": "Marketing"
+      for (let phone of oldPhones) {
+        await phone.destroy();
       }
-    ],
-    "price_per_hour": 720,
-    "contact": {
-      "telephone_numbers": [
-        "+123 777 338 111"
-      ],
-      "emails": [
-        "user@example.com"
-      ]
+
+      // add new phones
+
+      for (let phone of input.contact.telephone_numbers) {
+        let [finalPhone, created] = await Phone.findOrCreate({
+          where: {
+            number: phone
+          },
+          defaults: {
+            number: phone
+          }
+        });
+
+        await lector.addPhone(finalPhone);
+      };
+    }
+
+    if (input.contact.hasOwnProperty("emails")) {
+      
+      // delete all emails
+      let oldEmails = await lector.getEmails();
+
+      for (let email of oldEmails) {
+        await email.destroy();
+      }
+
+
+      for (let email of input.contact.emails) {
+        let [finalEmail, created] = await Email.findOrCreate({
+          where: {
+            email: email
+          },
+          defaults: {
+            email: email
+          }
+        });
+
+        await lector.addEmail(finalEmail);
+      };
     }
   }
-  */
-  //#endregion
 
-  //#region Pokud lektor s uuid neexistuje, vrátí:
-  /*
-      {
-    "code": 404,
-    "message": "User not found"
-  }
-  
-      */
-  //#endregion
+  console.log(lector);
+
+  await lector.save();
+
+  await cleanup();
+
+  return await getLectorById(uuid);
+
 }
 
-function deleteLector(uuid) {
+async function deleteLector(uuid) {
 
-  cachedLectors = null;
-
-  let lector = db.prepare(/*sql*/`
-  SELECT * FROM Lectors WHERE UUID = ?
-  `).get(uuid)
+  let lector = await Lecturer.findOne({
+    where: {
+      uuid: uuid,
+    }
+  })
 
   if (!lector) {
     return {
@@ -326,45 +308,13 @@ function deleteLector(uuid) {
     }
   }
 
-  db.prepare(/*sql*/`
-  DELETE FROM Lectors WHERE UUID = ?
-  `).run(uuid)
-
-  db.prepare(/*sql*/`
-  DELETE FROM telephone_numbers WHERE lector_uuid = ?
-  `).run(uuid)
-
-  db.prepare(/*sql*/`
-  DELETE FROM email WHERE lector_uuid = ?
-  `).run(uuid)
-
-  db.prepare(/*sql*/`
-  DELETE FROM tags WHERE lector_uuid = ?
-  `).run(uuid)
+  await lector.destroy();
+  await cleanup();
 
   return {
     code: 200,
     message: "User deleted"
   }
-
-  //#region Očekávaný output:
-  /*
-      {
-    "code": 200,
-    "message": "User deleted"
-      }
-  
-      */
-  //#endregion
-
-  //#region    Pokud lektor s uuid neexistuje, vrátí:
-  /*
-      {
-    "code": 404,
-    "message": "User not found"
-  }
-  */
-  //#endregion
 }
 
 export { getLectors, createLector, getLectorById, editLector, deleteLector };

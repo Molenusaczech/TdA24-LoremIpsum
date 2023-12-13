@@ -3,6 +3,7 @@ import { Sequelize, DataTypes } from "sequelize";
 const sequelize = new Sequelize({
     dialect: "sqlite",
     storage: "./db.sqlite",
+    transactionType: "IMMEDIATE",
 });
 
 const Tag = sequelize.define("Tag", {
@@ -78,28 +79,24 @@ const Lecturer = sequelize.define("Lecturer", {
     },
     bio: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     location: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     claim: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     price_per_hour: {
         type: DataTypes.FLOAT,
-        allowNull: false,
+        allowNull: true,
     },
     picture_url: {
         type: DataTypes.STRING,
-        allowNull: false,
-    }/*,
-    tags: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: true,
-    },*/
+    }
 });
 
 const LecturerTag = sequelize.define("LecturerTag", {}, { timestamps: false });
