@@ -30,6 +30,10 @@ app.post("/api/lecturers", cors(), async (req, res) => {
 
   const result = await createLector(input);
 
+  if (result.code) {
+    res.status(result.code);
+  }
+
   res.send(result);
 });
 
