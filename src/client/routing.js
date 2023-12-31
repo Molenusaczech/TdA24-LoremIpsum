@@ -25,14 +25,57 @@ function renderPage(currentUrl) {
         changeFavicon(faviconUrl);
         document.title = "Teacher Digital Agency"
 
-        fetch("/api/lecturers")
+        /*fetch("/api/lecturers")
             .then((response) => response.json())
             .then((data) => {
                 let tags = getAllTags(data);
                 let locations = getAllLocations(data);
                 document.getElementById("mainPage").innerHTML = renderMain(data, tags, locations);
                 mainAfter(data);
+            });*/
+
+        
+        let filterData = fetch("/api/filterData").then((response) => response.json());
+
+        let lecturers = fetch("/api/filterLecturers", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify({
+                page: 1,
+                tags: [],
+                location: [],
+                priceMin: -1,
+                priceMax: -1
+            })
+        }).then((response) => response.json());
+
+        Promise.all([filterData, lecturers]).then((values) => {
+            
+            let filterData = values[0]
+            let lecturers = values[1]
+
+            console.log(filterData);
+            console.log(lecturers);
+
+            let tags = filterData.tags.map((tag) => {
+                return {
+                    name: tag.name,
+                    uuid: tag.uuid
+                }
             });
+            let locations = filterData.locations;
+            let minPrice = filterData.minPrice;
+            let maxPrice = filterData.maxPrice;
+            //console.log(tags);
+
+            document.getElementById("mainPage").innerHTML = renderMain(lecturers, tags, locations, minPrice, maxPrice);
+            mainAfter(lecturers, tags, locations);
+        });
+
+
+
     } else if (currentUrl == "/lecturer") {
         document.getElementById("mainPage").innerHTML = renderLecturer(defaultLecturer);
         lecturerAfter();
@@ -54,12 +97,12 @@ function renderPage(currentUrl) {
 }
 
 function linkClick(link) {
-    window.history.pushState({"html":"placeholder","pageTitle":link},"", link);
+    window.history.pushState({ "html": "placeholder", "pageTitle": link }, "", link);
     renderPage(link);
 }
 
-window.onpopstate = function(e){
-    if(e.state){
+window.onpopstate = function (e) {
+    if (e.state) {
         console.log(e.state);
         renderPage(e.state.pageTitle);
     }

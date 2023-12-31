@@ -8,6 +8,9 @@ const app = express();
 
 import { getLectors, createLector, getLectorById, editLector, deleteLector } from "./dbHandler.js";
 
+import { getFiltered } from "./getFilter.js";
+import { getFilterData } from "./setFilteringData.js";
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -76,6 +79,34 @@ app.delete("/api/lecturers/:uuid", cors(), async (req, res) => {
   const result = await deleteLector(uuid);
 
   res.status(result.code);
+
+  res.send(result);
+});
+
+app.post("/api/filterLecturers", cors(), async (req, res) => {
+  const input = req.body;
+
+  console.log(req.body);
+
+  input.page ??= 1;
+  input.tags ??= [];
+  input.location ??= [];
+  input.priceMin ??= -1;
+  input.priceMax ??= -1;
+
+  const result = await getFiltered(
+    input.page, 
+    input.tags, 
+    input.location,
+    input.priceMin,
+    input.priceMax,
+  );
+
+  res.send(result);
+});
+
+app.get("/api/filterData", cors(), async (req, res) => {
+  const result = await getFilterData();
 
   res.send(result);
 });

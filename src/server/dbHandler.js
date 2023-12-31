@@ -1,5 +1,3 @@
-import crypto from "crypto";
-
 import { Lecturer, Tag, Phone, Email } from "./dbModels.js";
 
 async function cleanup() {

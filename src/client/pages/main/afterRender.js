@@ -1,6 +1,7 @@
 import { linkClick } from "../../routing";
+import { initLectors } from "./filter";
 
-function mainAfter(lectors) {
+function mainAfter(lectors, tags, locations) {
     console.log("mainAfter");
 
     lectors.forEach(element => {
@@ -10,6 +11,8 @@ function mainAfter(lectors) {
             linkClick("/lecturer/" + element.uuid);
         });
     });
+
+    initLectors(lectors, tags, locations);
 }
 
 export { mainAfter };

@@ -1,4 +1,4 @@
-function renderMain(lectors, tags, locations) {
+function renderMain(lectors, tags, locations, minPrice, maxPrice) {
     console.log(tags);
     return /*html */`
     <h1> Main Page </h1>
@@ -6,9 +6,9 @@ function renderMain(lectors, tags, locations) {
     <div id="filter">
         <div class="filterPrice">
             Cena lektora:
-            <input type="number" id="minPrice">
+            <input type="number" id="minPrice" value="${minPrice}">
             -
-            <input type="number" id="maxPrice">
+            <input type="number" id="maxPrice" value="${maxPrice}">
         </div>
         <div class="filterTags">
             ${tags.map(renderTagSelect).join("")}
@@ -18,12 +18,14 @@ function renderMain(lectors, tags, locations) {
         </div>
     </div>
 
+    <div id="lectors">
     ${lectors.map(lector => lectorTitle(lector)).join("")}
+    </div>
     `;
 }
 
 function lectorTitle(lector) {
-    console.log(lector);
+    //console.log(lector);
     return /*html */`
     <div ${lectorMetadata(lector)} class="lectorSmall">
     <h2> ${lector.title_before
@@ -52,6 +54,7 @@ function lectorTitle(lector) {
 }
 
 function renderTag(tag) {
+    console.log(tag.name);
     return /*html */`
     <li data-uuid="${tag.uuid}"> ${tag.name} </li>
     `;
@@ -64,28 +67,28 @@ function lectorMetadata(lector) {
 }
 
 function tagMetadata(tag) {
-    console.log(tag);
+    //console.log(tag);
     return /*html */`
     data-tag-${tag.name}="${tag.uuid}"
     `;
 }
 
-function renderTagSelect(name) {
+function renderTagSelect(tag) {
     return /*html */`
-    <span>
-    <label for="${name}">${name}</label>
-    <input type="checkbox" name="${name}" id="${name}">
+    <span data-tag="${tag.uuid}" class="tagSelect">
+    ${tag.name}
     </span>
     `;
 }
 
 function renderLocationSelect(location) {
+    console.log(location);
+    location = location.location;
     return /*html */`
-    <span>
-    <label for="${location}">${location}</label>
-    <input type="checkbox" name="${location}" id="${location}">
+    <span data-location="${location}" class="locationSelect">
+    ${location}
     </span>
     `;
 }
 
-export { renderMain };
+export { renderMain, lectorTitle };

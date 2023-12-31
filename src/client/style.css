@@ -221,6 +221,27 @@ a {
     transition: 0.2s;
 }
 
+.locationSelect {
+    background-color: #333333;
+    color: #fff;
+}
+
+.locationSelect.active {
+    background-color: #74C7D3;
+    color: #333333;
+}
+
+.tagSelect {
+    background-color: #333333;
+    color: #fff;
+}
+
+.tagSelect.active {
+    background-color: #74C7D3;
+    color: #333333;
+}
+
+
 @media screen and (max-width: 700px) {
     .lectorContainer {
         width: 100%;
