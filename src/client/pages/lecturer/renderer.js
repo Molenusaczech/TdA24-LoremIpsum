@@ -7,43 +7,41 @@ import { getLectorName } from "../../getLectorName";
 function renderLecturer(lecturer) {
     return /*html */`
     <div class="lecturerPage">
+
     <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
-    <div class="lectorContainer">
-    <div class="flexbox">
-
-    <div class="lectorLeftBox">
-
-    <img class="lectorPicture" id="lectorPic" src="${lecturer.picture_url}" alt="Lecturer picture">
-    <div class="lectorTags">
-    ${lecturer.tags.map(renderTag).join("")}
-    </div>
-
-    </div>
-    <div class="lectorRightBox">
-    <div class="lectorName"> ${getLectorName(lecturer)} </div>
-    <hr>
-    <h2 class="lectorLocation"> ${lecturer.location} </h2>
-    <h3 class="lectorClaim"> ${lecturer.claim} </h3>
-    <div class="lectorBio"> ${lecturer.bio} </div>
-
-    <div>
-    </div>
-
-    <div class="lectorContact">
-    <div class="contactBox">
-    <span class="lectorContactOption"> ${lecturer.price_per_hour} Kč / hodina </span>
-    ${lecturer.contact.telephone_numbers.map(renderPhoneNumber).join("")}
-    ${lecturer.contact.emails.map(renderEmail).join("")}
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
-
-    <img class="vlevoDole" src="${vlevoDole}">
-    <img class="vpravoDole" src="${vpravoDole}">
-    <img class="vpravoNahore" src="${vpravoNahore}">
+        <div class="lectorContainer">
+            <div class="flexbox">
+    
+                <div class="lectorLeftBox">
+    
+                    <img class="lectorPicture" id="lectorPic" src="${lecturer.picture_url}" alt="Lecturer picture">
+                    <div class="lectorTags">
+                        ${lecturer.tags.map(renderTag).join("")}
+                    </div>
+                </div>
+    
+                <div class="lectorRightBox">
+                    <div class="lectorName"> ${getLectorName(lecturer)} </div>
+                    <hr>
+                    <h2 class="lectorLocation"> ${lecturer.location} </h2>
+                    <h3 class="lectorClaim"> ${lecturer.claim} </h3>
+                    <div class="lectorBio"> ${lecturer.bio} </div>
+    
+                    <div class="lectorContact">
+                        <div class="contactBox">
+                            <span class="lectorContactOption"> ${lecturer.price_per_hour} Kč / hodina </span>
+                            ${lecturer.contact.telephone_numbers.map(renderPhoneNumber).join("")}
+                            ${lecturer.contact.emails.map(renderEmail).join("")}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <img class="vlevoDole" src="${vlevoDole}">
+        <img class="vpravoDole" src="${vpravoDole}">
+        <img class="vpravoNahore" src="${vpravoNahore}">
 
     </div>
     `;

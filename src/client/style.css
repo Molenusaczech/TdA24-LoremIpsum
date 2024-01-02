@@ -230,17 +230,146 @@ a {
     background-color: #74C7D3;
     color: #333333;
 }
+.filterTags, .filterLocation {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 0.4vw;
+    column-gap: 0.4vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
 
 .tagSelect {
-    background-color: #333333;
+    background-color: #FECB2E;
+    color: #333333;
+    font-size: 1vw;
+    border-radius: 5vw;
+    padding: 0.1vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tagSelect:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.locationSelect {
+    background-color: #74C7D3;
     color: #fff;
+    font-size: 1vw;
+    border-radius: 5vw;
+    padding: 0.1vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    cursor: pointer;
 }
 
 .tagSelect.active {
-    background-color: #74C7D3;
-    color: #333333;
+    background-color: #00384D;
+    color: #74C7D3;
 }
 
+.mainPageContainer {
+    /*display: flex;*/
+    /*border: red solid 1px;*/
+    position: absolute;
+    top: 5vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 60vmax;
+    z-index: 10;
+}
+
+#filter {
+    background-color: #fff;
+    padding: 1vw;
+    border-radius: 2vw;
+    color: #333333;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+    margin-bottom: 1vw;
+}
+
+.lectorListLector {
+    border: aqua solid 1px;
+    background-color: #fff;
+    padding: 1vw;
+    border-radius: 2vw;
+    color: #333333;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+    margin-bottom: 1vw;
+    transition: 0.2s;
+}
+
+.lectorListLector hr {
+    margin-left: 0.5vw;
+    margin-right: 1vw;
+    height: 0.2vw;
+    border-radius: 1vw;
+    background-color: #333333;
+    border: none;
+}
+
+.lectorListLector:hover {
+    background-color: #74C7D3;
+    color: #fff;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+input {
+    border: #333333 solid 0px;
+    border-radius: 0.3vw;
+    height: 1.5vw;
+    font-size: 1vw;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #74C7D3;
+    color: #fff;
+    font-weight: 700;
+}
+
+.lectorListName {
+    font-size: 2vw;
+    font-weight: 500;
+    margin: 0.5vw;
+    font-family: "Lalezar", sans-serif;
+    font-size: 3vw;
+}
+
+.lectorListLector:hover .lectorTag {
+    background-color: #fff;
+    color: #74C7D3;
+}
+
+.lectorListLector:hover .moreInfo {
+    visibility: visible;
+    transition: 0.2s;
+}
+
+.lectorListLector:hover hr {
+    background-color: #fff;
+}
+
+.moreInfo {
+    visibility: hidden;
+    transition: 0.2s;
+    font-size: 1vw;
+    color: #fff;
+    text-align: center;
+}
+
+.lectorListPicture {
+    width: 100%;
+    border-radius: 50%;
+    transition: 0.2s;
+    margin-bottom: 1vw;
+}
 
 @media screen and (max-width: 700px) {
     .lectorContainer {

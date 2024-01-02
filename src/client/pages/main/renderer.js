@@ -1,62 +1,75 @@
+import vlevoDole from "../../img/Tvar_vlevo_dole.png";
+import vpravoDole from "../../img/Tvar_vpravo_dole.png";
+import vpravoNahore from "../../img/Tvar_pravo_nahore.png";
+import whiteLogo from "../../img/LOGO_white.svg?url";
+import { getLectorName } from "../../getLectorName";
+
 function renderMain(lectors, tags, locations, minPrice, maxPrice) {
     console.log(tags);
     return /*html */`
-    <h1> Main Page </h1>
+    <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
 
-    <div id="filter">
-        <div class="filterPrice">
-            Cena lektora:
-            <input type="number" id="minPrice" value="${minPrice}">
-            -
-            <input type="number" id="maxPrice" value="${maxPrice}">
+    <div class="mainPageContainer">
+        <div id="filter">
+            <div class="filterPrice">
+                Cena lektora: <br>
+                <input type="number" id="minPrice" value="${minPrice}">
+                -
+                <input type="number" id="maxPrice" value="${maxPrice}">
+            </div>
+            <div class="filterTags">
+                ${tags.map(renderTagSelect).join("")}
+            </div>
+            <div class="filterLocation">
+                ${locations.map(renderLocationSelect).join("")}
+            </div>
         </div>
-        <div class="filterTags">
-            ${tags.map(renderTagSelect).join("")}
-        </div>
-        <div class="filterLocation">
-            ${locations.map(renderLocationSelect).join("")}
+
+        <div id="lectors">
+            ${lectors.map(lector => lectorTitle(lector)).join("")}
         </div>
     </div>
 
-    <div id="lectors">
-    ${lectors.map(lector => lectorTitle(lector)).join("")}
-    </div>
+    <img class="vlevoDole" src="${vlevoDole}">
+    <img class="vpravoDole" src="${vpravoDole}">
+    <img class="vpravoNahore" src="${vpravoNahore}">
+
+
     `;
 }
 
-function lectorTitle(lector) {
+function lectorTitle(lecturer) {
     //console.log(lector);
     return /*html */`
-    <div ${lectorMetadata(lector)} class="lectorSmall">
-    <h2> ${lector.title_before
-        + " "
-        + lector.first_name
-        + " "
-        + lector.middle_name
-        + " "
-        + lector.last_name
-        + " "
-        + lector.title_after
-        } </h2>
-    <p> ${lector.bio} </p>
-    <p> ${lector.location} </p>
-    <p> ${lector.claim} </p>
-    <p> ${lector.price_per_hour} </p>
-    <img src="${lector.picture_url}" alt="Lecturer picture">
-
-    <div>Tags:
-    <ul>
-    ${lector.tags.map(renderTag).join("")}
-    </ul>
-    </div>
-    </div>
+    <div class="lectorListLector" ${lectorMetadata(lecturer)}>
+            <div class="flexbox">
+    
+                <div class="lectorLeftBox">
+                    <img class="lectorListPicture" id="lectorPic" src="${lecturer.picture_url}" alt="Lecturer picture">
+                </div>
+    
+                <div class="lectorRightBox">
+                    <div class="lectorListName"> ${getLectorName(lecturer)} </div>
+                    <hr>
+                    <h2 class="lectorLocation"> ${lecturer.location} </h2>
+                    <h3 class="lectorClaim"> ${lecturer.claim} </h3>
+                    <div class="lectorBio"> ${lecturer.bio} </div>
+                </div>
+            </div>
+            <div class="lectorTags">
+                ${lecturer.tags.map(renderTag).join("")}
+            </div>
+            <div class="moreInfo">
+                Klikněte pro více informací
+            </div>
+        </div>
     `;
 }
 
 function renderTag(tag) {
     console.log(tag.name);
     return /*html */`
-    <li data-uuid="${tag.uuid}"> ${tag.name} </li>
+    <span class="lectorTag" data-uuid="${tag.uuid}"> ${tag.name} </span>
     `;
 }
 

@@ -7,9 +7,10 @@ async function getFiltered(page, tags, location, priceMin, priceMax) {
     let filter = []
 
     if (tags.length > 0) {
+        // sequelize filter where all tags are in lector
         filter.push({
             '$Tags.uuid$': {
-                [Op.in]: tags
+                [Op.and]: tags
             }
         })
     }

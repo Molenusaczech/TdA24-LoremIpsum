@@ -1,4 +1,5 @@
 import { lectorTitle } from "./renderer"
+import { linkClick } from "../../routing";
 
 let lectors = []
 let tags = []
@@ -39,6 +40,18 @@ function initLectors(currentLectors, currentTags, currentLocations) {
             filterLectors();
         });
     });
+
+    registerListeners(lectors);
+}
+
+function registerListeners(lectors) {
+    lectors.forEach(element => {
+        document.querySelector(`[data-uuid="${element.uuid}"]`).addEventListener("click", () => {
+            console.log(element.uuid);
+            //window.location.href = "/lecturer/" + element.UUID;
+            linkClick("/lecturer/" + element.uuid);
+        });
+    });
 }
 
 function filterLectors() {
@@ -76,6 +89,7 @@ function filterLectors() {
         console.log(data);
         lectors = data;
         document.getElementById("lectors").innerHTML = data.map(lector => lectorTitle(lector)).join("");
+        registerListeners(lectors);
     })
 
     console.log(filter);
