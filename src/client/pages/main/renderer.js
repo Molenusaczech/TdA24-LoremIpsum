@@ -17,9 +17,11 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
                 -
                 <input type="number" id="maxPrice" value="${maxPrice}">
             </div>
+            Aktivity:
             <div class="filterTags">
                 ${tags.map(renderTagSelect).join("")}
             </div>
+            Místo působení:
             <div class="filterLocation">
                 ${locations.map(renderLocationSelect).join("")}
             </div>

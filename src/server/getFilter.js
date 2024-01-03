@@ -1,5 +1,5 @@
 import { Lecturer, Tag, Phone, Email } from "./dbModels.js";
-import { Op } from 'sequelize';
+import { Op, literal } from 'sequelize';
 
 async function getFiltered(page, tags, location, priceMin, priceMax) {
 
@@ -31,7 +31,7 @@ async function getFiltered(page, tags, location, priceMin, priceMax) {
         })
     }
 
-    let result = await Lecturer.findAll({
+    /*let result = await Lecturer.findAll({
         include: [
             //Tag, Phone, Email
             {
@@ -50,7 +50,24 @@ async function getFiltered(page, tags, location, priceMin, priceMax) {
             ]
         },
     },
-    );
+    );*/
+
+    let filterTags = tags.map((tag) => tag.uuid);
+
+    let result = await Lecturer.findAll({
+        include: [{
+            model: Tag,
+            attributes: [],
+            where: {
+                uuid: {
+                    [Op.in]: filterTags
+                }
+            },
+            through: {
+                attributes: []
+            }
+        }]
+    });
 
     let final = result.map((lector) => {
         lector = JSON.parse(JSON.stringify(lector));

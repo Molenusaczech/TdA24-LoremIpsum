@@ -237,11 +237,32 @@ a {
     flex-wrap: wrap;
     row-gap: 0.4vw;
     column-gap: 0.4vw;
-    margin-top: 1vw;
+    /*margin-top: 1vw;*/
+    margin-bottom: 2vw;
+}
+
+.filterPrice {
     margin-bottom: 1vw;
 }
 
 .tagSelect {
+    font-size: 1vw;
+    border-radius: 5vw;
+    padding: 0.1vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: #74C7D3;
+    color: #fff;
+}
+
+.tagSelect:hover {
+    transform: translateY(-10%);
+    transition: 0.2s;
+}
+
+.locationSelect {
     background-color: #FECB2E;
     color: #333333;
     font-size: 1vw;
@@ -253,20 +274,14 @@ a {
     transition: 0.2s;
 }
 
-.tagSelect:hover {
-    transform: scale(1.1);
+.locationSelect:hover {
+    transform: translateY(-10%);
     transition: 0.2s;
 }
 
-.locationSelect {
-    background-color: #74C7D3;
+.locationSelect.active {
+    background-color: #00384D;
     color: #fff;
-    font-size: 1vw;
-    border-radius: 5vw;
-    padding: 0.1vw;
-    padding-left: 0.5vw;
-    padding-right: 0.5vw;
-    cursor: pointer;
 }
 
 .tagSelect.active {

@@ -37,19 +37,7 @@ function renderPage(currentUrl) {
         
         let filterData = fetch("/api/filterData").then((response) => response.json());
 
-        let lecturers = fetch("/api/filterLecturers", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify({
-                page: 1,
-                tags: [],
-                location: [],
-                priceMin: -1,
-                priceMax: -1
-            })
-        }).then((response) => response.json());
+        let lecturers = fetch("/api/lecturers").then((response) => response.json());
 
         Promise.all([filterData, lecturers]).then((values) => {
             
