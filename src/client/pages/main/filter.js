@@ -1,10 +1,10 @@
 import { lectorTitle } from "./renderer"
 import { linkClick } from "../../routing";
+import '@material/web/slider/slider.js';
 
 let lectors = []
 let tags = []
 let locations = []
-let page = 1
 
 function initLectors(currentLectors, currentTags, currentLocations) {
     lectors = currentLectors
@@ -41,6 +41,14 @@ function initLectors(currentLectors, currentTags, currentLocations) {
         });
     });
 
+    let priceSlider = document.getElementById("priceSlider");
+
+    priceSlider.addEventListener("change", (change) => {
+        console.log(change);
+        document.getElementById("minPrice").value = priceSlider.value;
+        filterLectors();
+    });
+
     registerListeners(lectors);
 }
 
@@ -68,31 +76,65 @@ function filterLectors() {
         locations.push(element.dataset.location);
     });
 
-    let minPrice = document.getElementById("minPrice").value;
-    let maxPrice = document.getElementById("maxPrice").value;
+    let priceSlider = document.getElementById("priceSlider");
 
-    let filter = {
-        page: 1,
-        tags: tags,
-        location: locations,
-        priceMin: minPrice,
-        priceMax: maxPrice
-    };
+    console.log(priceSlider);
 
-    fetch("/api/filterLecturers", {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(filter)
-    }).then((response) => response.json()).then((data) => {
-        console.log(data);
-        lectors = data;
-        document.getElementById("lectors").innerHTML = data.map(lector => lectorTitle(lector)).join("");
-        registerListeners(lectors);
-    })
+    // get values from material ui slider
+    let minPrice = priceSlider.valueStart;
+    let maxPrice = priceSlider.valueEnd;
 
-    console.log(filter);
+    console.log(lectors);
+
+    let filterLectors = [];
+
+    lectors.forEach(element => {
+        let valid = true;
+
+        if (tags.length > 0) {
+            let lectorTags = element.tags.map(tag => tag.uuid);
+
+            console.log(lectorTags);
+            console.log(tags);
+
+            tags.forEach(tag => {
+                if (!lectorTags.includes(tag)) {
+                    //console.log("tag not found");
+                    //console.log(tag);
+                    valid = false;
+                }
+            });
+        }
+
+        if (locations.length > 0) {
+            //valid = locations.includes(element.location);
+            if (!locations.includes(element.location)) {
+                valid = false;
+            }
+        }
+
+        console.log(minPrice);
+        console.log(maxPrice);
+        console.log(element.price_per_hour);
+
+        if (minPrice > element.price_per_hour) {
+            valid = false;
+        }
+            
+        if (maxPrice < element.price_per_hour) {
+            valid = false;
+        }
+
+        if (valid) {
+            filterLectors.push(element);
+        }
+    });
+
+    console.log(filterLectors);
+
+    document.getElementById("lectors").innerHTML = filterLectors.map(lector => lectorTitle(lector)).join("");
+    registerListeners(filterLectors);
+
 }
 
 

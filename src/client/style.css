@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
+/* set variables */
+:root {
+    --md-sys-color-primary: #FECB2E;
+    --md-sys-color-secondary: #747474;
+    --md-slider-label-text-color: #333333;
+    --md-slider-label-text-weight: 700;
+    --md-slider-label-text-size: 1vw;
+    /* set font family */
+    --md-ref-typeface-brand: 'Open Sans';
+    --md-ref-typeface-plain: 'Open Sans';
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -97,7 +109,7 @@ body {
 .lectorTag:hover {
     transform: scale(1.1);
     transition: 0.2s;
-    color:#333333;
+    color: #333333;
     background-color: #74C7D3;
     /*box-shadow: #fff 0 0 0.5vw;*/
 }
@@ -168,7 +180,7 @@ b {
 .lectorPrice:hover {
     transform: scale(1.1);
     transition: 0.2s;
-    color:#333333;
+    color: #333333;
     background-color: #74C7D3;
     /*box-shadow: #fff 0 0 0.5vw;*/
 }
@@ -186,7 +198,7 @@ b {
 
 .lectorContactOption:hover {
     transition: 0.2s;
-    color:#333333;
+    color: #333333;
     background-color: #74C7D3;
     /*box-shadow: #fff 0 0 0.5vw;*/
 }
@@ -202,7 +214,7 @@ b {
 }
 
 a {
-    text-decoration: none;    
+    text-decoration: none;
 }
 
 .backButton {
@@ -230,7 +242,9 @@ a {
     background-color: #74C7D3;
     color: #333333;
 }
-.filterTags, .filterLocation {
+
+.filterTags,
+.filterLocation {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -338,7 +352,7 @@ a {
     cursor: pointer;
 }
 
-input {
+/*input {
     border: #333333 solid 0px;
     border-radius: 0.3vw;
     height: 1.5vw;
@@ -347,7 +361,7 @@ input {
     background-color: #74C7D3;
     color: #fff;
     font-weight: 700;
-}
+}*/
 
 .lectorListName {
     font-size: 2vw;
@@ -384,6 +398,14 @@ input {
     border-radius: 50%;
     transition: 0.2s;
     margin-bottom: 1vw;
+}
+
+.sliderContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 @media screen and (max-width: 700px) {
@@ -430,7 +452,7 @@ input {
     .lectorLocation {
         font-size: 5vw;
     }
-    
+
     .lectorClaim {
         font-size: 3vw;
     }
@@ -448,3 +470,79 @@ input {
     }
 
 }
+
+/*.wrapper{
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+input[type="range"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    pointer-events: none;
+}
+.slider-track{
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    height: 5px;
+}
+input[type="range"]::-moz-range-track{
+    -moz-appearance: none;
+    height: 5px;
+}
+input[type="range"]::-ms-track{
+    appearance: none;
+    height: 5px;
+}
+input[type="range"]::-webkit-slider-thumb{
+    height: 1.7em;
+    width: 1.7em;
+    background-color: #3264fe;
+    cursor: pointer;
+    margin-top: -9px;
+    pointer-events: auto;
+    border-radius: 50%;
+}
+input[type="range"]::-moz-range-thumb{
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+input[type="range"]::-ms-thumb{
+    appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+input[type="range"]:active::-webkit-slider-thumb{
+    background-color: #ffffff;
+    border: 3px solid #3264fe;
+}*/

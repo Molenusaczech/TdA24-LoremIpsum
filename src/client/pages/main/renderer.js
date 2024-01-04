@@ -3,6 +3,19 @@ import vpravoDole from "../../img/Tvar_vpravo_dole.png";
 import vpravoNahore from "../../img/Tvar_pravo_nahore.png";
 import whiteLogo from "../../img/LOGO_white.svg?url";
 import { getLectorName } from "../../getLectorName";
+import '@material/web/slider/slider.js';
+
+function formatSliderValue(value) {
+    if (value == null) {
+        return "0";
+    }
+    return value.toLocaleString("cs-CZ", {
+        style: "currency",
+        currency: "CZK",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+    });
+}
 
 function renderMain(lectors, tags, locations, minPrice, maxPrice) {
     console.log(tags);
@@ -11,11 +24,45 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
 
     <div class="mainPageContainer">
         <div id="filter">
+
+        <!--<div class="wrapper">
+        <div class="values">
+            <span id="range1">
+                0
+            </span>
+            <span> &dash; </span>
+            <span id="range2">
+                100
+            </span>
+        </div>
+        <div class="container">
+            <div class="slider-track"></div>
+            <input type="range" min="0" max="100" value="30" id="slider-1">
+            <input type="range" min="0" max="100" value="70" id="slider-2">
+        </div>
+    </div>-->
             <div class="filterPrice">
                 Cena lektora: <br>
-                <input type="number" id="minPrice" value="${minPrice}">
-                -
-                <input type="number" id="maxPrice" value="${maxPrice}">
+
+
+                <div class="sliderContainer">
+
+                <span id="minPrice">${formatSliderValue(minPrice)}</span>
+                <md-slider 
+                    range 
+                    min="${minPrice}"
+                    max="${maxPrice}"
+                    value-start="${minPrice}" 
+                    value-end="${maxPrice}" 
+                    labeled
+                    style="width: 90%;"
+                    id="priceSlider"
+                ></md-slider>
+                <span id="maxPrice">${formatSliderValue(maxPrice)}</span>
+
+                </div>
+
+
             </div>
             Aktivity:
             <div class="filterTags">
