@@ -73,6 +73,15 @@ function renderPage(currentUrl) {
         fetch("/api/lecturers/" + currentUrl.split("/")[2])
             .then((response) => response.json())
             .then((data) => {
+
+                data.code ?? 200;
+
+                if (data.code == 404) {
+                    document.getElementById("mainPage").innerHTML = renderNotFoundPage();
+                    notFoundAfter();
+                    return;
+                }
+
                 document.getElementById("mainPage").innerHTML = renderLecturer(data);
                 lecturerAfter();
                 changeFavicon(data.picture_url);

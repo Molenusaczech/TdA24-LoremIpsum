@@ -9,12 +9,7 @@ function formatSliderValue(value) {
     if (value == null) {
         return "0";
     }
-    return value.toLocaleString("cs-CZ", {
-        style: "currency",
-        currency: "CZK",
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-    });
+    return value+"&nbsp;Kč/hod";
 }
 
 function renderMain(lectors, tags, locations, minPrice, maxPrice) {
@@ -42,9 +37,6 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
         </div>
     </div>-->
             <div class="filterPrice">
-                Cena lektora: <br>
-
-
                 <div class="sliderContainer">
 
                 <span id="minPrice">${formatSliderValue(minPrice)}</span>

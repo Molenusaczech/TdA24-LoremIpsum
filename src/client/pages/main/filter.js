@@ -132,6 +132,10 @@ function filterLectors() {
 
     console.log(filterLectors);
 
+    if (filterLectors.length == 0) {
+        document.getElementById("lectors").innerHTML = "<div class='lectorListName' style='text-align: center;'>Žádní lektoři nenalezeni</div>";
+        return;
+    }
     document.getElementById("lectors").innerHTML = filterLectors.map(lector => lectorTitle(lector)).join("");
     registerListeners(filterLectors);
 
