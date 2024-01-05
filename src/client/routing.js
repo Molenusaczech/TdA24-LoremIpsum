@@ -20,7 +20,7 @@ const uuidRegex = /^\/lecturer\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}
 function renderPage(currentUrl) {
     renderLoading();
 
-    if (currentUrl == "/") {
+    if (currentUrl == "/" || currentUrl == "") {
         console.log("home");
         changeFavicon(faviconUrl);
         document.title = "Teacher Digital Agency"

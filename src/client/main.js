@@ -3,7 +3,7 @@ import "./style.css";
 
 import { changeFavicon } from "./setFavicon.js";
 
-import { renderPage } from "./routing.js";
+import { renderPage, linkClick } from "./routing.js";
 
 import faviconUrl from "./img/favicon.png";
 
@@ -14,6 +14,9 @@ console.log(currentUrl);
 
 changeFavicon(faviconUrl);
 
-renderPage(currentUrl);
+//renderPage(currentUrl);
+
+// link click, so it pushes into history
+linkClick(currentUrl);
 
 

@@ -6,7 +6,7 @@
     --md-sys-color-secondary: #747474;
     --md-slider-label-text-color: #333333;
     --md-slider-label-text-weight: 700;
-    --md-slider-label-text-size: 1vw;
+    --md-slider-label-text-size: 15px;
     /* set font family */
     --md-ref-typeface-brand: 'Open Sans';
     --md-ref-typeface-plain: 'Open Sans';
@@ -104,6 +104,21 @@ body {
     font-weight: 700;
     transition: 0.2s;
     font-size: 0.7vw;
+}
+
+.lectorListTag {
+    font-size: 1vw;
+    border-radius: 5vw;
+    padding: 0.1vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    border-radius: 5vw;
+    margin: 0.1vw;
+    background-color: #74C7D3;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.2s;
+    font-size: 1vw;
 }
 
 .lectorTag:hover {
@@ -371,7 +386,7 @@ a {
     font-size: 3vw;
 }
 
-.lectorListLector:hover .lectorTag {
+.lectorListLector:hover .lectorListTag {
     background-color: #fff;
     color: #74C7D3;
 }
@@ -429,7 +444,7 @@ a {
         flex-direction: column;
     }
 
-    .lectorPicture {
+    .lectorPicture, .lectorListPicture {
         width: 50%;
         position: relative;
         left: 50vw;
@@ -467,6 +482,40 @@ a {
 
     .vlevoDole {
         display: none;
+    }
+
+    .lectorListLector {
+        width: 100%;
+    }
+
+    .mainPageContainer {
+        width: 100%;
+        top: 20vw;
+    }
+
+    .tagSelect, .locationSelect, .lectorListTag {
+        font-size: 4vw;
+        margin-left: 0.3vw;
+        margin-right: 0.3vw;
+    }
+
+    .filter {
+        width: 100%;
+    }
+
+    .lectorListName {
+        font-size: 7vw;
+    }
+
+    .moreInfo {
+        font-size: 4vw;
+        color: #333333;
+        visibility: visible;
+        margin-top: 1vw;
+    }
+
+    .lectorListLector:hover .moreInfo {
+        color: #fff;
     }
 
 }

@@ -118,7 +118,7 @@ function lectorTitle(lecturer) {
 function renderTag(tag) {
     console.log(tag.name);
     return /*html */`
-    <span class="lectorTag" data-uuid="${tag.uuid}"> ${tag.name} </span>
+    <span class="lectorListTag" data-uuid="${tag.uuid}"> ${tag.name} </span>
     `;
 }
 
