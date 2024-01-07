@@ -4,6 +4,7 @@ import vpravoNahore from "../../img/Tvar_pravo_nahore.png";
 import whiteLogo from "../../img/LOGO_white.svg?url";
 import { getLectorName } from "../../getLectorName";
 import '@material/web/slider/slider.js';
+import sanitizeHtml from 'sanitize-html';
 
 function formatSliderValue(value) {
     if (value == null) {
@@ -86,15 +87,15 @@ function lectorTitle(lecturer) {
             <div class="flexbox">
     
                 <div class="lectorLeftBox">
-                    <img class="lectorListPicture" id="lectorPic" src="${lecturer.picture_url}" alt="Lecturer picture">
+                    <img class="lectorListPicture" id="lectorPic" src="${sanitizeHtml(lecturer.picture_url)}" alt="Lecturer picture">
                 </div>
     
                 <div class="lectorRightBox">
-                    <div class="lectorListName"> ${getLectorName(lecturer)} </div>
+                    <div class="lectorListName"> ${sanitizeHtml(getLectorName(lecturer))} </div>
                     <hr>
-                    <h2 class="lectorLocation"> ${lecturer.location} </h2>
-                    <h3 class="lectorClaim"> ${lecturer.claim} </h3>
-                    <div class="lectorBio"> ${lecturer.bio} </div>
+                    <h2 class="lectorLocation"> ${sanitizeHtml(lecturer.location)} </h2>
+                    <h3 class="lectorClaim"> ${sanitizeHtml(lecturer.claim)} </h3>
+                    <div class="lectorBio"> ${sanitizeHtml(lecturer.bio)} </div>
                 </div>
             </div>
             <div class="lectorTags">
@@ -110,34 +111,34 @@ function lectorTitle(lecturer) {
 function renderTag(tag) {
     console.log(tag.name);
     return /*html */`
-    <span class="lectorListTag" data-uuid="${tag.uuid}"> ${tag.name} </span>
+    <span class="lectorListTag" data-uuid="${tag.uuid}"> ${sanitizeHtml(tag.name)} </span>
     `;
 }
 
 function lectorMetadata(lector) {
     return /*html */`
-    data-uuid="${lector.uuid}"  data-price_per_hour="${lector.price_per_hour}" ${lector.tags.map(tagMetadata).join("")}
+    data-uuid="${lector.uuid}"  data-price_per_hour="${sanitizeHtml(lector.price_per_hour)}" ${lector.tags.map(tagMetadata).join("")}
     `;
 }
 
 function tagMetadata(tag) {
     //console.log(tag);
     return /*html */`
-    data-tag-${tag.name}="${tag.uuid}"
+    data-tag-${sanitizeHtml(tag.name)}="${tag.uuid}"
     `;
 }
 
 function renderTagSelect(tag) {
     return /*html */`
     <span data-tag="${tag.uuid}" class="tagSelect">
-    ${tag.name}
+    ${sanitizeHtml(tag.name)}
     </span>
     `;
 }
 
 function renderLocationSelect(location) {
     console.log(location);
-    location = location.location;
+    location = sanitizeHtml(location.location);
     return /*html */`
     <span data-location="${location}" class="locationSelect">
     ${location}

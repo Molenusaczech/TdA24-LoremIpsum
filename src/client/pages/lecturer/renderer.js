@@ -3,6 +3,7 @@ import vpravoDole from "../../img/Tvar_vpravo_dole.png";
 import vpravoNahore from "../../img/Tvar_pravo_nahore.png";
 import whiteLogo from "../../img/LOGO_white.svg?url";
 import { getLectorName } from "../../getLectorName";
+import sanitizeHtml from 'sanitize-html';
 
 function renderLecturer(lecturer) {
     return /*html */`
@@ -21,15 +22,15 @@ function renderLecturer(lecturer) {
                 </div>
     
                 <div class="lectorRightBox">
-                    <div class="lectorName"> ${getLectorName(lecturer)} </div>
+                    <div class="lectorName"> ${sanitizeHtml(getLectorName(lecturer))} </div>
                     <hr>
-                    <h2 class="lectorLocation"> ${lecturer.location} </h2>
-                    <h3 class="lectorClaim"> ${lecturer.claim} </h3>
-                    <div class="lectorBio"> ${lecturer.bio} </div>
+                    <h2 class="lectorLocation"> ${sanitizeHtml(lecturer.location)} </h2>
+                    <h3 class="lectorClaim"> ${sanitizeHtml(lecturer.claim)} </h3>
+                    <div class="lectorBio"> ${sanitizeHtml(lecturer.bio)} </div>
     
                     <div class="lectorContact">
                         <div class="contactBox">
-                            <span class="lectorContactOption"> ${lecturer.price_per_hour} Kč / hodina </span>
+                            <span class="lectorContactOption"> ${sanitizeHtml(lecturer.price_per_hour)} Kč / hodina </span>
                             ${lecturer.contact.telephone_numbers.map(renderPhoneNumber).join("")}
                             ${lecturer.contact.emails.map(renderEmail).join("")}
                         </div>
@@ -49,22 +50,22 @@ function renderLecturer(lecturer) {
 
 function renderTag(tag) {
     return /*html */`
-    <span class="lectorTag" data-uuid="${tag.uuid}"> ${tag.name} </span>
+    <span class="lectorTag" data-uuid="${tag.uuid}"> ${sanitizeHtml(tag.name)} </span>
     `;
 }
 
 function renderPhoneNumber(phoneNumber) {
     return /*html */`
-    <a href="tel:${phoneNumber.replace(/\s/g, '')}">
-    <span class="lectorContactOption"> ${phoneNumber} </span>
+    <a href="tel:${sanitizeHtml(phoneNumber.replace(/\s/g, ''))}">
+    <span class="lectorContactOption"> ${sanitizeHtml(phoneNumber)} </span>
     </a>
     `;
 }
 
 function renderEmail(email) {
     return /*html */`
-    <a href="mailto:${email}">
-    <span class="lectorContactOption"> ${email} </span>
+    <a href="mailto:${sanitizeHtml(email)}">
+    <span class="lectorContactOption"> ${sanitizeHtml(email)} </span>
     </a>
     `;
 }

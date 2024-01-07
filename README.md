@@ -14,3 +14,10 @@ npm run mole
 Links:
 localhost:8080
 localhost:8080/lecturer
+
+
+Todo:
+
+- SANETIZAION OF INPUTS
+- +- u tagů a lokací
+- při backu obnovení filtrů
