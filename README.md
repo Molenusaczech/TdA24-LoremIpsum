@@ -18,6 +18,6 @@ localhost:8080/lecturer
 
 Todo:
 
-- SANETIZAION OF INPUTS
+- SANETIZAION OF INPUTS (done)
 - +- u tagů a lokací
 - při backu obnovení filtrů

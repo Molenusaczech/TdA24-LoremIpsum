@@ -111,7 +111,9 @@ function lectorTitle(lecturer) {
 function renderTag(tag) {
     console.log(tag.name);
     return /*html */`
-    <span class="lectorListTag" data-uuid="${tag.uuid}"> ${sanitizeHtml(tag.name)} </span>
+    <span class="lectorListTag" data-uuid="${tag.uuid}"> 
+        ${sanitizeHtml(tag.name)} 
+    </span>
     `;
 }
 
@@ -131,6 +133,12 @@ function tagMetadata(tag) {
 function renderTagSelect(tag) {
     return /*html */`
     <span data-tag="${tag.uuid}" class="tagSelect">
+
+    <span class="lectorListFilterTagSymbol">
+        <span class="lectorListFilterTagSymbol1"></span>
+        <span class="lectorListFilterTagSymbol2"></span>
+    </span>
+
     ${sanitizeHtml(tag.name)}
     </span>
     `;
@@ -141,6 +149,10 @@ function renderLocationSelect(location) {
     location = sanitizeHtml(location.location);
     return /*html */`
     <span data-location="${location}" class="locationSelect">
+    <span class="lectorListFilterLocationSymbol">
+        <span class="lectorListFilterLocationSymbol1"></span>
+        <span class="lectorListFilterLocationSymbol2"></span>
+    </span>
     ${location}
     </span>
     `;
