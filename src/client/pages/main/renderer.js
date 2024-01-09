@@ -68,7 +68,6 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
         </div>
 
         <div id="lectors">
-            ${lectors.map(lector => lectorTitle(lector)).join("")}
         </div>
     </div>
 

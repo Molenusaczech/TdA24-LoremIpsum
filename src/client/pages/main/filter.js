@@ -1,6 +1,7 @@
 import { lectorTitle } from "./renderer"
 import { linkClick } from "../../routing";
 import '@material/web/slider/slider.js';
+import { renderAllLecturers } from "./renderLecturers";
 
 let lectors = []
 let tags = []
@@ -49,7 +50,7 @@ function initLectors(currentLectors, currentTags, currentLocations) {
         filterLectors();
     });
 
-    registerListeners(lectors);
+    //registerListeners(lectors);
 }
 
 function registerListeners(lectors) {
@@ -136,11 +137,12 @@ function filterLectors() {
         document.getElementById("lectors").innerHTML = "<div class='lectorListName' style='text-align: center;'>Žádní lektoři nenalezeni</div>";
         return;
     }
-    document.getElementById("lectors").innerHTML = filterLectors.map(lector => lectorTitle(lector)).join("");
-    registerListeners(filterLectors);
+    //document.getElementById("lectors").innerHTML = filterLectors.map(lector => lectorTitle(lector)).join("");
+    //registerListeners(filterLectors);
 
+    renderAllLecturers(filterLectors);
 }
 
 
-export { initLectors, filterLectors };
+export { initLectors, filterLectors, registerListeners };
 

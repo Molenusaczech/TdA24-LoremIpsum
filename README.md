@@ -21,3 +21,4 @@ Todo:
 - SANETIZAION OF INPUTS (done)
 - +- u tagů a lokací
 - při backu obnovení filtrů
+- zrušit výběr tagů a lokací
