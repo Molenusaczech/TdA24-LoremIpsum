@@ -7,6 +7,11 @@ let lectors = []
 let tags = []
 let locations = []
 
+let lastPriceMin = -1
+let lastPriceMax = -1
+let lastTags = []
+let lastLocations = []
+
 function initLectors(currentLectors, currentTags, currentLocations) {
     lectors = currentLectors
     tags = currentTags
@@ -141,8 +146,42 @@ function filterLectors() {
     //registerListeners(filterLectors);
 
     renderAllLecturers(filterLectors);
+
+    lastPriceMin = minPrice;
+    lastPriceMax = maxPrice;
+    lastTags = tags;
+    lastLocations = locations;
 }
 
+function loadFilterSettings() {
 
-export { initLectors, filterLectors, registerListeners };
+    if (lastPriceMin == -1) {
+        return;
+    }
+
+    let priceSlider = document.getElementById("priceSlider");
+
+    priceSlider.valueStart = lastPriceMin;
+    priceSlider.valueEnd = lastPriceMax;
+
+    let tagElements = document.querySelectorAll(".tagSelect");
+    tagElements.forEach(element => {
+        if (lastTags.includes(element.dataset.tag)) {
+            element.classList.add("active");
+        } else {
+            element.classList.remove("active");
+        }
+    });
+
+    let locationElements = document.querySelectorAll(".locationSelect");
+    locationElements.forEach(element => {
+        if (lastLocations.includes(element.dataset.location)) {
+            element.classList.add("active");
+        } else {
+            element.classList.remove("active");
+        }
+    });
+}
+
+export { initLectors, filterLectors, registerListeners, loadFilterSettings };
 
