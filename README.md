@@ -19,6 +19,8 @@ localhost:8080/lecturer
 Todo:
 
 - SANETIZAION OF INPUTS (done)
-- +- u tagů a lokací
-- při backu obnovení filtrů
+- +- u tagů a lokací (done)
+- při backu obnovení filtrů (done)
 - zrušit výběr tagů a lokací
+- řazení tagů a lokací podle počtu výskytů
+- na mobilu je width větší než 100%

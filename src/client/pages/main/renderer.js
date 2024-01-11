@@ -57,11 +57,16 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
 
 
             </div>
-            Aktivity:
+            <div>
+                Aktivity: <span id="tagReset" class="resetButton">Zrušit výběr</span>
+            </div>
             <div class="filterTags">
                 ${tags.map(renderTagSelect).join("")}
             </div>
-            Místo působení:
+            <div>
+                Místo působení:
+                <span id="locationReset" class="resetButton">Zrušit výběr</span>
+            </div>
             <div class="filterLocation">
                 ${locations.map(renderLocationSelect).join("")}
             </div>

@@ -55,6 +55,26 @@ function initLectors(currentLectors, currentTags, currentLocations) {
         filterLectors();
     });
 
+    let tagReset = document.getElementById("tagReset");
+    let locationReset = document.getElementById("locationReset");
+
+    tagReset.addEventListener("click", () => {
+        let tagElements = document.querySelectorAll(".tagSelect");
+        tagElements.forEach(element => {
+            element.classList.remove("active");
+        });
+        filterLectors();
+    });
+
+    locationReset.addEventListener("click", () => {
+        let locationElements = document.querySelectorAll(".locationSelect");
+        locationElements.forEach(element => {
+            element.classList.remove("active");
+        });
+        filterLectors();
+    }
+    );
+
     //registerListeners(lectors);
 }
 
@@ -81,6 +101,21 @@ function filterLectors() {
     locationElements.forEach(element => {
         locations.push(element.dataset.location);
     });
+
+    let tagReset = document.getElementById("tagReset");
+    let locationReset = document.getElementById("locationReset");
+
+    if (tags.length == 0) {
+        tagReset.style.display = "none";
+    } else {
+        tagReset.style.display = "inline-block";
+    }
+
+    if (locations.length == 0) {
+        locationReset.style.display = "none";
+    } else {
+        locationReset.style.display = "inline-block";
+    }
 
     let priceSlider = document.getElementById("priceSlider");
 
@@ -151,6 +186,7 @@ function filterLectors() {
     lastPriceMax = maxPrice;
     lastTags = tags;
     lastLocations = locations;
+
 }
 
 function loadFilterSettings() {
