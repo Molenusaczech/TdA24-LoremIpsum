@@ -18,6 +18,7 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
     <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
 
     <div class="mainPageContainer">
+        <h1 class="pageTitle">Katalog lektorů</h1>
         <div id="filter">
             <div class="filterPrice">
                 <div class="sliderContainer">

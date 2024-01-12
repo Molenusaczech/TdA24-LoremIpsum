@@ -25,3 +25,5 @@ Todo:
 - řazení tagů a lokací podle počtu výskytů
 - na mobilu je width větší než 100%
 - mobilní bug s pluskem u tagů
+- idea: zvýraznění vybraných tagů u lektorů
+- idea: nadpis stránky

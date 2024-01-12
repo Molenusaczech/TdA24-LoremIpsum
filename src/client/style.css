@@ -527,6 +527,14 @@ a {
     transition: 0.2s;
 }
 
+.pageTitle {
+    font-size: 2vw;
+    font-weight: 500;
+    margin: 0.5vw;
+    font-family: "Lalezar", sans-serif;
+    font-size: 3vw;
+}
+
 @media screen and (max-width: 700px) {
     .lectorContainer {
         width: 100%;
@@ -627,6 +635,10 @@ a {
         height: 4vw;
         display: inline-block;
         transform: translateY(0.48vw);
+    }
+
+    .pageTitle {
+        font-size: 7vw;
     }
     
 
