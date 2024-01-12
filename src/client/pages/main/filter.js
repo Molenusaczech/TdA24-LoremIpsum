@@ -2,6 +2,7 @@ import { linkClick } from "../../routing";
 import '@material/web/slider/slider.js';
 import { renderAllLecturers } from "./renderLecturers";
 import { updateFiltering } from "./filterRender";
+import { getFilterData } from "./getFilterData";
 
 let lectors = []
 let tags = []
@@ -15,10 +16,15 @@ let lastLocations = []
 function initLectors(currentLectors, currentTags, currentLocations) {
 
     lectors = currentLectors
-    tags = currentTags
-    locations = currentLocations
+    /*tags = currentTags
+    locations = currentLocations*/
 
-    updateFiltering(currentTags, currentLocations);
+    let filterData = getFilterData(lectors);
+
+    tags = filterData.tags;
+    locations = filterData.locations;
+
+    updateFiltering(tags, locations);
 
     let priceSlider = document.getElementById("priceSlider");
 
@@ -142,6 +148,31 @@ function filterLectors() {
         if (valid) {
             filterLectors.push(element);
         }
+
+        // reset tag and location filters
+
+        let newFilterData = getFilterData(filterLectors);
+
+        updateFiltering(newFilterData.tags, newFilterData.locations);
+
+        let tagElements = document.querySelectorAll(".tagSelect");
+        tagElements.forEach(element => {
+            if (tags.includes(element.dataset.tag)) {
+                element.classList.add("active");
+            } else {
+                element.classList.remove("active");
+            }
+        });
+
+        let locationElements = document.querySelectorAll(".locationSelect");
+        locationElements.forEach(element => {
+            if (locations.includes(element.dataset.location)) {
+                element.classList.add("active");
+            } else {
+                element.classList.remove("active");
+            }
+        });
+
     });
 
     console.log(filterLectors);
@@ -192,5 +223,5 @@ function loadFilterSettings() {
     });
 }
 
-export { initLectors, filterLectors, registerListeners, loadFilterSettings };
+export { initLectors, filterLectors, registerListeners, loadFilterSettings, tags, locations };
 

@@ -11,12 +11,17 @@ function renderTagSelect(tag) {
     </span>
 
     ${sanitizeHtml(tag.name)}
+
+    
+    <span class="lectorListFilterTagCount">(${tag.count})</span>
+    
     </span>
     `;
 }
 
 function renderLocationSelect(location) {
     console.log(location);
+    let count = location["count"];
     location = sanitizeHtml(location.location);
     return /*html */`
     <span data-location="${location}" class="locationSelect">
@@ -25,6 +30,9 @@ function renderLocationSelect(location) {
         <span class="lectorListFilterLocationSymbol2"></span>
     </span>
     ${location}
+
+    <span class="lectorListFilterLocationCount">(${count})</span>
+
     </span>
     `;
 }

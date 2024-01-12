@@ -24,3 +24,4 @@ Todo:
 - zrušit výběr tagů a lokací (done)
 - řazení tagů a lokací podle počtu výskytů
 - na mobilu je width větší než 100%
+- mobilní bug s pluskem u tagů
