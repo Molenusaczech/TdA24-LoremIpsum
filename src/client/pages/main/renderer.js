@@ -20,6 +20,7 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
     <div class="mainPageContainer">
         <h1 class="pageTitle">Katalog lektorů</h1>
         <div id="filter">
+            <span class="filterTitle"> Filtrovat podle ceny: </span>
             <div class="filterPrice">
                 <div class="sliderContainer">
 
@@ -39,12 +40,12 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
 
             </div>
             <div>
-                Aktivity: <span id="tagReset" class="resetButton">Zrušit výběr</span>
+                <span class="filterTitle">Filtrovat podle dovedností: </span> <span id="tagReset" class="resetButton">Zrušit výběr</span>
             </div>
             <div class="filterTags" id="filterTags">
             </div>
             <div>
-                Místo působení:
+            <span class="filterTitle">Filtrovat podle lokace: </span>
                 <span id="locationReset" class="resetButton">Zrušit výběr</span>
             </div>
             <div class="filterLocation" id="filterLocation">
