@@ -107,6 +107,7 @@ function filterLectors() {
     console.log(lectors);
 
     let filterLectors = [];
+    let tagFilterLectors = [];
 
     lectors.forEach(element => {
         let valid = true;
@@ -124,6 +125,10 @@ function filterLectors() {
                     valid = false;
                 }
             });
+        }
+
+        if (valid) {
+            tagFilterLectors.push(element);
         }
 
         if (locations.length > 0) {
@@ -151,7 +156,7 @@ function filterLectors() {
 
         // reset tag and location filters
 
-        let newFilterData = getFilterData(filterLectors);
+        let newFilterData = getFilterData(filterLectors, tagFilterLectors);
 
         updateFiltering(newFilterData.tags, newFilterData.locations);
 

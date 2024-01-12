@@ -1,10 +1,14 @@
 import { tags, locations } from "./filter";
 
-function getFilterData(lecturers) {
+function getFilterData(lecturers, tagLecturers = []) {
   
     let tagCounts = {};
     let tagNames = {};
     let locationCounts = {};
+
+    if (tagLecturers.length == 0) {
+        tagLecturers = lecturers;
+    }
 
     tags.forEach(tag => {
         tagCounts[tag.uuid] = 0;
@@ -24,6 +28,9 @@ function getFilterData(lecturers) {
                 tagCounts[tag.uuid]++;
             }
         });
+    });
+
+    tagLecturers.forEach(lector => {
         if (locationCounts[lector.location] == undefined) {
             locationCounts[lector.location] = 1;
         } else {
