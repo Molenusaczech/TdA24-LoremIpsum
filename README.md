@@ -21,6 +21,6 @@ Todo:
 - SANETIZAION OF INPUTS (done)
 - +- u tagů a lokací (done)
 - při backu obnovení filtrů (done)
-- zrušit výběr tagů a lokací
+- zrušit výběr tagů a lokací (done)
 - řazení tagů a lokací podle počtu výskytů
 - na mobilu je width větší než 100%

@@ -1,5 +1,4 @@
 import { initLectors, loadFilterSettings } from "./filter";
-import { initSlider } from "./priceSlider";
 import { renderAllLecturers } from "./renderLecturers";
 
 function mainAfter(lectors, tags, locations) {
@@ -7,7 +6,6 @@ function mainAfter(lectors, tags, locations) {
 
     renderAllLecturers(lectors);
     initLectors(lectors, tags, locations);
-    initSlider();
     loadFilterSettings();
 }
 

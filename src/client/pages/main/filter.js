@@ -1,7 +1,7 @@
-import { lectorTitle } from "./renderer"
 import { linkClick } from "../../routing";
 import '@material/web/slider/slider.js';
 import { renderAllLecturers } from "./renderLecturers";
+import { updateFiltering } from "./filterRender";
 
 let lectors = []
 let tags = []
@@ -13,39 +13,12 @@ let lastTags = []
 let lastLocations = []
 
 function initLectors(currentLectors, currentTags, currentLocations) {
+
     lectors = currentLectors
     tags = currentTags
     locations = currentLocations
 
-    locations.forEach(element => {
-        element = element.location
-        element = document.querySelector(`[data-location="${element}"]`);
-        console.log(element);
-        element.addEventListener("click", () => {
-            console.log(element);
-            if (element.classList.contains("active")) {
-                element.classList.remove("active");
-            } else {
-                element.classList.add("active");
-            }
-            filterLectors();
-        });
-    });
-
-    tags.forEach(element => {
-        element = element.uuid
-        element = document.querySelector(`[data-tag="${element}"]`);
-        console.log(element);
-        element.addEventListener("click", () => {
-            console.log(element);
-            if (element.classList.contains("active")) {
-                element.classList.remove("active");
-            } else {
-                element.classList.add("active");
-            }
-            filterLectors();
-        });
-    });
+    updateFiltering(currentTags, currentLocations);
 
     let priceSlider = document.getElementById("priceSlider");
 

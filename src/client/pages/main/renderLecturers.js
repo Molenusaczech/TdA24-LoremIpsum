@@ -1,4 +1,4 @@
-import { lectorTitle } from "./renderer.js";
+import { lectorCard } from "./lectorCard";
 import { registerListeners } from "./filter";
 
 function renderAllLecturers(lecturers) {
@@ -6,7 +6,7 @@ function renderAllLecturers(lecturers) {
         document.getElementById("lectors").innerHTML = "<div class='lectorListName' style='text-align: center;'>Žádní lektoři nenalezeni</div>";
         return;
     }
-    document.getElementById("lectors").innerHTML = lecturers.map(lector => lectorTitle(lector)).join("");
+    document.getElementById("lectors").innerHTML = lecturers.map(lector => lectorCard(lector)).join("");
     registerListeners(lecturers);
 }
 
