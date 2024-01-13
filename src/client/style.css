@@ -512,7 +512,8 @@ a {
     position: fixed;
     right: 1vw;
     border: #74C7D3 1px solid;
-    color: #74C7D3;
+    background-color: #74C7D3;
+    color: #ffffff;
     padding: 0.2vw;
     border-radius: 0.5vw;
     cursor: pointer;
@@ -522,8 +523,8 @@ a {
 }
 
 .resetButton:hover {
-    background-color: #74C7D3;
-    color: #fff;
+    background-color: #ffffff;
+    color: #74C7D3;
     transition: 0.2s;
 }
 
@@ -542,6 +543,30 @@ a {
     font-family: "Lalezar", sans-serif;
     font-size: 2vw;
 }
+
+.zeroCount {
+    background-color: #ffffff;
+    border: 1px solid #74C7D3;
+    color:#74C7D3;
+}
+
+/*.zeroCount .lectorListFilterLocationSymbol2 {
+    background-color: #74C7D3;
+}
+
+.zeroCount .lectorListFilterLocationSymbol1 {
+    background-color: #74C7D3;
+}*/
+
+.zeroCount .lectorListFilterTagSymbol {
+    display: none;
+}
+
+.zeroCount:hover {
+    transform: translate(0, 0);
+    cursor: not-allowed;
+}
+
 
 @media screen and (max-width: 700px) {
     .lectorContainer {
@@ -606,6 +631,8 @@ a {
 
     .lectorListLector {
         width: 100%;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .mainPageContainer {
@@ -638,15 +665,24 @@ a {
         color: #fff;
     }
 
-    .lectorListFilterTagSymbol {
+    .lectorListFilterTagSymbol, .lectorListFilterLocationSymbol {
         aspect-ratio: 1/1;
         height: 4vw;
         display: inline-block;
         transform: translateY(0.48vw);
     }
 
+
     .pageTitle {
         font-size: 7vw;
+    }
+
+    .filterTitle {
+        font-size: 5vw;
+    }
+
+    #minPrice, #maxPrice {
+        font-size: 3vw;
     }
     
 

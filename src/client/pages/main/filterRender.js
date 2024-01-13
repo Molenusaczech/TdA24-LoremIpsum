@@ -2,8 +2,15 @@ import sanitizeHtml from 'sanitize-html';
 import { filterLectors } from './filter';
 
 function renderTagSelect(tag) {
+
+    let countClass = "";
+
+    if (tag.count == 0) {
+        countClass = "zeroCount";
+    }
+
     return /*html */`
-    <span data-tag="${tag.uuid}" class="tagSelect">
+    <span data-tag="${tag.uuid}" class="tagSelect ${countClass}">
 
     <span class="lectorListFilterTagSymbol">
         <span class="lectorListFilterTagSymbol1"></span>
@@ -50,6 +57,11 @@ function updateFiltering(tags, locations) {
         console.log(element);
         element.addEventListener("click", () => {
             console.log(element);
+
+            if (element.classList.contains("zeroCount")) {
+                return;
+            }
+
             if (element.classList.contains("active")) {
                 element.classList.remove("active");
             } else {
@@ -64,6 +76,11 @@ function updateFiltering(tags, locations) {
         element = document.querySelector(`[data-tag="${element}"]`);
         console.log(element);
         element.addEventListener("click", () => {
+
+            if (element.classList.contains("zeroCount")) {
+                return;
+            }
+
             console.log(element);
             if (element.classList.contains("active")) {
                 element.classList.remove("active");
