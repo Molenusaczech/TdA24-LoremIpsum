@@ -341,7 +341,7 @@ a {
 }
 
 .lectorListLector {
-    border: aqua solid 1px;
+    /*border: aqua solid 1px;*/
     background-color: #fff;
     padding: 1vw;
     border-radius: 2vw;
