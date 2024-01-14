@@ -1,0 +1,58 @@
+
+{
+    "title_before": "",
+    "first_name": "Daniel",
+    "middle_name": "",
+    "last_name": "Rajtšlégr",
+    "title_after": "",
+    "picture_url": "https://media.licdn.com/dms/image/D4D03AQEqN_ipbnA-sg/profile-displayphoto-shrink_800_800/0/1684172121097?e=1710979200&v=beta&t=Nfq9Au_9KtwkEMPGWiT-7s4mOrxGRquFhF_r_3ExvFU",
+    "location": "Ráječko",
+    "claim": "Webový vývoj / Robotika",
+    "bio": "Student <b>SPŠ Jedovnice</b> oboru Informační technologie. Zajímají mě všechny nové technologie a jejich využití v praxi. Automatizace a programování mě fascinuje již od dětství a v budoucnosti bych se chtěl tomuto oboru věnovat. V současnosti se věnuji tvorbě webových aplikací a robotickým soutěžím. Jsem velkým fanouškem deskových a karetních her a úřadující mistr světa v karetní hře <b>Scratch Wars</b>. Mluvím plynně anglicky a umím základy ruštiny a japonštiny. Také rád používám <b>Excelovské tabulky</b> k počítání všeho možného i nemožného (např. cena Maltesers v různých balení nebo EV losů od Sazky).",
+    "tags": [
+      {
+        "name": "JavaScript"
+      },
+      {
+        "name": "PHP"
+      },
+      {
+        "name": "Python"
+      },
+      {
+        "name": "Robotika"
+      },
+      {
+        "name": "Front-end"
+      },
+      {
+        "name": "Back-end"
+      },
+      {
+        "name": "Databáze"
+      },
+      {
+        "name": "Chůze na berlích"
+      },
+      {
+        "name": "Scratch Wars"
+      },
+      {
+        "name": "Piškvorky"
+      },
+      {
+        "name": "Angličtina"
+      },
+      {
+        "name": "Microsoft Office"
+      },
+      {
+        "name": "SQL Databáze"
+      }
+    ],
+    "price_per_hour": 2000,
+    "contact": {
+      "telephone_numbers": ["+420 725 828 496"],
+      "emails": ["06krtek@gmail.com"]
+    }
+  }
