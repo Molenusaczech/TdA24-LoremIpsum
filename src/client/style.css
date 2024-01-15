@@ -268,7 +268,7 @@ a {
     column-gap: 0.4vw;
     /*margin-top: 1vw;*/
     margin-bottom: 1.2vw;
-    margin-top: 0.1vw;
+    padding-top: 0.2vw;
 }
 
 .filterPrice {
@@ -567,6 +567,33 @@ a {
     cursor: not-allowed;
 }
 
+.showMore {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3vw;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.filterTags.showLess {
+    height: 8vw;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.gradient {
+    position: absolute;
+    width: 97%;
+    height: 3vw;
+    transform: translate(0, -100%);
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(0,212,255,0) 100%);
+    pointer-events: none;
+}
+
+.hidden {
+    display: none;
+}
 
 @media screen and (max-width: 700px) {
     .lectorContainer {

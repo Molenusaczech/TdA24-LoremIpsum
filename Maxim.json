@@ -1,0 +1,36 @@
+{
+    "title_before": "",
+    "first_name": "Maxim",
+    "middle_name": "",
+    "last_name": "Vašíček",
+    "title_after": "",
+    "picture_url": "https://i.imgur.com/hZ3fNtA.jpeg",
+    "location": "Krasová",
+    "claim": "Mentální podpora",
+    "bio": "Student <b>SPŠ Jedovnice</b> obor Informační technologie. Zajímám se o programování a kreativní činnost, jako například vymýšlení scénářů, příběhů nebo videoher. Dále rád studuji politiku a historii, na kterých většinou stavím mé projekty. Umím anglicky a základy španělštiny a ruštiny. Aktuální držitel titulu <b>nejlínější zaměstnanec</b>.",
+    "tags": [
+      {
+        "name": "JavaScript"
+      },
+      {
+        "name": "PHP"
+      },
+      {
+        "name": "Python"
+      },
+      {
+        "name": "C#"
+      },
+      {
+        "name": "Politika"
+      },
+      {
+        "name": "Angličtina"
+      }
+    ],
+    "price_per_hour": 1856,
+    "contact": {
+      "telephone_numbers": ["+420 727 898 298"],
+      "emails": ["tntlp858@gmail.com"]
+    }
+  }

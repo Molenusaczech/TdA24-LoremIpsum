@@ -55,6 +55,27 @@ function initLectors(currentLectors, currentTags, currentLocations) {
     );
 
     //registerListeners(lectors);
+
+    document.getElementById("showMoreTags").addEventListener("click", () => {
+        let filterTags = document.getElementById("filterTags");
+        filterTags.classList.toggle("showLess");
+        document.getElementById("showMoreTags").classList.toggle("showLess");
+        document.getElementById("tagGradient").classList.toggle("hidden");
+
+        if (filterTags.classList.contains("showLess")) {
+            document.getElementById("showMoreTags").innerHTML = `<span class="tagSelect">Zobrazit více dovedností </span>`;
+        }
+        else {
+            document.getElementById("showMoreTags").innerHTML = `<span class="tagSelect">Zobrazit méně dovedností </span>`;
+        }
+    });
+
+    if (tags.length < 21) {
+        document.getElementById("showMoreTags").classList.add("hidden");
+        document.getElementById("tagGradient").classList.add("hidden");
+        document.getElementById("filterTags").classList.remove("showLess");
+        
+    }
 }
 
 function registerListeners(lectors) {

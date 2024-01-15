@@ -42,7 +42,11 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
             <div>
                 <span class="filterTitle">Filtrovat podle dovedností: </span> <span id="tagReset" class="resetButton">Zrušit výběr</span>
             </div>
-            <div class="filterTags" id="filterTags">
+            <div class="filterTags showLess" id="filterTags">
+            </div>
+            <div class="gradient" id="tagGradient"></div>
+            <div class="showMore" id="showMoreTags"> 
+                <span class="tagSelect">Zobrazit více dovedností </span>
             </div>
             <div>
             <span class="filterTitle">Filtrovat podle lokace: </span>

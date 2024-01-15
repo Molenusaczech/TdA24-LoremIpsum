@@ -1,4 +1,4 @@
-import { initLectors, loadFilterSettings } from "./filter";
+import { initLectors, loadFilterSettings, filterLectors } from "./filter";
 import { renderAllLecturers } from "./renderLecturers";
 
 function mainAfter(lectors, tags, locations) {
@@ -7,6 +7,7 @@ function mainAfter(lectors, tags, locations) {
     renderAllLecturers(lectors);
     initLectors(lectors, tags, locations);
     loadFilterSettings();
+    filterLectors();
 }
 
 export { mainAfter };
