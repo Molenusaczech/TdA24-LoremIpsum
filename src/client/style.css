@@ -576,7 +576,7 @@ a {
 }
 
 .filterTags.showLess, .filterLocation.showLess {
-    height: 8vw;
+    max-height: 8vw;
     overflow: hidden;
     transition: 0.2s;
 }
