@@ -52,7 +52,11 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
             <span class="filterTitle">Filtrovat podle lokace: </span>
                 <span id="locationReset" class="resetButton">Zrušit výběr</span>
             </div>
-            <div class="filterLocation" id="filterLocation">
+            <div class="filterLocation showLess" id="filterLocation">
+            </div>
+            <div class="gradient" id="locationGradient"></div>
+            <div class="showMore" id="showMoreLocations"> 
+                <span class="locationSelect">Zobrazit více lokací</span>
             </div>
         </div>
 

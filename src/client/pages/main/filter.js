@@ -76,6 +76,27 @@ function initLectors(currentLectors, currentTags, currentLocations) {
         document.getElementById("filterTags").classList.remove("showLess");
         
     }
+
+    document.getElementById("showMoreLocations").addEventListener("click", () => {
+        let filterTags = document.getElementById("filterLocation");
+        filterTags.classList.toggle("showLess");
+        document.getElementById("showMoreLocations").classList.toggle("showLess");
+        document.getElementById("locationGradient").classList.toggle("hidden");
+
+        if (filterTags.classList.contains("showLess")) {
+            document.getElementById("showMoreLocations").innerHTML = `<span class="locationSelect">Zobrazit více lokací </span>`;
+        }
+        else {
+            document.getElementById("showMoreLocations").innerHTML = `<span class="locationSelect">Zobrazit méně lokací </span>`;
+        }
+    });
+
+    if (locations.length < 21) {
+        document.getElementById("showMoreLocations").classList.add("hidden");
+        document.getElementById("locationGradient").classList.add("hidden");
+        document.getElementById("filterLocations").classList.remove("showLess");
+        
+    }
 }
 
 function registerListeners(lectors) {
