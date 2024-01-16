@@ -1,0 +1,39 @@
+{
+    "title_before": "",
+    "first_name": "Eva",
+    "middle_name": "",
+    "last_name": "Střížová",
+    "title_after": "",
+    "picture_url": "https://i.imgur.com/ACN30in_d.webp?maxwidth=760&fidelity=grand",
+    "location": "Frýdek-Místek",
+    "claim": "Grafický design",
+    "bio": "Studentka Střední uměleckoprůmyslové školy ve Frýdku-Místku. Ráda se věnuji <b>designu</b> plakátů, webů a her. Ve volném čase se věnuji kreslení nebo <i>hraní videoher</i>.",
+    "tags": [
+      {
+        "name": "Grafický design"
+      },
+      {
+        "name": "Adobe Photoshop"
+      },
+      {
+        "name": "Typografie"
+      },
+      {
+        "name": "Počítačová grafika"
+      },
+      {
+        "name": "2D Grafika"
+      },
+      {
+        "name": "3D Grafika"
+      },
+      {
+        "name": "Cinema 4D"
+      }
+    ],
+    "price_per_hour": 1500,
+    "contact": {
+      "telephone_numbers": ["+420 739 600 608"],
+      "emails": ["3va.strizova@gmail.com"]
+    }
+  }
