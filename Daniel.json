@@ -48,6 +48,15 @@
       },
       {
         "name": "SQL Databáze"
+      },
+      {
+        "name": "Projektový management"
+      },
+      {
+        "name": "Node.js"
+      },
+      {
+        "name": "TypeScript"
       }
     ],
     "price_per_hour": 2000,
