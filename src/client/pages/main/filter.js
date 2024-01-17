@@ -94,7 +94,7 @@ function initLectors(currentLectors, currentTags, currentLocations) {
     if (locations.length < 21) {
         document.getElementById("showMoreLocations").classList.add("hidden");
         document.getElementById("locationGradient").classList.add("hidden");
-        document.getElementById("filterLocations").classList.remove("showLess");
+        document.getElementById("filterLocation").classList.remove("showLess");
         
     }
 }

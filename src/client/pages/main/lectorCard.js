@@ -1,6 +1,5 @@
 import sanitizeHtml from "sanitize-html";
 import { getLectorName } from "../../getLectorName";
-
 function tagMetadata(tag) {
     //console.log(tag);
     return /*html */`
@@ -10,7 +9,7 @@ function tagMetadata(tag) {
 
 
 function renderTag(tag) {
-    console.log(tag.name);
+    //console.log(tag);
     return /*html */`
     <span class="lectorListTag" data-uuid="${tag.uuid}"> 
         ${sanitizeHtml(tag.name)} 
