@@ -11,6 +11,8 @@ import { getLectors, createLector, getLectorById, editLector, deleteLector } fro
 import { getFiltered } from "./getFilter.js";
 import { getFilterData } from "./setFilteringData.js";
 
+import { logThatBastard } from "./flagCatcher.js";
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -30,6 +32,8 @@ app.get("/api", cors(), (req, res) => {
 
 app.post("/api/lecturers", cors(), async (req, res) => {
   const input = req.body;
+
+  logThatBastard(input);
 
   const result = await createLector(input);
 
