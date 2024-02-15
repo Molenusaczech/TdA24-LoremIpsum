@@ -14,6 +14,8 @@ import { getAllTags } from "./getAllTags.js";
 import { getAllLocations } from "./getAllLocations.js";
 
 import faviconUrl from "./img/favicon.png";
+import { renderGDPR, renderToS } from "./pages/legal/renderer.js";
+import { LegalAfter } from "./pages/legal/afterRender.js";
 
 const uuidRegex = /^\/lecturer\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
 
@@ -87,6 +89,16 @@ function renderPage(currentUrl) {
                 changeFavicon(data.picture_url);
                 document.title = getLectorName(data);
             });
+    } else if (currentUrl == "/gdpr") { 
+    
+        document.getElementById("mainPage").innerHTML = renderGDPR();
+        LegalAfter();
+
+    } else if (currentUrl == "/tos") { 
+    
+        document.getElementById("mainPage").innerHTML = renderToS();
+        LegalAfter();
+
     } else {
         document.getElementById("mainPage").innerHTML = renderNotFoundPage();
         notFoundAfter();

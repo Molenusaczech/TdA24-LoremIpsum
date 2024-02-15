@@ -459,7 +459,7 @@ a {
     display: inline-block;
     transform: translateY(-50%);
     top: 50%;
-    position:absolute;
+    position: absolute;
 }
 
 .lectorListFilterTagSymbol2 {
@@ -492,7 +492,7 @@ a {
     display: inline-block;
     transform: translateY(-50%);
     top: 50%;
-    position:absolute;
+    position: absolute;
 }
 
 .lectorListFilterLocationSymbol2 {
@@ -551,7 +551,7 @@ a {
 .zeroCount {
     background-color: #ffffff;
     border: 1px solid #74C7D3;
-    color:#74C7D3;
+    color: #74C7D3;
 }
 
 /*.zeroCount .lectorListFilterLocationSymbol2 {
@@ -579,7 +579,8 @@ a {
     cursor: pointer;
 }
 
-.filterTags.showLess, .filterLocation.showLess {
+.filterTags.showLess,
+.filterLocation.showLess {
     max-height: 8vw;
     overflow: hidden;
     transition: 0.2s;
@@ -590,13 +591,42 @@ a {
     width: 97%;
     height: 3vw;
     transform: translate(0, -100%);
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(0,212,255,0) 100%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(0, 212, 255, 0) 100%);
     pointer-events: none;
 }
 
 .hidden {
     display: none;
+}
+
+footer {
+    background-color: #fff;
+    color: #333333;
+    padding: 1vw;
+    text-align: center;
+    font-size: 1vw;
+    font-weight: 700;
+    position: fixed;
+    border-radius: 2vw;
+    text-align: center;
+}
+
+.footerBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vw;
+    margin-bottom: 5vw;
+}
+
+a {
+    color: #74C7D3;
+    text-decoration: underline;
+}
+
+.clickable {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {
@@ -620,7 +650,8 @@ a {
         flex-direction: column;
     }
 
-    .lectorPicture, .lectorListPicture {
+    .lectorPicture,
+    .lectorListPicture {
         width: 50%;
         position: relative;
         left: 50vw;
@@ -671,7 +702,9 @@ a {
         top: 20vw;
     }
 
-    .tagSelect, .locationSelect, .lectorListTag {
+    .tagSelect,
+    .locationSelect,
+    .lectorListTag {
         font-size: 4vw;
         margin-left: 0.3vw;
         margin-right: 0.3vw;
@@ -696,7 +729,8 @@ a {
         color: #fff;
     }
 
-    .lectorListFilterTagSymbol, .lectorListFilterLocationSymbol {
+    .lectorListFilterTagSymbol,
+    .lectorListFilterLocationSymbol {
         aspect-ratio: 1/1;
         height: 4vw;
         display: inline-block;
@@ -712,10 +746,11 @@ a {
         font-size: 5vw;
     }
 
-    #minPrice, #maxPrice {
+    #minPrice,
+    #maxPrice {
         font-size: 3vw;
     }
-    
+
 
 }
 

@@ -62,6 +62,16 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
 
         <div id="lectors">
         </div>
+
+        <div class="footerBox">
+        <footer>
+        Teacher digital Agency © 2024 
+        <a href="mailto:06krtek@gmail.com"> Kontaktovat webmastera </a>
+        <a id="GDPR" class="clickable">GDPR</a>
+        <a id="ToS" class="clickable">Podmínky použití</a>
+        </footer>
+        </div>
+
     </div>
 
     <img class="vlevoDole" src="${vlevoDole}">

@@ -1,0 +1,737 @@
+[
+    {
+        "title_before": "Bc.",
+        "first_name": "Petr",
+        "middle_name": "D.",
+        "last_name": "Novák",
+        "title_after": "MBA",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Plzeň",
+        "claim": "Kreativita je cestou k úspěchu.",
+        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
+        "tags": [
+            {
+                "name": "Řízení"
+            },
+            {
+                "name": "Prezentace"
+            }
+        ],
+        "price_per_hour": 640,
+        "contact": {
+            "telephone_numbers": [
+                "+420 226 948 227",
+                "+420 284 795 550"
+            ],
+            "emails": [
+                "3357bee7-365c-46a5-a514-8e4d5b834594@yahoo.com"
+            ]
+        }
+    },
+    {
+        "title_before": "",
+        "first_name": "Jakub",
+        "middle_name": "Lynn",
+        "last_name": "Gindl",
+        "title_after": "",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Praha",
+        "claim": "Inovace jsou klíčem k úspěchu.",
+        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
+        "tags": [
+            {
+                "name": "Řízení"
+            },
+            {
+                "name": "Kreativita"
+            },
+            {
+                "name": "Management"
+            }
+        ],
+        "price_per_hour": 700,
+        "contact": {
+            "telephone_numbers": [
+                "+420 751 297 176"
+            ],
+            "emails": [
+                "11580b28-a522-4184-aca1-0420870003e1@gmail.com"
+            ]
+        }
+    },
+    {
+        "title_before": "",
+        "first_name": "Martin",
+        "middle_name": "Ray",
+        "last_name": "Gindl",
+        "title_after": "Ph.D",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Praha",
+        "claim": "Znalost trhu je základ úspěchu.",
+        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
+        "tags": [
+            {
+                "name": "Inovace"
+            }
+        ],
+        "price_per_hour": 880,
+        "contact": {
+            "telephone_numbers": [
+                "+420 106 756 854",
+                "+420 857 687 561"
+            ],
+            "emails": [
+                "aae23f29-fdc7-4992-894f-65ff1262e509@gmail.com"
+            ]
+        }
+    },
+    {
+        "title_before": "Mgr.",
+        "first_name": "David",
+        "middle_name": "",
+        "last_name": "Gindl",
+        "title_after": null,
+        "picture_url": "https://picsum.photos/200",
+        "location": "Ostrava",
+        "claim": "Inovace jsou klíčem k úspěchu.",
+        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
+        "tags": [
+            {
+                "name": "Prezentace"
+            },
+            {
+                "name": "Management"
+            }
+        ],
+        "price_per_hour": 540,
+        "contact": {
+            "telephone_numbers": [
+                "+420 109 458 746",
+                "+420 498 108 976"
+            ],
+            "emails": [
+                "04411a48-77eb-42e1-8703-61ac0f82f870@gmail.com"
+            ]
+        }
+    },
+    {
+        "title_before": "Bc.",
+        "first_name": "David",
+        "middle_name": null,
+        "last_name": "Gindl",
+        "title_after": null,
+        "picture_url": "https://picsum.photos/200",
+        "location": "Brno",
+        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
+        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
+        "tags": [
+            {
+                "name": "Management"
+            },
+            {
+                "name": "Prezentace"
+            },
+            {
+                "name": "Řízení"
+            }
+        ],
+        "price_per_hour": 900,
+        "contact": {
+            "telephone_numbers": [
+                "+420 976 651 514",
+                "+420 779 650 404"
+            ],
+            "emails": [
+                "84580cac-a253-44af-af94-2d819a0b9d81@seznam.cz"
+            ]
+        }
+    },
+    {
+        "title_before": null,
+        "first_name": "Jakub",
+        "middle_name": null,
+        "last_name": "Rajnoha",
+        "title_after": null,
+        "picture_url": "https://picsum.photos/200",
+        "location": null,
+        "claim": null,
+        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
+        "tags": [
+            {
+                "name": "Prezentace"
+            },
+            {
+                "name": "Marketing"
+            }
+        ],
+        "price_per_hour": 960,
+        "contact": {
+            "telephone_numbers": [
+                "+420 447 464 238"
+            ],
+            "emails": [
+                "8b16e85d-1d00-406d-af42-9e3970c1f86d@seznam.cz"
+            ]
+        }
+    },
+    {
+        "title_before": "",
+        "first_name": "Martin",
+        "middle_name": "",
+        "last_name": "Novák",
+        "title_after": "Ph.D",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Praha",
+        "claim": "Kreativita je cestou k úspěchu.",
+        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
+        "tags": [],
+        "price_per_hour": 360,
+        "contact": {
+            "telephone_numbers": [
+                "+420 471 198 736",
+                "+420 210 995 719"
+            ],
+            "emails": [
+                "f4bdbfe9-49c9-4232-94be-6b4117d0663f@seznam.cz"
+            ]
+        }
+    },
+    {
+        "title_before": "",
+        "first_name": "Martin",
+        "middle_name": "",
+        "last_name": "Kocich",
+        "title_after": "",
+        "picture_url": "https://picsum.photos/200",
+        "location": "",
+        "claim": "",
+        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
+        "tags": [
+            {
+                "name": "Kreativita"
+            }
+        ],
+        "price_per_hour": 220,
+        "contact": {
+            "telephone_numbers": [
+                "+420 924 868 423",
+                "+420 506 102 207"
+            ],
+            "emails": [
+                "6287efbc-c856-4854-a9da-dfc5a25ec0d1@seznam.cz"
+            ]
+        }
+    },
+    {
+        "title_before": "Bc.",
+        "first_name": null,
+        "middle_name": "Lynn",
+        "last_name": null,
+        "title_after": "",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Plzeň",
+        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
+        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
+        "tags": [
+            {
+                "name": "Prezentace"
+            },
+            {
+                "name": "Finance"
+            }
+        ],
+        "price_per_hour": 720,
+        "contact": {
+            "telephone_numbers": [
+                "+420 695 475 499"
+            ],
+            "emails": [
+                "d3801c7a-a928-42c4-82b8-606b98968471@seznam.cz"
+            ]
+        }
+    },
+    {
+        "title_before": null,
+        "first_name": "David",
+        "middle_name": null,
+        "last_name": "Novák",
+        "title_after": "MBA",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Plzeň",
+        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
+        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
+        "tags": [
+            {
+                "name": "Management"
+            },
+            {
+                "name": "Kreativita"
+            },
+            {
+                "name": "Inovace"
+            }
+        ],
+        "price_per_hour": 880,
+        "contact": {
+            "telephone_numbers": [
+                "+420 433 527 527",
+                "+420 824 206 343"
+            ],
+            "emails": [
+                "64af2a51-ed7e-4f3f-9802-ddb195decf12@seznam.cz"
+            ]
+        }
+    },
+    {
+        "title_before": "Dr.",
+        "first_name": "Petr",
+        "middle_name": null,
+        "last_name": "Rajnoha",
+        "title_after": null,
+        "picture_url": "https://picsum.photos/200",
+        "location": "Ostrava",
+        "claim": "Kreativita je cestou k úspěchu.",
+        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
+        "tags": [
+            {
+                "name": "Řízení"
+            },
+            {
+                "name": "Finance"
+            },
+            {
+                "name": "Marketing"
+            }
+        ],
+        "price_per_hour": 220,
+        "contact": {
+            "telephone_numbers": [
+                "+420 699 578 900"
+            ],
+            "emails": [
+                "79c7c26a-dfe8-4d23-98eb-11fb98b8823d@outlook.com"
+            ]
+        }
+    },
+    {
+        "title_before": "Ing.",
+        "first_name": "Jakub",
+        "middle_name": null,
+        "last_name": "Kříž",
+        "title_after": "M.Sc",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Ostrava",
+        "claim": "Kreativita je cestou k úspěchu.",
+        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
+        "tags": [
+            {
+                "name": "Finance"
+            },
+            {
+                "name": "Řízení"
+            }
+        ],
+        "price_per_hour": 920,
+        "contact": {
+            "telephone_numbers": [
+                "+420 417 172 303"
+            ],
+            "emails": [
+                "f99e102f-3823-4786-8845-7d501c4260ae@seznam.cz"
+            ]
+        }
+    },
+    {
+        "title_before": "Mgr.",
+        "first_name": "Martin",
+        "middle_name": "",
+        "last_name": "Kříž",
+        "title_after": "MBA",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Plzeň",
+        "claim": "Vedení týmu vyžaduje empatii a strategii.",
+        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
+        "tags": [
+            {
+                "name": "Řízení"
+            },
+            {
+                "name": "Prezentace"
+            },
+            {
+                "name": "Inovace"
+            }
+        ],
+        "price_per_hour": 660,
+        "contact": {
+            "telephone_numbers": [
+                "+420 776 621 577",
+                "+420 811 304 692"
+            ],
+            "emails": [
+                "6b5990b3-e7c7-4be7-bb8b-f670853a8a29@gmail.com"
+            ]
+        }
+    },
+    {
+        "title_before": "",
+        "first_name": "Vítězslav",
+        "middle_name": "Lynn",
+        "last_name": "Novák",
+        "title_after": "Ph.D",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Brno",
+        "claim": "Vedení týmu vyžaduje empatii a strategii.",
+        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
+        "tags": [
+            {
+                "name": "Marketing"
+            },
+            {
+                "name": "Kreativita"
+            }
+        ],
+        "price_per_hour": 880,
+        "contact": {
+            "telephone_numbers": [
+                "+420 316 914 169",
+                "+420 491 802 433"
+            ],
+            "emails": [
+                "219089eb-8bb1-4d90-9e32-e0efd2435d64@gmail.com"
+            ]
+        }
+    },
+    {
+        "title_before": "Dr.",
+        "first_name": "Martin",
+        "middle_name": "Ray",
+        "last_name": "Kříž",
+        "title_after": "M.Sc",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Ostrava",
+        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
+        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
+        "tags": [
+            {
+                "name": "Řízení"
+            },
+            {
+                "name": "Kreativita"
+            },
+            {
+                "name": "Management"
+            }
+        ],
+        "price_per_hour": 200,
+        "contact": {
+            "telephone_numbers": [
+                "+420 127 562 696",
+                "+420 321 570 536"
+            ],
+            "emails": [
+                "015aff44-8b57-423d-a032-f9d2c39f23ad@seznam.cz"
+            ]
+        }
+    },
+    {
+        "title_before": "Dr.",
+        "first_name": "Matyáš",
+        "middle_name": "Ray",
+        "last_name": "Novák",
+        "title_after": "MBA",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Praha",
+        "claim": "Inovace jsou klíčem k úspěchu.",
+        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
+        "tags": [],
+        "price_per_hour": 700,
+        "contact": {
+            "telephone_numbers": [
+                "+420 542 951 607"
+            ],
+            "emails": [
+                "4e123059-a6d8-4583-b60b-feaae85cd1aa@seznam.cz"
+            ]
+        }
+    },
+    {
+        "title_before": "",
+        "first_name": "Vítězslav",
+        "middle_name": "",
+        "last_name": "Kocich",
+        "title_after": "",
+        "picture_url": "https://picsum.photos/200",
+        "location": "",
+        "claim": "",
+        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
+        "tags": [
+            {
+                "name": "Marketing"
+            },
+            {
+                "name": "Management"
+            },
+            {
+                "name": "Leadership"
+            }
+        ],
+        "price_per_hour": 300,
+        "contact": {
+            "telephone_numbers": [
+                "+420 374 898 835",
+                "+420 750 201 324"
+            ],
+            "emails": [
+                "18e69164-3209-4d60-81d2-14d4bc4e85f1@seznam.cz"
+            ]
+        }
+    },
+    {
+        "title_before": "Bc.",
+        "first_name": null,
+        "middle_name": "Lynn",
+        "last_name": null,
+        "title_after": "Ph.D",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Brno",
+        "claim": "Inovace jsou klíčem k úspěchu.",
+        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
+        "tags": [
+            {
+                "name": "Prezentace"
+            },
+            {
+                "name": "Management"
+            },
+            {
+                "name": "Řízení"
+            }
+        ],
+        "price_per_hour": 340,
+        "contact": {
+            "telephone_numbers": [
+                "+420 360 858 882"
+            ],
+            "emails": [
+                "34e7ccb4-4c49-48e8-aa46-4f22b1699a31@outlook.com"
+            ]
+        }
+    },
+    {
+        "title_before": "",
+        "first_name": "Petr",
+        "middle_name": "",
+        "last_name": "Kocich",
+        "title_after": null,
+        "picture_url": "https://picsum.photos/200",
+        "location": "Brno",
+        "claim": "Zkušenosti vedou k efektivitě.",
+        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
+        "tags": [
+            {
+                "name": "Leadership"
+            },
+            {
+                "name": "Řízení"
+            },
+            {
+                "name": "Inovace"
+            }
+        ],
+        "price_per_hour": 320,
+        "contact": {
+            "telephone_numbers": [
+                "+420 629 715 368"
+            ],
+            "emails": [
+                "8e93543b-830a-4937-9306-a9a8469514a6@outlook.com"
+            ]
+        }
+    },
+    {
+        "title_before": "Bc.",
+        "first_name": "David",
+        "middle_name": "Lynn",
+        "last_name": "Gindl",
+        "title_after": "Ph.D",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Plzeň",
+        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
+        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
+        "tags": [
+            {
+                "name": "Prezentace"
+            },
+            {
+                "name": "Finance"
+            },
+            {
+                "name": "Inovace"
+            }
+        ],
+        "price_per_hour": 780,
+        "contact": {
+            "telephone_numbers": [
+                "+420 109 230 570",
+                "+420 158 319 599"
+            ],
+            "emails": [
+                "526a6675-aa19-4289-927b-d85430503d30@outlook.com"
+            ]
+        }
+    },
+    {
+        "title_before": "Ing.",
+        "first_name": "Matyáš",
+        "middle_name": "Ray",
+        "last_name": "Novák",
+        "title_after": "",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Ostrava",
+        "claim": "Zkušenosti vedou k efektivitě.",
+        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
+        "tags": [
+            {
+                "name": "Inovace"
+            },
+            {
+                "name": "Marketing"
+            }
+        ],
+        "price_per_hour": 260,
+        "contact": {
+            "telephone_numbers": [
+                "+420 161 171 570"
+            ],
+            "emails": [
+                "c7eddf09-cd06-4e8a-bc8a-a84b4876786d@outlook.com"
+            ]
+        }
+    },
+    {
+        "title_before": null,
+        "first_name": "Martin",
+        "middle_name": "Ray",
+        "last_name": "Rajnoha",
+        "title_after": "",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Plzeň",
+        "claim": "Inovace jsou klíčem k úspěchu.",
+        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
+        "tags": [
+            {
+                "name": "Marketing"
+            }
+        ],
+        "price_per_hour": 520,
+        "contact": {
+            "telephone_numbers": [
+                "+420 863 137 301",
+                "+420 959 516 313"
+            ],
+            "emails": [
+                "a376ee3e-7f17-47e4-8631-ac4d5912d4c5@seznam.cz"
+            ]
+        }
+    },
+    {
+        "title_before": "Bc.",
+        "first_name": "Matyáš",
+        "middle_name": "",
+        "last_name": "Kříž",
+        "title_after": null,
+        "picture_url": "https://picsum.photos/200",
+        "location": "Praha",
+        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
+        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
+        "tags": [
+            {
+                "name": "Inovace"
+            }
+        ],
+        "price_per_hour": 660,
+        "contact": {
+            "telephone_numbers": [
+                "+420 452 669 204"
+            ],
+            "emails": [
+                "f49c5ab1-e584-4739-9816-6405398efa2e@yahoo.com"
+            ]
+        }
+    },
+    {
+        "title_before": "Dr.",
+        "first_name": "Matyáš",
+        "middle_name": "Ray",
+        "last_name": "Caras",
+        "title_after": "M.Sc",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Ostrava",
+        "claim": "Efektivní řízení týmu zvyšuje produktivitu.",
+        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
+        "tags": [],
+        "price_per_hour": 960,
+        "contact": {
+            "telephone_numbers": [
+                "+420 520 616 914"
+            ],
+            "emails": [
+                "f49e805f-91ed-41b6-9634-63f83f16fc75@yahoo.com"
+            ]
+        }
+    },
+    {
+        "title_before": "",
+        "first_name": "Matyáš",
+        "middle_name": "",
+        "last_name": "Kříž",
+        "title_after": "",
+        "picture_url": "https://picsum.photos/200",
+        "location": "",
+        "claim": "",
+        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
+        "tags": [
+            {
+                "name": "Management"
+            },
+            {
+                "name": "Finance"
+            }
+        ],
+        "price_per_hour": 560,
+        "contact": {
+            "telephone_numbers": [
+                "+420 401 139 866"
+            ],
+            "emails": [
+                "46ad8c85-f425-4468-a212-5295a800664d@gmail.com"
+            ]
+        }
+    },
+    {
+        "title_before": null,
+        "first_name": "Jakub",
+        "middle_name": "Ray",
+        "last_name": "Gindl",
+        "title_after": "M.Sc",
+        "picture_url": "https://picsum.photos/200",
+        "location": "Praha",
+        "claim": "Efektivní řízení týmu zvyšuje produktivitu.",
+        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
+        "tags": [
+            {
+                "name": "Finance"
+            }
+        ],
+        "price_per_hour": 280,
+        "contact": {
+            "telephone_numbers": [
+                "+420 693 442 998"
+            ],
+            "emails": [
+                "eb3b62b0-251e-4e68-a331-2cf6445e3e6e@yahoo.com"
+            ]
+        }
+    }
+]
