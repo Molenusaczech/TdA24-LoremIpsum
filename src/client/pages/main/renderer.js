@@ -68,7 +68,7 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
         Teacher digital Agency © 2024 
         <a href="mailto:06krtek@gmail.com"> Kontaktovat webmastera </a>
         <a id="GDPR" class="clickable">GDPR</a>
-        <a id="ToS" class="clickable">Podmínky použití</a>
+        <a id="ToS" class="clickable">Podmínky užití</a>
         </footer>
         </div>
 
