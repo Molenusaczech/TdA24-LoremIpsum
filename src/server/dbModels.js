@@ -104,7 +104,39 @@ const Lecturer = sequelize.define("Lecturer", {
     picture_url: {
         type: DataTypes.STRING,
         allowNull: true,
-    }
+    },
+    username: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    salt: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+},
+    {
+        timestamps: false,
+    });
+
+const Token = sequelize.define("Token", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    token: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    expiration: {
+        type: DataTypes.DATE,
+        allowNull: false,
+    },
 },
     {
         timestamps: false,
@@ -118,6 +150,8 @@ Phone.belongsTo(Lecturer);
 Lecturer.hasMany(Phone);
 Email.belongsTo(Lecturer);
 Lecturer.hasMany(Email);
+Token.belongsTo(Lecturer);
+Lecturer.hasMany(Token);
 
 /*Lecturer.sync({ force: true});
 Tag.sync({ force: true});
@@ -130,6 +164,7 @@ Tag.sync();
 Phone.sync();
 Email.sync();
 LecturerTag.sync();
+Token.sync();
 
 
-export { sequelize, Lecturer, Tag, Phone, Email };
+export { sequelize, Lecturer, Tag, Phone, Email, Token };

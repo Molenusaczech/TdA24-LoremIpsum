@@ -6,7 +6,7 @@ import cors from "cors";
 
 const app = express();
 
-import { getLectors, createLector, getLectorById, editLector, deleteLector } from "./dbHandler.js";
+import { getLectors, createLector, getLectorById, editLector, deleteLector, tryLoginUser, verifyToken } from "./dbHandler.js";
 
 import { getFiltered } from "./getFilter.js";
 import { getFilterData } from "./setFilteringData.js";
@@ -33,7 +33,7 @@ app.get("/api", cors(), (req, res) => {
 app.post("/api/lecturers", cors(), async (req, res) => {
   const input = req.body;
 
-  logThatBastard(input);
+  logThatBastard(req.body);
 
   const result = await createLector(input);
 
@@ -95,8 +95,8 @@ app.post("/api/filterLecturers", cors(), async (req, res) => {
   input.page ??= 1;
   input.tags ??= [];
   input.location ??= [];
-  input.priceMin ??= -1;
-  input.priceMax ??= -1;
+  input.priceMin ??= 0;
+  input.priceMax ??= 10000;
 
   const result = await getFiltered(
     input.page, 
@@ -111,6 +111,38 @@ app.post("/api/filterLecturers", cors(), async (req, res) => {
 
 app.get("/api/filterData", cors(), async (req, res) => {
   const result = await getFilterData();
+
+  res.send(result);
+});
+
+app.post("/api/login", cors(), async (req, res) => {
+  const input = req.body;
+
+  let username = input.username;
+  let password = input.password;
+
+  let result = await tryLoginUser(username, password);
+
+  if (result.code) {
+    res.status(result.code);
+  }
+
+  res.send(result);
+  
+});
+
+app.post("/api/verifyToken", cors(), async (req, res) => {
+  const input = req.body;
+
+  let token = input.token;
+
+  let result = await verifyToken(token);
+
+  /*result.code ??= 200;
+
+  if (result.code) {
+    res.status(result.code);
+  }*/
 
   res.send(result);
 });

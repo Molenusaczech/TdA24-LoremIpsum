@@ -1,4 +1,5 @@
-import { Lecturer, Tag, Phone, Email } from "./dbModels.js";
+import { Lecturer, Tag, Phone, Email, Token } from "./dbModels.js";
+import { generateHash, generateSalt, generateToken } from "./passwordHandler.js";
 
 async function cleanup() {
   let tags = await Tag.findAll({
@@ -84,6 +85,8 @@ async function createLector(input) { // vytvoří lektora
     }
   }
 
+  let salt = await generateSalt();
+
   let lector = await Lecturer.create({
     title_before: input.title_before,
     first_name: input.first_name,
@@ -95,6 +98,9 @@ async function createLector(input) { // vytvoří lektora
     claim: input.claim,
     bio: input.bio,
     price_per_hour: input.price_per_hour,
+    salt: salt,
+    username: input.username,
+    password: generateHash(input.password, salt)
   });
 
   if (input.hasOwnProperty("tags") && input.tags != null) {
@@ -343,4 +349,71 @@ async function deleteLector(uuid) {
   }
 }
 
-export { getLectors, createLector, getLectorById, editLector, deleteLector };
+async function createToken(username) {
+  let token = await Token.create({
+    token: generateToken(),
+    expiration: new Date(Date.now() + 1000 * 60 * 60 * 24),
+    username: username,
+  });
+
+  let lector = await Lecturer.findOne({
+    where: {
+      username: username,
+    },
+    include: [
+      Token
+    ]
+  });
+
+  console.log(lector);
+
+  await lector.addToken(token);
+
+  return token.token;
+}
+
+async function verifyToken(token) {
+  let result = await Token.findOne({
+    where: {
+      token: token
+    },
+    include: [
+      Lecturer
+    ],
+    exclude: [
+      "username", "password", "salt"
+    ]
+  });
+  return result;
+}
+
+async function tryLoginUser(username, password) {
+  let lector = await Lecturer.findOne({
+    where: {
+      username: username,
+    }
+  });
+
+  if (!lector) {
+    return {
+      code: 404,
+      message: "User not found"
+    }
+  }
+
+  if (generateHash(password, lector.salt) == lector.password) {
+    return {
+      code: 200,
+      message: "User logged in",
+      username: username,
+      token: await createToken(username)
+    };
+  } else {
+    return {
+      code: 401,
+      message: "Wrong password"
+    }
+  }
+}
+
+export { getLectors, createLector, getLectorById, editLector, deleteLector, tryLoginUser, verifyToken };
