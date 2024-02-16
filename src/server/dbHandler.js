@@ -1,5 +1,6 @@
 import { Lecturer, Tag, Phone, Email, Token } from "./dbModels.js";
 import { generateHash, generateSalt, generateToken } from "./passwordHandler.js";
+import { Op } from "sequelize";
 
 async function cleanup() {
   let tags = await Tag.findAll({
@@ -375,7 +376,10 @@ async function createToken(username) {
 async function verifyToken(token) {
   let result = await Token.findOne({
     where: {
-      token: token
+      token: token,
+      expiration: {
+        [Op.gt]: new Date()
+      }
     },
     include: [
       Lecturer
