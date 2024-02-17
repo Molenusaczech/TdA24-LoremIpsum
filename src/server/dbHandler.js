@@ -1,4 +1,4 @@
-import { Lecturer, Tag, Phone, Email, Token } from "./dbModels.js";
+import { Lecturer, Tag, Phone, Email, Token, Booking } from "./dbModels.js";
 import { generateHash, generateSalt, generateToken } from "./passwordHandler.js";
 import { Op } from "sequelize";
 
@@ -267,7 +267,7 @@ async function editLector(uuid, input) {
 
   if (input.hasOwnProperty("contact")) {
     if (input.contact.hasOwnProperty("telephone_numbers")) {
-      
+
       // delete all phones
       let oldPhones = await lector.getPhones();
 
@@ -292,7 +292,7 @@ async function editLector(uuid, input) {
     }
 
     if (input.contact.hasOwnProperty("emails")) {
-      
+
       // delete all emails
       let oldEmails = await lector.getEmails();
 
@@ -420,4 +420,81 @@ async function tryLoginUser(username, password) {
   }
 }
 
-export { getLectors, createLector, getLectorById, editLector, deleteLector, tryLoginUser, verifyToken };
+async function createBooking(input) {
+
+  let lector = await Lecturer.findOne({
+    where: {
+      uuid: input.lector_uuid,
+    }
+  });
+
+  if (!lector) {
+    return {
+      code: 404,
+      message: "Lector not found"
+    }
+  }
+
+  let booking = await Booking.create({
+    start: input.start,
+    name: input.name,
+    email: input.email,
+    phone: input.phone,
+    note: input.note
+  });
+  await lector.addBooking(booking);
+
+  return booking;
+}
+
+async function getMyBookings(token) {
+  let lector = await verifyToken(token);
+  lector = lector.Lecturer;
+
+  if (!lector) {
+    return {
+      code: 401,
+      message: "Token expired"
+    }
+  }
+
+  let bookings = await lector.getBookings();
+
+  return bookings;
+
+}
+
+async function getBookedTimes(lector_uuid) {
+  let lector = await Lecturer.findOne({
+    where: {
+      uuid: lector_uuid,
+    }
+  });
+
+  if (!lector) {
+    return {
+      code: 404,
+      message: "Lector not found"
+    }
+  }
+
+  let bookings = await lector.getBookings();
+
+  return bookings.map((booking) => {
+    return booking.start;
+  });
+
+}
+
+export {
+  getLectors,
+  createLector,
+  getLectorById,
+  editLector,
+  deleteLector,
+  tryLoginUser,
+  verifyToken,
+  createBooking,
+  getMyBookings,
+  getBookedTimes
+};

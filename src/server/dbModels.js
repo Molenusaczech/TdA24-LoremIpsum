@@ -18,9 +18,9 @@ const Tag = sequelize.define("Tag", {
         allowNull: false,
     },
 },
- {
-    timestamps: false,
- }
+    {
+        timestamps: false,
+    }
 );
 
 const Phone = sequelize.define("Phone", {
@@ -140,7 +140,42 @@ const Token = sequelize.define("Token", {
 },
     {
         timestamps: false,
-    });
+    }
+);
+
+const Booking = sequelize.define("Booking", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    start: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        unique: true,
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    phone: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    note: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    }
+},
+    {
+        timestamps: false,
+    }
+);
 
 const LecturerTag = sequelize.define("LecturerTag", {}, { timestamps: false });
 
@@ -152,6 +187,8 @@ Email.belongsTo(Lecturer);
 Lecturer.hasMany(Email);
 Token.belongsTo(Lecturer);
 Lecturer.hasMany(Token);
+Booking.belongsTo(Lecturer);
+Lecturer.hasMany(Booking);
 
 /*Lecturer.sync({ force: true});
 Tag.sync({ force: true});
@@ -165,6 +202,7 @@ Phone.sync();
 Email.sync();
 LecturerTag.sync();
 Token.sync();
+Booking.sync();
 
 
-export { sequelize, Lecturer, Tag, Phone, Email, Token };
+export { sequelize, Lecturer, Tag, Phone, Email, Token, Booking};

@@ -6,7 +6,18 @@ import cors from "cors";
 
 const app = express();
 
-import { getLectors, createLector, getLectorById, editLector, deleteLector, tryLoginUser, verifyToken } from "./dbHandler.js";
+import { 
+  getLectors, 
+  createLector, 
+  getLectorById, 
+  editLector, 
+  deleteLector, 
+  tryLoginUser, 
+  verifyToken,
+  createBooking,
+  getMyBookings,
+  getBookedTimes
+} from "./dbHandler.js";
 
 import { getFiltered } from "./getFilter.js";
 import { getFilterData } from "./setFilteringData.js";
@@ -143,6 +154,42 @@ app.post("/api/verifyToken", cors(), async (req, res) => {
   if (result.code) {
     res.status(result.code);
   }*/
+
+  res.send(result);
+});
+
+app.post("/api/createBooking", cors(), async (req, res) => {
+  const input = req.body;
+
+  let result = await createBooking(input);
+
+  if (result.code) {
+    res.status(result.code);
+  }
+
+  res.send(result);
+});
+
+app.post("/api/myBookings", cors(), async (req, res) => {
+  const input = req.body;
+
+  let result = await getMyBookings(input.token);
+
+  if (result.code) {
+    res.status(result.code);
+  }
+
+  res.send(result);
+});
+
+app.post("/api/getBookedTimes", cors(), async (req, res) => {
+  const input = req.body;
+
+  let result = await getBookedTimes(input.uuid);
+
+  if (result.code) {
+    res.status(result.code);
+  }
 
   res.send(result);
 });
