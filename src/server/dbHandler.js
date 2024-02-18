@@ -448,19 +448,32 @@ async function createBooking(input) {
 }
 
 async function getMyBookings(token) {
-  let lector = await verifyToken(token);
-  lector = lector.Lecturer;
 
+  if (!token) {
+    return {
+      code: 401,
+      message: "Token required"
+    }
+  }
+
+  let lector = await verifyToken(token);
+  console.log(lector);
+  
   if (!lector) {
     return {
       code: 401,
       message: "Token expired"
     }
   }
-
+  
+  lector = lector.Lecturer;
   let bookings = await lector.getBookings();
 
-  return bookings;
+  return {
+    code: 200,
+    bookings: bookings,
+    lector: lector
+  };
 
 }
 

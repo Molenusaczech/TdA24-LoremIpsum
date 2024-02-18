@@ -45,13 +45,13 @@ function renderPage(currentUrl) {
                 mainAfter(data);
             });*/
 
-        
+
         let filterData = fetch("/api/filterData").then((response) => response.json());
 
         let lecturers = fetch("/api/lecturers").then((response) => response.json());
 
         Promise.all([filterData, lecturers]).then((values) => {
-            
+
             let filterData = values[0]
             let lecturers = values[1]
 
@@ -98,32 +98,39 @@ function renderPage(currentUrl) {
                 changeFavicon(data.picture_url);
                 document.title = getLectorName(data);
             });
-    } else if (currentUrl == "/gdpr") { 
-    
+    } else if (currentUrl == "/gdpr") {
+
         document.getElementById("mainPage").innerHTML = renderGDPR();
         LegalAfter();
 
-    } else if (currentUrl == "/tos") { 
-    
+    } else if (currentUrl == "/tos") {
+
         document.getElementById("mainPage").innerHTML = renderToS();
         LegalAfter();
 
-    } else if (currentUrl == "/login") { 
-    
+    } else if (currentUrl == "/login") {
+
         document.getElementById("mainPage").innerHTML = renderLogin();
         loginAfter();
 
-    } else if (currentUrl.match(bookRegex)) { 
-    
+    } else if (currentUrl.match(bookRegex)) {
+
         document.getElementById("mainPage").innerHTML = renderBook();
         bookAfter();
 
-    } else if (currentUrl == "/myBookings") { 
-    
-        document.getElementById("mainPage").innerHTML = renderMyBookings();
-        myBookingsAfter();
+    } else if (currentUrl == "/myBookings") {
 
-    }else {
+
+        fetch("/api/myBookings", {
+            method: "POST",
+            body: JSON.stringify({ token: localStorage.getItem("token") })
+        }).then((response) => response.json())
+            .then((data) => {
+                document.getElementById("mainPage").innerHTML = renderMyBookings(data.bookings, data.lector);
+                myBookingsAfter();
+            });
+
+    } else {
         document.getElementById("mainPage").innerHTML = renderNotFoundPage();
         notFoundAfter();
     }

@@ -9,14 +9,10 @@ function renderBook(lector, bookedDates) {
     return /*html */`
     <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
 
-    <div class="mainPageContainer">
-        <h1 class="pageTitle">Zabookovat lektora</h1>
-
-        <div id="bookPage">
-            <div class="bookLectorContainer">
-                <div class="flexbox">
-                
-                </div>
+    <div class="bookPage">
+        <div class="bookLectorContainer">
+            <div class="bookCol1">
+            
             </div>
         </div>
     </div>
