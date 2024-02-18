@@ -32,9 +32,12 @@ function lectorCard(lecturer) {
                 <div class="lectorLeftBox">
                     <img class="lectorListPicture" id="lectorPic" src="${sanitizeHtml(lecturer.picture_url)}" alt="Lecturer picture">
                 </div>
-    
-                <div class="lectorRightBox">
+
+                <div class="lectorSwitchBox">
                     <div class="lectorListName"> ${sanitizeHtml(getLectorName(lecturer))} </div>
+                </div>
+
+                <div class="lectorRightBox">
                     <hr>
                     <h2 class="lectorLocation"> ${sanitizeHtml(lecturer.location)} </h2>
                     <h3 class="lectorClaim"> ${sanitizeHtml(lecturer.claim)} </h3>
