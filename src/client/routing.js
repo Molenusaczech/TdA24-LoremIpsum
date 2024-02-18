@@ -17,7 +17,16 @@ import faviconUrl from "./img/favicon.png";
 import { renderGDPR, renderToS } from "./pages/legal/renderer.js";
 import { LegalAfter } from "./pages/legal/afterRender.js";
 
-const uuidRegex = /^\/lecturer\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
+import { renderBook } from "./pages/book/renderer.js";
+import { bookAfter } from "./pages/book/afterRender.js";
+
+import { renderLogin } from "./pages/login/renderer.js";
+import { loginAfter } from "./pages/login/afterRender.js";
+import { renderMyBookings } from "./pages/myBookings/renderer.js";
+import { myBookingsAfter } from "./pages/myBookings/afterRender.js";
+
+const lecturerRegex = /^\/lecturer\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
+const bookRegex = /^\/book\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
 
 function renderPage(currentUrl) {
     renderLoading();
@@ -71,7 +80,7 @@ function renderPage(currentUrl) {
         lecturerAfter();
         changeFavicon(defaultLecturer.picture_url);
         document.title = getLectorName(defaultLecturer);
-    } else if (currentUrl.match(uuidRegex)) {
+    } else if (currentUrl.match(lecturerRegex)) {
         fetch("/api/lecturers/" + currentUrl.split("/")[2])
             .then((response) => response.json())
             .then((data) => {
@@ -99,7 +108,22 @@ function renderPage(currentUrl) {
         document.getElementById("mainPage").innerHTML = renderToS();
         LegalAfter();
 
-    } else {
+    } else if (currentUrl == "/login") { 
+    
+        document.getElementById("mainPage").innerHTML = renderLogin();
+        loginAfter();
+
+    } else if (currentUrl.match(bookRegex)) { 
+    
+        document.getElementById("mainPage").innerHTML = renderBook();
+        bookAfter();
+
+    } else if (currentUrl == "/myBookings") { 
+    
+        document.getElementById("mainPage").innerHTML = renderMyBookings();
+        myBookingsAfter();
+
+    }else {
         document.getElementById("mainPage").innerHTML = renderNotFoundPage();
         notFoundAfter();
     }

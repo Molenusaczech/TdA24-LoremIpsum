@@ -2,7 +2,7 @@
 
 /* set variables */
 :root {
-    --md-sys-color-primary: #FECB2E;
+    --md-sys-color-primary: #74C7D3;
     --md-sys-color-secondary: #747474;
     --md-slider-label-text-color: #333333;
     --md-slider-label-text-weight: 700;
@@ -627,6 +627,24 @@ a {
 
 .clickable {
     cursor: pointer;
+}
+
+.loginContainer {
+    /*display: flex;*/
+    /*border: red solid 1px;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #fff;
+    padding: 1vw;
+    border-radius: 1vw;
+}
+
+.loginContainer md-outlined-text-field, md-filled-button {
+    width: 100%;
+    margin-bottom: 1vw;
 }
 
 @media screen and (max-width: 700px) {
