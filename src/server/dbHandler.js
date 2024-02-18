@@ -478,6 +478,7 @@ async function getMyBookings(token) {
 }
 
 async function getBookedTimes(lector_uuid) {
+  console.log(lector_uuid);
   let lector = await Lecturer.findOne({
     where: {
       uuid: lector_uuid,

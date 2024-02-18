@@ -115,8 +115,34 @@ function renderPage(currentUrl) {
 
     } else if (currentUrl.match(bookRegex)) {
 
-        document.getElementById("mainPage").innerHTML = renderBook();
-        bookAfter();
+        let uuid = currentUrl.split("/")[2];
+        console.log(uuid);
+
+        fetch("/api/getBookedTimes", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(
+                { 
+                    "uuid": uuid
+                }
+                )
+        }).then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+
+                fetch("/api/lecturers/" + uuid)
+                    .then((response) => response.json())
+                    .then((lectorData) => {
+                        document.getElementById("mainPage").innerHTML = renderBook(data.bookedDates, lectorData);
+                        bookAfter(data.bookedDates);
+                    });
+
+            })
+
+        /*document.getElementById("mainPage").innerHTML = renderBook();
+        bookAfter();*/
 
     } else if (currentUrl == "/myBookings") {
 
