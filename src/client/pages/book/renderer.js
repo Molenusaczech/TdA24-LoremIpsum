@@ -10,6 +10,7 @@ import '@material/web/button/outlined-button';
 import '@material/web/button/text-button';
 
 import dayjs from "dayjs";
+import flatpickr from "flatpickr";
 
 let lastLector = null;
 let lastBookedDates = [];
@@ -41,7 +42,8 @@ function renderBook(bookedDates, lector) {
             <div class="calendaryCol">
                 <!-- TODO: Add calendar here -->
 
-                <input type="date" id="bookDate" name="bookDate" min="${minDate}" value="${minDate}">
+                <div type="date" id="bookDate" name="bookDate" min="${minDate}" value="${minDate}">
+                </div>
 
             </div>
 
