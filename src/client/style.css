@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
+/*@import url("datepicker.css");*/
+
 /* set variables */
 :root {
     --md-sys-color-primary: #74C7D3;
@@ -765,11 +767,12 @@ a {
 }
 
 .loginButton {
+    margin-top: 5%;
     width: 100%;
 }
 
 .bookLectorDetailsContainer {
-    width: 90%;
+    width: 85%;
 }
 
 .bookTime {
@@ -777,6 +780,7 @@ a {
     height: 20%;
     width: 30%;
     font-size: 1vw;
+    padding: 0;
 }
 
 #bookTimeContainer {
@@ -801,8 +805,29 @@ a {
 
 .flatpickr-calendar {
     background-color: #fff;
-    border-radius: 1vw;
+    border-radius: 2vw;
     width: 100%;
+    padding: 1vw;
+}
+
+.flatpickr-next-month, .flatpickr-prev-month {
+    margin: 0.5vw;
+}
+
+.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
+    background: #74C7D3;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    border-color: #74C7D3;
+}
+
+.flatpickr-day {
+    color: #333333;
+}
+
+span.flatpickr-weekday {
+    color: #333333;
 }
 
 @media screen and (max-width: 700px) {
