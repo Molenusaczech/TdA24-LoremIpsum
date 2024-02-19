@@ -135,7 +135,7 @@ function renderPage(currentUrl) {
                 fetch("/api/lecturers/" + uuid)
                     .then((response) => response.json())
                     .then((lectorData) => {
-                        document.getElementById("mainPage").innerHTML = renderBook(data.bookedDates, lectorData);
+                        document.getElementById("mainPage").innerHTML = renderBook(data, lectorData);
                         bookAfter(data.bookedDates);
                     });
 
