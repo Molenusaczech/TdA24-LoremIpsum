@@ -20,9 +20,12 @@ function renderLecturer(lecturer) {
                         ${lecturer.tags.map(renderTag).join("")}
                     </div>
                 </div>
-    
+
+                <div class="lectorSwitchBox">
+                    ${getLectorName(lecturer)}
+                </div>
+
                 <div class="lectorRightBox">
-                    <div class="lectorName"> ${sanitizeHtml(getLectorName(lecturer))} </div>
                     <hr>
                     <h2 class="lectorLocation"> ${sanitizeHtml(lecturer.location)} </h2>
                     <h3 class="lectorClaim"> ${sanitizeHtml(lecturer.claim)} </h3>
