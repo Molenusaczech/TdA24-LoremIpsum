@@ -28,6 +28,8 @@ import { myBookingsAfter } from "./pages/myBookings/afterRender.js";
 import { renderSuccess } from "./pages/success/renderer.js";
 import { successAfter } from "./pages/success/afterRender.js";
 
+import { getLectorPlainTextName } from "./parseName.js";
+
 const lecturerRegex = /^\/lecturer\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
 const bookRegex = /^\/book\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
 
@@ -82,7 +84,7 @@ function renderPage(currentUrl) {
         document.getElementById("mainPage").innerHTML = renderLecturer(defaultLecturer);
         lecturerAfter();
         changeFavicon(defaultLecturer.picture_url);
-        document.title = getLectorName(defaultLecturer);
+        document.title = getLectorPlainTextName(defaultLecturer);
     } else if (currentUrl.match(lecturerRegex)) {
         fetch("/api/lecturers/" + currentUrl.split("/")[2])
             .then((response) => response.json())
@@ -99,7 +101,7 @@ function renderPage(currentUrl) {
                 document.getElementById("mainPage").innerHTML = renderLecturer(data);
                 lecturerAfter();
                 changeFavicon(data.picture_url);
-                document.title = getLectorName(data);
+                document.title = getLectorPlainTextName(data);
             });
     } else if (currentUrl == "/gdpr") {
 
@@ -140,6 +142,10 @@ function renderPage(currentUrl) {
                     .then((lectorData) => {
                         document.getElementById("mainPage").innerHTML = renderBook(data, lectorData);
                         bookAfter(data.bookedDates);
+
+                        changeFavicon(lectorData.picture_url);
+                        document.title = getLectorPlainTextName(lectorData) + " - Rezervace";
+
                     });
 
             })
