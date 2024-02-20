@@ -830,6 +830,32 @@ span.flatpickr-weekday {
     color: #333333;
 }
 
+.successContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    /*border: red solid 1px;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #fff;
+    padding: 1vw;
+    border-radius: 2vw;
+}
+
+.successContainer h1 {
+    color: #333333;
+    width: 100%;
+}
+
+.successContainer md-filled-button {
+    width: 100%;
+    margin-top: 1vw;
+}
+
 @media screen and (max-width: 700px) {
     .lectorContainer {
         width: 100%;

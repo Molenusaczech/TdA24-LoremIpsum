@@ -15,6 +15,7 @@ import flatpickr from "flatpickr";
 let lastLector = null;
 let lastBookedDates = [];
 let selectedIndex = -1;
+let lector_uuid = null;
 
 function renderBook(bookedDates, lector) {
 
@@ -23,6 +24,7 @@ function renderBook(bookedDates, lector) {
 
     lastLector = lector;
     lastBookedDates = [];
+    lector_uuid = lector.uuid;
 
     bookedDates.forEach((date) => {
         lastBookedDates.push(dayjs(date).minute(0).second(0).millisecond(0));
@@ -69,7 +71,7 @@ function renderBook(bookedDates, lector) {
                         <md-outlined-text-field label="Email" id="bookEmail" class="bookTextbox" type="email">
                             <md-icon slot="leading-icon">mail</md-icon>
                         </md-outlined-text-field>
-                        <md-outlined-text-field label="Telefonní číslo" id="bookEmail" class="bookTextbox">
+                        <md-outlined-text-field label="Telefonní číslo" id="bookPhone" class="bookTextbox">
                             <md-icon slot="leading-icon">call</md-icon>
                         </md-outlined-text-field>
 
@@ -77,10 +79,11 @@ function renderBook(bookedDates, lector) {
                             type="textarea"
                             label="Zpráva pro lektora (nepovinné)"
                             class="bookTextbox"
+                            id="bookNote"
                             rows="3">
                             </md-outlined-text-field>
 
-                        <md-filled-button class="loginButton">Přihlásit se</md-filled-button>
+                        <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
                         </div>
 
                     </div>
@@ -127,7 +130,7 @@ function renderTimes() {
             }
         });
 
-        console.log(isBooked);
+        //console.log(isBooked);
 
         result += renderTime(time, isBooked, selectedIndex == i);
     }
@@ -152,9 +155,14 @@ function renderTimes() {
 
 function renderTime(time, isBooked, isSelected) {
 
-    console.log(time);
-    console.log(isBooked);
+    //console.log(time);
+    //console.log(isBooked);
     let endTime = time.add(1, "hour");
+
+    if (isBooked && isSelected) {
+        selectedIndex = -1;
+        isSelected = false;
+    }
 
     if (isBooked) {
         return /*html*/`
@@ -181,4 +189,4 @@ function renderTime(time, isBooked, isSelected) {
 
 
 
-export { renderBook, renderTimes };
+export { renderBook, renderTimes, selectedIndex, lector_uuid };

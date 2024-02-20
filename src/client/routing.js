@@ -25,6 +25,9 @@ import { loginAfter } from "./pages/login/afterRender.js";
 import { renderMyBookings } from "./pages/myBookings/renderer.js";
 import { myBookingsAfter } from "./pages/myBookings/afterRender.js";
 
+import { renderSuccess } from "./pages/success/renderer.js";
+import { successAfter } from "./pages/success/afterRender.js";
+
 const lecturerRegex = /^\/lecturer\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
 const bookRegex = /^\/book\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
 
@@ -155,6 +158,21 @@ function renderPage(currentUrl) {
                 document.getElementById("mainPage").innerHTML = renderMyBookings(data.bookings, data.lector);
                 myBookingsAfter();
             });
+
+    } else if (currentUrl == "/success") {
+
+        let placeholderData = {
+            "uuid": "0a1b00d7-6aa2-4d00-b191-0819ced39090",
+            "start": "2024-02-21T19:00:00.000Z",
+            "lector_uuid": "4641e291-d58a-4506-b2d8-eb0a93ef1382",
+            "name": "Sus Testus",
+            "email": "example@seznam.cz",
+            "phone": "+720 123 456 789",
+            "note": "Popisek"
+        }
+
+        document.getElementById("mainPage").innerHTML = renderSuccess(placeholderData);
+        successAfter(placeholderData);
 
     } else {
         document.getElementById("mainPage").innerHTML = renderNotFoundPage();
