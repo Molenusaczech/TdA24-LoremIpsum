@@ -34,7 +34,7 @@ function lectorCard(lecturer) {
                 </div>
 
                 <div class="lectorSwitchBox">
-                    <div class="lectorListName"> ${sanitizeHtml(getLectorName(lecturer))} </div>
+                    ${getLectorName(lecturer)}
                 </div>
 
                 <div class="lectorRightBox">
