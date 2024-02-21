@@ -7,6 +7,9 @@ function getDaysArray(dates) {
 }
 
 function myBookingsAfter(bookedDates) {
+
+    console.log(bookedDates);
+
     document.getElementById("backButton").addEventListener("click", () => {
         linkClick("/");
     });

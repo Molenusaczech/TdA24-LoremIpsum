@@ -9,6 +9,18 @@ import bookingPozadi from "../../img/Booking_pozadi.png";
 
 import dayjs from "dayjs";
 
+function emptyCache() {
+    let result = [];
+
+    for (let i = 0; i < 12; i++) {
+        result.push(null);
+    }
+    
+    return result;
+}
+
+let todayCache = emptyCache();
+
 function renderMyBookings() {
 
     let today = dayjs().format('YYYY-MM-DD');
@@ -26,6 +38,9 @@ function renderMyBookings() {
             <div class="timesCol" id="timesCol">
 
 
+            </div>
+
+            <div class="meetingDetails" id="meetingDetails">
 
             </div>
 
@@ -38,13 +53,13 @@ function renderTime(index, isBooked) {
     let time = index + 8;
     if (isBooked) {
         return /*html */`
-            <md-filled-button class="timeSlot">
+            <md-filled-button class="timeSlot" data-timeIndex="${index}">
                 <span>${time}:00 - ${time + 1}:00</span>
             </md-filled-button>
     `;
     } else {
         return /*html */`
-            <md-text-button class="timeSlot" disabled="true">
+            <md-text-button class="timeSlot" disabled="true" data-timeIndex="${index}">
                 <span>${time}:00 - ${time + 1}:00</span>
             </md-text-button>
     `;
@@ -56,6 +71,7 @@ function renderTodayTimes(bookedDates) {
     let result = "";
 
     let curDate = document.getElementById('bookDate').value;
+    todayCache = emptyCache();
 
     for (let i = 0; i < 12; i++) {
 
@@ -70,6 +86,9 @@ function renderTodayTimes(bookedDates) {
             if (curTime == bookedDates[j]["start"]) {
                 isBooked = true;
                 data = bookedDates[j];
+
+                todayCache[i] = data;
+
                 break;
             }
         }
@@ -79,6 +98,35 @@ function renderTodayTimes(bookedDates) {
 
     document.getElementById("timesCol").innerHTML = result;
 
+    console.log(todayCache);
+
+    for (let i = 0; i < 12; i++) {
+        if (todayCache[i] != null) {
+            document.getElementById("timesCol").querySelectorAll(".timeSlot")[i].addEventListener("click", () => {
+                renderBookingDetails(todayCache[i]);
+            });
+        }
+    }
+
+}
+
+function renderBookingDetails(booking) {
+    console.log(booking);
+
+    let startTime = dayjs(booking["start"]);
+
+    let endTime = startTime.add(1, 'hour');
+
+    document.getElementById("meetingDetails").innerHTML = /*html */`
+    <div class="meetingDetailsBox">
+        <h2>Rezervace</h2>
+        <h3>${startTime.format('DD.MM.YYYY HH:mm')} - ${endTime.format('DD.MM.YYYY HH:mm')}</h3>
+        <h3>${booking["name"]}</h3>
+        <h3>${booking["email"]}</h3>
+        <h3>${booking["phone"]}</h3>
+        <h3>${booking["note"]}</h3>
+    </div>
+    `
 }
 
 export { renderMyBookings, renderTodayTimes };
