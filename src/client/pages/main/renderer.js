@@ -69,6 +69,7 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
         <a href="mailto:06krtek@gmail.com"> Kontaktovat webmastera </a>
         <a id="GDPR" class="clickable">GDPR</a>
         <a id="ToS" class="clickable">Podmínky užití</a>
+        <a id="login" class="clickable">Přihlášení</a>
         </footer>
         </div>
 

@@ -158,11 +158,25 @@ function renderPage(currentUrl) {
 
         fetch("/api/myBookings", {
             method: "POST",
-            body: JSON.stringify({ token: localStorage.getItem("token") })
+            body: JSON.stringify({ token: localStorage.getItem("token") }),
+
+            headers: {
+                "Content-Type": "application/json"
+            }
+
         }).then((response) => response.json())
             .then((data) => {
+
+                console.log(localStorage.getItem("token"));
+                console.log(data);
+
+                if (data.code == 401) {
+                    linkClick("/");
+                    console.log("redirecting");
+                }
+
                 document.getElementById("mainPage").innerHTML = renderMyBookings(data.bookings, data.lector);
-                myBookingsAfter();
+                myBookingsAfter(data.bookings, data.lector);
             });
 
     } else if (currentUrl == "/success") {

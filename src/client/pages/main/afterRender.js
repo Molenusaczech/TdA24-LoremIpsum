@@ -19,6 +19,10 @@ function mainAfter(lectors, tags, locations) {
         linkClick("/tos");
     });
 
+    document.getElementById("login").addEventListener("click", () => {
+        linkClick("/login");
+    });
+
 }
 
 export { mainAfter };
