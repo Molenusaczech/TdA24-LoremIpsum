@@ -11,21 +11,26 @@ function renderLecturer(lecturer) {
 
     <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
         <div class="lectorContainer">
-            <div class="flexbox">
+            <div class="flexboxB">
     
                 <div class="lectorLeftBox">
-    
                     <img class="lectorPicture" id="lectorPic" src="${lecturer.picture_url}" alt="Lecturer picture">
-                    <div class="lectorTags">
-                        ${lecturer.tags.map(renderTag).join("")}
-                    </div>
+                </div>
+
+                <div class="lectorSwitchTags">
+                    ${lecturer.tags.map(renderTag).join("")}
                 </div>
 
                 <div class="lectorSwitchBox">
                     ${getLectorName(lecturer)}
                 </div>
 
-                <div class="lectorRightBox">
+                <div class="lectorSwitchBoxRight">
+                    <a class="cancelA"><span class="lectorContactOptionC"> Rezervace </span></a>
+                    <a><span class="lectorContactOptionB"> ${sanitizeHtml(lecturer.price_per_hour)} Kč / hodina </span></a>
+                </div>
+
+                <div class="lectorRightBoxB">
                     <hr>
                     <h2 class="lectorLocation"> ${sanitizeHtml(lecturer.location)} </h2>
                     <h3 class="lectorClaim"> ${sanitizeHtml(lecturer.claim)} </h3>
@@ -33,7 +38,6 @@ function renderLecturer(lecturer) {
     
                     <div class="lectorContact">
                         <div class="contactBox">
-                            <span class="lectorContactOption"> ${sanitizeHtml(lecturer.price_per_hour)} Kč / hodina </span>
                             ${lecturer.contact.telephone_numbers.map(renderPhoneNumber).join("")}
                             ${lecturer.contact.emails.map(renderEmail).join("")}
                         </div>

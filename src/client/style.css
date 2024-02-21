@@ -67,6 +67,14 @@ body {
     align-items: center;
 }
 
+.flexboxB {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-auto-rows: minmax(1vw, auto);
+    justify-content: center;
+    align-items: center;
+}
+
 .lectorLeftBox {
     grid-row: 1 / 3;
     /*border: green solid 1px;*/
@@ -79,8 +87,25 @@ body {
     padding-left: 2vw;
 }
 
+.lectorSwitchBoxRight {
+    grid-column: 3;
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    /*border: red solid 1px;*/
+    padding-left: 0.1vw;
+}
+
 .lectorRightBox {
     grid-column: 2;
+    align-self: flex-start;
+    /*border: blue solid 1px;*/
+    padding-left: 2vw;
+}
+
+.lectorRightBoxB {
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
     align-self: flex-start;
     /*border: blue solid 1px;*/
     padding-left: 2vw;
@@ -104,6 +129,16 @@ body {
     justify-content: left;
     align-items: center;
     flex-wrap: wrap;
+    /*border: yellow solid 1px;*/
+}
+
+.lectorSwitchTags {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-row: 3;
+    grid-column: 1;
     /*border: yellow solid 1px;*/
 }
 
@@ -227,6 +262,46 @@ b {
     transition: 0.2s;
     color: #333333;
     background-color: #74C7D3;
+    /*box-shadow: #fff 0 0 0.5vw;*/
+}
+
+.lectorContactOptionB {
+    margin: 0.2vw;
+    padding: 0.3vw 0.5vw 0.3vw 0.5vw;
+    border-radius: 1vw;
+    background-color: #74C7D3;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.2s;
+    font-size: 1vw;
+}
+
+.lectorContactOptionB:hover {
+    transition: 0.2s;
+    color: #333333;
+    background-color: #74C7D3;
+    /*box-shadow: #fff 0 0 0.5vw;*/
+}
+
+.cancelA {
+    text-decoration: none;
+}
+
+.lectorContactOptionC {
+    margin: 0.2vw;
+    padding: 0.3vw 0.5vw 0.3vw 0.5vw;
+    border-radius: 1vw;
+    background-color: #FECB2E;
+    color: #333333;
+    font-weight: 700;
+    transition: 0.2s;
+    font-size: 1vw;
+}
+
+.lectorContactOptionC:hover {
+    transition: 0.2s;
+    color: #333333;
+    background-color: #FECB2E;
     /*box-shadow: #fff 0 0 0.5vw;*/
 }
 
@@ -898,13 +973,49 @@ span.flatpickr-weekday {
         align-self: center;
     }
 
+    .lectorSwitchBoxRight {
+        grid-row: 4;
+        grid-column: 1 / 3;
+        align-items: center;
+        display: block;
+    }
+
+    .lectorContactOptionB {
+        display: block;
+        width: 100%;
+        font-size: 4vw;
+        margin-top: 1vw;
+        margin-left: 0.3vw;
+        margin-right: 0.3vw;
+    }
+
+    .lectorContactOptionC {
+        display: block;
+        width: 100%;
+        font-size: 4vw;
+        margin-top: 1vw;
+        margin-left: 0.3vw;
+        margin-right: 0.3vw;
+    }
+
     .lectorRightBox {
         grid-column: 1 / 3;
         align-self: center;
     }
 
+    .lectorRightBoxB {
+        grid-column: 1 / 3;
+        grid-row: 3;
+        align-self: center;
+    }
+
     .flexbox {
         flex-direction: column;
+    }
+
+    .flexboxB {
+        flex-direction: column;
+        grid-template-columns: 30% 70%;
     }
 
     .lectorPicture,
@@ -939,6 +1050,8 @@ span.flatpickr-weekday {
 
     .lectorTag {
         font-size: 3vw;
+        padding: 1.3vw;
+        margin: 0.2vw;
     }
 
     .lectorContactOption {
@@ -1008,6 +1121,13 @@ span.flatpickr-weekday {
 
     .lectorTags {
         padding-left: 0.2vw;
+    }
+
+    .lectorSwitchTags {
+        margin-top: 2vw;
+        padding-left: 0.2vw;
+        grid-row: 5;
+        grid-column: 1 / 3;
     }
 
     .pageTitle {
