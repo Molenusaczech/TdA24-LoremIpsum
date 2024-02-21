@@ -26,7 +26,7 @@ function renderLecturer(lecturer) {
                 </div>
 
                 <div class="lectorSwitchBoxRight">
-                    <a class="cancelA"><span class="lectorContactOptionC"> Rezervace </span></a>
+                    <a class="cancelA" id="reserveButton"><span class="lectorContactOptionC"> Rezervace </span></a>
                     <a><span class="lectorContactOptionB"> ${sanitizeHtml(lecturer.price_per_hour)} Kč / hodina </span></a>
                 </div>
 

@@ -298,13 +298,6 @@ b {
     font-size: 1vw;
 }
 
-.lectorContactOptionC:hover {
-    transition: 0.2s;
-    color: #333333;
-    background-color: #FECB2E;
-    /*box-shadow: #fff 0 0 0.5vw;*/
-}
-
 .contactBox {
     display: flex;
     justify-content: left;
@@ -952,6 +945,12 @@ span.flatpickr-weekday {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.lectorContactOptionC:hover {
+    transform: translateY(-10%);
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {

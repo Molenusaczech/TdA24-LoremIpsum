@@ -99,7 +99,7 @@ function renderPage(currentUrl) {
                 }
 
                 document.getElementById("mainPage").innerHTML = renderLecturer(data);
-                lecturerAfter();
+                lecturerAfter(data);
                 changeFavicon(data.picture_url);
                 document.title = getLectorPlainTextName(data);
             });
