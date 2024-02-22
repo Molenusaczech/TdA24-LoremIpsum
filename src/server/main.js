@@ -3,6 +3,7 @@ import express from "express";
 //const ViteExpress = require("vite-express");
 import ViteExpress from "vite-express";
 import cors from "cors";
+import { authString } from "./authHandler.js";
 
 const app = express();
 
@@ -46,6 +47,14 @@ app.post("/api/lecturers", cors(), async (req, res) => {
 
   logThatBastard(req.body);
 
+  console.log(req.headers.authorization);
+
+  if (req.headers.authorization != authString) {
+    res.status(401);
+    res.send({ message: "Unauthorized" });
+    return;
+  }
+
   const result = await createLector(input);
 
   if (result.code) {
@@ -79,6 +88,12 @@ app.put("/api/lecturers/:uuid", cors(), async (req, res) => {
   const uuid = req.params.uuid;
   const input = req.body;
 
+  if (req.headers.authorization != authString) {
+    res.status(401);
+    res.send({ message: "Unauthorized" });
+    return;
+  }
+
   const result = await editLector(uuid, input);
 
   if (result.code) {
@@ -90,6 +105,12 @@ app.put("/api/lecturers/:uuid", cors(), async (req, res) => {
 
 app.delete("/api/lecturers/:uuid", cors(), async (req, res) => {
   const uuid = req.params.uuid;
+
+  if (req.headers.authorization != authString) {
+    res.status(401);
+    res.send({ message: "Unauthorized" });
+    return;
+  }
 
   const result = await deleteLector(uuid);
 

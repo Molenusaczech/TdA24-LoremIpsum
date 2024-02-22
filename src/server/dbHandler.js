@@ -60,6 +60,9 @@ async function getLectors() { // vypíše všechny lektory
     delete lector.Phones;
     delete lector.Emails;
     delete lector.Tags;
+    delete lector.password;
+    delete lector.salt;
+    delete lector.username;
 
     return lector;
   });
@@ -195,6 +198,9 @@ async function getLectorById(uuid) { // vypíše lektora podle id
   delete final.Tags;
   delete final.Phones;
   delete final.Emails;
+  delete final.password;
+  delete final.salt;
+  delete final.username;
 
   return final;
 
@@ -247,6 +253,8 @@ async function editLector(uuid, input) {
   if (input.hasOwnProperty("claim")) lector.claim = input.claim;
   if (input.hasOwnProperty("bio")) lector.bio = input.bio;
   if (input.hasOwnProperty("price_per_hour")) lector.price_per_hour = input.price_per_hour;
+  if (input.hasOwnProperty("username")) lector.username = input.username;
+  if (input.hasOwnProperty("password")) lector.password = generateHash(input.password, lector.salt);
 
   if (input.hasOwnProperty("tags")) {
     lector.setTags([]);
