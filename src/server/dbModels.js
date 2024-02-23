@@ -170,6 +170,10 @@ const Booking = sequelize.define("Booking", {
     note: {
         type: DataTypes.STRING,
         allowNull: true,
+    },
+    isOnline: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
     }
 },
     {
@@ -178,6 +182,7 @@ const Booking = sequelize.define("Booking", {
 );
 
 const LecturerTag = sequelize.define("LecturerTag", {}, { timestamps: false });
+const BookingTag = sequelize.define("BookingTag", {}, { timestamps: false });
 
 Lecturer.belongsToMany(Tag, { through: LecturerTag });
 Tag.belongsToMany(Lecturer, { through: LecturerTag });
@@ -189,6 +194,9 @@ Token.belongsTo(Lecturer);
 Lecturer.hasMany(Token);
 Booking.belongsTo(Lecturer);
 Lecturer.hasMany(Booking);
+
+Booking.belongsToMany(Tag, { through: BookingTag });
+Tag.belongsToMany(Booking, { through: BookingTag });
 
 /*Lecturer.sync({ force: true});
 Tag.sync({ force: true});
@@ -203,6 +211,7 @@ Email.sync();
 LecturerTag.sync();
 Token.sync();
 Booking.sync();
+BookingTag.sync();
 
 
 export { sequelize, Lecturer, Tag, Phone, Email, Token, Booking};

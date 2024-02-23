@@ -16,6 +16,7 @@ let lastLector = null;
 let lastBookedDates = [];
 let selectedIndex = -1;
 let lector_uuid = null;
+let isOnline = false;
 
 function renderBook(bookedDates, lector) {
 
@@ -75,6 +76,8 @@ function renderBook(bookedDates, lector) {
                             <md-icon slot="leading-icon">call</md-icon>
                         </md-outlined-text-field>
 
+                        
+
                         <md-outlined-text-field
                             type="textarea"
                             label="Zpráva pro lektora (nepovinné)"
@@ -82,6 +85,12 @@ function renderBook(bookedDates, lector) {
                             id="bookNote"
                             rows="3">
                             </md-outlined-text-field>
+
+
+
+                        <div class="bookLectorOnlineToggle" id="bookLectorOnlineToggle">
+
+                        </div>
 
                         <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
                         </div>
@@ -92,7 +101,11 @@ function renderBook(bookedDates, lector) {
 
                 <div class="bookLectorInfo">
 
-                    
+                    <div class="bookingTags">
+
+                        ${renderBookingTags(lector)}
+
+                    </div>
 
                 </div>
 
@@ -186,7 +199,58 @@ function renderTime(time, isBooked, isSelected) {
 
 }
 
+function renderBookingTags(lector) {
+    let result = "";
+
+    lector.tags.forEach((tag) => {
+        result += /*html*/`
+        <span data-tag="${tag.uuid}" class="tagSelect">
+
+            <span class="lectorListFilterTagSymbol">
+                <span class="lectorListFilterTagSymbol1"></span>
+                <span class="lectorListFilterTagSymbol2"></span>
+            </span>
+
+            ${sanitizeHtml(tag.name)}
 
 
+            <span class="lectorListFilterTagCount"></span>
+    
+    </span>
+        `;
+    });
 
-export { renderBook, renderTimes, selectedIndex, lector_uuid };
+    return result;
+}
+
+function renderOnline() {
+    
+    if (isOnline) {
+
+        document.getElementById("bookLectorOnlineToggle").innerHTML = /*html*/`
+        <md-outlined-button class="bookOnlineButton" id="bookPhysical">Osobně</md-outlined-button>
+        <md-filled-button class="bookOnlineButton" id="bookOnline">Online</md-filled-button>
+        `;
+
+    } else {
+
+        document.getElementById("bookLectorOnlineToggle").innerHTML = /*html*/`
+        <md-filled-button class="bookOnlineButton" id="bookPhysical">Osobně</md-filled-button>
+        <md-outlined-button class="bookOnlineButton" id="bookOnline">Online</md-outlined-button>
+        `;
+
+    }
+
+    document.getElementById("bookPhysical").addEventListener("click", () => {
+        isOnline = false;
+        renderOnline();
+    });
+
+    document.getElementById("bookOnline").addEventListener("click", () => {
+        isOnline = true;
+        renderOnline();
+    });
+
+}
+
+export { renderBook, renderTimes, selectedIndex, lector_uuid, renderBookingTags, renderOnline, isOnline };

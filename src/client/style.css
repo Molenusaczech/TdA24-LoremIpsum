@@ -963,7 +963,33 @@ span.flatpickr-weekday {
     align-items: center;
     flex-direction: column;
 }
+.bookingTags {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: top;
+    flex-wrap: wrap;
+    gap: 0.5vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
 
+.bookLectorOnlineToggle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.bookOnlineButton {
+    width: 50%;
+}
+
+.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover {
+    color: rgba(51, 51, 51, 0.4);
+}
 @media screen and (max-width: 700px) {
     .lectorContainer {
         width: 100%;

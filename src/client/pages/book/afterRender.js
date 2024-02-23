@@ -1,11 +1,11 @@
 import { linkClick } from "../../routing";
-import { renderTimes, selectedIndex, lector_uuid } from "./renderer";
+import { renderTimes, selectedIndex, lector_uuid, renderOnline, isOnline } from "./renderer";
 import { renderSuccess } from "../../pages/success/renderer";
 import { successAfter } from "../../pages/success/afterRender";
 import flatpickr from "flatpickr";
 import dayjs from "dayjs";
 
-function bookAfter() {
+function bookAfter(bookingData, lectorData) {
     document.getElementById("backButton").addEventListener("click", () => {
         linkClick("/");
     });
@@ -46,6 +46,15 @@ function bookAfter() {
         let telephone = document.getElementById('bookPhone').value;
         let note = document.getElementById('bookNote').value;
 
+        let tagElements = document.querySelectorAll(".tagSelect.active");
+
+        let tags = [];
+        tagElements.forEach(element => {
+            tags.push(element.dataset.tag);
+        });
+
+        console.log(tags);
+
         // TODO: check validity of input
 
         fetch("/api/createBooking", {
@@ -59,7 +68,9 @@ function bookAfter() {
                 name: name,
                 email: email,
                 phone: telephone,
-                note: note
+                note: note,
+                tags: tags,
+                online: isOnline
             }),
         })
             .then((response) => response.json())
@@ -92,6 +103,24 @@ function bookAfter() {
     });
 
     renderTimes();
+
+    lectorData.tags.forEach(element => {
+        element = element.uuid
+        element = document.querySelector(`[data-tag="${element}"]`);
+        console.log(element);
+        element.addEventListener("click", () => {
+            console.log(element);
+
+            if (element.classList.contains("active")) {
+                element.classList.remove("active");
+            } else {
+                element.classList.add("active");
+            }
+        });
+    });
+
+    renderOnline();
+
 }
 
 export { bookAfter };

@@ -141,7 +141,7 @@ function renderPage(currentUrl) {
                     .then((response) => response.json())
                     .then((lectorData) => {
                         document.getElementById("mainPage").innerHTML = renderBook(data, lectorData);
-                        bookAfter(data.bookedDates);
+                        bookAfter(data, lectorData);
 
                         changeFavicon(lectorData.picture_url);
                         document.title = getLectorPlainTextName(lectorData) + " - Rezervace";

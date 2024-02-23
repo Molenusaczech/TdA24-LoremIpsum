@@ -6,7 +6,7 @@ import '@material/web/textfield/outlined-text-field';
 import '@material/web/icon/icon';
 import '@material/web/button/filled-button';
 import bookingPozadi from "../../img/Booking_pozadi.png";
-
+import sanitizeHtml from 'sanitize-html';
 import dayjs from "dayjs";
 
 function emptyCache() {
@@ -117,6 +117,8 @@ function renderBookingDetails(booking) {
 
     let endTime = startTime.add(1, 'hour');
 
+    let onlineText = booking["isOnline"] ? "Online" : "Osobně";
+
     document.getElementById("meetingDetails").innerHTML = /*html */`
     <div class="meetingDetailsBox">
         <h2>Rezervace</h2>
@@ -125,8 +127,27 @@ function renderBookingDetails(booking) {
         <h3>${booking["email"]}</h3>
         <h3>${booking["phone"]}</h3>
         <h3>${booking["note"]}</h3>
+        <h3>${onlineText}</h3>
+
+        <div>
+
+        ${booking["Tags"].map(tag => {
+            return renderTag(tag);
+        }).join('')}
+
+        </div>
+        
     </div>
     `
+}
+
+function renderTag(tag) {
+    //console.log(tag);
+    return /*html */`
+    <span class="lectorListTag" data-uuid="${tag.uuid}"> 
+        ${sanitizeHtml(tag.name)} 
+    </span>
+    `;
 }
 
 export { renderMyBookings, renderTodayTimes };

@@ -433,7 +433,10 @@ async function createBooking(input) {
   let lector = await Lecturer.findOne({
     where: {
       uuid: input.lector_uuid,
-    }
+    },
+    include: [
+      Booking, Tag
+    ]
   });
 
   if (!lector) {
@@ -448,8 +451,22 @@ async function createBooking(input) {
     name: input.name,
     email: input.email,
     phone: input.phone,
-    note: input.note
+    note: input.note,
+    isOnline: input.online
   });
+
+  for (let tag of input.tags) {
+
+    let finalTag = await Tag.findOne({
+      where: {
+        uuid: tag
+      }
+    });
+
+    await booking.addTag(finalTag);
+
+  }
+
   await lector.addBooking(booking);
 
   return booking;
@@ -475,7 +492,11 @@ async function getMyBookings(token) {
   }
   
   lector = lector.Lecturer;
-  let bookings = await lector.getBookings();
+  let bookings = await lector.getBookings({
+    include: [
+      Tag
+    ]
+  });
 
   return {
     code: 200,
