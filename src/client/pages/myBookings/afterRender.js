@@ -6,15 +6,44 @@ function getDaysArray(dates) {
 
 }
 
+
+function formatDates(dates) {
+    let result = [];
+    for (let date of dates) {
+        for (let i = 0; i < date.length; i++) {
+            result.push({
+                uuid: date.uuid,
+                start: dayjs(date.start).add(i, 'hour').toISOString(),
+                startTime: dayjs(date.start).toISOString(),
+                endTime: dayjs(date.start).add(date.length, 'hour').toISOString(),
+                name: date.name,
+                email: date.email,
+                phone: date.phone,
+                note: date.note,
+                tags: date.Tags,
+                isOnline: date.isOnline,
+                length: date.length,
+                isStart: i == 0,
+                isLast: i == date.length - 1
+            });
+        }
+
+    };
+
+    return result;
+}
+
 function myBookingsAfter(bookedDates) {
 
     console.log(bookedDates);
+
+    bookedDates = formatDates(bookedDates);
 
     document.getElementById("backButton").addEventListener("click", () => {
         linkClick("/");
     });
 
-    flatpickr("#bookDate",{
+    flatpickr("#bookDate", {
         inline: true,
         defaultDate: new Date().fp_incr(0),
         minDate: new Date().fp_incr(-7),

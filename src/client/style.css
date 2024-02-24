@@ -990,6 +990,36 @@ span.flatpickr-weekday {
 .flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover {
     color: rgba(51, 51, 51, 0.4);
 }
+
+.yellowButton {
+    --md-filled-button-container-color: #FECB2E;
+    --md-filled-button-container-color-hover: #FECB2E;
+    --md-filled-button-label-text-color: #333333;
+    --md-filled-button-label-text-color-hover: #333333;
+}
+
+.buttonTopZero {
+    --_container-shape-start-end: var(--md-filled-button-container-shape, 0px);
+    --_container-shape-start-start: var(--md-filled-button-container-shape, 0px);
+}
+
+.buttonBottomZero {
+    --_container-shape-end-end: var(--md-filled-button-container-shape, 0px);
+    --_container-shape-end-start: var(--md-filled-button-container-shape, 0px);
+}
+
+.timeSlot {
+    width: 100%;
+}
+
+.timesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1vw;
+}
+
 @media screen and (max-width: 700px) {
     .lectorContainer {
         width: 100%;

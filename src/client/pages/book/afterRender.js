@@ -43,7 +43,9 @@ function bookAfter(bookingData, lectorData) {
 
         console.log(curDate);
 
-        let curTime = dayjs().hour(8).minute(0).second(0).day(dayjs(curDate).day()).month(dayjs(curDate).month()).year(dayjs(curDate).year()).millisecond(0).add(selectedIndex, 'hour').toISOString();
+        let startIndex = Math.min(...selectedIndex);
+
+        let curTime = dayjs().hour(8).minute(0).second(0).day(dayjs(curDate).day()).month(dayjs(curDate).month()).year(dayjs(curDate).year()).millisecond(0).add(startIndex, 'hour').toISOString();
 
         console.log(curTime);
 
@@ -84,6 +86,7 @@ function bookAfter(bookingData, lectorData) {
             body: JSON.stringify({
                 lector_uuid: lector_uuid,
                 start: curTime,
+                length: selectedIndex.length,
                 name: name,
                 email: email,
                 phone: telephone,
@@ -126,7 +129,7 @@ function bookAfter(bookingData, lectorData) {
     lectorData.tags.forEach(element => {
         element = element.uuid
         element = document.querySelector(`[data-tag="${element}"]`);
-        console.log(element);
+        //console.log(element);
         element.addEventListener("click", () => {
             console.log(element);
 

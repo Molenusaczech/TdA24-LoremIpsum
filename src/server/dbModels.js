@@ -174,7 +174,11 @@ const Booking = sequelize.define("Booking", {
     isOnline: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-    }
+    },
+    length: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
 },
     {
         timestamps: false,

@@ -14,7 +14,7 @@ import flatpickr from "flatpickr";
 
 let lastLector = null;
 let lastBookedDates = [];
-let selectedIndex = -1;
+let selectedIndex = [];
 let lector_uuid = null;
 let isOnline = false;
 
@@ -28,7 +28,11 @@ function renderBook(bookedDates, lector) {
     lector_uuid = lector.uuid;
 
     bookedDates.forEach((date) => {
-        lastBookedDates.push(dayjs(date).minute(0).second(0).millisecond(0));
+        //lastBookedDates.push(dayjs(date["start"]).minute(0).second(0).millisecond(0));
+    
+        for (let i = 0; i < date["length"]; i++) {
+            lastBookedDates.push(dayjs(date["start"]).minute(0).second(0).millisecond(0).add(i, 'hour'));
+        }
     });
 
     console.log(lastBookedDates);
@@ -145,7 +149,7 @@ function renderTimes() {
 
         //console.log(isBooked);
 
-        result += renderTime(time, isBooked, selectedIndex == i);
+        result += renderTime(time, isBooked, selectedIndex.includes(i));
     }
 
     document.getElementById("bookTimeContainer").innerHTML = result;
@@ -158,7 +162,22 @@ function renderTimes() {
         }
 
         button.addEventListener("click", () => {
-            selectedIndex = i;
+            if (selectedIndex.includes(i)) {
+                selectedIndex = selectedIndex.filter((index) => index != i);
+            } else {
+                selectedIndex.push(i);
+            }
+
+            if (selectedIndex.length > 1) {
+                selectedIndex.forEach((index) => {
+                    if (!selectedIndex.includes(index + 1) && !selectedIndex.includes(index - 1)) {
+                        selectedIndex = [i]
+                    }
+                });
+            }
+
+            console.log(selectedIndex);
+
             renderTimes();
         });
     
@@ -173,7 +192,7 @@ function renderTime(time, isBooked, isSelected) {
     let endTime = time.add(1, "hour");
 
     if (isBooked && isSelected) {
-        selectedIndex = -1;
+        selectedIndex = [];
         isSelected = false;
     }
 

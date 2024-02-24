@@ -452,7 +452,8 @@ async function createBooking(input) {
     email: input.email,
     phone: input.phone,
     note: input.note,
-    isOnline: input.online
+    isOnline: input.online,
+    length: input.length
   });
 
   for (let tag of input.tags) {
@@ -524,7 +525,10 @@ async function getBookedTimes(lector_uuid) {
   let bookings = await lector.getBookings();
 
   return bookings.map((booking) => {
-    return booking.start;
+    return {
+      start: booking.start,
+      length: booking.length
+    };
   });
 
 }

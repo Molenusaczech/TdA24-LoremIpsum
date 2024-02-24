@@ -49,11 +49,32 @@ function renderMyBookings() {
     `;
 }
 
-function renderTime(index, isBooked) {
+function renderTime(index, isBooked, isStart = true, isFirst = false, isLast = false) {
     let time = index + 8;
+
     if (isBooked) {
+
+        let styleClass = "";
+
+        if (!isFirst) {
+            styleClass += "buttonTopZero ";
+        }
+
+        if (!isLast) {
+            styleClass += "buttonBottomZero ";
+        }
+
+
+        if (!isStart) {
+            return /*html */`
+                <md-filled-button class="timeSlot yellowButton ${styleClass}" data-timeIndex="${index}">
+                    <span>${time}:00 - ${time + 1}:00</span>
+                </md-filled-button>
+        `;
+        }
+
         return /*html */`
-            <md-filled-button class="timeSlot" data-timeIndex="${index}">
+            <md-filled-button class="timeSlot  ${styleClass}" data-timeIndex="${index}">
                 <span>${time}:00 - ${time + 1}:00</span>
             </md-filled-button>
     `;
@@ -73,6 +94,8 @@ function renderTodayTimes(bookedDates) {
     let curDate = document.getElementById('bookDate').value;
     todayCache = emptyCache();
 
+    let isBlue = false;
+
     for (let i = 0; i < 12; i++) {
 
         let curTime = dayjs().hour(i + 8).minute(0).second(0).millisecond(0).day(dayjs(curDate).day()).month(dayjs(curDate).month()).year(dayjs(curDate).year());
@@ -80,6 +103,9 @@ function renderTodayTimes(bookedDates) {
         curTime = curTime.toISOString();
 
         let isBooked = false;
+        let isStart = false;
+        let isFirst = false;
+        let isLast = false;
         let data = {}
 
         for (let j = 0; j < bookedDates.length; j++) {
@@ -87,16 +113,37 @@ function renderTodayTimes(bookedDates) {
                 isBooked = true;
                 data = bookedDates[j];
 
+
                 todayCache[i] = data;
+                isStart = data["isStart"];
+                
+                if (isStart) {
+
+                    if (isBlue) {
+                        isBlue = false;
+                    }
+                    else {
+                        isBlue = true;
+                    }
+                }
+
+                isFirst = data["isStart"];
+                isLast = data["isLast"];
 
                 break;
             }
         }
 
-        result += renderTime(i, isBooked);
+        result += renderTime(i, isBooked, isBlue, isFirst, isLast);
     }
 
-    document.getElementById("timesCol").innerHTML = result;
+    document.getElementById("timesCol").innerHTML = `
+    
+    <div class="timesContainer">
+    ${result}
+    </div>
+
+    `;
 
     console.log(todayCache);
 
@@ -113,9 +160,9 @@ function renderTodayTimes(bookedDates) {
 function renderBookingDetails(booking) {
     console.log(booking);
 
-    let startTime = dayjs(booking["start"]);
+    let startTime = dayjs(booking["startTime"]);
 
-    let endTime = startTime.add(1, 'hour');
+    let endTime = dayjs(booking["endTime"]);
 
     let onlineText = booking["isOnline"] ? "Online" : "Osobně";
 
@@ -131,7 +178,7 @@ function renderBookingDetails(booking) {
 
         <div>
 
-        ${booking["Tags"].map(tag => {
+        ${booking["tags"].map(tag => {
             return renderTag(tag);
         }).join('')}
 
