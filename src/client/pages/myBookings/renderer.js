@@ -9,6 +9,7 @@ import bookingPozadi from "../../img/Booking_pozadi.png";
 import sanitizeHtml from 'sanitize-html';
 import dayjs from "dayjs";
 import { getLectorName } from "../../getLectorName";
+import { getLectorPlainTextName } from "../../parseName";
 
 function emptyCache() {
     let result = [];
@@ -20,12 +21,31 @@ function emptyCache() {
     return result;
 }
 
+function getClosestBookedDate(date, bookedDates) {
+    let result = null;
+    let minDiff = 10000000000000
+
+    for (let i = 0; i < bookedDates.length; i++) {
+        let diff = Math.abs(dayjs().diff(dayjs(bookedDates[i]["start"])));
+        
+        if (diff < minDiff) {
+            minDiff = diff;
+            result = i;
+        }
+    }
+    
+    return date[result];
+}
+
 let todayCache = emptyCache();
 
 function renderMyBookings(bookings, lector) {
     console.log(lector);
 
     let today = dayjs().format('YYYY-MM-DD');
+
+    let closest = getClosestBookedDate(today, bookings);
+    console.log(closest);
 
     return /*html */`
     <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
@@ -37,7 +57,14 @@ function renderMyBookings(bookings, lector) {
                 <div type="date" id="bookDate" name="bookDate" value="${today}"></div>
             
                 <div class="calendaryBottom">
-                    
+                    <h3>Dobrý den, ${sanitizeHtml(getLectorPlainTextName(lector))}!</h3>
+
+                    <h3> Nejbližší rezervace: ${dayjs(closest["start"]).format('DD.MM.YYYY HH:mm')}</h3>
+
+                    <md-filled-button class="downloadButton" id="downloadButton">
+                        Exportovat kalendář
+                    </md-filled-button>
+
                     </div>
 
             </div>
