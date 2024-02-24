@@ -5,6 +5,12 @@ import { successAfter } from "../../pages/success/afterRender";
 import flatpickr from "flatpickr";
 import dayjs from "dayjs";
 
+const emailRegex = /\S+@\S+\.\S+/;
+const phoneRegex1 = /^\d{9}$/;
+const phoneRegex2 = /^\d{3} \d{3} \d{3}$/;
+const phoneRegex3 = /^\+\d{3}\d{9}$/;
+const phoneRegex4 = /^\+\d{3} \d{3} \d{3} \d{3}$/;
+
 function bookAfter(bookingData, lectorData) {
     document.getElementById("backButton").addEventListener("click", () => {
         linkClick("/");
@@ -56,6 +62,19 @@ function bookAfter(bookingData, lectorData) {
         console.log(tags);
 
         // TODO: check validity of input
+
+        if (name == "" || email == "" || telephone == "") {
+            alert("Prosím vyplňte všechny údaje");
+            return;
+        } else if (!emailRegex.test(email)) {
+            alert("Prosím zadejte platný email");
+            return;
+        } else if (!phoneRegex1.test(telephone) && !phoneRegex2.test(telephone) && !phoneRegex3.test(telephone) && !phoneRegex4.test(telephone)) {
+            alert("Prosím zadejte platné telefonní číslo");
+            return;
+        } else if (selectedIndex == -1) {
+            alert("Prosím vyberte čas");
+        }
 
         fetch("/api/createBooking", {
             method: "POST",

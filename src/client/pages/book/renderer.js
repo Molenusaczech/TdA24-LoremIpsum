@@ -72,7 +72,7 @@ function renderBook(bookedDates, lector) {
                         <md-outlined-text-field label="Email" id="bookEmail" class="bookTextbox" type="email">
                             <md-icon slot="leading-icon">mail</md-icon>
                         </md-outlined-text-field>
-                        <md-outlined-text-field label="Telefonní číslo" id="bookPhone" class="bookTextbox">
+                        <md-outlined-text-field label="Telefonní číslo" id="bookPhone" class="bookTextbox" type="tel">
                             <md-icon slot="leading-icon">call</md-icon>
                         </md-outlined-text-field>
 
