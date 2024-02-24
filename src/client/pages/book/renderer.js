@@ -11,6 +11,7 @@ import '@material/web/button/text-button';
 
 import dayjs from "dayjs";
 import flatpickr from "flatpickr";
+import { getLectorName } from "../../getLectorName";
 
 let lastLector = null;
 let lastBookedDates = [];
@@ -51,6 +52,13 @@ function renderBook(bookedDates, lector) {
 
                 <div type="date" id="bookDate" name="bookDate" min="${minDate}" value="${minDate}">
                 </div>
+
+                <div class="calendaryBottom">
+                
+                   <h3>${sanitizeHtml(getLectorName(lector))}</h3>
+                    <h3>${sanitizeHtml(lector.price_per_hour)}</h3>
+                    </div>
+                
 
             </div>
 

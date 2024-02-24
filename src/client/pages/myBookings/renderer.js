@@ -8,6 +8,7 @@ import '@material/web/button/filled-button';
 import bookingPozadi from "../../img/Booking_pozadi.png";
 import sanitizeHtml from 'sanitize-html';
 import dayjs from "dayjs";
+import { getLectorName } from "../../getLectorName";
 
 function emptyCache() {
     let result = [];
@@ -21,7 +22,8 @@ function emptyCache() {
 
 let todayCache = emptyCache();
 
-function renderMyBookings() {
+function renderMyBookings(bookings, lector) {
+    console.log(lector);
 
     let today = dayjs().format('YYYY-MM-DD');
 
@@ -33,6 +35,11 @@ function renderMyBookings() {
         <div class="bookLectorContainer">
             <div class="calendaryCol">
                 <div type="date" id="bookDate" name="bookDate" value="${today}"></div>
+            
+                <div class="calendaryBottom">
+                    
+                    </div>
+
             </div>
 
             <div class="timesCol" id="timesCol">
