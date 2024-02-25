@@ -62,9 +62,11 @@ function renderMyBookings(bookings, lector) {
 
                 <h3> Nejbližší rezervace: <span class="timeText">${dayjs(closest["start"]).format('DD.MM.YYYY HH:mm')}</span></h3>
 
+                <a href="/api/calendar/${localStorage.getItem("token").replace("/", "+")}" target="_blank">
                 <md-filled-button class="downloadButton" id="downloadButton">
                     Exportovat kalendář
                 </md-filled-button>
+                </a>
 
             </div>
 

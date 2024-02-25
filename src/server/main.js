@@ -220,6 +220,7 @@ app.post("/api/getBookedTimes", cors(), async (req, res) => {
 app.get("/api/calendar/:token", cors(), async (req, res) => {
 
   let token = req.params.token;
+  token = token.replace("+", "/");
 
   res.header("Content-Type", "text/calendar");
   res.header("Content-Disposition", "attachment; filename=calendar.ics");
