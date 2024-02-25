@@ -48,81 +48,89 @@ function renderBook(bookedDates, lector) {
     <div class="bookPage">
         <div class="bookLectorContainer">
             <!-- TODO: Add calendar here -->
+            <div class="calendaryCol">
+                <div type="date" id="bookDate" name="bookDate" min="${minDate}" value="${minDate}"></div>
 
-            <div type="date" id="bookDate" name="bookDate" min="${minDate}" value="${minDate}"></div>
+                <div class="smallProfileCont">
+                    <div class="smallProfile">
+                        <div class="smallProfileUpperBox">
+                            <div class="smallProfileUpperBoxLeft">
+                                <img class="lectorListPicture" id="lectorPic" src="${sanitizeHtml(lector.picture_url)}" alt="Lecturer picture">
+                            </div>
+                            <div class="smallProfileUpperBoxRight">
+                                ${getLectorName(lector)}
+                            </div>
+                        </div>
 
-            <div class="smallProfileCont">
-                <div class="smallProfile">
-                    <div class="smallProfileLeftBox">
-                        <img class="lectorListPicture" id="lectorPic" src="${sanitizeHtml(lector.picture_url)}" alt="Lecturer picture">
-                    </div>
-
-                    <div class="smallProfileSwitchBox">
-                        ${getLectorName(lector)}
-                    </div>
-
-                    <div class="smallProfileRightBox">
                         <hr>
-                        <div class="lectorBio"> ${sanitizeHtml(lector.bio)} </div>
+
+                        <div class="smallProfileBio">
+                            <div class="lectorBio"> ${sanitizeHtml(lector.bio)} </div>
+                        </div>
+
+                        <div class="smallProfilePrice">
+                            <span class="lectorContactOptionB"> ${sanitizeHtml(lector.price_per_hour)} Kč / hodina </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bookLeftCol">
+                <div class="bookLectorTopRow">
+
+                    <div class="bookLectorTimes">
+
+                        <h3>Vyberte čas schůzky</h3>
+
+                        <div id="bookTimeContainer">
+
+                        </div>
+
                     </div>
 
-                    <div class="smallProfileSwitchBoxRight">
-                        <span class="lectorContactOptionB"> ${sanitizeHtml(lector.price_per_hour)} Kč / hodina </span>
+                    <div class="bookLectorDetails">
+                        <div class="bookLectorDetailsContainer">
+                        <md-outlined-text-field label="Celé jméno" id="bookName" class="bookTextbox">
+                            <md-icon slot="leading-icon">person</md-icon>
+                        </md-outlined-text-field>
+                        <md-outlined-text-field label="Email" id="bookEmail" class="bookTextbox" type="email">
+                            <md-icon slot="leading-icon">mail</md-icon>
+                        </md-outlined-text-field>
+                        <md-outlined-text-field label="Telefonní číslo" id="bookPhone" class="bookTextbox" type="tel">
+                            <md-icon slot="leading-icon">call</md-icon>
+                        </md-outlined-text-field>
+
+                        
+
+                        <md-outlined-text-field
+                            type="textarea"
+                            label="Zpráva pro lektora (nepovinné)"
+                            class="bookTextbox"
+                            id="bookNote"
+                            rows="3">
+                            </md-outlined-text-field>
+
+
+
+                        <div class="bookLectorOnlineToggle" id="bookLectorOnlineToggle">
+
+                        </div>
+
+                        <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
+                        </div>
+
                     </div>
                 </div>
-            </div>
 
-            <div class="bookLectorTimes">
+                <div class="bookLectorInfo">
 
-                <h3>Vyberte čas schůzky</h3>
+                    <div class="bookingTags">
 
-                <div id="bookTimeContainer">
+                        ${renderBookingTags(lector)}
 
-                </div>
-
-            </div>
-
-            <div class="bookLectorDetails">
-                <div class="bookLectorDetailsContainer">
-                <md-outlined-text-field label="Celé jméno" id="bookName" class="bookTextbox">
-                    <md-icon slot="leading-icon">person</md-icon>
-                </md-outlined-text-field>
-                <md-outlined-text-field label="Email" id="bookEmail" class="bookTextbox" type="email">
-                    <md-icon slot="leading-icon">mail</md-icon>
-                </md-outlined-text-field>
-                <md-outlined-text-field label="Telefonní číslo" id="bookPhone" class="bookTextbox" type="tel">
-                    <md-icon slot="leading-icon">call</md-icon>
-                </md-outlined-text-field>
-
-                
-
-                <md-outlined-text-field
-                    type="textarea"
-                    label="Zpráva pro lektora (nepovinné)"
-                    class="bookTextbox"
-                    id="bookNote"
-                    rows="3">
-                    </md-outlined-text-field>
-
-
-
-                <div class="bookLectorOnlineToggle" id="bookLectorOnlineToggle">
+                    </div>
 
                 </div>
-
-                <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
-                </div>
-
-            </div>
-
-            <div class="bookLectorInfo">
-
-                <div class="bookingTags">
-
-                    ${renderBookingTags(lector)}
-
-                </div>
-
             </div>
         </div>
     </div>

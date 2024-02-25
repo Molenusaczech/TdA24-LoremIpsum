@@ -61,7 +61,7 @@ body {
 
 .flexbox {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 30% 50% 20%;
     grid-auto-rows: minmax(1vw, auto);
     justify-content: center;
     align-items: center;
@@ -97,7 +97,7 @@ body {
 }
 
 .lectorRightBox {
-    grid-column: 2;
+    grid-column: 2 / 4;
     align-self: flex-start;
     /*border: blue solid 1px;*/
     padding-left: 2vw;
@@ -210,7 +210,6 @@ hr {
     font-size: 1.1vmax;
     font-weight: 700;
     margin: 0.5vw;
-    margin-bottom: 2vw;
 }
 
 .lectorBio {
@@ -245,6 +244,26 @@ b {
     color: #333333;
     background-color: #74C7D3;
     /*box-shadow: #fff 0 0 0.5vw;*/
+}
+
+.lectorContact {
+    display: block;
+}
+
+.lectorContact .lectorContactOption {
+    margin: 0.1vw;
+    padding: 0.3vw;
+    border-radius: 1vw;
+    background-color: #FECB2E;
+    color: #333333;
+    font-weight: 700;
+    transition: 0.2s;
+    font-size: 1vw;
+    display: block;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 0.2vw;
+    margin-top: 0.2vw;
 }
 
 .lectorContactOption {
@@ -778,16 +797,14 @@ footer a {
 }
 
 .bookLectorContainer {
-    display: grid;
-    grid-template-columns: 14.2vw 28% 17% 32%;
-    grid-template-rows: 14.2vw 18.5% 47%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    gap: 0.5vw;
+    gap: 1vw;
     /*background-color: #fff;*/
     border-radius: 2vw;
     width: 100%;
-    height: 95%;
+    height: 100%;
 }
 
 .calendaryCol {
@@ -801,7 +818,7 @@ footer a {
 .bookLeftCol {
     height: 100%;
     /*border: red solid 1px;*/
-    width: 80%;
+    width: 5000%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -821,10 +838,8 @@ footer a {
 }
 
 .bookLectorInfo {
-    grid-column: 2 / 5;
-    grid-row: 3;
     width: 100%;
-    height: 100%;
+    height: 50%;
     /*border: blue solid 1px;*/
     background-color: #fff;
     border-radius: 2vw;
@@ -835,9 +850,7 @@ footer a {
 }
 
 .bookLectorTimes {
-    grid-column: 2 / 4;
-    grid-row: 1 / 3;
-    width: 100%;
+    width: 60%;
     height: 100%;
     /*border: blue solid 1px;*/
     background-color: #fff;
@@ -845,9 +858,7 @@ footer a {
 }
 
 .bookLectorDetails {
-    grid-column: 4;
-    grid-row: 1 / 3;
-    width: 100%;
+    width: 40%;
     height: 100%;
     /*border: blue solid 1px;*/
     background-color: #fff;
@@ -875,6 +886,8 @@ footer a {
 
 .bookLectorDetailsContainer {
     width: 85%;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
 
 .bookTime {
@@ -906,13 +919,12 @@ footer a {
 }
 
 .flatpickr-calendar {
-    grid-column: 1;
-    grid-row: 1;
     background-color: #fff;
+    align-self: flex-start;
+    width: 100%;
     border-radius: 2vw;
     padding: 1vw;
-    width: 100%;
-    height: 100%;
+    margin-top: -1vw;
 }
 
 .flatpickr-next-month, .flatpickr-prev-month {
@@ -962,9 +974,7 @@ span.flatpickr-weekday {
 }
 
 .timesCol {
-    grid-column: 2 / 3;
-    grid-row: 1 / 4;
-    width: 100%;
+    width: 40%;
     background-color: #fff;
     border-radius: 2vw;
     height: 100%;
@@ -982,8 +992,6 @@ span.flatpickr-weekday {
 
 .meetingDetails {
     width: 100%;
-    grid-column: 3 / 5;
-    grid-row: 1 / 4;
     background-color: #fff;
     border-radius: 2vw;
     height: 100%;
@@ -1045,7 +1053,7 @@ span.flatpickr-weekday {
     text-align: left;
 }
 
-.meetingDetailsName hr, .smallProfileRightBox hr {
+.meetingDetailsName hr {
     height: 0.2vw;
     border-radius: 1vw;
     justify-self: center;
@@ -1087,17 +1095,17 @@ span.flatpickr-weekday {
     height: 17vw;
 }
 
-.meetingDetailsNote::-webkit-scrollbar {
+.meetingDetailsNote::-webkit-scrollbar, .smallProfileBio::-webkit-scrollbar {
     border-radius: 2vw;
 }
 
-.meetingDetailsNote::-webkit-scrollbar-track {
+.meetingDetailsNote::-webkit-scrollbar-track, .smallProfileBio::-webkit-scrollbar-track {
     border-radius: 2vw;
     box-shadow: inset 0 0 5px #333333;
     margin: 0.25vw;
 }
 
-.meetingDetailsNote::-webkit-scrollbar-thumb {
+.meetingDetailsNote::-webkit-scrollbar-thumb, .smallProfileBio::-webkit-scrollbar-thumb {
     background: #333333;
     border-radius: 2vw;
     box-shadow: inset 0 0 5px #333333;
@@ -1129,14 +1137,14 @@ span.flatpickr-weekday {
 .downloadButton {
     text-align: center;
     margin: 0.2vw;
-    padding: 0.5vw;
+    padding: 0.7vw;
     margin-top: 0.9vw;
     border-radius: 1vw;
     background-color: #74C7D3;
     color: #fff;
     font-weight: 700;
     transition: 0.2s;
-    font-size: 1vw;
+    font-size: 0.7vw;
 }
 
 .downloadButton:hover {
@@ -1214,28 +1222,32 @@ span.flatpickr-weekday {
 }
 
 .calendaryBottom {
-    grid-column: 1;
-    grid-row: 2 / 4;
     display: flex;
+    height: 100%;
+    width: 100%;
+    align-self: flex-end;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 1vw;
-    width: 100%;
-    height: 100%;
     /*border: green solid 1px;*/
     background-color: #fff;
     border-radius: 2vw;
 }
 
+.calendaryBottom h3 {
+    font-size: 1.5vw;
+}
+
 .smallProfileCont {
-    grid-column: 1;
-    grid-row: 2 / 4;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
     height: 100%;
+    width: 100%;
+    align-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
     /*border: green solid 1px;*/
     background-color: #fff;
     border-radius: 2vw;
@@ -1243,35 +1255,41 @@ span.flatpickr-weekday {
 }
 
 .smallProfile {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-auto-rows: minmax(1vw, auto);
-    justify-content: center;
+    display: flex;
     align-items: center;
     flex-direction: column;
     width: 95%;
-    height: 100%;
 }
 
-.smallProfileLeftBox {
-    grid-row: 1;
-    grid-column: 1;
-
+.smallProfile hr {
+    height: 0.2vw;
+    width: 95%;
+    border-radius: 1vw;
+    justify-self: center;
+    background-color: #333333;
+    border: none;
+    margin-top: 1vw;
 }
 
-.smallProfileLeftBox .lectorListPicture {
+.smallProfileUpperBox {
     width: 100%;
-    left: 20vw;
-    float: left;
-    margin-top: 0.8vw;
+    height: 20%;
+    flex-direction: row;
+    display: flex;
+    margin-top: 2vw;
 }
 
-.smallProfileSwitchBox {
-    grid-row: 1;
-    grid-column: 2 / 3;
+.smallProfileUpperBoxLeft{
+    width: 30%;
+    align-self: center;
 }
 
-.smallProfileSwitchBox .lectorListName {
+.smallProfileUpperBoxRight {
+    width: 70%;
+    align-self: center;
+}
+
+.smallProfileUpperBoxRight .lectorListName {
     font-size: 1.5vw;
     padding-left: 0.5vw;
     margin-top: -1vw;
@@ -1279,18 +1297,16 @@ span.flatpickr-weekday {
     display: block;
 }
 
-.smallProfileSwitchBoxRight {
-    grid-row: 3;
-    grid-column: 1 / 3;
-    align-self: flex-start;
-    justify-self: center;
-    margin-bottom: 1vw;
+.smallProfileBio {
+    width: 100%;
+    height: 7vw;
+    overflow-y: auto;
 }
 
-.smallProfileRightBox {
-    grid-row: 2;
-    grid-column: 1 / 3;
-    align-self: flex-start;
+.smallProfilePrice {
+    height: 10%;
+    align-self: center;
+    margin-top: 1vw;
 }
 
 .timeText {
@@ -1304,6 +1320,16 @@ span.flatpickr-weekday {
 
     .vlevoDole {
         width: 100%;
+    }
+
+    .lectorContact .lectorContactOption {
+        display: block;
+        text-align: center;
+        width: 95%;
+        font-size: 4vw;
+        margin-top: 1vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
     }
 
     .lectorLeftBox {
@@ -1358,6 +1384,7 @@ span.flatpickr-weekday {
 
     .flexbox {
         flex-direction: column;
+        grid-template-columns: 30% 70%;
     }
 
     .flexboxB {

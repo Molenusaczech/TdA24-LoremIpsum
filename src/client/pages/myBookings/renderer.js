@@ -55,19 +55,21 @@ function renderMyBookings(bookings, lector) {
 
     <div class="bookPage">
         <div class="bookLectorContainer">
-            <div type="date" id="bookDate" name="bookDate" value="${today}"></div>
+            <div class="calendaryCol">
+                <div type="date" id="bookDate" name="bookDate" value="${today}"></div>
 
-            <div class="calendaryBottom">
-                <h3>Dobrý den, ${sanitizeHtml(getLectorPlainTextName(lector))}!</h3>
+                <div class="calendaryBottom">
+                    <h3>Dobrý den, ${sanitizeHtml(getLectorPlainTextName(lector))}!</h3>
 
-                <h3> Nejbližší rezervace: <span class="timeText">${dayjs(closest["start"]).format('DD.MM.YYYY HH:mm')}</span></h3>
+                    <h3> Nejbližší rezervace: <span class="timeText">${dayjs(closest["start"]).format('DD.MM.YYYY HH:mm')}</span></h3>
 
-                <a href="/api/calendar/${localStorage.getItem("token").replace("/", "+")}" target="_blank">
-                <md-filled-button class="downloadButton" id="downloadButton">
-                    Exportovat kalendář
-                </md-filled-button>
-                </a>
+                    <a href="/api/calendar/${localStorage.getItem("token").replace("/", "+")}" target="_blank">
+                    <md-filled-button class="downloadButton" id="downloadButton">
+                        Exportovat kalendář
+                    </md-filled-button>
+                    </a>
 
+                </div>
             </div>
 
             <div class="timesCol" id="timesCol">

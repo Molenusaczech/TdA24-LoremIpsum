@@ -37,7 +37,7 @@ function renderLecturer(lecturer) {
                     <div class="lectorBio"> ${sanitizeHtml(lecturer.bio)} </div>
     
                     <div class="lectorContact">
-                        <div class="contactBox">
+                        <div class="lectorContact">
                             ${lecturer.contact.telephone_numbers.map(renderPhoneNumber).join("")}
                             ${lecturer.contact.emails.map(renderEmail).join("")}
                         </div>

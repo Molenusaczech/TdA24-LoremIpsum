@@ -65,9 +65,10 @@ function lectorCard(lecturer) {
 
                 <div class="lectorSwitchBox">
                     ${getLectorName(lecturer)}
+                </div>
 
-                    <span class="lectorContactOptionB"> ${sanitizeHtml(lecturer.price_per_hour)} Kč / hodina </span>
-
+                <div class="lectorSwitchBoxRight">
+                    <span class="lectorListTag"> ${sanitizeHtml(lecturer.price_per_hour)} Kč / hodina </span>
                 </div>
 
                 <div class="lectorRightBox">
@@ -75,12 +76,9 @@ function lectorCard(lecturer) {
                     <h2 class="lectorLocation"> ${sanitizeHtml(lecturer.location)} </h2>
                     <h3 class="lectorClaim"> ${sanitizeHtml(lecturer.claim)} </h3>
 
-                    <div class="lectorContact">
-                    
-                    ${lecturer.contact.telephone_numbers.map(telephoneLink).join("")}
-
-                    ${lecturer.contact.emails.map(emailLink).join("")}
-
+                    <div class="lectorContact">   
+                        ${lecturer.contact.telephone_numbers.map(telephoneLink).join("")}
+                        ${lecturer.contact.emails.map(emailLink).join("")}
                     </div>
 
                     <div class="lectorBio"> ${sanitizeHtml(lecturer.bio)} </div>
