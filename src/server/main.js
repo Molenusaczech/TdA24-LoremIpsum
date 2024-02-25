@@ -5,6 +5,8 @@ import ViteExpress from "vite-express";
 import cors from "cors";
 import { authString } from "./authHandler.js";
 
+import generateCalendar from "./calendar.js";
+
 const app = express();
 
 import { 
@@ -213,6 +215,15 @@ app.post("/api/getBookedTimes", cors(), async (req, res) => {
   }
 
   res.send(result);
+});
+
+app.get("/api/calendar/:token", cors(), async (req, res) => {
+
+  let token = req.params.token;
+
+  res.header("Content-Type", "text/calendar");
+  res.header("Content-Disposition", "attachment; filename=calendar.ics");
+  res.send(await generateCalendar(token));
 });
 
 if (process.argv[2] == "prod") {
