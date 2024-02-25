@@ -47,82 +47,69 @@ function renderBook(bookedDates, lector) {
 
     <div class="bookPage">
         <div class="bookLectorContainer">
-            <div class="calendaryCol">
-                <!-- TODO: Add calendar here -->
+            <!-- TODO: Add calendar here -->
 
-                <div type="date" id="bookDate" name="bookDate" min="${minDate}" value="${minDate}">
-                </div>
-
-                <div class="calendaryBottom">
-                
-                   <h3>${sanitizeHtml(getLectorName(lector))}</h3>
-                    <h3>${sanitizeHtml(lector.price_per_hour)}</h3>
-                    </div>
-                
-
+            <div type="date" id="bookDate" name="bookDate" min="${minDate}" value="${minDate}">
             </div>
 
-            <div class="bookLeftCol">
+            <div class="calendaryBottom">
+            
+                <h3>${sanitizeHtml(getLectorName(lector))}</h3>
+                <h3>${sanitizeHtml(lector.price_per_hour)}</h3>
+            </div>
 
-                <div class="bookLectorTopRow">
+            <div class="bookLectorTimes">
 
-                    <div class="bookLectorTimes">
+                <h3>Vyberte čas schůzky</h3>
 
-                        <h3>Vyberte čas schůzky</h3>
-
-                        <div id="bookTimeContainer">
-
-                        </div>
-
-                    </div>
-
-                    <div class="bookLectorDetails">
-                        <div class="bookLectorDetailsContainer">
-                        <md-outlined-text-field label="Celé jméno" id="bookName" class="bookTextbox">
-                            <md-icon slot="leading-icon">person</md-icon>
-                        </md-outlined-text-field>
-                        <md-outlined-text-field label="Email" id="bookEmail" class="bookTextbox" type="email">
-                            <md-icon slot="leading-icon">mail</md-icon>
-                        </md-outlined-text-field>
-                        <md-outlined-text-field label="Telefonní číslo" id="bookPhone" class="bookTextbox" type="tel">
-                            <md-icon slot="leading-icon">call</md-icon>
-                        </md-outlined-text-field>
-
-                        
-
-                        <md-outlined-text-field
-                            type="textarea"
-                            label="Zpráva pro lektora (nepovinné)"
-                            class="bookTextbox"
-                            id="bookNote"
-                            rows="3">
-                            </md-outlined-text-field>
-
-
-
-                        <div class="bookLectorOnlineToggle" id="bookLectorOnlineToggle">
-
-                        </div>
-
-                        <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="bookLectorInfo">
-
-                    <div class="bookingTags">
-
-                        ${renderBookingTags(lector)}
-
-                    </div>
+                <div id="bookTimeContainer">
 
                 </div>
 
             </div>
 
+            <div class="bookLectorDetails">
+                <div class="bookLectorDetailsContainer">
+                <md-outlined-text-field label="Celé jméno" id="bookName" class="bookTextbox">
+                    <md-icon slot="leading-icon">person</md-icon>
+                </md-outlined-text-field>
+                <md-outlined-text-field label="Email" id="bookEmail" class="bookTextbox" type="email">
+                    <md-icon slot="leading-icon">mail</md-icon>
+                </md-outlined-text-field>
+                <md-outlined-text-field label="Telefonní číslo" id="bookPhone" class="bookTextbox" type="tel">
+                    <md-icon slot="leading-icon">call</md-icon>
+                </md-outlined-text-field>
+
+                
+
+                <md-outlined-text-field
+                    type="textarea"
+                    label="Zpráva pro lektora (nepovinné)"
+                    class="bookTextbox"
+                    id="bookNote"
+                    rows="3">
+                    </md-outlined-text-field>
+
+
+
+                <div class="bookLectorOnlineToggle" id="bookLectorOnlineToggle">
+
+                </div>
+
+                <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
+                </div>
+
+            </div>
+
+            <div class="bookLectorInfo">
+
+                <div class="bookingTags">
+
+                    ${renderBookingTags(lector)}
+
+                </div>
+
+            </div>
         </div>
     </div>
 

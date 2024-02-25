@@ -55,19 +55,16 @@ function renderMyBookings(bookings, lector) {
 
     <div class="bookPage">
         <div class="bookLectorContainer">
-            <div class="calendaryCol">
-                <div type="date" id="bookDate" name="bookDate" value="${today}"></div>
-            
-                <div class="calendaryBottom">
-                    <h3>Dobrý den, ${sanitizeHtml(getLectorPlainTextName(lector))}!</h3>
+            <div type="date" id="bookDate" name="bookDate" value="${today}"></div>
+        
+            <div class="calendaryBottom">
+                <h3>Dobrý den, ${sanitizeHtml(getLectorPlainTextName(lector))}!</h3>
 
-                    <h3> Nejbližší rezervace: ${dayjs(closest["start"]).format('DD.MM.YYYY HH:mm')}</h3>
+                <h3> Nejbližší rezervace: <span class="timeText">${dayjs(closest["start"]).format('DD.MM.YYYY HH:mm')}</span></h3>
 
-                    <md-filled-button class="downloadButton" id="downloadButton">
-                        Exportovat kalendář
-                    </md-filled-button>
-
-                    </div>
+                <md-filled-button class="downloadButton" id="downloadButton">
+                    Exportovat kalendář
+                </md-filled-button>
 
             </div>
 
@@ -110,7 +107,7 @@ function renderTime(index, isBooked, isStart = true, isFirst = false, isLast = f
         }
 
         return /*html */`
-            <md-filled-button class="timeSlot  ${styleClass}" data-timeIndex="${index}">
+            <md-filled-button class="timeSlot blueButton ${styleClass}" data-timeIndex="${index}">
                 <span>${time}:00 - ${time + 1}:00</span>
             </md-filled-button>
     `;
@@ -204,15 +201,21 @@ function renderBookingDetails(booking) {
 
     document.getElementById("meetingDetails").innerHTML = /*html */`
     <div class="meetingDetailsBox">
-        <h2>Rezervace</h2>
-        <h3>${startTime.format('DD.MM.YYYY HH:mm')} - ${endTime.format('DD.MM.YYYY HH:mm')}</h3>
-        <h3>${booking["name"]}</h3>
-        <h3>${booking["email"]}</h3>
-        <h3>${booking["phone"]}</h3>
-        <h3>${booking["note"]}</h3>
-        <h3>${onlineText}</h3>
+        <h3 class="meetingDetailsTime">${startTime.format('DD.MM.YYYY HH:mm')} - ${endTime.format('HH:mm')}</h3>
+        <div class="meetingDetailsName">
+            <h3>${booking["name"]}</h3>
+            <hr>
+        </div>
+        <div class="meetingDetailsContacts">
+            <span>${booking["email"]}</span>
+            <span>${booking["phone"]}</span>
+        </div>
+        <div  class="meetingDetailsNote">
+            <h3>${booking["note"]}</h3>
+        </div>
+        <span class="meetingDetailsOnline">${onlineText}</span>
 
-        <div>
+        <div class="meetingDetailsTags">
 
         ${booking["tags"].map(tag => {
             return renderTag(tag);
@@ -227,7 +230,7 @@ function renderBookingDetails(booking) {
 function renderTag(tag) {
     //console.log(tag);
     return /*html */`
-    <span class="lectorListTag" data-uuid="${tag.uuid}"> 
+    <span class="lectorTag" data-uuid="${tag.uuid}"> 
         ${sanitizeHtml(tag.name)} 
     </span>
     `;
