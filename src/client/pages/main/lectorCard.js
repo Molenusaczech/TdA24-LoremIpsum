@@ -23,6 +23,36 @@ function lectorMetadata(lector) {
     `;
 }
 
+function telephoneLink(phone) {
+    if (phone) {
+        return /*html */`
+        <a href=""> 
+        
+            <span class="lectorContactOption">
+                ${sanitizeHtml(phone)} 
+            </span>
+        
+        </a>
+        `;
+    }
+    return "";
+}
+
+function emailLink(email) {
+    if (email) {
+        return /*html */`
+        <a href=""> 
+        
+            <span class="lectorContactOption">
+                ${sanitizeHtml(email)} 
+            </span>
+        
+        </a>
+        `;
+    }
+    return "";
+}
+
 function lectorCard(lecturer) {
     //console.log(lector);
     return /*html */`
@@ -35,12 +65,24 @@ function lectorCard(lecturer) {
 
                 <div class="lectorSwitchBox">
                     ${getLectorName(lecturer)}
+
+                    <span class="lectorContactOptionB"> ${sanitizeHtml(lecturer.price_per_hour)} Kč / hodina </span>
+
                 </div>
 
                 <div class="lectorRightBox">
                     <hr>
                     <h2 class="lectorLocation"> ${sanitizeHtml(lecturer.location)} </h2>
                     <h3 class="lectorClaim"> ${sanitizeHtml(lecturer.claim)} </h3>
+
+                    <div class="lectorContact">
+                    
+                    ${lecturer.contact.telephone_numbers.map(telephoneLink).join("")}
+
+                    ${lecturer.contact.emails.map(emailLink).join("")}
+
+                    </div>
+
                     <div class="lectorBio"> ${sanitizeHtml(lecturer.bio)} </div>
                 </div>
             </div>

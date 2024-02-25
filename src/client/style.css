@@ -251,8 +251,8 @@ b {
     margin: 0.1vw;
     padding: 0.3vw;
     border-radius: 1vw;
-    background-color: #74C7D3;
-    color: #fff;
+    background-color: #FECB2E;
+    color: #333333;
     font-weight: 700;
     transition: 0.2s;
     font-size: 1vw;
@@ -261,7 +261,7 @@ b {
 .lectorContactOption:hover {
     transition: 0.2s;
     color: #333333;
-    background-color: #74C7D3;
+    background-color: #FECB2E;
     /*box-shadow: #fff 0 0 0.5vw;*/
 }
 
@@ -495,6 +495,11 @@ a {
     background-color: #fff;
 }
 
+.lectorListLector:hover .lectorContactOption {
+    background-color: #fff;
+    color: #74C7D3;
+}
+
 .moreInfo {
     visibility: hidden;
     transition: 0.2s;
@@ -710,7 +715,7 @@ footer {
     margin-bottom: 5vw;
 }
 
-a {
+footer a {
     color: #74C7D3;
     text-decoration: underline;
 }
