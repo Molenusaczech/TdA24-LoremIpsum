@@ -49,13 +49,27 @@ function renderBook(bookedDates, lector) {
         <div class="bookLectorContainer">
             <!-- TODO: Add calendar here -->
 
-            <div type="date" id="bookDate" name="bookDate" min="${minDate}" value="${minDate}">
-            </div>
+            <div type="date" id="bookDate" name="bookDate" min="${minDate}" value="${minDate}"></div>
 
-            <div class="calendaryBottom">
-            
-                <h3>${sanitizeHtml(getLectorName(lector))}</h3>
-                <h3>${sanitizeHtml(lector.price_per_hour)}</h3>
+            <div class="smallProfileCont">
+                <div class="smallProfile">
+                    <div class="smallProfileLeftBox">
+                        <img class="lectorListPicture" id="lectorPic" src="${sanitizeHtml(lector.picture_url)}" alt="Lecturer picture">
+                    </div>
+
+                    <div class="smallProfileSwitchBox">
+                        ${getLectorName(lector)}
+                    </div>
+
+                    <div class="smallProfileRightBox">
+                        <hr>
+                        <div class="lectorBio"> ${sanitizeHtml(lector.bio)} </div>
+                    </div>
+
+                    <div class="smallProfileSwitchBoxRight">
+                        <span class="lectorContactOptionB"> ${sanitizeHtml(lector.price_per_hour)} Kč / hodina </span>
+                    </div>
+                </div>
             </div>
 
             <div class="bookLectorTimes">
