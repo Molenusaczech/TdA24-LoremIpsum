@@ -26,7 +26,9 @@ function getClosestBookedDate(date, bookedDates) {
     let minDiff = 10000000000000
 
     for (let i = 0; i < bookedDates.length; i++) {
-        let diff = Math.abs(dayjs().diff(dayjs(bookedDates[i]["start"])));
+        let bookTime = dayjs(bookedDates[i]["start"]);
+        let diff = Math.abs(dayjs(date).diff(bookTime));
+
         
         if (diff < minDiff) {
             minDiff = diff;
@@ -34,7 +36,7 @@ function getClosestBookedDate(date, bookedDates) {
         }
     }
     
-    return date[result];
+    return bookedDates[result];
 }
 
 let todayCache = emptyCache();
