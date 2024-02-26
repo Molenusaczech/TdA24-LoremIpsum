@@ -56,7 +56,9 @@ function renderMyBookings(bookings, lector) {
     <div class="bookPage">
         <div class="bookLectorContainer">
             <div class="calendaryCol">
-                <div type="date" id="bookDate" name="bookDate" value="${today}"></div>
+                <div class="calendaryCenter">
+                    <div type="date" id="bookDate" name="bookDate" value="${today}"></div>
+                </div>
 
                 <div class="calendaryBottom">
                     <h3>Dobrý den, ${sanitizeHtml(getLectorPlainTextName(lector))}!</h3>

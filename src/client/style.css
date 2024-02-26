@@ -247,7 +247,8 @@ b {
 }
 
 .lectorContact {
-    display: block;
+    display: flex;
+    flex-direction: row;
 }
 
 .lectorContact .lectorContactOption {
@@ -259,7 +260,6 @@ b {
     font-weight: 700;
     transition: 0.2s;
     font-size: 1vw;
-    display: block;
     width: 30%;
     text-align: center;
     margin-bottom: 0.2vw;
@@ -924,7 +924,6 @@ footer a {
     width: 100%;
     border-radius: 2vw;
     padding: 1vw;
-    margin-top: -1vw;
 }
 
 .flatpickr-next-month, .flatpickr-prev-month {
@@ -1428,8 +1427,13 @@ span.flatpickr-weekday {
         margin: 0.2vw;
     }
 
+    .lectorContact {
+        display: block;
+    }
+
     .lectorContactOption {
         font-size: 3vw;
+        display: block;
     }
 
     .vlevoDole {
@@ -1546,6 +1550,193 @@ span.flatpickr-weekday {
         border-radius: 2vw;
     }
 
+    .bookPage {
+        width: 100%;
+        height: 100%;
+        transform: translate(0%,0%);
+        position: static;
+    }
+
+    .bookLectorContainer {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .calendaryCol {
+        width: 95%;
+        justify-self: center;
+        gap: 1vw;
+        margin-top: 15%;
+    }
+
+    .flatpickr-calendar {
+        align-self: center;
+        margin-top: 0vw;
+        margin-bottom: 1vw;
+    }
+
+    .calendaryBottom {
+        width: 100%;
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+    }
+
+    .calendaryBottom h3 {
+        font-size: 5vw;
+    }
+
+    .downloadButton {
+        font-size: 3vw;
+        padding: 2vw 8vw 2vw 8vw;
+    }
+
+    .timesCol {
+        width: 95%;
+    }
+
+    .meetingDetails {
+        width: 95%;
+    }
+
+    .timeSlot {
+        font-size: 3vw;
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+    }
+
+    .meetingDetailsBox {
+        grid-template-columns: 100%;
+
+    }
+
+    .bookPage h3 {
+        font-size: 5vw;
+    }
+
+    .meetingDetailsTime {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .meetingDetailsOnline {
+        grid-column: 1;
+        grid-row: 2;
+        font-size: 3vw;
+    }
+
+    .meetingDetailsOnline:hover {
+        transform: scale(1.02);
+    }
+
+    .meetingDetailsName {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .meetingDetailsContacts {
+        grid-column: 1;
+        grid-row: 4;
+        font-size: 3vw;
+    }
+
+    .meetingDetailsNote {
+        grid-column: 1;
+        grid-row: 5;
+        margin-top: 2vw;
+        height: 50vw;
+    }
+
+    .meetingDetailsTags {
+        grid-column: 1;
+        grid-row: 6;
+        margin-top: 2vw;
+    }
+
+    .meetingDetailsTags .lectorTag {
+        font-size: 3vw;
+        margin-right: 1vw;
+    }
+
+    .meetingDetailsContacts span {
+        font-size: 3vw;
+    }
+
+    .meetingDetailsContacts span:hover {
+        transform: scale(1.02);
+    }
+
+    .bookLectorTopRow {
+        flex-direction: column;
+    }
+
+    .bookLectorTimes {
+        width: 100%;
+    }
+
+    .bookLectorTimes h3 {
+        font-size: 8vw;
+    }
+
+    .bookTimeContainer {
+        flex-direction: column;
+    }
+
+    .bookTimeContainer .bookTime {
+        width: 95%;
+        font-size: 3vw;
+        margin-bottom: 1vw;
+    }
+
+    .bookLectorDetails {
+        width: 100%;
+    }
+
+    .smallProfilePrice {
+        margin-bottom: 2vw;
+    }
+
+    .smallProfileBio {
+        height: 50vw;
+    }
+
+    .smallProfileUpperBoxLeft .lectorListPicture {
+        transform: translate(-75%, 0%);
+    }
+
+    .smallProfileUpperBoxRight .lectorListName {
+        font-size: 7vw;
+        padding-left: 5vw;
+        margin-top: -3vw;
+        margin-bottom: -3vw;
+        display: block;
+    }
+
+    .bookLeftCol {
+        width: 95%;
+    }
+
+    .bookLectorDetailsContainer {
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+
+    .bookOnlineButton {
+        margin-top: 1vw;
+        font-size: 3vw;
+    }
+
+    .loginButton {
+        font-size: 3vw;
+    }
+
+    .bookingTags  {
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+
+    .bookTextbox {
+        margin-top: 1.5vw;
+    }
 }
 
 /*.wrapper{

@@ -49,7 +49,9 @@ function renderBook(bookedDates, lector) {
         <div class="bookLectorContainer">
             <!-- TODO: Add calendar here -->
             <div class="calendaryCol">
-                <div type="date" id="bookDate" name="bookDate" min="${minDate}" value="${minDate}"></div>
+                <div class="calendaryCenter">
+                    <div type="date" id="bookDate" name="bookDate" min="${minDate}" value="${minDate}"></div>
+                </div>
 
                 <div class="smallProfileCont">
                     <div class="smallProfile">
@@ -82,7 +84,7 @@ function renderBook(bookedDates, lector) {
 
                         <h3>Vyberte čas schůzky</h3>
 
-                        <div id="bookTimeContainer">
+                        <div class="bookTimeContainer" id="bookTimeContainer">
 
                         </div>
 
