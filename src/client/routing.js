@@ -29,6 +29,7 @@ import { renderSuccess } from "./pages/success/renderer.js";
 import { successAfter } from "./pages/success/afterRender.js";
 
 import { getLectorPlainTextName } from "./parseName.js";
+import { getPriceInfo } from "./getPriceInfo.js";
 
 const lecturerRegex = /^\/lecturer\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
 const bookRegex = /^\/book\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
@@ -70,8 +71,11 @@ function renderPage(currentUrl) {
                 }
             });
             let locations = filterData.locations;
-            let minPrice = filterData.minPrice;
-            let maxPrice = filterData.maxPrice;
+
+            let priceInfo = getPriceInfo(lecturers);
+
+            let minPrice = priceInfo.min;
+            let maxPrice = priceInfo.max;
             //console.log(tags);
 
             document.getElementById("mainPage").innerHTML = renderMain(lecturers, tags, locations, minPrice, maxPrice);
