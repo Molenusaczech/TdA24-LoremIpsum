@@ -533,6 +533,39 @@ async function getBookedTimes(lector_uuid) {
 
 }
 
+async function deleteBooking(uuid, token) {
+
+  let user = await tryLoginUser(token);
+
+  if (!user) {
+    return {
+      code: 401,
+      message: "Unauthorized"
+    }
+  }
+
+  let booking = await Booking.findOne({
+    where: {
+      uuid: uuid,
+    }
+  });
+
+  if (!booking) {
+    return {
+      code: 404,
+      message: "Booking not found"
+    }
+  }
+
+  await booking.destroy();
+
+  return {
+    code: 200,
+    message: "Booking deleted"
+  }
+
+}
+
 export {
   getLectors,
   createLector,
@@ -543,5 +576,6 @@ export {
   verifyToken,
   createBooking,
   getMyBookings,
-  getBookedTimes
+  getBookedTimes,
+  deleteBooking
 };

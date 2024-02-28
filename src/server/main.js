@@ -19,7 +19,8 @@ import {
   verifyToken,
   createBooking,
   getMyBookings,
-  getBookedTimes
+  getBookedTimes,
+  deleteBooking
 } from "./dbHandler.js";
 
 import { getFiltered } from "./getFilter.js";
@@ -225,6 +226,20 @@ app.get("/api/calendar/:token", cors(), async (req, res) => {
   res.header("Content-Type", "text/calendar");
   res.header("Content-Disposition", "attachment; filename=calendar.ics");
   res.send(await generateCalendar(token));
+});
+
+app.post("/api/deleteBooking", cors(), async (req, res) => {
+  const input = req.body;
+  const uuid = input.uuid;
+  const token = input.token;
+
+  let result = await deleteBooking(uuid, token);
+
+  if (result.code) {
+    res.status(result.code);
+  }
+
+  res.send(result);
 });
 
 if (process.argv[2] == "prod") {

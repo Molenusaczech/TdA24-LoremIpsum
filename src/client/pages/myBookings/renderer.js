@@ -10,6 +10,7 @@ import sanitizeHtml from 'sanitize-html';
 import dayjs from "dayjs";
 import { getLectorName } from "../../getLectorName";
 import { getLectorPlainTextName } from "../../parseName";
+import { linkClick } from "../../routing";
 
 function emptyCache() {
     let result = [];
@@ -207,7 +208,9 @@ function renderBookingDetails(booking) {
 
     document.getElementById("meetingDetails").innerHTML = /*html */`
     <div class="meetingDetailsBox">
-        <h3 class="meetingDetailsTime">${startTime.format('DD.MM.YYYY HH:mm')} - ${endTime.format('HH:mm')}</h3>
+        <h3 class="meetingDetailsTime">
+            ${startTime.format('DD.MM.YYYY HH:mm')} - ${endTime.format('HH:mm')}
+        </h3>
         <div class="meetingDetailsName">
             <h3>${booking["name"]}</h3>
             <hr>
@@ -219,7 +222,11 @@ function renderBookingDetails(booking) {
         <div  class="meetingDetailsNote">
             <h3>${booking["note"]}</h3>
         </div>
-        <span class="meetingDetailsOnline">${onlineText}</span>
+        <span class="meetingDetailsOnline">
+        ${onlineText}
+        </span>
+
+        <md-filled-button class="deleteButton" id="deleteButton" data-uuid="${booking["uuid"]}">Smazat</md-filled-button>
 
         <div class="meetingDetailsTags">
 
@@ -231,6 +238,27 @@ function renderBookingDetails(booking) {
         
     </div>
     `
+
+    document.getElementById("deleteButton").addEventListener("click", () => {
+        fetch("/api/deleteBooking", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(
+                { 
+                    "uuid": booking["uuid"],
+                    "token": localStorage.getItem("token")
+                }
+                )
+        }).then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                linkClick("/myBookings");
+            });
+    });
+            
+
 }
 
 function renderTag(tag) {
