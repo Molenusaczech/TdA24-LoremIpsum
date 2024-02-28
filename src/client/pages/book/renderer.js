@@ -12,6 +12,7 @@ import '@material/web/button/text-button';
 import dayjs from "dayjs";
 import flatpickr from "flatpickr";
 import { getLectorName } from "../../getLectorName";
+import { ifNull } from "../../ifNull";
 
 let lastLector = null;
 let lastBookedDates = [];
@@ -57,7 +58,7 @@ function renderBook(bookedDates, lector) {
                     <div class="smallProfile">
                         <div class="smallProfileUpperBox">
                             <div class="smallProfileUpperBoxLeft">
-                                <img class="lectorListPicture" id="lectorPic" src="${sanitizeHtml(lector.picture_url)}" alt="Lecturer picture">
+                                <img class="lectorListPicture" id="lectorPic" src="${sanitizeHtml(ifNull(lector.picture_url, "https://placehold.co/400x400/74C7D3/FFFFFF/png?text="+lector.first_name+"%5Cn"+lector.last_name))}" alt="Lecturer picture">
                             </div>
                             <div class="smallProfileUpperBoxRight">
                                 ${getLectorName(lector)}
@@ -71,7 +72,7 @@ function renderBook(bookedDates, lector) {
                         </div>
 
                         <div class="smallProfilePrice">
-                            <span class="lectorContactOptionB"> ${sanitizeHtml(lector.price_per_hour)} Kč / hodina </span>
+                            <span class="lectorContactOptionB"> ${ifNull(lector.price_per_hour, "0")} Kč / hodina </span>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import vpravoNahore from "../../img/Tvar_pravo_nahore.png";
 import whiteLogo from "../../img/LOGO_white.svg?url";
 import { getLectorName } from "../../getLectorName";
 import sanitizeHtml from 'sanitize-html';
+import { ifNull } from "../../ifNull";
 
 function renderLecturer(lecturer) {
     return /*html */`
@@ -14,7 +15,7 @@ function renderLecturer(lecturer) {
             <div class="flexboxB">
     
                 <div class="lectorLeftBox">
-                    <img class="lectorPicture" id="lectorPic" src="${lecturer.picture_url}" alt="Lecturer picture">
+                    <img class="lectorPicture" id="lectorPic" src="${sanitizeHtml(ifNull(lecturer.picture_url, "https://placehold.co/400x400/74C7D3/FFFFFF/png?text="+lecturer.first_name+"%5Cn"+lecturer.last_name))}" alt="Lecturer picture">
                 </div>
 
                 <div class="lectorSwitchTags">
@@ -27,7 +28,7 @@ function renderLecturer(lecturer) {
 
                 <div class="lectorSwitchBoxRight">
                     <a class="cancelA" id="reserveButton"><span class="lectorContactOptionC"> Rezervovat </span></a>
-                    <a><span class="lectorContactOptionB"> ${sanitizeHtml(lecturer.price_per_hour)} Kč / hodina </span></a>
+                    <a><span class="lectorContactOptionB"> ${sanitizeHtml(ifNull(lecturer.price_per_hour, "0"))} Kč / hodina </span></a>
                 </div>
 
                 <div class="lectorRightBoxB">

@@ -2,6 +2,7 @@ import sanitizeHtml from "sanitize-html";
 import { getLectorName } from "../../getLectorName";
 import studiumBlue from "../../img/studium_blue.png";
 import studiumWhite from "../../img/studium_white.png";
+import { ifNull } from "../../ifNull";
 
 function tagMetadata(tag) {
     //console.log(tag);
@@ -63,7 +64,7 @@ function lectorCard(lecturer) {
             <div class="flexbox">
     
                 <div class="lectorLeftBox">
-                    <img class="lectorListPicture" id="lectorPic" src="${sanitizeHtml(lecturer.picture_url)}" alt="Lecturer picture">
+                    <img class="lectorListPicture" id="lectorPic" src="${sanitizeHtml(ifNull(lecturer.picture_url, "https://placehold.co/400x400/74C7D3/FFFFFF/png?text="+lecturer.first_name+"%5Cn"+lecturer.last_name))}" alt="Lecturer picture">
                 </div>
 
                 <div class="lectorSwitchBox">
@@ -78,17 +79,17 @@ function lectorCard(lecturer) {
                 <div class="lectorRightBox">
                     <hr>
                     <div class="lectorRightBoxInter">
-                        <h2 class="lectorLocation"> ${sanitizeHtml(lecturer.location)} </h2>
-                        <span class="lectorListTag"> ${sanitizeHtml(lecturer.price_per_hour)} Kč / hodina </span>
+                        <h2 class="lectorLocation"> ${sanitizeHtml(ifNull(lecturer.location, "⠀"))} </h2>
+                        <span class="lectorListTag"> ${sanitizeHtml(ifNull(lecturer.price_per_hour, "0"))} Kč / hodina </span>
                     </div>
-                    <h3 class="lectorClaim"> ${sanitizeHtml(lecturer.claim)} </h3>
+                    <h3 class="lectorClaim"> ${sanitizeHtml(ifNull(lecturer.claim), "⠀")} </h3>
 
                     <div class="lectorContact">   
                         ${lecturer.contact.telephone_numbers.map(telephoneLink).join("")}
                         ${lecturer.contact.emails.map(emailLink).join("")}
                     </div>
 
-                    <div class="lectorBio"> ${sanitizeHtml(lecturer.bio)} </div>
+                    <div class="lectorBio"> ${sanitizeHtml(ifNull(lecturer.bio, "⠀"))} </div>
                 </div>
             </div>
             <div class="lectorTags">
