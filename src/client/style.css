@@ -87,6 +87,12 @@ body {
     padding-left: 2vw;
 }
 
+.mainPageTitleIcon {
+    width: 60%;
+    align-self: center;
+    height: 100%;
+}
+
 .flexbox .lectorSwitchBoxRight .lectorIconTop {
     width: 30%;
     transform: translate(150%, 0%);
@@ -134,6 +140,11 @@ body {
     align-self: flex-start;
     /*border: blue solid 1px;*/
     padding-left: 2vw;
+}
+
+.mainPageTop {
+    display: flex;
+    justify-content: space-between;
 }
 
 .lectorPicture {
@@ -331,6 +342,10 @@ b {
     color: #333333;
     background-color: #74C7D3;
     /*box-shadow: #fff 0 0 0.5vw;*/
+}
+
+.smallProfilePrice .lectorContactOptionB:hover {
+    color: #FFF;
 }
 
 .cancelA {
@@ -873,13 +888,12 @@ footer a {
     flex-direction: row;
     gap: 1vw;
     width: 100%;
-    height: 60%;
+    height: 100%;
     /*border: green solid 1px;*/
 }
 
 .bookLectorInfo {
     width: 100%;
-    height: 50%;
     /*border: blue solid 1px;*/
     background-color: #fff;
     border-radius: 2vw;
@@ -887,6 +901,7 @@ footer a {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    min-height: 10vw;
 }
 
 .bookLectorTimes {
@@ -1134,17 +1149,17 @@ span.flatpickr-weekday {
     height: 14vw;
 }
 
-.meetingDetailsNote::-webkit-scrollbar, .smallProfileBio::-webkit-scrollbar {
+.meetingDetailsNote::-webkit-scrollbar, .smallProfileBio::-webkit-scrollbar, .bookingTags::-webkit-scrollbar {
     border-radius: 2vw;
 }
 
-.meetingDetailsNote::-webkit-scrollbar-track, .smallProfileBio::-webkit-scrollbar-track {
+.meetingDetailsNote::-webkit-scrollbar-track, .smallProfileBio::-webkit-scrollbar-track, .bookingTags::-webkit-scrollbar-track {
     border-radius: 2vw;
     box-shadow: inset 0 0 5px #333333;
     margin: 0.25vw;
 }
 
-.meetingDetailsNote::-webkit-scrollbar-thumb, .smallProfileBio::-webkit-scrollbar-thumb {
+.meetingDetailsNote::-webkit-scrollbar-thumb, .smallProfileBio::-webkit-scrollbar-thumb, .bookingTags::-webkit-scrollbar-thumb {
     background: #333333;
     border-radius: 2vw;
     box-shadow: inset 0 0 5px #333333;
@@ -1203,6 +1218,7 @@ span.flatpickr-weekday {
     gap: 0.5vw;
     margin-top: 1vw;
     margin-bottom: 1vw;
+    overflow-y: auto;
 }
 
 .bookLectorOnlineToggle {
@@ -1819,6 +1835,21 @@ span.flatpickr-weekday {
 
     .lectorContainer {
         height: 100%;
+    }
+
+    .mainPageTop {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .pageTitle {
+        text-align: center;
+        font-size: 10vw;
+    }
+
+    .mainPageTitleIcon {
+        width: 95%;
+        margin-bottom: 2vw;
     }
 }
 
