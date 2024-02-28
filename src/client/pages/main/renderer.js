@@ -2,6 +2,7 @@ import vlevoDole from "../../img/Tvar_vlevo_dole.png";
 import vpravoDole from "../../img/Tvar_vpravo_dole.png";
 import vpravoNahore from "../../img/Tvar_pravo_nahore.png";
 import whiteLogo from "../../img/LOGO_white.svg?url";
+import pageTitleIcon from "../../img/pageTitleIcon_white.png";
 import '@material/web/slider/slider.js';
 import sanitizeHtml from 'sanitize-html';
 
@@ -18,7 +19,10 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
     <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
 
     <div class="mainPageContainer">
-        <h1 class="pageTitle">Katalog lektorů</h1>
+        <div class="mainPageTop">
+            <h1 class="pageTitle">Katalog lektorů</h1>
+            <img src="${pageTitleIcon}" alt="IkonaTitle" class="mainPageTitleIcon">
+        </div>
         <div id="filter">
             <span class="filterTitle"> Filtrovat podle ceny: </span>
             <div class="filterPrice">
