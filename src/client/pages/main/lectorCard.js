@@ -1,5 +1,8 @@
 import sanitizeHtml from "sanitize-html";
 import { getLectorName } from "../../getLectorName";
+import studiumBlue from "../../img/studium_blue.png";
+import studiumWhite from "../../img/studium_white.png";
+
 function tagMetadata(tag) {
     //console.log(tag);
     return /*html */`
@@ -68,12 +71,16 @@ function lectorCard(lecturer) {
                 </div>
 
                 <div class="lectorSwitchBoxRight">
-                    <span class="lectorListTag"> ${sanitizeHtml(lecturer.price_per_hour)} Kč / hodina </span>
+                    <img src="${studiumBlue}" alt="IkonaStudium" class="lectorIconTop">
+                    <img src="${studiumWhite}" alt="IkonaStudium" class="lectorIconBottom">
                 </div>
 
                 <div class="lectorRightBox">
                     <hr>
-                    <h2 class="lectorLocation"> ${sanitizeHtml(lecturer.location)} </h2>
+                    <div class="lectorRightBoxInter">
+                        <h2 class="lectorLocation"> ${sanitizeHtml(lecturer.location)} </h2>
+                        <span class="lectorListTag"> ${sanitizeHtml(lecturer.price_per_hour)} Kč / hodina </span>
+                    </div>
                     <h3 class="lectorClaim"> ${sanitizeHtml(lecturer.claim)} </h3>
 
                     <div class="lectorContact">   
