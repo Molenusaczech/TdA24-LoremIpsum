@@ -216,8 +216,8 @@ function renderBookingDetails(booking) {
             <hr>
         </div>
         <div class="meetingDetailsContacts">
-            <span>${booking["email"]}</span>
-            <span>${booking["phone"]}</span>
+            <a href="mailto:${booking["email"]}">${booking["email"]}</a>
+            <a href="tel:${booking["phone"]}">${booking["phone"]}</a>
         </div>
         <div  class="meetingDetailsNote">
             <h3>${booking["note"]}</h3>
