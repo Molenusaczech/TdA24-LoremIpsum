@@ -127,6 +127,8 @@ function renderBook(bookedDates, lector) {
 
                 <div class="bookLectorInfo">
 
+                    <h3>Vyberte&nbsptémata&nbspschůzky:</h3>
+
                     <div class="bookingTags">
 
                         ${renderBookingTags(lector)}

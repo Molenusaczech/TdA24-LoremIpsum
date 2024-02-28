@@ -900,7 +900,7 @@ footer a {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     min-height: 10vw;
 }
 
@@ -1375,6 +1375,13 @@ span.flatpickr-weekday {
 
 .timeText {
     color:#74C7D3;
+}
+
+.bookLectorInfo h3 {
+    text-align: left;
+    font-size: 1.5vw;
+    padding-bottom: 0;
+
 }
 
 @media screen and (max-width: 700px) {
