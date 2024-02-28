@@ -240,6 +240,11 @@ function renderBookingDetails(booking) {
     `
 
     document.getElementById("deleteButton").addEventListener("click", () => {
+
+        if (!confirm("Opravdu chcete smazat rezervaci?")) {
+            return;
+        }
+
         fetch("/api/deleteBooking", {
             method: "POST",
             headers: {
