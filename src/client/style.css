@@ -1094,6 +1094,21 @@ span.flatpickr-weekday {
     /*box-shadow: #fff 0 0 0.5vw;*/
 }
 
+.deleteButton {
+    grid-column: 1 / 3;
+    grid-row: 6;
+    text-align: center;
+    margin: 0.2vw;
+    padding: 0.3vw;
+    margin-top: 0.9vw;
+    border-radius: 1vw;
+    background-color: #74C7D3;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.2s;
+    font-size: 1vw;
+}
+
 .meetingDetailsName {
     grid-column: 1 / 3;
     grid-row: 2;
@@ -1505,6 +1520,7 @@ span.flatpickr-weekday {
 
     .lectorBio {
         font-size: 3vw;
+        width: 95%;
     }
 
     .lectorLocation {
@@ -1554,6 +1570,10 @@ span.flatpickr-weekday {
         margin: 0.2vw;
     }
 
+    .lectorRightBoxInter .lectorListTag {
+        margin-right: 3vw;
+    }
+
     .filter {
         width: 100%;
     }
@@ -1593,6 +1613,11 @@ span.flatpickr-weekday {
 
     .lectorTags {
         padding-left: 0.2vw;
+    }
+
+    .lectorListLector .lectorTags {
+        margin-left: 2vw;
+        margin-right: 3vw;
     }
 
     .lectorSwitchTags {
@@ -1857,6 +1882,16 @@ span.flatpickr-weekday {
     .mainPageTitleIcon {
         width: 95%;
         margin-bottom: 2vw;
+    }
+
+    .deleteButton {
+        grid-row: 7;
+        font-size: 4vw;
+        margin-bottom: 2vw;
+    }
+
+    .meetingDetailsContacts a {
+        font-size: 3vw;
     }
 }
 
