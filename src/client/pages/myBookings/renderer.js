@@ -11,6 +11,8 @@ import dayjs from "dayjs";
 import { getLectorName } from "../../getLectorName";
 import { getLectorPlainTextName } from "../../parseName";
 import { linkClick } from "../../routing";
+import { renderDeleteBooking } from "../deleteBooking/renderer";
+import { deleteBookingAfter } from "../deleteBooking/afterRender";
 
 function emptyCache() {
     let result = [];
@@ -259,7 +261,8 @@ function renderBookingDetails(booking) {
         }).then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                linkClick("/myBookings");
+                document.getElementById("mainPage").innerHTML = renderDeleteBooking(booking);
+                deleteBookingAfter(booking);
             });
     });
             

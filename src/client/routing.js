@@ -31,6 +31,9 @@ import { successAfter } from "./pages/success/afterRender.js";
 import { getLectorPlainTextName } from "./parseName.js";
 import { getPriceInfo } from "./getPriceInfo.js";
 
+import { renderDeleteBooking } from "./pages/deleteBooking/renderer.js";
+import { deleteBookingAfter } from "./pages/deleteBooking/afterRender.js";
+
 const lecturerRegex = /^\/lecturer\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
 const bookRegex = /^\/book\/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}/;
 
@@ -197,6 +200,13 @@ function renderPage(currentUrl) {
 
         document.getElementById("mainPage").innerHTML = renderSuccess(placeholderData);
         successAfter(placeholderData);
+
+    } else if (currentUrl == "/deleteSuccess") {
+
+        let placeholderData = {"uuid":"7b2fb224-806a-40ad-b39b-77ead4235a4d","start":"2024-02-20T15:00:00.000Z","name":"qwrtuik","email":"evhk@jekefj.cz","phone":"123456789","note":"jhjhjhj","isOnline":false,"length":3,"LecturerUuid":"8d60b0d4-4dff-4831-96cc-6186ef6b9a72","Tags":[{"uuid":"1da5938b-af7e-4a02-83a0-719bcfff1d99","name":"Microsoft Office","BookingTag":{"BookingUuid":"7b2fb224-806a-40ad-b39b-77ead4235a4d","TagUuid":"1da5938b-af7e-4a02-83a0-719bcfff1d99"}},{"uuid":"3024c04f-bd08-4b2c-af6c-86778bfaec52","name":"Robotika","BookingTag":{"BookingUuid":"7b2fb224-806a-40ad-b39b-77ead4235a4d","TagUuid":"3024c04f-bd08-4b2c-af6c-86778bfaec52"}},{"uuid":"5dab0a27-461c-4419-b939-369824b8172c","name":"Front-end","BookingTag":{"BookingUuid":"7b2fb224-806a-40ad-b39b-77ead4235a4d","TagUuid":"5dab0a27-461c-4419-b939-369824b8172c"}},{"uuid":"9616b117-bbd9-486c-9e56-28d271a8b815","name":"Piškvorky","BookingTag":{"BookingUuid":"7b2fb224-806a-40ad-b39b-77ead4235a4d","TagUuid":"9616b117-bbd9-486c-9e56-28d271a8b815"}}]}
+    
+        document.getElementById("mainPage").innerHTML = renderDeleteBooking(placeholderData);
+        deleteBookingAfter(placeholderData);
 
     } else {
         document.getElementById("mainPage").innerHTML = renderNotFoundPage();
