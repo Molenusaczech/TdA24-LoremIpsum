@@ -140,7 +140,7 @@ function renderTodayTimes(bookedDates) {
 
     for (let i = 0; i < 12; i++) {
 
-        let curTime = dayjs().hour(i + 8).minute(0).second(0).millisecond(0).day(dayjs(curDate).day()).month(dayjs(curDate).month()).year(dayjs(curDate).year());
+        let curTime = dayjs().hour(i + 8).minute(0).second(0).millisecond(0).date(dayjs(curDate).date()).month(dayjs(curDate).month()).year(dayjs(curDate).year());
 
         curTime = curTime.toISOString();
 

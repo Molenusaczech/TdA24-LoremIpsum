@@ -45,7 +45,7 @@ function bookAfter(bookingData, lectorData) {
 
         let startIndex = Math.min(...selectedIndex);
 
-        let curTime = dayjs().hour(8).minute(0).second(0).day(dayjs(curDate).day()).month(dayjs(curDate).month()).year(dayjs(curDate).year()).millisecond(0).add(startIndex, 'hour').toISOString();
+        let curTime = dayjs().hour(8).minute(0).second(0).date(dayjs(curDate).date()).month(dayjs(curDate).month()).year(dayjs(curDate).year()).millisecond(0).add(startIndex, 'hour').toISOString();
 
         console.log(curTime);
 

@@ -1,11 +1,7 @@
 import { linkClick } from "../../routing";
 import { renderTodayTimes } from "./renderer";
 import dayjs from "dayjs";
-
-function getDaysArray(dates) {
-
-}
-
+import { highlightCalendar, initHighlights } from "./calendarHighlight";
 
 function formatDates(dates) {
     let result = [];
@@ -60,10 +56,12 @@ function myBookingsAfter(bookedDates) {
         },
         onChange: (selectedDates, dateStr, instance) => {
             renderTodayTimes(bookedDates);
+            highlightCalendar();
         }
     });
 
     renderTodayTimes(bookedDates);
+    initHighlights(bookedDates);
 }
 
 export { myBookingsAfter };

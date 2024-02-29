@@ -150,7 +150,7 @@ function renderTimes() {
 
     curDate = dayjs(curDate);
 
-    let startTime = dayjs().hour(8).minute(0).second(0).day(curDate.day()).month(curDate.month()).year(curDate.year()).millisecond(0);
+    let startTime = dayjs().hour(8).minute(0).second(0).date(curDate.date()).month(curDate.month()).year(curDate.year()).millisecond(0);
 
     let result = "";
 
