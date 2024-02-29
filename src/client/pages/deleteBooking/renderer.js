@@ -17,12 +17,13 @@ function renderDeleteBooking(booking) {
         <h2>Kontaktujte prosím zákazníka a informujte ho o smazání rezervace</h2>
 
         <h3>${booking["name"]}</h3>
+        <hr>
         <div class="meetingDetailsContacts">
-            <a href="mailto:${booking["email"]}">${booking["email"]}</a>
-            <a href="tel:${booking["phone"]}">${booking["phone"]}</a>
+            <a href="mailto:${booking["email"]}">Email: ${booking["email"]}</a>
+            <a href="tel:${booking["phone"]}">Tel.: ${booking["phone"]}</a>
         </div>
 
-        <md-filled-button id="myBookingButton">Zpět na seznam rezervací</md-filled-button>
+        <md-filled-button class="myBookingButton" id="myBookingButton">Zpět na seznam rezervací</md-filled-button>
         
     </div>
 

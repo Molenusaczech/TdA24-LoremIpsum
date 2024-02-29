@@ -1020,6 +1020,29 @@ span.flatpickr-weekday {
 .successContainer h1 {
     color: #333333;
     width: 100%;
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+.successContainer h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.75vw;
+}
+
+.successContainer h3 {
+    font-size: 1.5vw;
+    margin-bottom: 0vw;
+    margin-left: 0.5vw;
+}
+
+.successContainer hr {
+    margin-left: 0.5vw;
+    margin-right: 1vw;
+    height: 0.2vw;
+    border-radius: 1vw;
+    background-color: #333333;
+    border: none;
 }
 
 .successContainer md-filled-button {
@@ -1100,7 +1123,7 @@ span.flatpickr-weekday {
     text-align: center;
     margin: 0.2vw;
     padding: 0.3vw;
-    margin-top: 0.9vw;
+    margin-bottom: 2vw;
     border-radius: 1vw;
     background-color: #74C7D3;
     color: #fff;
@@ -1137,6 +1160,12 @@ span.flatpickr-weekday {
     flex-direction: column;
 }
 
+.meetingDetailsContacts h3 {
+    align-self: left;
+    width: 30%;
+    margin-bottom: -2vw;
+}
+
 .meetingDetailsContacts a{
     margin: 0.7vw 0.2vw 0.7vw 0.2vw;
     padding: 0.3vw 0.5vw 0.3vw 0.5vw;
@@ -1158,23 +1187,26 @@ span.flatpickr-weekday {
 .meetingDetailsNote {
     grid-column: 1 / 3;
     grid-row: 4;
+}
+
+.meetingDetailsNoteBottom {
     border-radius: 1vw;
     border: #333333 solid 0.1vw;
     overflow-y: auto;
-    height: 14vw;
+    height: 10vw;
 }
 
-.meetingDetailsNote::-webkit-scrollbar, .smallProfileBio::-webkit-scrollbar, .bookingTags::-webkit-scrollbar {
+.meetingDetailsNoteBottom::-webkit-scrollbar, .smallProfileBio::-webkit-scrollbar, .bookingTags::-webkit-scrollbar {
     border-radius: 2vw;
 }
 
-.meetingDetailsNote::-webkit-scrollbar-track, .smallProfileBio::-webkit-scrollbar-track, .bookingTags::-webkit-scrollbar-track {
+.meetingDetailsNoteBottom::-webkit-scrollbar-track, .smallProfileBio::-webkit-scrollbar-track, .bookingTags::-webkit-scrollbar-track {
     border-radius: 2vw;
     box-shadow: inset 0 0 5px #333333;
     margin: 0.25vw;
 }
 
-.meetingDetailsNote::-webkit-scrollbar-thumb, .smallProfileBio::-webkit-scrollbar-thumb, .bookingTags::-webkit-scrollbar-thumb {
+.meetingDetailsNoteBottom::-webkit-scrollbar-thumb, .smallProfileBio::-webkit-scrollbar-thumb, .bookingTags::-webkit-scrollbar-thumb {
     background: #333333;
     border-radius: 2vw;
     box-shadow: inset 0 0 5px #333333;
@@ -1182,7 +1214,15 @@ span.flatpickr-weekday {
 
 .meetingDetailsNote h3 {
     text-align: left;
-    margin: 0.7vw;
+}
+
+.meetingDetailsNoteTop {
+    margin-bottom: -2vw;
+}
+
+.meetingDetailsNoteBottom h3 {
+    margin-left: 1vw;
+    font-size: 1.5vw;
 }
 
 .meetingDetailsTags {
@@ -1226,7 +1266,7 @@ span.flatpickr-weekday {
 .bookingTags {
     font-family: 'Open Sans', sans-serif;
     display: flex;
-    width: 100%;
+    width: 95%;
     justify-content: center;
     align-items: top;
     flex-wrap: wrap;
@@ -1234,6 +1274,7 @@ span.flatpickr-weekday {
     margin-top: 1vw;
     margin-bottom: 1vw;
     overflow-y: auto;
+    padding: 0.4vw;
 }
 
 .bookLectorOnlineToggle {
@@ -1405,6 +1446,7 @@ span.flatpickr-weekday {
 @media screen and (max-width: 700px) {
     .lectorContainer {
         width: 100%;
+        top: 60%;
     }
 
     .vlevoDole {
@@ -1575,6 +1617,10 @@ span.flatpickr-weekday {
 
     .lectorRightBoxInter .lectorListTag {
         margin-right: 3vw;
+    }
+
+    .lectorListTag {
+        padding: 0.5vw 2.5vw 0.5vw 2.5vw;
     }
 
     .filter {
@@ -1764,9 +1810,17 @@ span.flatpickr-weekday {
     .meetingDetailsNote {
         grid-column: 1;
         grid-row: 5;
+    }
+
+    .meetingDetailsNoteBottom {
         margin-top: 2vw;
         height: 50vw;
     }
+
+    .meetingDetailsNoteBottom h3 {
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
+    }   
 
     .meetingDetailsTags {
         grid-column: 1;
@@ -1880,6 +1934,7 @@ span.flatpickr-weekday {
     .pageTitle {
         text-align: center;
         font-size: 10vw;
+        margin-top: 12vw;
     }
 
     .mainPageTitleIcon {
@@ -1890,10 +1945,46 @@ span.flatpickr-weekday {
     .deleteButton {
         grid-row: 7;
         font-size: 4vw;
-        margin-bottom: 2vw;
     }
 
     .meetingDetailsContacts a {
+        font-size: 3vw;
+    }
+
+    .meetingDetailsContacts a:hover {
+        transform: scale(1.02);
+    }
+
+    .bookLectorInfo h3 {
+        font-size: 8vw;
+    }
+
+    .successContainer {
+        width: 95%;
+    }
+
+    .successContainer hr {    
+        height: 1vw;
+    }
+
+    .successContainer h1 {
+        font-size: 8vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+    
+    .successContainer h2 {
+        font-size: 5vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+    
+    .successContainer h3 {
+        font-size: 5vw;
+        margin-top: 1vw;
+    }
+
+    .successContainer .myBookingButton {
         font-size: 3vw;
     }
 }
