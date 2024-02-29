@@ -11,7 +11,7 @@ function highlightCalendar() {
         let el = document.querySelector('[aria-label="' + key + '"]');
 
         if (el != null) {
-            el.style.backgroundColor = "rgba(254, 203, 46, " + value * 1 / 12 + ")";
+            el.style.backgroundColor = "rgba(254, 203, 46, " + ( 0.2 + value * 1 / 18) + ")";
         }
     }
 
