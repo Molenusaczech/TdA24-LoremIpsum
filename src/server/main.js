@@ -27,6 +27,7 @@ import { getFiltered } from "./getFilter.js";
 import { getFilterData } from "./setFilteringData.js";
 
 import { logThatBastard } from "./flagCatcher.js";
+import dayjs from "dayjs";
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -223,8 +224,10 @@ app.get("/api/calendar/:token", cors(), async (req, res) => {
   let token = req.params.token;
   token = token.replaceAll("&", "/");
 
+  let today = dayjs().format("YYYY-MM-DD");
+
   res.header("Content-Type", "text/calendar");
-  res.header("Content-Disposition", "attachment; filename=calendar.ics");
+  res.header("Content-Disposition", "attachment; filename="+today+"_plan-vyuky.ics");
   res.send(await generateCalendar(token));
 });
 
