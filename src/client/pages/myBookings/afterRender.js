@@ -42,7 +42,6 @@ function myBookingsAfter(bookedDates) {
     flatpickr("#bookDate", {
         inline: true,
         defaultDate: new Date().fp_incr(0),
-        minDate: new Date().fp_incr(0),
         locale: {
             firstDayOfWeek: 1,
             weekdays: {
