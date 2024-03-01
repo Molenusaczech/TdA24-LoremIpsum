@@ -20,7 +20,7 @@ function emptyCache() {
     for (let i = 0; i < 12; i++) {
         result.push(null);
     }
-    
+
     return result;
 }
 
@@ -32,14 +32,29 @@ function getClosestBookedDate(date, bookedDates) {
         let bookTime = dayjs(bookedDates[i]["start"]);
         let diff = Math.abs(dayjs(date).diff(bookTime));
 
-        
+
         if (diff < minDiff) {
             minDiff = diff;
             result = i;
         }
     }
-    
+
     return bookedDates[result];
+}
+
+function closestText(bookings) {
+
+    let today = dayjs().format('YYYY-MM-DD');
+
+    let closest = getClosestBookedDate(today, bookings);
+    //console.log(closest);
+
+    if (closest == null) {
+        return "<h3>Žádné rezervace na dnešek</h3>";
+    }
+
+    return `<h3> Nejbližší rezervace: <span class="timeText">${dayjs(closest["start"]).format('DD.MM.YYYY HH:mm')}</span></h3>`;
+
 }
 
 let todayCache = emptyCache();
@@ -48,9 +63,6 @@ function renderMyBookings(bookings, lector) {
     console.log(lector);
 
     let today = dayjs().format('YYYY-MM-DD');
-
-    let closest = getClosestBookedDate(today, bookings);
-    console.log(closest);
 
     return /*html */`
     <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
@@ -66,7 +78,7 @@ function renderMyBookings(bookings, lector) {
                 <div class="calendaryBottom">
                     <h3>Dobrý den, ${sanitizeHtml(getLectorPlainTextName(lector))}!</h3>
 
-                    <h3> Nejbližší rezervace: <span class="timeText">${dayjs(closest["start"]).format('DD.MM.YYYY HH:mm')}</span></h3>
+                    ${closestText(bookings)}
 
                     <a href="/api/calendar/${localStorage.getItem("token").replaceAll("/", "&")}" target="_blank">
                     <md-filled-button class="downloadButton" id="downloadButton">
@@ -158,7 +170,7 @@ function renderTodayTimes(bookedDates) {
 
                 todayCache[i] = data;
                 isStart = data["isStart"];
-                
+
                 if (isStart) {
 
                     if (isBlue) {
@@ -234,8 +246,8 @@ function renderBookingDetails(booking) {
         <div class="meetingDetailsTags">
 
         ${booking["tags"].map(tag => {
-            return renderTag(tag);
-        }).join('')}
+        return renderTag(tag);
+    }).join('')}
 
         </div>
         
@@ -254,11 +266,11 @@ function renderBookingDetails(booking) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(
-                { 
+                {
                     "uuid": booking["uuid"],
                     "token": localStorage.getItem("token")
                 }
-                )
+            )
         }).then((response) => response.json())
             .then((data) => {
                 console.log(data);
@@ -266,7 +278,7 @@ function renderBookingDetails(booking) {
                 deleteBookingAfter(booking);
             });
     });
-            
+
 
 }
 
