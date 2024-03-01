@@ -1443,6 +1443,12 @@ span.flatpickr-weekday {
     color: #333333;
 }
 
+.successContainer img {
+    width: 50%;
+    justify-self: center;
+    transform: translate(50%, 0%);
+}
+
 #loadMore {
     width: 100%;
 }

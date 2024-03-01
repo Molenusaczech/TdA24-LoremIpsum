@@ -119,7 +119,7 @@ function renderBook(bookedDates, lector) {
 
                         </div>
 
-                        <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
+                        <md-filled-button class="loginButton" id="loginButton">Rezervovat</md-filled-button>
                         </div>
 
                     </div>
