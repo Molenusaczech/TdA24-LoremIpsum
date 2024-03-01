@@ -89,6 +89,20 @@ async function createLector(input) { // vytvoří lektora
     }
   }
 
+  if (input.username == null || input.username == "" || !input.hasOwnProperty("username")) {
+    return {
+      code: 400,
+      message: "Username is required"
+    }
+  }
+
+  if (input.password == null || input.password == "" || !input.hasOwnProperty("password")) {
+    return {
+      code: 400,
+      message: "Password is required"
+    }
+  }
+
   let salt = await generateSalt();
 
   let lector = await Lecturer.create({
