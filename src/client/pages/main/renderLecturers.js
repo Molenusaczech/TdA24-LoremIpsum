@@ -38,7 +38,7 @@ function renderNextLecturers() {
 }
 
 function updateButtonVisibility() {
-    if (lecturerCache.length > page * perPage) {
+    if (lecturerCache.length > page * perPage && lecturerCache.length != 0) {
         document.getElementById("loadMore").style.visibility = "visible";
     } else {
         document.getElementById("loadMore").style.visibility = "hidden";

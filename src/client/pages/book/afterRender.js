@@ -43,6 +43,11 @@ function bookAfter(bookingData, lectorData) {
 
         console.log(curDate);
 
+        if (selectedIndex.length == 0) {
+            alert("Prosím vyberte čas");
+            return;
+        }
+
         let startIndex = Math.min(...selectedIndex);
 
         let curTime = dayjs().hour(8).minute(0).second(0).date(dayjs(curDate).date()).month(dayjs(curDate).month()).year(dayjs(curDate).year()).millisecond(0).add(startIndex, 'hour').toISOString();
