@@ -153,7 +153,6 @@ const Booking = sequelize.define("Booking", {
     start: {
         type: DataTypes.DATE,
         allowNull: false,
-        unique: true,
     },
     name: {
         type: DataTypes.STRING,
