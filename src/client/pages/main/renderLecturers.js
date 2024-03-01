@@ -18,13 +18,13 @@ function renderAllLecturers(lecturers) {
         return;
     }
     document.getElementById("lectors").innerHTML = curLecturers.map(lector => lectorCard(lector)).join("");
-    registerListeners(curLecturers);
+    registerListeners(lecturerCache.slice(0, perPage * page));
     updateButtonVisibility();
 }
 
 function appendLecturers(lecturers) {
     document.getElementById("lectors").innerHTML += lecturers.map(lector => lectorCard(lector)).join("");
-    registerListeners(lecturers);
+    registerListeners(lecturerCache.slice(0, perPage * page));
 }
 
 function renderNextLecturers() {
