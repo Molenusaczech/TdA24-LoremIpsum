@@ -1,5 +1,5 @@
 import { initLectors, loadFilterSettings, filterLectors } from "./filter";
-import { renderAllLecturers } from "./renderLecturers";
+import { renderAllLecturers, renderNextLecturers } from "./renderLecturers";
 import { linkClick } from "../../routing";
 
 function mainAfter(lectors, tags, locations) {
@@ -21,6 +21,10 @@ function mainAfter(lectors, tags, locations) {
 
     document.getElementById("login").addEventListener("click", () => {
         linkClick("/login");
+    });
+
+    document.getElementById("loadMore").addEventListener("click", () => {
+        renderNextLecturers();
     });
 
 }

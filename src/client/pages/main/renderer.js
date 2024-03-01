@@ -67,6 +67,12 @@ function renderMain(lectors, tags, locations, minPrice, maxPrice) {
         <div id="lectors">
         </div>
 
+        <div class="loadMoreBox">
+
+            <md-filled-button id="loadMore"> Načíst další lektory </md-filled-button>
+
+        </div>
+
         <div class="footerBox">
         <footer>
         Teacher digital Agency © 2024 

@@ -11,12 +11,15 @@ function renderAllLecturers(lecturers) {
     lecturerCache = lecturers;
     page = 1;
 
-    if (lecturers.length == 0) {
+    let curLecturers = lecturers.slice(0, perPage);
+
+    if (curLecturers.length == 0) {
         document.getElementById("lectors").innerHTML = "<div class='lectorListName' style='text-align: center;'>Žádní lektoři nenalezeni</div>";
         return;
     }
-    document.getElementById("lectors").innerHTML = lecturers.map(lector => lectorCard(lector)).join("");
-    registerListeners(lecturers);
+    document.getElementById("lectors").innerHTML = curLecturers.map(lector => lectorCard(lector)).join("");
+    registerListeners(curLecturers);
+    updateButtonVisibility();
 }
 
 function appendLecturers(lecturers) {
@@ -31,6 +34,15 @@ function renderNextLecturers() {
     const end = page * perPage;
 
     appendLecturers(lecturerCache.slice(start, end));
+    updateButtonVisibility();
+}
+
+function updateButtonVisibility() {
+    if (lecturerCache.length > page * perPage) {
+        document.getElementById("loadMore").style.visibility = "visible";
+    } else {
+        document.getElementById("loadMore").style.visibility = "hidden";
+    }
 }
 
 export { renderAllLecturers, renderNextLecturers };
