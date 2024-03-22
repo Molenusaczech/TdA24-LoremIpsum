@@ -1468,12 +1468,17 @@ span.flatpickr-weekday {
 
 .aiPageBox h1 {
     color: black;
-    margin-bottom: -0vw;
+    margin-bottom: 0.2vw;
 }
 
 .aiResponse {
     color: black;
 }
+
+.aiAskButton {
+    margin-top: 1.5vw;
+    width: 100%;
+} 
 
 .aiPageContainer {
     /*display: flex;*/

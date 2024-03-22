@@ -9,7 +9,7 @@ const openai = new OpenAI({
 async function aiResp(prompt) {
 
     // jen pro test frontendu ODSTRSANIT!!!!!
-    return "Test testus sus amogus";
+    //return "Test testus sus amogus";
 
     const completion = await openai.chat.completions.create({
         messages: [

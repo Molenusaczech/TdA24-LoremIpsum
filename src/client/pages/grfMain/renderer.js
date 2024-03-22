@@ -17,11 +17,11 @@ function renderGrfMain() {
         
         <div class="aiPageBox">
         
-        <md-outlined-text-field label="AI Prompt" id="aiPromt" class="bookTextbox">
+        <md-outlined-text-field label="Zeptej se AI" id="aiPromt" class="bookTextbox">
             <md-icon slot="leading-icon">psychology</md-icon>
         </md-outlined-text-field>
 
-        <md-filled-button class="loginButton" id="promptButton">Zeptat se AI</md-filled-button>
+        <md-filled-button class="aiAskButton" id="promptButton">Zeptat se AI</md-filled-button>
 
         <h1> Odpověď AI: </h1>
 
