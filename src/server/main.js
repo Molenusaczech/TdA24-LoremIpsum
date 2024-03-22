@@ -5,11 +5,11 @@ import ViteExpress from "vite-express";
 import cors from "cors";
 import { authString } from "./authHandler.js";
 
-import generateCalendar from "./calendar.js";
+//import generateCalendar from "./calendar.js";
 
 const app = express();
 
-import { 
+/*import { 
   getLectors, 
   createLector, 
   getLectorById, 
@@ -27,7 +27,9 @@ import { getFiltered } from "./getFilter.js";
 import { getFilterData } from "./setFilteringData.js";
 
 import { logThatBastard } from "./flagCatcher.js";
-import dayjs from "dayjs";
+import dayjs from "dayjs";*/
+
+import { aiResp } from "./aiHandler.js";
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -42,7 +44,7 @@ function clientErrorHandler (err, req, res, next) {
 
 app.use(clientErrorHandler);
 
-app.get("/api", cors(), (req, res) => {
+/*app.get("/api", cors(), (req, res) => {
   res.send({ secret: "The cake is a lie" });
 });
 
@@ -174,11 +176,6 @@ app.post("/api/verifyToken", cors(), async (req, res) => {
 
   let result = await verifyToken(token);
 
-  /*result.code ??= 200;
-
-  if (result.code) {
-    res.status(result.code);
-  }*/
 
   res.send(result);
 });
@@ -243,6 +240,16 @@ app.post("/api/deleteBooking", cors(), async (req, res) => {
   }
 
   res.send(result);
+});*/
+
+app.post("/api/ai", cors(), async (req, res) => {
+  const input = req.body.prompt;
+
+  console.log(input);
+
+  let fromAI = await aiResp(input);
+
+  res.send({ message: fromAI });
 });
 
 if (process.argv[2] == "prod") {

@@ -1453,6 +1453,39 @@ span.flatpickr-weekday {
     width: 100%;
 }
 
+.aiPageBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100%;
+
+    /*border: red solid 1px;*/
+    background-color: #fff;
+    padding: 1vw;
+    border-radius: 2vw;
+}
+
+.aiPageBox h1 {
+    color: black;
+    margin-bottom: -0vw;
+}
+
+.aiResponse {
+    color: black;
+}
+
+.aiPageContainer {
+    /*display: flex;*/
+    /*border: red solid 1px;*/
+    position: absolute;
+    top: 5vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 60vmax;
+    z-index: 10;
+}
+
 @media screen and (max-width: 700px) {
     .lectorContainer {
         width: 100%;
