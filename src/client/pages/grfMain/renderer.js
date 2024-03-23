@@ -28,6 +28,10 @@ function renderGrfMain(activities) {
         <div class="aiPageContainer">
             <img src="${pageTitleIcon}" alt="IkonaTitle" class="mainTitleIcon">
 
+            <div class="aiButtonContainer">
+                <md-filled-button class="mainButton" id="createButton">Vytvořit aktivitu</md-filled-button>
+            </div>
+
             <div class="searchField">
                 <md-filled-text-field label="Hledat aktivity" id="aiPromt" class="bookTextbox">
                     <md-icon slot="leading-icon">search</md-icon>
@@ -37,10 +41,6 @@ function renderGrfMain(activities) {
 
             <div class="aiResults">
                 ${activities.map(renderActivity).join("")}
-            </div>
-
-            <div class="aiButtonContainer">
-                <md-filled-button class="mainButton" id="createButton">Vytvořit aktivitu</md-filled-button>
             </div>
         </div>
 
@@ -59,8 +59,14 @@ function renderActivity(activity) {
                 <p>${activity.lengthMin} - ${activity.lengthMax} minut</p>
             </div>
         </div>
+        <h2>Shrnutí od AI</h2>
         <div class="activityCardDesc">
-            <p>${activity.description}</p>
+            <p>${activity.summary}</p>
+        </div>
+
+        <h2>Úroveň vzdělání</h2>
+        <div class="detailEdLevel">
+            ${activity.edLevel.map(renderEdLevel).join("")}
         </div>
 
         <h2>Galerie</h2>
@@ -100,5 +106,11 @@ function renderSearchData(data) {
 
     document.getElementById("mainPage").innerHTML = renderGrfMain(activities);
 }
+
+function renderEdLevel(edLvl) {
+    return /*html*/`
+    <p>${edLvl}</p>
+    `;
+  }
 
 export { renderGrfMain, renderSearchData };

@@ -53,7 +53,7 @@ function renderCreate() {
             
             </div>
 
-            <md-outlined-text-field label="Úloha" id="objectiveInput">
+            <md-outlined-text-field label="Cíl" id="objectiveInput">
                 <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
             <md-filled-button class="createButton" id="addObjective">+</md-filled-button>
@@ -113,7 +113,7 @@ function renderCreate() {
             <md-outlined-text-field label="Název" id="prepTitleInput">
                 <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
-            <md-outlined-text-field label="WARN -PŘELOŽIT DO ČEŠTINY-" id="prepWarnInput">
+            <md-outlined-text-field label="Uozornění" id="prepWarnInput">
                 <md-icon slot="leading-icon">error</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field
@@ -139,7 +139,7 @@ function renderCreate() {
             <md-outlined-text-field label="Název" id="instructionTitleInput">
                 <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
-            <md-outlined-text-field label="WARN -PŘELOŽIT DO ČEŠTINY-" id="instructionWarnInput">
+            <md-outlined-text-field label="Upozornění" id="instructionWarnInput">
                 <md-icon slot="leading-icon">error</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field
@@ -280,7 +280,7 @@ function renderLinks(link, index) {
 function renderGallery(gallery, index) {
     return /*html*/`
     <div class="task">
-        <p>${gallery.name}</p>
+        <p>${gallery.title}</p>
         <md-icon class="deleteGallery" data-gallery="${index}">delete</md-icon>
 
         <div class="createGallerySub">

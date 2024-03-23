@@ -68,7 +68,7 @@ function renderPage(currentUrl) {
         changeFavicon(faviconUrl);
         document.title = "AMOS - Aktivity"
 
-        fetch("/api/activityAll/")
+        fetch("/api/activityAll")
             .then(response => {
                 return response.json();
             })

@@ -189,6 +189,8 @@ body {
     justify-self: center;
     align-self: center;
     width: 30%;
+    --md-filled-button-disabled-label-text-color: #fff;
+    --md-filled-button-disabled-container-color: #fff;
 }
 
 .aiButtonContainer md-filled-button:hover {
@@ -396,7 +398,7 @@ body {
 }
 
 .formPageContainer .createButton {
-    margin-top: 2vw;
+    margin-top: 1.5vw;
     justify-self: center;
     align-self: center;
     width: 1%;
@@ -410,6 +412,8 @@ body {
 .loginButton {
     justify-self: center;
     align-self: center;
+    --md-filled-button-disabled-label-text-color: #fff;
+    --md-filled-button-disabled-container-color: #fff;
 }
 
 .loginButton:hover {

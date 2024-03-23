@@ -1,3 +1,10 @@
+# Využití umělé inteligence (AI)
+
+1) Pro shrnutí jednotlivých aktivit na hlavní, detailní a admin stránce
+    -Při vytvoření aktivity vygeneruje AI shrnutí v pár větách
+2) Chytré vyhledávání na hlavní stránce 
+    -AI pomocí dotazu porovná svoji databázi a poskytne nejpřesnější výsledky
+
 # Local deployment
 test
 docker build -t my-nodejs-app .
