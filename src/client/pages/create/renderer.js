@@ -110,7 +110,7 @@ function renderCreate() {
             <md-outlined-text-field label="Název" id="prepTitleInput">
                 <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
-            <md-outlined-text-field label="Uozornění" id="prepWarnInput">
+            <md-outlined-text-field label="Upozornění" id="prepWarnInput">
                 <md-icon slot="leading-icon">error</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field
