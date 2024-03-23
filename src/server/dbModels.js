@@ -6,7 +6,7 @@ const sequelize = new Sequelize({
     transactionType: "IMMEDIATE",
 });
 
-const Objective = sequelize.define("Objective", {
+/*const Objective = sequelize.define("Objective", {
     uuid: {
         type: DataTypes.UUID,
         primaryKey: true,
@@ -153,7 +153,7 @@ const Image = sequelize.define("Image", {
         type: DataTypes.STRING,
         allowNull: true,
     }
-});
+});*/
 
 const Activity = sequelize.define("Activity", {
     uuid: {
@@ -166,7 +166,10 @@ const Activity = sequelize.define("Activity", {
         type: DataTypes.STRING,
         allowNull: true,
     },
-    // objectives:
+    objectives: {
+        type: DataTypes.STRING,
+        allowNull: true,	
+    },
     lengthMin: {
         type: DataTypes.INTEGER,
         allowNull: true,
@@ -183,18 +186,41 @@ const Activity = sequelize.define("Activity", {
         type: DataTypes.STRING,
         allowNull: true,
     },
-    // edLevel
-    // tools
+    edlevels: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    tools: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
     isVerified: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
-    //home preparation
-    //instructions
-    //agenda
+    homePreparation: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    instructions: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    agenda: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    links: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    galleries: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    }
 });
 
-const ActivityObjective = sequelize.define("ActivityObjective", {}, { timestamps: false });
+/*const ActivityObjective = sequelize.define("ActivityObjective", {}, { timestamps: false });
 const ActivityEdLevel = sequelize.define("ActivityEdLevel", {}, { timestamps: false });
 const ActivityTool = sequelize.define("ActivityTool", {}, { timestamps: false });
 
@@ -250,7 +276,11 @@ export { sequelize,
     Link, 
     Gallery, 
     Image 
-};
+};*/
+
+Activity.sync();
+
+export { sequelize, Activity };
 
 /*
 
