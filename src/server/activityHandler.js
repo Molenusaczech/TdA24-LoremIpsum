@@ -11,27 +11,9 @@ import {
     Image
 } from "./dbModels.js"
 
-async function getActivity(uuid) {
-    let activity = await Activity.findOne({
-        where: {
-            uuid: uuid
-        },
-        include: [
-            Objective,
-            EdLevel,
-            Tool,
-            HomePreparation,
-            Instruction,
-            Agenda,
-            Link,
-            {
-                model: Gallery,
-                include: Image
-            }
-        ]
-    });
-
+function parseActivity(activity) {
     let newActivity = {
+        uuid: activity.uuid,
         title: activity.activityName,
         lengthMin: activity.lengthMin,
         lengthMax: activity.lengthMax,
@@ -98,8 +80,8 @@ async function getActivity(uuid) {
 
         for (let img of gallery.Images) {
             galleryObj.images.push({
-                title: img.title,
-                url: img.url
+                lowRes: img.lowRes,
+                highRes: img.highRes
             });
         }
 
@@ -107,6 +89,31 @@ async function getActivity(uuid) {
     }
 
     return newActivity;
+}
+
+async function getActivity(uuid) {
+    let activity = await Activity.findOne({
+        where: {
+            uuid: uuid
+        },
+        include: [
+            Objective,
+            EdLevel,
+            Tool,
+            HomePreparation,
+            Instruction,
+            Agenda,
+            Link,
+            {
+                model: Gallery,
+                include: Image
+            }
+        ]
+    });
+
+    //return activity;
+
+    return parseActivity(activity);
 }
 
 async function createActivity(input, isServer = false) {
@@ -213,7 +220,8 @@ async function createActivity(input, isServer = false) {
             let imgObj = await Image.create({
 
                 title: img.title,
-                url: img.url
+                lowRes: img.lowRes,
+                highRes: img.highRes
 
             });
 
@@ -226,4 +234,4 @@ async function createActivity(input, isServer = false) {
     return getActivity(activity.uuid);
 }
 
-export { createActivity };
+export { createActivity, getActivity };

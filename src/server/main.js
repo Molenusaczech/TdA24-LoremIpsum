@@ -31,7 +31,7 @@ import { getFilterData } from "./setFilteringData.js";
 import { logThatBastard } from "./flagCatcher.js";
 import dayjs from "dayjs";*/
 
-import { createActivity } from "./activityHandler.js";
+import { createActivity, getActivity } from "./activityHandler.js";
 
 import { aiResp } from "./aiHandler.js";
 
@@ -267,6 +267,20 @@ app.post("/api/activity", cors(), async (req, res) => {
   let resp = await createActivity(input, true);
 
   res.send({ response: resp });
+});
+
+app.get("/api/activity/:uuid", cors(), async (req, res) => {
+  const uuid = req.params.uuid;
+
+  console.log(uuid);
+
+  const result = await getActivity(uuid);
+
+  if (result.code) {
+    res.status(404);
+  }
+
+  res.send(result);
 });
 
 app.post("/api/createActivity", cors(), async (req, res) => {
