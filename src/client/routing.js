@@ -77,10 +77,22 @@ function renderPage(currentUrl) {
         changeFavicon(faviconUrl);
         document.title = "Detail akivity";
 
-        document.getElementById("mainPage").innerHTML = renderActivityDetail({
+        let split = currentUrl.split("/");
+        let uuid = split[2];
+
+        fetch("/api/activity/" + uuid)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById("mainPage").innerHTML = renderActivityDetail(data);
+                detailAfter();
+            });
+
+        /*document.getElementById("mainPage").innerHTML = renderActivityDetail({
             "data": "amogus"
         });
-        detailAfter();
+        detailAfter();*/
 
     } else if (currentUrl == "/create") {
         console.log("create");

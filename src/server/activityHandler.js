@@ -167,7 +167,12 @@ async function getActivity(uuid) {
         }
     });
 
-    console.log(JSON.parse(activity.tools)[0]);
+    if (!activity) {
+        return {
+            code: 404,
+            message: "Activity not found"
+        };
+    }
 
     //return activity;
 
