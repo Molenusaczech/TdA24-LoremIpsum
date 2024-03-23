@@ -6,7 +6,8 @@ import '@material/web/icon/icon';
 
 import '@material/web/button/filled-button';
 
-function renderActivityDetail() {
+function renderActivityDetail(activity) {
+  console.log(activity);
     return /*html*/`
     <div class="pageTop">
       <div class=pageTopBack>
@@ -24,46 +25,43 @@ function renderActivityDetail() {
     <div class="aiPageContainer">
         <img src="${pageTitleIcon}" alt="IkonaTitle" class="mainTitleIcon">
         
-        <h1 class="detailName">Jméno</h1>
+        <h1 class="detailName">${activity.title}</h1>
 
         <div class="detailSide">
           <div class="detailLeft">
 
             <h2>Popis</h2>
-            <div class="detailDesc">Popisek</div>
+            <div class="detailDesc">${activity.description}</div>
             <h2>Struktura</h2>
-            <div class="detailSubDesc">Struktura</div>
+            <div class="detailSubDesc">${activity.classStructure}</div>
 
             <h2>Čas</h2>
             <div class="detailTime">
               <md-icon>schedule</md-icon>
               <div class="detailTimeSubContainer">
-                <p>Délka min</p>
-                <p>Délka max</p>
+                <p>${activity.lengthMin} minut</p>
+                <p>${activity.lengthMax} minut</p>
               </div>
             </div>
 
             <h2>Úroveň vzdělání</h2>
             <div class="detailEdLevel">
-              <p>Tady budou všechny edLevel</p>
-              <p>Tady budou všechny edLevel</p>
+              ${activity.edLevel.map(renderEdLevel).join("")}
             </div>
 
             <h2>Cíle</h2>
             <div class="detailEdLevel">
-              <p>Tady budou všechny cíle</p>
-              <p>Tady budou všechny cíle</p>
+              ${activity.objectives.map(editGoals).join("")}
             </div>
 
             <h2>Nástroje</h2>
             <div class="detailEdLevel">
-              <p>Tady budou všechny nástroje</p>
-              <p>Tady budou všechny nástroje</p>
+              ${activity.tools.map(renderTool).join("")}
             </div>
 
             <h2>Odkazy</h2>
             <div class="detailLinks">
-              <p>Tady bude odkaz</p>
+              ${activity.links.map(renderLink).join("")}
             </div>
 
           </div>
@@ -71,37 +69,85 @@ function renderActivityDetail() {
           <div class="detailRight">
             <div class="detailHomePrep">
               <h1>Domácí příprava</h1>
-              <div class="detailHomePrepSub">
-                <p>Title</p>
-                <p class="detailHomePrepSubText">Warn</p>
-                <p class="detailHomePrepSubText">Note</p>
-              </div>
+              
+              ${activity.homePreparation.map(renderHomePrep).join("")}
+
             </div>
             <div class="detailHomePrep">
               <h1>Instrukce</h1>
-              <div class="detailHomePrepSub">
-                <p>Title</p>
-                <p class="detailHomePrepSubText">Warn</p>
-                <p class="detailHomePrepSubText">Note</p>
-              </div>
+              
+              ${activity.instructions.map(renderHomePrep).join("")}
+              
             </div>
             <div class="detailHomePrep">
               <h1>Agenda</h1>
-              <div class="detailHomePrepSub">
-                <p>Title</p>
-                <p class="detailHomePrepSubText">Duration</p>
-                <p class="detailHomePrepSubText">Description</p>
-              </div>
+              
+              ${activity.agenda.map(renderHomePrep).join("")}
+
             </div>
           </div>
         </div>
 
         <h1>Galerie</h1>
-        <div class="detailGallery">Tady budou všechny galerie</div>
+        <div class="detailGallery">
+        ${activity.gallery.map(renderGallery).join("")}
+        </div>
+
 
 
     </div>
     `;
+}
+
+function renderEdLevel(edLvl) {
+  return /*html*/`
+  <p>${edLvl}</p>
+  `;
+}
+
+function editGoals(goal) {
+  return /*html*/`
+  <p>${goal}</p>
+  `;
+}
+
+function renderTool(tool) {
+  return /*html*/`
+  <p>${tool}</p>
+  `;
+}
+
+function renderLink(link) {
+  return /*html*/`
+  <p>${link.title} ${link.url}</p>
+  `;
+}
+
+function renderHomePrep(prep) {
+  return /*html*/`
+  <div class="detailHomePrepSub">
+    <p>${prep.title}</p>
+    <p class="detailHomePrepSubText">${prep.warn || ""}</p>
+    <p class="detailHomePrepSubText">${prep.note || ""}</p>
+  </div>
+  `;
+}
+
+function renderImage(image) {
+  return /*html*/`
+  <img src="${image.highRes}">
+  `;
+}
+
+function renderGallery(gallery) {
+  return /*html*/`
+  <div class="detailGallerySub">
+    <h2>${gallery.title}</h2>
+    <div class="detailGalleryImages">
+      ${gallery.images.map(renderImage).join("")}
+    </div>
+  </div>
+  `;
 }
 
 export { renderActivityDetail };
