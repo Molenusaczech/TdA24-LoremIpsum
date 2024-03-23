@@ -19,6 +19,57 @@ let agenda = [];
 let links = [];
 let galleries = [];
 let tools = [];
+let classroomType = "Individual";
+
+function updateClassroomType() {
+    
+    if (classroomType === "Individual") {
+        document.getElementById("classroomType").innerHTML = /*html*/`
+        
+        <md-filled-button class="radioButton" id="individualButton">Individuální</md-filled-button>
+        <md-outlined-button class="radioButton" id="groupButton">Skupinové</md-outlined-button>
+        <md-outlined-button class="radioButton" id="allButton">Celotřídní</md-outlined-button>
+        
+        `;
+    }
+
+    if (classroomType === "Group") {
+        document.getElementById("classroomType").innerHTML = /*html*/`
+        
+        <md-outlined-button class="radioButton" id="individualButton">Individuální</md-outlined-button>
+        <md-filled-button class="radioButton" id="groupButton">Skupinové</md-filled-button>
+        <md-outlined-button class="radioButton" id="allButton">Celotřídní</md-outlined-button>
+        
+        `;
+    }
+
+    if (classroomType === "All") {
+        document.getElementById("classroomType").innerHTML = /*html*/`
+        
+        <md-outlined-button class="radioButton" id="individualButton">Individuální</md-outlined-button>
+        <md-outlined-button class="radioButton" id="groupButton">Skupinové</md-outlined-button>
+        <md-filled-button class="radioButton" id="allButton">Celotřídní</md-filled-button>
+        
+        `;
+    }
+
+    document.getElementById("individualButton").addEventListener("click", () => {
+        classroomType = "Individual";
+        updateClassroomType();
+    });
+
+    document.getElementById("groupButton").addEventListener("click", () => {
+        classroomType = "Group";
+        updateClassroomType();
+    }
+    );
+
+    document.getElementById("allButton").addEventListener("click", () => {
+        classroomType = "All";
+        updateClassroomType();
+    }
+    );
+}
 
 function updateObjectives() {
     document.getElementById("objectiveInput").value = "";
@@ -319,14 +370,15 @@ function createAfter() {
                 "lengthMin": minLenght,
                 "lengthMax": maxLenght,
                 "classStructure": structure,
-                "description": "gghkgkgkh",
+                "description": description,
                 "edLevel": edLevels,
                 "tools": tools,
                 "homePreparation": prep,
                 "instructions": instructions,
                 "agenda": agenda,
                 "links": links,
-                "gallery": parseGalleryImages()
+                "gallery": parseGalleryImages(),
+                "classStructure": classroomType
               })
         }).then(response => {
             return response.json();
@@ -335,6 +387,8 @@ function createAfter() {
         // http://localhost:8080/aktivita/55c78822-8d2f-4c2e-bde0-104544cd2dba
         linkClick("/aktivita/"+response.response.uuid);
     });
+
+    updateClassroomType();
 
 }
 

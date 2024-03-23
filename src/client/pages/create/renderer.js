@@ -5,6 +5,7 @@ import '@material/web/textfield/outlined-text-field';
 import '@material/web/icon/icon';
 
 import '@material/web/button/filled-button';
+import '@material/web/button/outlined-button';
 
 function renderCreate() {
     return /*html*/`
@@ -12,8 +13,9 @@ function renderCreate() {
         <div class=pageTopBack>
             <div class="pageTopRow">
                 <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
-                <h1>Projekt <span class="blueText">AMOS</span></h1>
+                <h1>Project <span class="blueText">AMOS</span></h1>
                 <div class="pageTopRowAdmin">
+                    dadad
                 </div>
             </div>
             <hr>
@@ -33,9 +35,6 @@ function renderCreate() {
         <md-outlined-text-field label="Maximální délka" id="maxLenghtInput">
             <md-icon slot="leading-icon">schedule</md-icon>
         </md-outlined-text-field>
-        <md-outlined-text-field label="Struktura aktivity" id="structureInput">
-            <md-icon slot="leading-icon">edit</md-icon>
-        </md-outlined-text-field>
         <md-outlined-text-field
             type="textarea"
             label="Popisek aktivity"
@@ -51,7 +50,6 @@ function renderCreate() {
             <div id="objectiveList">
             
             </div>
-
             <md-outlined-text-field label="Cíl" id="objectiveInput">
                 <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
@@ -89,6 +87,18 @@ function renderCreate() {
 
         </div>
 
+        <div class="createTools">
+
+            <h2 class="inputsTitle">Struktura</h2>
+
+                <div id="classroomType">
+                    <md-filled-button class="radioButton" id="individualButton">Individuální</md-filled-button>
+                    <md-outlined-button class="radioButton" id="groupButton">Skupinové</md-outlined-button>
+                    <md-outlined-button class="radioButton" id="allButton">Celotřídní</md-outlined-button>
+                </div>
+
+        </div>
+
         <div class="createHomePreparation">
 
             <h2 class="inputsTitle">Domácí příprava</h2>
@@ -100,7 +110,7 @@ function renderCreate() {
             <md-outlined-text-field label="Název" id="prepTitleInput">
                 <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
-            <md-outlined-text-field label="Uozornění" id="prepWarnInput">
+            <md-outlined-text-field label="Upozornění" id="prepWarnInput">
                 <md-icon slot="leading-icon">error</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field
@@ -268,6 +278,7 @@ function renderGallery(gallery, index) {
     return /*html*/`
     <div class="task">
         <p>${gallery.title}</p>
+        <p>${gallery.name}</p>
         <md-icon class="deleteGallery" data-gallery="${index}">delete</md-icon>
 
         <div class="createGallerySub">
@@ -282,7 +293,7 @@ function renderGallery(gallery, index) {
                     <md-icon slot="leading-icon">person</md-icon>
                 </md-outlined-text-field>
 
-                <md-filled-button class="createButton" data-galleryButton="${index}">+</md-filled-button>
+                <p><md-filled-button class="createButton" data-galleryButton="${index}">+</md-filled-button></p>
 
             </div>
     </div>
