@@ -121,6 +121,7 @@ async function createActivity(input, isServer = false) {
     //console.log(input);
 
     let activity = await Activity.create({
+        uuid: input.uuid,
         activityName: input.activityName,
         lengthMin: input.lengthMin,
         lengthMax: input.lengthMax,
