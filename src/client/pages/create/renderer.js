@@ -27,18 +27,13 @@ function renderCreate() {
         <h1 class="pageTitle">Vytvořit aktivitu</h1>
         
         <md-outlined-text-field label="Jméno aktivity" id="titleInput">
-            <md-icon slot="leading-icon">Ink-Highlighter</md-icon>
+            <md-icon slot="leading-icon">edit</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field label="Minimální délka" id="minLenghtInput">
-            <md-icon slot="leading-icon">person</md-icon>
+            <md-icon slot="leading-icon">schedule</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field label="Maximální délka" id="maxLenghtInput">
-            <md-icon slot="leading-icon">person</md-icon>
-        </md-outlined-text-field>
-        <md-outlined-text-field label="Struktura aktivity" id="structureInput">
-            <md-filled-button class="radioButton" id="individualButton">Individuální</md-filled-button>
-            <md-outlined-button class="radioButton" id="groupButton">Skupinové</md-outlined-button>
-            <md-outlined-button class="radioButton" id="allButton">Celotřídní</md-outlined-button>
+            <md-icon slot="leading-icon">schedule</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field
             type="textarea"
@@ -93,6 +88,14 @@ function renderCreate() {
         </div>
 
         <div class="createTools">
+
+            <h2 class="inputsTitle">Struktura</h2>
+
+                <div id="classroomType">
+                    <md-filled-button class="radioButton" id="individualButton">Individuální</md-filled-button>
+                    <md-outlined-button class="radioButton" id="groupButton">Skupinové</md-outlined-button>
+                    <md-outlined-button class="radioButton" id="allButton">Celotřídní</md-outlined-button>
+                </div>
 
         </div>
 

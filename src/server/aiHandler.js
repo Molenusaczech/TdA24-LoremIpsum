@@ -39,13 +39,13 @@ async function aiSumActivity(activity) {
     const completion = await openai.chat.completions.create({
         messages: [
             {
-                role: "system", content: "Jsi část systému pro školní projekty, napíšeš shrnutí aktivity."
+                role: "system", content: "Jsi část systému pro školní projekty, napíšeš shrnutí aktivity. Nepoužívej stylovací značky"
             },
             {
                 role: "user", content: "Shrň tuto aktivitu: " + JSON.stringify(activity)
             }
         ],
-        model: "gpt-3.5-turbo",
+        model: "gpt-4-turbo-preview",
     });
 
     console.log(completion.choices[0]);
@@ -80,7 +80,7 @@ async function aiSearch(prompt) {
                 role: "user", content: "Zadání uživatele: " + prompt + " JSON soubor: " + JSON.stringify(parsed)
             }
         ],
-        model: "gpt-3.5-turbo",
+        model: "gpt-4-turbo-preview",
         response_format: { type: "json_object" },
     });
 
