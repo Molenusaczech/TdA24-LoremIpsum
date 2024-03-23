@@ -35,7 +35,8 @@ import {
   createActivity, 
   getActivity,
   getAllActivities,
-  deleteActivity
+  deleteActivity,
+  verifyActivity
 } from "./activityHandler.js";
 
 import { aiResp } from "./aiHandler.js";
@@ -294,6 +295,12 @@ app.get("/api/activity", cors(), async (req, res) => {
   res.send(result);
 });
 
+app.get("/api/activityAdmin", cors(), async (req, res) => {
+  const result = await getAllActivities(true);
+
+  res.send(result);
+});
+
 app.delete("/api/activity/:uuid", cors(), async (req, res) => {
   const uuid = req.params.uuid;
 
@@ -314,6 +321,13 @@ app.post("/api/createActivity", cors(), async (req, res) => {
   res.send({ response: resp });
 });
 
+app.post("/api/verifyActivity", cors(), async (req, res) => {
+  const input = req.body;
+
+  let resp = await verifyActivity(input.uuid);
+
+  res.send({ response: resp });
+});
 
 if (process.argv[2] == "prod") {
   ViteExpress.config(

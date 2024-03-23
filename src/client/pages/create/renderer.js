@@ -47,107 +47,142 @@ function renderCreate() {
 
         <div class="createObjective">
 
-            <h2 class="inputsTitle">Vytvořit úlohu</h2>
-            <md-outlined-text-field label="Úloha" id="(objective string)">
+            <h2 class="inputsTitle">Podúlohy aktivity</h2>
+
+            <div id="objectiveList">
+            
+            </div>
+
+            <md-outlined-text-field label="Úloha" id="objectiveInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
+            <md-filled-button class="createButton" id="addObjective">+</md-filled-button>
 
         </div>
 
         <div class="createEdLevel">
 
         <h2 class="inputsTitle">Úrovně vzdělání</h2>
-            <md-outlined-text-field label="Vzdělání" id="(edLevel string)">
+
+             <div id="edLevelList">
+        
+             </div>
+
+            <md-outlined-text-field label="Vzdělání" id="edLevelInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
+            <md-filled-button class="createButton" id="addEdLevel">+</md-filled-button>
 
         </div>
 
         <div class="createHomePreparation">
-    
+
             <h2 class="inputsTitle">Domácí příprava</h2>
-            <md-outlined-text-field label="Název" id="(HomePreparation title)">
+
+            <div id="prepList">
+        
+             </div>
+    
+            <md-outlined-text-field label="Název" id="prepTitleInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
-            <md-outlined-text-field label="WARN -PŘELOŽIT DO ČEŠTINY-" id="(HomePreparation warn)">
+            <md-outlined-text-field label="WARN -PŘELOŽIT DO ČEŠTINY-" id="prepWarnInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field
                 type="textarea"
                 label="Zpráva na domácí příprava"
                 class="bookTextbox"
-                id="(HomePreparation note)"
+                id="prepNoteInput"
                 rows="3">
             </md-outlined-text-field>
+
+            <md-filled-button class="createButton" id="addPrep">+</md-filled-button>
+
 
         </div>
 
         <div class="createHomePreparation">
+
     
             <h2 class="inputsTitle">Instrukce</h2>
-            <md-outlined-text-field label="Název" id="(Instruction title)">
+
+            <div id="instrList"> </div>
+
+            <md-outlined-text-field label="Název" id="instructionTitleInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
-            <md-outlined-text-field label="WARN -PŘELOŽIT DO ČEŠTINY-" id="(Instruction warn)">
+            <md-outlined-text-field label="WARN -PŘELOŽIT DO ČEŠTINY-" id="instructionWarnInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field
                 type="textarea"
                 label="Zpráva na domácí příprava"
                 class="bookTextbox"
-                id="(Instruction note)"
+                id="instructionNoteInput"
                 rows="3">
             </md-outlined-text-field>
+
+            <md-filled-button class="createButton" id="addInstr">+</md-filled-button>
 
         </div>
 
         <div class="createAgenda">
     
             <h2 class="inputsTitle">Agenda</h2>
-            <md-outlined-text-field label="Délka trvání" id="(Agenda duration)">
+
+            <div id="agendaList"> </div>
+
+            <md-outlined-text-field label="Délka trvání" id="agendaDurationInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
-            <md-outlined-text-field label="Název" id="(Agenda title)">
+            <md-outlined-text-field label="Název" id="agendaTitleInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field
                 type="textarea"
                 label="Popis"
                 class="bookTextbox"
-                id="(Agenda description)"
+                id="agendaDescriptionInput"
                 rows="3">
             </md-outlined-text-field>
+
+            <md-filled-button class="createButton" id="addAgenda">+</md-filled-button>
+
 
         </div>
 
         <div class="createLinks">
     
             <h2 class="inputsTitle">Odkazy</h2>
-            <md-outlined-text-field label="URL" id="(Links URL)">
+
+            <div id="linkList"> </div>
+
+            <md-outlined-text-field label="URL" id="linkUrlInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
-            <md-outlined-text-field label="Název" id="(Links title)">
+            <md-outlined-text-field label="Název" id="linkTitleInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
+
+            <md-filled-button class="createButton" id="addLink">+</md-filled-button>
+
 
         </div>
 
         <div class="createGallery">
     
             <h2 class="inputsTitle">Galerie</h2>
-            <md-outlined-text-field label="Název galerie" id="(Gallery title)">
+
+            <div id="galleryList"> </div>
+
+            <md-outlined-text-field label="Název galerie" id="galleryTitleInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
-
-            <div class="createGallerySub">
-    
-                <h3 class="inputsTitle">Obrázky</h3>
-                <md-outlined-text-field label="URL" id="(Links URL)">
-                    <md-icon slot="leading-icon">person</md-icon>
-                </md-outlined-text-field>
-
-            </div>
         </div>
+
+        <md-filled-button class="createButton" id="addGallery">+</md-filled-button>
+
 
         <md-filled-button class="createButton" id="(Vytvoř aktivitu)">Rezervovat</md-filled-button>
 
@@ -156,4 +191,108 @@ function renderCreate() {
     `;
 }
 
-export { renderCreate };
+function renderTask(name) {
+    return /*html*/`
+    <div class="task">
+        <p>${name}</p>
+        <md-icon class="deleteTask" data-task="${name}">delete</md-icon>
+    </div>
+    `;
+}
+
+function renderEdLevel(name) {
+    return /*html*/`
+    <div class="task">
+        <p>${name}</p>
+        <md-icon class="deleteEdLevel" data-edLevel="${name}">delete</md-icon>
+    </div>
+    `;
+}
+
+function renderPrep(prep, index) {
+    return /*html*/`
+    <div class="task">
+        <p>${prep.title}</p>
+        <p>${prep.warn}</p>
+        <p>${prep.note}</p>
+        <md-icon class="deletePrep" data-prep="${index}">delete</md-icon>
+    </div>
+    `;
+}
+
+function renderInstructions(instr, index) {
+    return /*html*/`
+    <div class="task">
+        <p>${instr.title}</p>
+        <p>${instr.warn}</p>
+        <p>${instr.note}</p>
+        <md-icon class="deleteInstr" data-instr="${index}">delete</md-icon>
+    </div>
+    `;
+}
+
+function renderAgenda(agenda, index) {
+    return /*html*/`
+    <div class="task">
+        <p>${agenda.duration}</p>
+        <p>${agenda.title}</p>
+        <p>${agenda.description}</p>
+        <md-icon class="deleteAgenda" data-agenda="${index}">delete</md-icon>
+    </div>
+    `;
+}
+
+function renderLinks(link, index) {
+    return /*html*/`
+    <div class="task">
+        <p>${link.title}</p>
+        <p>${link.url}</p>
+        <md-icon class="deleteLink" data-link="${index}">delete</md-icon>
+    </div>
+    `;
+}
+
+function renderGallery(gallery, index) {
+    return /*html*/`
+    <div class="task">
+        <p>${gallery.name}</p>
+        <md-icon class="deleteGallery" data-gallery="${index}">delete</md-icon>
+
+        <div class="createGallerySub">
+    
+                <h3 class="inputsTitle">Obrázky</h3>
+
+                ${gallery.images.map((img, imgindex) => {
+                    return renderImage(img, imgindex, index);
+                }).join("")}
+
+                <md-outlined-text-field label="URL" data-galleryInput="${index}">
+                    <md-icon slot="leading-icon">person</md-icon>
+                </md-outlined-text-field>
+
+                <md-filled-button class="createButton" data-galleryButton="${index}">+</md-filled-button>
+
+            </div>
+    </div>
+    `;
+};
+
+function renderImage(image, index, galleryIndex) {
+    return /*html*/`
+    <!--<img src="${image}" alt="Image">-->
+    <div data-image="${index+";"+galleryIndex}"> ${image}
+    <md-icon class="deleteLink" data-delimage="${index+";"+galleryIndex}">delete</md-icon>
+    </div>
+    `;
+}
+
+export { 
+    renderCreate, 
+    renderTask, 
+    renderEdLevel, 
+    renderPrep,
+    renderInstructions,
+    renderAgenda,
+    renderLinks,
+    renderGallery
+};

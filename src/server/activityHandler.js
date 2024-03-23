@@ -234,22 +234,46 @@ async function createActivity(input, isServer = false) {
     return getActivity(activity.uuid);
 }
 
-async function getAllActivities() {
-    let activities = await Activity.findAll({
-        include: [
-            Objective,
-            EdLevel,
-            Tool,
-            HomePreparation,
-            Instruction,
-            Agenda,
-            Link,
-            {
-                model: Gallery,
-                include: Image
+async function getAllActivities(isAdmin = false) {
+
+    let activities = [];
+
+    if (!isAdmin) {
+        activities = await Activity.findAll({
+            include: [
+                Objective,
+                EdLevel,
+                Tool,
+                HomePreparation,
+                Instruction,
+                Agenda,
+                Link,
+                {
+                    model: Gallery,
+                    include: Image
+                }
+            ],
+            where: {
+                isVerified: true
             }
-        ]
-    });
+        });
+    } else {
+        activities = await Activity.findAll({
+            include: [
+                Objective,
+                EdLevel,
+                Tool,
+                HomePreparation,
+                Instruction,
+                Agenda,
+                Link,
+                {
+                    model: Gallery,
+                    include: Image
+                }
+            ]
+        });
+    }
 
     let newActivities = [];
 
@@ -281,9 +305,32 @@ async function deleteActivity(uuid) {
     };
 }
 
-export { 
-    createActivity, 
-    getActivity, 
+async function verifyActivity(uuid) {
+    let activity = await Activity.findOne({
+        where: {
+            uuid: uuid
+        }
+    });
+
+    if (activity) {
+        activity.isVerified = true;
+        activity.save();
+        return {
+            code: 200,
+            message: "Activity verified"
+        };
+    }
+
+    return {
+        code: 404,
+        message: "Activity not found"
+    };
+}
+
+export {
+    createActivity,
+    getActivity,
     getAllActivities,
-    deleteActivity
+    deleteActivity,
+    verifyActivity
 };
