@@ -149,6 +149,8 @@ function renderCreate() {
             </div>
         </div>
 
+        <md-filled-button class="createButton" id="(Vytvoř aktivitu)">Rezervovat</md-filled-button>
+
     </div>
 
     `;
