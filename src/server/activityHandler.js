@@ -234,4 +234,56 @@ async function createActivity(input, isServer = false) {
     return getActivity(activity.uuid);
 }
 
-export { createActivity, getActivity };
+async function getAllActivities() {
+    let activities = await Activity.findAll({
+        include: [
+            Objective,
+            EdLevel,
+            Tool,
+            HomePreparation,
+            Instruction,
+            Agenda,
+            Link,
+            {
+                model: Gallery,
+                include: Image
+            }
+        ]
+    });
+
+    let newActivities = [];
+
+    for (let activity of activities) {
+        newActivities.push(parseActivity(activity));
+    }
+
+    return newActivities;
+}
+
+async function deleteActivity(uuid) {
+    let activity = await Activity.findOne({
+        where: {
+            uuid: uuid
+        }
+    });
+
+    if (activity) {
+        activity.destroy();
+        return {
+            code: 200,
+            message: "Activity deleted"
+        };
+    }
+
+    return {
+        code: 404,
+        message: "Activity not found"
+    };
+}
+
+export { 
+    createActivity, 
+    getActivity, 
+    getAllActivities,
+    deleteActivity
+};

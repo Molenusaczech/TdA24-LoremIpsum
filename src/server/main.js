@@ -31,7 +31,12 @@ import { getFilterData } from "./setFilteringData.js";
 import { logThatBastard } from "./flagCatcher.js";
 import dayjs from "dayjs";*/
 
-import { createActivity, getActivity } from "./activityHandler.js";
+import { 
+  createActivity, 
+  getActivity,
+  getAllActivities,
+  deleteActivity
+} from "./activityHandler.js";
 
 import { aiResp } from "./aiHandler.js";
 
@@ -279,6 +284,22 @@ app.get("/api/activity/:uuid", cors(), async (req, res) => {
   if (result.code) {
     res.status(404);
   }
+
+  res.send(result);
+});
+
+app.get("/api/activity", cors(), async (req, res) => {
+  const result = await getAllActivities();
+
+  res.send(result);
+});
+
+app.delete("/api/activity/:uuid", cors(), async (req, res) => {
+  const uuid = req.params.uuid;
+
+  const result = await deleteActivity(uuid);
+
+  res.status(result.code);
 
   res.send(result);
 });
