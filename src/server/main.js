@@ -31,10 +31,18 @@ import { getFilterData } from "./setFilteringData.js";
 import { logThatBastard } from "./flagCatcher.js";
 import dayjs from "dayjs";*/
 
+import { 
+  createActivity, 
+  getActivity,
+  getAllActivities,
+  deleteActivity
+} from "./activityHandler.js";
+
 import { aiResp } from "./aiHandler.js";
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+//app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded())
 
 function clientErrorHandler (err, req, res, next) {
   if (req.xhr) {
@@ -253,6 +261,59 @@ app.post("/api/ai", cors(), async (req, res) => {
 
   res.send({ message: fromAI });
 });
+
+app.post("/api/activity", cors(), async (req, res) => {
+  const input = req.body;
+
+  console.log(req.body);
+
+  // toto je z scg serveru
+
+  let resp = await createActivity(input, true);
+
+  res.send({ response: resp });
+});
+
+app.get("/api/activity/:uuid", cors(), async (req, res) => {
+  const uuid = req.params.uuid;
+
+  console.log(uuid);
+
+  const result = await getActivity(uuid);
+
+  if (result.code) {
+    res.status(404);
+  }
+
+  res.send(result);
+});
+
+app.get("/api/activity", cors(), async (req, res) => {
+  const result = await getAllActivities();
+
+  res.send(result);
+});
+
+app.delete("/api/activity/:uuid", cors(), async (req, res) => {
+  const uuid = req.params.uuid;
+
+  const result = await deleteActivity(uuid);
+
+  res.status(result.code);
+
+  res.send(result);
+});
+
+app.post("/api/createActivity", cors(), async (req, res) => {
+  const input = req.body;
+
+  // toto je z klientu
+
+  let resp = await createActivity(input);
+
+  res.send({ response: resp });
+});
+
 
 if (process.argv[2] == "prod") {
   ViteExpress.config(
