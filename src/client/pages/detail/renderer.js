@@ -119,16 +119,17 @@ function renderTool(tool) {
 
 function renderLink(link) {
   return /*html*/`
-  <p>${link.title} ${link.url}</p>
+  <p>${link.title} <a href="${link.url}">${link.url}</a></p>
   `;
 }
 
 function renderHomePrep(prep) {
   return /*html*/`
   <div class="detailHomePrepSub">
-    <p>${prep.title}</p>
-    <p class="detailHomePrepSubText">${prep.warn || ""}</p>
-    <p class="detailHomePrepSubText">${prep.note || ""}</p>
+    <hr>
+    <p class="detailHomePrepSubTitle">${prep.title}</p>
+    <p class="detailHomePrepSubText">>${prep.warn || ""}</p>
+    <p class="detailHomePrepSubText">>${prep.note || ""}</p>
   </div>
   `;
 }

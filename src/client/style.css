@@ -233,13 +233,17 @@ body {
 
 .detailEdLevel {
     margin-top: 1vw;
+    margin-right: 0.2vw;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .detailEdLevel p {
     margin: 0.1vw;
     margin-right: 0.5vw;
     padding: 0.3vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
     border-radius: 1vw;
     background-color: #74C7D3;
     color: #fff;
@@ -262,9 +266,21 @@ body {
 
 .detailHomePrep {
     background-color: #fff;
-    padding: 0.6vw;
+    padding: 1.2vw;
     border-radius: 1vw;
     margin-top: 2vw;
+}
+
+.detailHomePrepSub hr {
+    width: 100%;
+    height: 0.2vw;
+    border-radius: 1vw;
+    background-color: #333333;
+    border: none;
+}
+
+.detailHomePrepSubTitle {
+    font-size: 1.5vw;
 }
 
 .detailTimeSubContainer p {
@@ -276,6 +292,12 @@ body {
 }
 
 .detailHomePrep h1, p{
+    color: #333333;
+    margin-top: 0vw;
+    margin-bottom: 0vw;
+}
+
+.detailHomePrepSub p{
     color: #333333;
     margin-top: 0vw;
     margin-bottom: 0vw;

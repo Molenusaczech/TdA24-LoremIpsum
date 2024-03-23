@@ -26,7 +26,7 @@ function renderCreate() {
         <h1 class="pageTitle">Vytvořit aktivitu</h1>
         
         <md-outlined-text-field label="Jméno aktivity" id="titleInput">
-            <md-icon slot="leading-icon">person</md-icon>
+            <md-icon slot="leading-icon">Ink-Highlighter</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field label="Minimální délka" id="minLenghtInput">
             <md-icon slot="leading-icon">person</md-icon>
