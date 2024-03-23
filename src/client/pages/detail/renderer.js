@@ -24,6 +24,15 @@ function renderActivityDetail() {
         <p class="detailSubDesc">Struktura</p>
         <div class="detailDesc">Popisek</div>
 
+        <div class="detailObjective">Tady budou všechny edLevel</div>
+        <div class="detailObjective">Tady budou všechny tools</div>
+        <div class="detailObjective">Tady budou všechny home preparation</div>
+        <div class="detailObjective">Tady budou všechny instructions</div>
+        <div class="detailObjective">Tady budou všechny agenda</div>
+        <div class="detailObjective">Tady budou všechny lists</div>
+        <div class="detailObjective">Tady budou všechny galerie</div>
+
+
     </div>
 
     <img class="vlevoDole" src="${vlevoDole}">

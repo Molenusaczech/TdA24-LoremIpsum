@@ -59,6 +59,28 @@ body {
     transition: 0.2s;
 }
 
+.loginContainer {
+    /*display: flex;*/
+    /*border: red solid 1px;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #fff;
+    padding: 1vw;
+    border-radius: 1vw;
+}
+
+.loginContainer md-outlined-text-field {
+    width: 100%;
+    margin-bottom: 1vw;
+}
+
+.loginContainer md-filled-button {
+    width: 100%;
+}
+
 .aiPageBox {
     display: flex;
     justify-content: center;

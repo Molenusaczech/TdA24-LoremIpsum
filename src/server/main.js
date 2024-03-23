@@ -5,6 +5,8 @@ import ViteExpress from "vite-express";
 import cors from "cors";
 import { authString } from "./authHandler.js";
 
+import { sequelize } from "./dbModels.js";
+
 //import generateCalendar from "./calendar.js";
 
 const app = express();

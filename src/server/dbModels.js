@@ -6,6 +6,255 @@ const sequelize = new Sequelize({
     transactionType: "IMMEDIATE",
 });
 
+const Objective = sequelize.define("Objective", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    objectiveName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
+});
+
+const EdLevel = sequelize.define("EdLevel", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    levelName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
+});
+
+const Tool = sequelize.define("Tool", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    toolName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
+});
+
+const HomePreparation = sequelize.define("HomePreparation", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    warn: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
+});
+
+const Instruction = sequelize.define("Instruction", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    warn: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    note: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
+});
+
+const Agenda = sequelize.define("Agenda", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    duration: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
+});
+
+const Link = sequelize.define("Link", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    url: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
+});
+
+const Gallery = sequelize.define("Gallery", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
+});
+
+const Image = sequelize.define("Image", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    lowRes: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    highRes: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    }
+});
+
+const Activity = sequelize.define("Activity", {
+    uuid: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+        defaultValue: DataTypes.UUIDV4,
+    },
+    activityName: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    // objectives:
+    lengthMin: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+    lengthMax: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+    classStructure: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    // edLevel
+    // tools
+    isVerified: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+    },
+    //home preparation
+    //instructions
+    //agenda
+});
+
+const ActivityObjective = sequelize.define("ActivityObjective", {}, { timestamps: false });
+const ActivityEdLevel = sequelize.define("ActivityEdLevel", {}, { timestamps: false });
+const ActivityTool = sequelize.define("ActivityTool", {}, { timestamps: false });
+
+Activity.belongsToMany(Objective, { through: ActivityObjective });
+Objective.belongsToMany(Activity, { through: ActivityObjective });
+
+Activity.belongsToMany(EdLevel, { through: ActivityEdLevel });
+EdLevel.belongsToMany(Activity, { through: ActivityEdLevel });
+
+Activity.belongsToMany(Tool, { through: ActivityTool });
+Tool.belongsToMany(Activity, { through: ActivityTool });
+
+HomePreparation.belongsTo(Activity);
+Activity.hasMany(HomePreparation);
+
+Instruction.belongsTo(Activity);
+Activity.hasMany(Instruction);
+
+Agenda.belongsTo(Activity);
+Activity.hasMany(Agenda);
+
+Link.belongsTo(Activity);
+Activity.hasMany(Link);
+
+Gallery.belongsTo(Activity);
+Activity.hasMany(Gallery);
+
+Image.belongsTo(Gallery);
+Gallery.hasMany(Image);
+
+Activity.sync();
+Objective.sync();
+EdLevel.sync();
+Tool.sync();
+HomePreparation.sync();
+Instruction.sync();
+Agenda.sync();
+Link.sync();
+Gallery.sync();
+Image.sync();
+ActivityObjective.sync();
+ActivityEdLevel.sync();
+ActivityTool.sync();
+
+export { sequelize, 
+    Activity, 
+    Objective, 
+    EdLevel, 
+    Tool, 
+    HomePreparation,
+    Instruction, 
+    Agenda, 
+    Link, 
+    Gallery, 
+    Image 
+};
+
+/*
+
+
 const Tag = sequelize.define("Tag", {
     uuid: {
         type: DataTypes.UUID,
@@ -201,11 +450,6 @@ Lecturer.hasMany(Booking);
 Booking.belongsToMany(Tag, { through: BookingTag });
 Tag.belongsToMany(Booking, { through: BookingTag });
 
-/*Lecturer.sync({ force: true});
-Tag.sync({ force: true});
-Phone.sync({ force: true});
-Email.sync({ force: true});
-LecturerTag.sync({ force: true});*/
 
 Lecturer.sync();
 Tag.sync();
@@ -217,4 +461,4 @@ Booking.sync();
 BookingTag.sync();
 
 
-export { sequelize, Lecturer, Tag, Phone, Email, Token, Booking};
+export { sequelize, Lecturer, Tag, Phone, Email, Token, Booking};*/

@@ -1,0 +1,94 @@
+{
+    "uuid": "<uuid>",
+    "activityName": "<string>",
+    "objectives": [
+      "<string>",
+      "<string>"
+    ],
+    "lengthMin": "<integer>",
+    "lengthMax": "<integer>",
+    "classStructure": "All",
+    "description": "<string>",
+    "edLevel": [
+      "primarySchool",
+      "secondarySchool"
+    ],
+    "tools": [
+      "<string>",
+      "<string>"
+    ],
+    "homePreparation": [
+      {
+        "title": "<string>",
+        "warn": "<string>",
+        "note": "<string>"
+      },
+      {
+        "title": "<string>",
+        "warn": "<string>",
+        "note": "<string>"
+      }
+    ],
+    "instructions": [
+      {
+        "title": "<string>",
+        "warn": "<string>",
+        "note": "<string>"
+      },
+      {
+        "title": "<string>",
+        "warn": "<string>",
+        "note": "<string>"
+      }
+    ],
+    "agenda": [
+      {
+        "duration": "<integer>",
+        "title": "<string>",
+        "description": "<string>"
+      },
+      {
+        "duration": "<integer>",
+        "title": "<string>",
+        "description": "<string>"
+      }
+    ],
+    "links": [
+      {
+        "url": "<string>",
+        "title": "<string>"
+      },
+      {
+        "url": "<string>",
+        "title": "<string>"
+      }
+    ],
+    "gallery": [
+      {
+        "title": "<string>",
+        "images": [
+          {
+            "lowRes": "<string>",
+            "highRes": "<string>"
+          },
+          {
+            "lowRes": "<string>",
+            "highRes": "<string>"
+          }
+        ]
+      },
+      {
+        "title": "<string>",
+        "images": [
+          {
+            "lowRes": "<string>",
+            "highRes": "<string>"
+          },
+          {
+            "lowRes": "<string>",
+            "highRes": "<string>"
+          }
+        ]
+      }
+    ]
+  }
