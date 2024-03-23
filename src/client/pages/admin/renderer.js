@@ -38,7 +38,7 @@ function verifyButton(activity) {
     }
 
     return /*html*/`
-    <md-filled-button class="verifyButton" data-adminVerify="${activity.uuid}">Schválit</md-filled-button>
+    <md-filled-button class="verifyButton" id="verify${activity.uuid}">Schválit</md-filled-button>
     `;
 }
 

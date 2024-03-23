@@ -7,8 +7,14 @@ function adminAfter(data) {
         linkClick("/");
     });
 
-    data.forEach(async activity => {
-        document.querySelector(`[data-adminVerify="${activity.uuid}"]`).addEventListener("click", async () => {
+    data.forEach(activity => {
+        let element = document.getElementById("verify"+activity.uuid)
+        
+        if (element) {
+
+        document.getElementById("verify"+activity.uuid).addEventListener("click", async () => {
+
+            if (!confirm("Opravdu chcete schválit tuto aktivitu?")) return;
 
             fetch("/api/verifyActivity", {
                 method: "POST",
@@ -20,12 +26,17 @@ function adminAfter(data) {
                 })
             }).then(response => {
                 alert("Schváleno");
+                linkClick("/admin");
             });
 
         });
+    }
 
         document.querySelector(`[data-adminDelete="${activity.uuid}"]`).addEventListener("click", async () => {
-            etch("/api/activity/"+activity.uuid, {
+
+            if (!confirm("Opravdu chcete smazat tuto aktivitu?")) return;
+
+            fetch("/api/activity/"+activity.uuid, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
@@ -34,6 +45,11 @@ function adminAfter(data) {
                 alert("Smazáno");
                 linkClick("/admin");
             });
+        });
+
+        document.getElementById("logoutButton").addEventListener("click", () => {
+            localStorage.removeItem("token");
+            linkClick("/");
         });
     });
 }

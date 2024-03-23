@@ -313,11 +313,7 @@ async function getAllActivitiesAll(isAdmin = false) {
     let activities = [];
 
     if (!isAdmin) {
-        activities = await Activity.findAll({
-            where: {
-                isVerified: true
-            }
-        });
+        activities = await Activity.findAll();
     } else {
         activities = await Activity.findAll({});
     }
