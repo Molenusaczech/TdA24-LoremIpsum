@@ -1,27 +1,35 @@
-import vlevoDole from "../../img/Tvar_vlevo_dole.png";
-import vpravoDole from "../../img/Tvar_vpravo_dole.png";
-import vpravoNahore from "../../img/Tvar_pravo_nahore.png";
 import whiteLogo from "../../img/LOGO_white.svg?url";
+import pageTitleIcon from "../../img/pageTitleIcon_white.png";
 
 import '@material/web/textfield/outlined-text-field';
+import '@material/web/textfield/filled-text-field';
 import '@material/web/icon/icon';
 
 import '@material/web/button/filled-button';
 
 function renderGrfMain() {
     return /*html*/`
-  <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
+    <div class="pageTop">
+        <div class=pageTopBack>
+            <div class="pageTopRow">
+                <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
+                <h1>Project <span class="blueText">AMOS</span></h1>
+                <div class="pageTopRowAdmin">
+                    dadad
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
 
     <div class="aiPageContainer">
-        <h1 class="pageTitle">AI</h1>
-        
-        <div class="aiPageBox">
-        
-        <md-outlined-text-field label="Zeptej se AI" id="aiPromt" class="bookTextbox">
-            <md-icon slot="leading-icon">psychology</md-icon>
-        </md-outlined-text-field>
+        <img src="${pageTitleIcon}" alt="IkonaTitle" class="mainTitleIcon">
 
-        <md-filled-button class="aiAskButton" id="promptButton">Zeptat se AI</md-filled-button>
+        <div class="searchField">
+            <md-filled-text-field label="Hledat aktivity" id="aiPromt" class="bookTextbox">
+                <md-icon slot="leading-icon">psychology</md-icon>
+            </md-filled-text-field>
+        </div>
 
         <h1> Odpověď AI: </h1>
 
@@ -32,10 +40,6 @@ function renderGrfMain() {
         </div>
 
     </div>
-
-    <img class="vlevoDole" src="${vlevoDole}">
-    <img class="vpravoDole" src="${vpravoDole}">
-    <img class="vpravoNahore" src="${vpravoNahore}">
     `;
 }
 
