@@ -55,7 +55,7 @@ function renderCreate() {
             <md-outlined-text-field label="Cíl" id="objectiveInput">
                 <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
-            <md-filled-button class="createButton" id="addObjective"><md-icon>add</md-icon></md-filled-button>
+            <md-filled-button class="createButton" id="addObjective">+</md-filled-button>
 
         </div>
 

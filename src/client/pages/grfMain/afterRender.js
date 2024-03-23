@@ -29,6 +29,9 @@ function grfMainAfter(activities) {
 
         // disable material button with id aiPromt
         document.getElementById("aiPromt").disabled = true;
+        document.getElementById("searchButton").disabled = true;
+        document.getElementById("createButton").disabled = true;
+        document.getElementById("loginButton").disabled = true;
 
         fetch("/api/search/",
             {
