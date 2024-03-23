@@ -1,5 +1,5 @@
 import { linkClick } from "../../routing";
-
+import { renderSearchData } from "./renderer.js";
 
 function grfMainAfter(activities) {
 
@@ -19,6 +19,31 @@ function grfMainAfter(activities) {
         });
     });
 
+    document.getElementById("loginButton").addEventListener("click", () => {
+        linkClick("/login");
+    });
+
+    document.getElementById("searchButton").addEventListener("click", () => {
+
+        let prompt = document.getElementById("aiPromt").value;
+
+        fetch("/api/search/",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ prompt: prompt })
+            }
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    renderSearchData(data);
+                })
+        );
+
+    })
 }
 
 export { grfMainAfter };

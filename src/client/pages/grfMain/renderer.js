@@ -7,7 +7,10 @@ import '@material/web/icon/icon';
 
 import '@material/web/button/filled-button';
 
+let cache = [];
+
 function renderGrfMain(activities) {
+    cache = activities;
     return /*html*/`
     <div class="pageTop">
         <div class=pageTopBack>
@@ -116,4 +119,14 @@ return /*html*/`
 `;
 }
 
-export { renderGrfMain };
+function renderSearchData(data) {
+    let activities = [];
+
+    data.matches.forEach(match => {
+        activities.push(cache.find(activity => activity.uuid == match));
+    });
+
+    document.getElementById("mainPage").innerHTML = renderGrfMain(activities);
+}
+
+export { renderGrfMain, renderSearchData };

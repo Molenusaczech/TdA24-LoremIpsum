@@ -42,7 +42,7 @@ import {
   getAllActivitiesAll
 } from "./activityHandler.js";
 
-import { aiResp, aiSumActivity } from "./aiHandler.js";
+import { aiResp, aiSumActivity, aiSearch } from "./aiHandler.js";
 
 app.use(express.json());
 //app.use(express.urlencoded({ extended: true }));
@@ -165,6 +165,14 @@ app.post("/api/login", cors(), async (req, res) => {
 
   res.send(result);
   
+});
+
+app.post("/api/search", cors(), async (req, res) => {
+  const input = req.body;
+
+  let result = await aiSearch(input.prompt);
+
+  res.send(result);
 });
 
 if (process.argv[2] == "prod") {
