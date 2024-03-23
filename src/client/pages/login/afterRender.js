@@ -27,7 +27,7 @@ function loginAfter() {
 
             if (data.code == 200) {
                 localStorage.setItem("token", data.token);
-                linkClick("/myBookings");
+                linkClick("/admin");
             } else {
                 alert("Špatné jméno nebo heslo!");
                 document.getElementById("loginPassword").value = "";

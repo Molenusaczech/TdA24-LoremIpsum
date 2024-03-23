@@ -383,10 +383,42 @@ async function verifyActivity(uuid) {
     };
 }
 
+const token = "OWRI89AiN5";
+
+async function tryLogin(username, password) {
+    let corUsername = "admin";
+    let corPassword = "tda";
+
+    if (username == corUsername && password == corPassword) {
+        return {
+            code: 200,
+            token: token
+        };
+    }
+
+    return {
+        code: 404,
+        message: "Invalid username or password"
+    };
+}
+
+async function generateToken() {
+    return token;
+}
+
+async function verifyToken(token) {
+    if (token == token) {
+        return true;
+    }
+    return false;
+}
+
 export {
     createActivity,
     getActivity,
     getAllActivities,
     deleteActivity,
-    verifyActivity
+    verifyActivity,
+    tryLogin,
+    generateToken,
 };

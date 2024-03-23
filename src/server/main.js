@@ -36,7 +36,8 @@ import {
   getActivity,
   getAllActivities,
   deleteActivity,
-  verifyActivity
+  verifyActivity,
+  tryLogin
 } from "./activityHandler.js";
 
 import { aiResp } from "./aiHandler.js";
@@ -327,6 +328,18 @@ app.post("/api/verifyActivity", cors(), async (req, res) => {
   let resp = await verifyActivity(input.uuid);
 
   res.send({ response: resp });
+});
+
+app.post("/api/login", cors(), async (req, res) => {
+  const input = req.body;
+
+  let username = input.username;
+  let password = input.password;
+
+  let result = await tryLogin(username, password);
+
+  res.send(result);
+  
 });
 
 if (process.argv[2] == "prod") {

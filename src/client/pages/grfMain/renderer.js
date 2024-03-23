@@ -46,7 +46,7 @@ function renderGrfMain(activities) {
 function renderActivity(activity) {
     console.log(activity);
     return /*html*/`
-    <div class="activityCard">
+    <div class="activityCard" data-activityId="${activity.uuid}">
         <div class="activityCardTop">
             <h2>${activity.title}</h2>
             <div class="activityCardTopRight">

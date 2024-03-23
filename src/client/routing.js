@@ -77,7 +77,7 @@ function renderPage(currentUrl) {
                 //detailAfter();
 
                 document.getElementById("mainPage").innerHTML = renderGrfMain(data);
-                grfMainAfter();
+                grfMainAfter(data);
             });
 
             /*
@@ -128,8 +128,20 @@ function renderPage(currentUrl) {
         changeFavicon(faviconUrl);
         document.title = "Administrace";
 
-        document.getElementById("mainPage").innerHTML = renderAdmin();
-        adminAfter();
+        fetch("/api/activity/")
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                //document.getElementById("mainPage").innerHTML = renderActivityDetail(data);
+                //detailAfter();
+
+                //document.getElementById("mainPage").innerHTML = renderGrfMain(data);
+                document.getElementById("mainPage").innerHTML = renderAdmin(data);
+                adminAfter(data);
+            });
+
+        
 
     }
 }
