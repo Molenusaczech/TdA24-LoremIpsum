@@ -29,6 +29,7 @@ function renderGrfMain(activities) {
                 <md-filled-text-field label="Hledat aktivity" id="aiPromt" class="bookTextbox">
                     <md-icon slot="leading-icon">search</md-icon>
                 </md-filled-text-field>
+                <md-filled-button class="searchButton" id="searchButton">Vyhledat</md-filled-button>
             </div>
 
             <div class="aiResults">
@@ -57,20 +58,6 @@ function renderActivity(activity) {
         <div class="activityCardDesc">
             <p>${activity.description}</p>
         </div>
-        <h2>Úroveň vzdělání</h2>
-        <div class="detailEdLevel">
-            ${activity.edLevel.map(renderEdLevel).join("")}
-        </div>
-
-        <h2>Cíle</h2>
-        <div class="detailEdLevel">
-            ${activity.objectives.map(editGoals).join("")}
-        </div>
-
-        <h2>Nástroje</h2>
-        <div class="detailEdLevel">
-            ${activity.tools.map(renderTool).join("")}
-        </div>
 
         <h2>Galerie</h2>
         <div class="detailGallery">
@@ -79,24 +66,6 @@ function renderActivity(activity) {
     </div>
     `;
 
-}
-
-function renderEdLevel(edLvl) {
-    return /*html*/`
-    <p>${edLvl}</p>
-    `;
-}
-
-function editGoals(goal) {
-return /*html*/`
-<p>${goal}</p>
-`;
-}
-
-function renderTool(tool) {
-return /*html*/`
-<p>${tool}</p>
-`;
 }
 
 function renderGallery(gallery) {

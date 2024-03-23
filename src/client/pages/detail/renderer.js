@@ -15,7 +15,6 @@ function renderActivityDetail(activity) {
               <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
               <h1>Projekt <span class="blueText">AMOS</span></h1>
               <div class="pageTopRowAdmin">
-                <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
               </div>
           </div>
           <hr>
@@ -140,10 +139,19 @@ function renderHomePrep(prep) {
   <div class="detailHomePrepSub">
     <hr>
     <p class="detailHomePrepSubTitle">${prep.title}</p>
-    <p class="detailHomePrepSubText">>${prep.warn || ""}</p>
-    <p class="detailHomePrepSubText">>${prep.note || ""}</p>
+    ${checkWarn(prep.warn || "")}
+    ${checkWarn(prep.note || "")}
   </div>
   `;
+}
+
+function checkWarn(str) {
+  if(str.length == 0){
+    return "";
+  }
+  else{
+    return /*html*/`<p class="detailHomePrepSubText">>${str}</p>`;
+  }
 }
 
 function renderImage(image) {

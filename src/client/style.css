@@ -210,7 +210,13 @@ body {
 }
 
 .searchField md-filled-text-field {
-    width: 100%;
+    width: 60%;
+}
+
+.aiPageContainer .searchField .searchButton md-filled-button {
+    justify-self: center;
+    align-self: center;
+    width: 20%;
 }
 
 .detailTime {
@@ -289,6 +295,14 @@ body {
 
 .detailLinks p {
     color: #fff;
+}
+
+.activityCard .detailLinks p {
+    color: #333333;
+}
+
+.activityCard .detailHomePrep {
+    padding: 0vw;
 }
 
 .detailHomePrep h2, p{
@@ -510,6 +524,10 @@ body {
 
 .inputsTitle {
     margin-top: 1vw;
+}
+
+.verifyButton {
+    margin-right: 1vw;
 }
 
 @media screen and (max-width: 700px) {
