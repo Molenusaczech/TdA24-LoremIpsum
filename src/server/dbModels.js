@@ -10,12 +10,12 @@ const Objective = sequelize.define("Objective", {
     uuid: {
         type: DataTypes.UUID,
         primaryKey: true,
-        allowNull: false,
+        allowNull: true,
         defaultValue: DataTypes.UUIDV4,
     },
     objectiveName: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     }
 });
 
@@ -23,12 +23,12 @@ const EdLevel = sequelize.define("EdLevel", {
     uuid: {
         type: DataTypes.UUID,
         primaryKey: true,
-        allowNull: false,
+        allowNull: true,
         defaultValue: DataTypes.UUIDV4,
     },
     levelName: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     }
 });
 
@@ -41,7 +41,7 @@ const Tool = sequelize.define("Tool", {
     },
     toolName: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     }
 });
 
@@ -54,15 +54,15 @@ const HomePreparation = sequelize.define("HomePreparation", {
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     warn: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
-    description: {
+    note: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     }
 });
 
@@ -75,15 +75,15 @@ const Instruction = sequelize.define("Instruction", {
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     warn: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     note: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     }
 });
 
@@ -96,15 +96,15 @@ const Agenda = sequelize.define("Agenda", {
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     duration: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
     },
     description: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     }
 });
 
@@ -117,11 +117,11 @@ const Link = sequelize.define("Link", {
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     url: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     }
 });
 
@@ -134,7 +134,7 @@ const Gallery = sequelize.define("Gallery", {
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     }
 });
 
