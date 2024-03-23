@@ -32,4 +32,22 @@ async function aiResp(prompt) {
     }
 }
 
-export { aiResp };
+async function aiSumActivity(activity) {
+
+    const completion = await openai.chat.completions.create({
+        messages: [
+            {
+                role: "system", content: "Jsi část systému pro školní projekty, napíšeš shrnutí aktivity."
+            },
+            {
+                role: "user", content: "Shrň tuto aktivitu: " + JSON.stringify(activity)
+            }
+        ],
+        model: "gpt-3.5-turbo",
+    });
+
+    console.log(completion.choices[0]);
+    return completion.choices[0].message.content;
+}
+
+export { aiResp, aiSumActivity };

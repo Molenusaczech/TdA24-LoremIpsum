@@ -28,7 +28,7 @@ function renderActivityDetail(activity) {
 
         <div class="detailPageTop">
           <h2 class="yellowText">Shrnutí pomocí AI</h2>
-          <p>blablabla</p>
+          <p>${activity.summary}</p>
         </div>
 
         <div class="detailSide">

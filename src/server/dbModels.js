@@ -217,6 +217,10 @@ const Activity = sequelize.define("Activity", {
     galleries: {
         type: DataTypes.STRING,
         allowNull: true,
+    },
+    summary: {
+        type: DataTypes.STRING,
+        allowNull: true,
     }
 });
 
