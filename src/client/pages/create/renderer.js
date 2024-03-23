@@ -5,6 +5,7 @@ import '@material/web/textfield/outlined-text-field';
 import '@material/web/icon/icon';
 
 import '@material/web/button/filled-button';
+import '@material/web/button/outlined-button';
 
 function renderCreate() {
     return /*html*/`
@@ -86,6 +87,18 @@ function renderCreate() {
                 <md-icon slot="leading-icon">build</md-icon>
             </md-outlined-text-field>
             <md-filled-button class="createButton" id="addTool">+</md-filled-button>
+
+        </div>
+
+        <div class="createTools">
+
+        <h2 class="inputsTitle">Uspořádání třídy</h2>
+
+            <div id="classroomType">
+                <md-filled-button class="radioButton" id="individualButton">Individuální</md-filled-button>
+                <md-outlined-button class="radioButton" id="groupButton">Skupinové</md-outlined-button>
+                <md-outlined-button class="radioButton" id="allButton">Celotřídní</md-outlined-button>
+            </div>
 
         </div>
 
