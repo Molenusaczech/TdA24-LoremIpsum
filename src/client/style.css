@@ -542,6 +542,10 @@ body {
     margin-right: 1vw;
 }
 
+.formPageContainer md-icon {
+    --md-icon-size: 2vw;
+}
+
 @media screen and (max-width: 700px) {
     
 }
