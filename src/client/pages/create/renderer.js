@@ -14,7 +14,6 @@ function renderCreate() {
                 <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
                 <h1>Projekt <span class="blueText">AMOS</span></h1>
                 <div class="pageTopRowAdmin">
-                    <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
                 </div>
             </div>
             <hr>
