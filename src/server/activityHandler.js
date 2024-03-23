@@ -23,11 +23,16 @@ function parseActivity(activity, isAll = false) {
         gallery: []
     };
 
+    try {
     activity.objectives ??= "[]";
+    console.log(activity.objectives);
     JSON.parse(activity.objectives).forEach(obj => {
         console.log(obj);
         newActivity.objectives.push(obj);
     });
+} catch (e) {
+    console.log(e);
+}
 
  
     activity.edLevel ??= "[]";

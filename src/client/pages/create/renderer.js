@@ -13,8 +13,9 @@ function renderCreate() {
         <div class=pageTopBack>
             <div class="pageTopRow">
                 <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
-                <h1>Projekt <span class="blueText">AMOS</span></h1>
+                <h1>Project <span class="blueText">AMOS</span></h1>
                 <div class="pageTopRowAdmin">
+                    dadad
                 </div>
             </div>
             <hr>
@@ -26,16 +27,18 @@ function renderCreate() {
         <h1 class="pageTitle">Vytvořit aktivitu</h1>
         
         <md-outlined-text-field label="Jméno aktivity" id="titleInput">
-            <md-icon slot="leading-icon">edit</md-icon>
+            <md-icon slot="leading-icon">Ink-Highlighter</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field label="Minimální délka" id="minLenghtInput">
-            <md-icon slot="leading-icon">schedule</md-icon>
+            <md-icon slot="leading-icon">person</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field label="Maximální délka" id="maxLenghtInput">
-            <md-icon slot="leading-icon">schedule</md-icon>
+            <md-icon slot="leading-icon">person</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field label="Struktura aktivity" id="structureInput">
-            <md-icon slot="leading-icon">edit</md-icon>
+            <md-filled-button class="radioButton" id="individualButton">Individuální</md-filled-button>
+            <md-outlined-button class="radioButton" id="groupButton">Skupinové</md-outlined-button>
+            <md-outlined-button class="radioButton" id="allButton">Celotřídní</md-outlined-button>
         </md-outlined-text-field>
         <md-outlined-text-field
             type="textarea"
@@ -52,7 +55,6 @@ function renderCreate() {
             <div id="objectiveList">
             
             </div>
-
             <md-outlined-text-field label="Cíl" id="objectiveInput">
                 <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
@@ -91,14 +93,6 @@ function renderCreate() {
         </div>
 
         <div class="createTools">
-
-        <h2 class="inputsTitle">Uspořádání třídy</h2>
-
-            <div id="classroomType">
-                <md-filled-button class="radioButton" id="individualButton">Individuální</md-filled-button>
-                <md-outlined-button class="radioButton" id="groupButton">Skupinové</md-outlined-button>
-                <md-outlined-button class="radioButton" id="allButton">Celotřídní</md-outlined-button>
-            </div>
 
         </div>
 
@@ -281,6 +275,7 @@ function renderGallery(gallery, index) {
     return /*html*/`
     <div class="task">
         <p>${gallery.title}</p>
+        <p>${gallery.name}</p>
         <md-icon class="deleteGallery" data-gallery="${index}">delete</md-icon>
 
         <div class="createGallerySub">
@@ -295,7 +290,7 @@ function renderGallery(gallery, index) {
                     <md-icon slot="leading-icon">person</md-icon>
                 </md-outlined-text-field>
 
-                <md-filled-button class="createButton" data-galleryButton="${index}">+</md-filled-button>
+                <p><md-filled-button class="createButton" data-galleryButton="${index}">+</md-filled-button></p>
 
             </div>
     </div>
