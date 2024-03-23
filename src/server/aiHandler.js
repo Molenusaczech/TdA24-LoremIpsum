@@ -53,9 +53,10 @@ async function aiSumActivity(activity) {
 }
 
 function parseActivitiesForAI(activities) {
-    let parsed = activities.map(activity => {
+    let count = 0;
+    let parsed = activities.map((activity, index) => {
         return {
-            uuid: activity.uuid,
+            id: index,
             summary: activity.summary,
             title: activity.activityName,
         };
@@ -73,7 +74,7 @@ async function aiSearch(prompt) {
     const completion = await openai.chat.completions.create({
         messages: [
             {
-                role: "system", content: "Jsi část systému pro školní projekty. Dostaneš 2 vstupy: zadání uživatele a json soubor všech projektů. Najdeš 3 nejvhodnější a napíšeš jejich uuid, nadpis a hodnota do JSONU, jak moc odpovídají zadání uživatele. JSON je seznam a každý prvek má vždy match, uuid a title."
+                role: "system", content: "Jsi část systému pro školní projekty. Dostaneš 2 vstupy: zadání uživatele a json soubor všech projektů. Najdeš 3 nejvhodnější a napíšeš jejich id, nadpis a hodnota do JSONU, jak moc odpovídají zadání uživatele. JSON je seznam a každý prvek má vždy match, id a title."
             },
             {
                 role: "user", content: "Zadání uživatele: " + prompt + " JSON soubor: " + JSON.stringify(parsed)

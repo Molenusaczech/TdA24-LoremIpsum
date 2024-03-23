@@ -27,6 +27,9 @@ function grfMainAfter(activities) {
 
         let prompt = document.getElementById("aiPromt").value;
 
+        // disable material button with id aiPromt
+        document.getElementById("aiPromt").disabled = true;
+
         fetch("/api/search/",
             {
                 method: "POST",
@@ -34,13 +37,12 @@ function grfMainAfter(activities) {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({ prompt: prompt })
-            }
-                .then(response => {
+            }).then(response => {
                     return response.json();
                 })
                 .then(data => {
                     renderSearchData(data);
-                })
+                }
         );
 
     })

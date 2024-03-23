@@ -92,8 +92,10 @@ function renderSearchData(data) {
     let activities = [];
 
     data.matches.forEach(match => {
-        activities.push(cache.find(activity => activity.uuid == match));
+        activities.push(cache[match.id]);
     });
+
+    console.log(activities);
 
     document.getElementById("mainPage").innerHTML = renderGrfMain(activities);
 }
