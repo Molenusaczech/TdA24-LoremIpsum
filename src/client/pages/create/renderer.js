@@ -290,7 +290,7 @@ function renderGallery(gallery, index) {
                 }).join("")}
 
                 <md-outlined-text-field label="URL" data-galleryInput="${index}">
-                    <md-icon slot="leading-icon">person</md-icon>
+                    <md-icon slot="leading-icon">link</md-icon>
                 </md-outlined-text-field>
 
                 <p><md-filled-button class="createButton" data-galleryButton="${index}">+</md-filled-button></p>
