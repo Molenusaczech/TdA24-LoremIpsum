@@ -41,7 +41,7 @@ function renderGrfMain() {
                 Tady budou nejoblíbenější
             </div>
 
-            <md-filled-button class="mainButton" id="(Přejít na tvoření aktivity)">Vytvořit aktivitu</md-filled-button>
+            <md-filled-button class="mainButton" id="createButton">Vytvořit aktivitu</md-filled-button>
 
         </div>
 
