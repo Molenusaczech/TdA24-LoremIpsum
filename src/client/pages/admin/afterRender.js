@@ -35,6 +35,11 @@ function adminAfter(data) {
                 linkClick("/admin");
             });
         });
+
+        document.getElementById("logoutButton").addEventListener("click", () => {
+            localStorage.removeItem("token");
+            linkClick("/");
+        });
     });
 }
 
