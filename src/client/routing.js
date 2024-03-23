@@ -93,7 +93,7 @@ function renderPage(currentUrl) {
         let split = currentUrl.split("/");
         let uuid = split[2];
 
-        fetch("/api/activity/" + uuid)
+        fetch("/api/activityAll/" + uuid)
             .then(response => {
                 return response.json();
             })

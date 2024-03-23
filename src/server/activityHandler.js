@@ -2,7 +2,9 @@ import {
     Activity
 } from "./dbModels.js"
 
-function parseActivity(activity) {
+import { aiSumActivity } from "./aiHandler.js";
+
+function parseActivity(activity, isAll = false) {
 
     let newActivity = {
         uuid: activity.uuid,
@@ -21,75 +23,13 @@ function parseActivity(activity) {
         gallery: []
     };
 
-    /*let objectives = JSON.parse(activity.objectives) || [];
-    for (let obj of objectives) {
-        newActivity.objectives.push(obj.objectiveName);
-    }*/
-
     activity.objectives ??= "[]";
     JSON.parse(activity.objectives).forEach(obj => {
         console.log(obj);
         newActivity.objectives.push(obj);
     });
 
-    /*let edLevels = JSON.parse(activity.edLevel) || [];
-    for (let edLevel of edLevels) {
-        newActivity.edLevel.push(edLevel.levelName);
-    }
-
-    let tools = JSON.parse(activity.tools) || [];
-    for (let tool of tools) {
-        newActivity.tools.push(tool.toolName);
-    }
-
-    let homePreparations = JSON.parse(activity.homePreparation) || [];
-    for (let prep of homePreparations) {
-        newActivity.homePreparation.push({
-            title: prep.title,
-            warn: prep.warn,
-            note: prep.note
-        });
-    }
-
-    for (let instr of activity.Instructions) {
-        newActivity.instructions.push({
-            title: instr.title,
-            warn: instr.warn,
-            note: instr.note
-        });
-    }
-
-    for (let agenda of activity.Agendas) {
-        newActivity.agenda.push({
-            duration: agenda.duration,
-            title: agenda.title,
-            description: agenda.description
-        });
-    }
-
-    for (let link of activity.Links) {
-        newActivity.links.push({
-            title: link.title,
-            url: link.url
-        });
-    }
-
-    for (let gallery of activity.Galleries) {
-        let galleryObj = {
-            title: gallery.title,
-            images: []
-        };
-
-        for (let img of gallery.Images) {
-            galleryObj.images.push({
-                lowRes: img.lowRes,
-                highRes: img.highRes
-            });
-        }
-
-        newActivity.gallery.push(galleryObj);
-    }*/
-
+ 
     activity.edLevel ??= "[]";
     JSON.parse(activity.edLevel).forEach(edLevel => {
 
@@ -156,6 +96,11 @@ function parseActivity(activity) {
         newActivity.gallery.push(galleryObj);
     });
 
+    if (isAll) {
+        newActivity.summary = activity.summary;
+        newActivity.isVerified = activity.isVerified;
+    }
+
 
     return newActivity;
 }
@@ -179,6 +124,23 @@ async function getActivity(uuid) {
     return parseActivity(activity);
 }
 
+async function getActivityAll(uuid) {
+    let activity = await Activity.findOne({
+        where: {
+            uuid: uuid
+        }
+    });
+
+    if (!activity) {
+        return {
+            code: 404,
+            message: "Activity not found"
+        };
+    }
+
+    return parseActivity(activity, true);
+}
+
 async function createActivity(input, isServer = false) {
 
     //console.log(input);
@@ -199,7 +161,8 @@ async function createActivity(input, isServer = false) {
         instructions: JSON.stringify(input.instructions),
         agenda: JSON.stringify(input.agenda),
         links: JSON.stringify(input.links),
-        galleries: JSON.stringify(input.gallery)
+        galleries: JSON.stringify(input.gallery),
+        summary: "WIP"
     });
 
     /*let activity = await Activity.create({
@@ -314,6 +277,11 @@ async function createActivity(input, isServer = false) {
         activity.addGallery(galleryObj);
     }*/
 
+    aiSumActivity(input).then((summary) => {
+        activity.summary = summary;
+        activity.save();
+    });
+
     return getActivity(activity.uuid);
 }
 
@@ -335,6 +303,29 @@ async function getAllActivities(isAdmin = false) {
 
     for (let activity of activities) {
         newActivities.push(parseActivity(activity));
+    }
+
+    return newActivities;
+}
+
+async function getAllActivitiesAll(isAdmin = false) {
+
+    let activities = [];
+
+    if (!isAdmin) {
+        activities = await Activity.findAll({
+            where: {
+                isVerified: true
+            }
+        });
+    } else {
+        activities = await Activity.findAll({});
+    }
+
+    let newActivities = [];
+
+    for (let activity of activities) {
+        newActivities.push(parseActivity(activity, true));
     }
 
     return newActivities;
@@ -421,4 +412,6 @@ export {
     verifyActivity,
     tryLogin,
     generateToken,
+    getActivityAll,
+    getAllActivitiesAll
 };
