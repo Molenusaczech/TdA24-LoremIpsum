@@ -53,7 +53,7 @@ function renderActivity(activity) {
     return /*html*/`
     <div class="activityCard" data-activityId="${activity.uuid}">
         <div class="activityCardTop">
-            <h2>${activity.title}</h2>
+            <h2>${activity.activityName}</h2>
             <div class="activityCardTopRight">
                 <md-icon>schedule</md-icon>
                 <p>${activity.lengthMin} - ${activity.lengthMax} minut</p>
