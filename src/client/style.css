@@ -10,8 +10,8 @@
     --md-slider-label-text-weight: 700;
     --md-slider-label-text-size: 15px;
     /* set font family */
-    --md-ref-typeface-brand: 'Open Sans';
-    --md-ref-typeface-plain: 'Open Sans';
+    --md-ref-typeface-brand: 'Lalezar';
+    --md-ref-typeface-plain: 'Lalezar';
 }
 
 body {
@@ -19,7 +19,8 @@ body {
     padding: 0;
     background-color: #292d2f;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Lalezar";
+    font-weight: 10;
 }
 
 .pageTop {
@@ -53,6 +54,10 @@ body {
     width: 78%;
     text-align: center;
     background-color: #292d2f;
+    font-family: "Lalezar";
+    font-weight: 100;
+    font-size: 4vw;
+    margin: -1vw;
 }
 
 .pageTopRowAdmin {
@@ -137,21 +142,91 @@ body {
     /*display: flex;*/
     /*border: red solid 1px;*/
     position: absolute;
+    display: flex;
+    flex-direction: column;
     top: 5vw;
     left: 50%;
     transform: translate(-50%, 0);
     width: 60vmax;
     z-index: 10;
+    --md-filled-button-container-color: #fff;
+    --md-filled-button-label-text-color: #333333;
+    --md-filled-button-hover-label-text-color: #333333;
+}
+
+.aiPageContainer md-filled-button {
+    margin-top: 2vw;
+    justify-self: center;
+    align-self: center;
+    width: 30%;
+}
+
+.aiPageContainer md-filled-button:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
 }
 
 .searchField {
     background-color: #fff;
     border-radius: 3vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
     padding: 1vw;
+    --md-filled-text-field-container-color: #fff;
+    --md-filled-text-field-container-hover-color: #fff;
+    --md-filled-text-field-active-indicator-color: #fff;
+    --md-filled-text-field-hover-active-indicator-color: #fff;
+    --md-filled-text-field-focus-active-indicator-color: #fff;
 }
 
 .searchField md-filled-text-field {
     width: 100%;
+}
+
+.detailTime {
+    display: flex;
+    width: 33%;
+    justify-self: center;
+}
+
+.detailTime md-icon {
+    width: 33%;
+    color: #74C7D3;
+    --md-icon-size: 4.5vw;
+}
+
+.detailTimeSubContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailTimeSubContainer p {
+    margin: 0.2vw;
+    margin-left: 1vw;
+}
+
+.detailEdLevel p {
+    margin: 0.1vw;
+    margin-top: 2vw;
+    padding: 0.3vw;
+    border-radius: 1vw;
+    background-color: #FECB2E;
+    color: #fff;
+    font-weight: 100;
+    transition: 0.2s;
+    font-size: 1vw;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 0.2vw;
+    margin-top: 0.2vw;
+}
+
+.detailLeft {
+    width: 70%
+}
+
+.detailRight {
+    width: 30%
 }
 
 @media screen and (max-width: 700px) {

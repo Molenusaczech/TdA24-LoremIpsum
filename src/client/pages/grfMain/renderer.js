@@ -13,7 +13,7 @@ function renderGrfMain() {
         <div class=pageTopBack>
             <div class="pageTopRow">
                 <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
-                <h1>Project <span class="blueText">AMOS</span></h1>
+                <h1>Projekt <span class="blueText">AMOS</span></h1>
                 <div class="pageTopRowAdmin">
                     dadad
                 </div>
@@ -22,20 +22,26 @@ function renderGrfMain() {
         </div>
     </div>
 
-    <div class="aiPageContainer">
-        <img src="${pageTitleIcon}" alt="IkonaTitle" class="mainTitleIcon">
+        <div class="aiPageContainer">
+            <img src="${pageTitleIcon}" alt="IkonaTitle" class="mainTitleIcon">
 
-        <div class="searchField">
-            <md-filled-text-field label="Hledat aktivity" id="aiPromt" class="bookTextbox">
-                <md-icon slot="leading-icon">psychology</md-icon>
-            </md-filled-text-field>
-        </div>
+            <div class="searchField">
+                <md-filled-text-field label="Hledat aktivity" id="aiPromt" class="bookTextbox">
+                    <md-icon slot="leading-icon">psychology</md-icon>
+                </md-filled-text-field>
+            </div>
 
-        <h1> Odpověď AI: </h1>
+            <div class="aiResults">
+                Tady budou výsledky
+            </div>
 
-        <div class="aiResponse" id="aiResponse">
-            Na něco se zeptejte AI
-        </div>
+            <h1>Oblíbené aktivity</h1>
+
+            <div class="aiBest">
+                Tady budou nejoblíbenější
+            </div>
+
+            <md-filled-button class="mainButton" id="(Přejít na tvoření aktivity)">Vytvořit aktivitu</md-filled-button>
 
         </div>
 
