@@ -7,7 +7,7 @@ import '@material/web/icon/icon';
 
 import '@material/web/button/filled-button';
 
-function renderGrfMain() {
+function renderGrfMain(activities) {
     return /*html*/`
     <div class="pageTop">
         <div class=pageTopBack>
@@ -32,13 +32,7 @@ function renderGrfMain() {
             </div>
 
             <div class="aiResults">
-                Tady budou výsledky
-            </div>
-
-            <h1>Oblíbené aktivity</h1>
-
-            <div class="aiBest">
-                Tady budou nejoblíbenější
+                ${activities.map(renderActivity).join("")}
             </div>
 
             <md-filled-button class="mainButton" id="createButton">Vytvořit aktivitu</md-filled-button>
@@ -47,6 +41,25 @@ function renderGrfMain() {
 
     </div>
     `;
+}
+
+function renderActivity(activity) {
+    console.log(activity);
+    return /*html*/`
+    <div class="activityCard">
+        <div class="activityCardTop">
+            <h2>${activity.title}</h2>
+            <div class="activityCardTopRight">
+                <md-icon>schedule</md-icon>
+                <p>${activity.lengthMin} - ${activity.lengthMax} minut</p>
+            </div>
+        </div>
+        <div class="activityCardDesc">
+            <p>${activity.description}</p>
+        </div>
+    </div>
+    `;
+
 }
 
 export { renderGrfMain };

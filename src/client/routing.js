@@ -68,8 +68,21 @@ function renderPage(currentUrl) {
         changeFavicon(faviconUrl);
         document.title = "AMOS - Aktivity"
 
+        fetch("/api/activity/")
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                //document.getElementById("mainPage").innerHTML = renderActivityDetail(data);
+                //detailAfter();
+
+                document.getElementById("mainPage").innerHTML = renderGrfMain(data);
+                grfMainAfter();
+            });
+
+            /*
         document.getElementById("mainPage").innerHTML = renderGrfMain();
-        grfMainAfter();
+        grfMainAfter();*/
 
 
     } else if (activityRegex.test(currentUrl)) {
