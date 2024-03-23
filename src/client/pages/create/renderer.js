@@ -199,7 +199,7 @@ function renderCreate() {
         <p><md-filled-button class="createButton" id="addGallery">+</md-filled-button></p>
 
 
-        <md-filled-button class="createButton" id="submitActivity">Vytvořit ke schválení</md-filled-button>
+        <md-filled-button class="createButtonFin" id="submitActivity">Vytvořit ke schválení</md-filled-button>
 
     </div>
 

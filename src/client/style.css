@@ -95,11 +95,12 @@ body {
     /*display: flex;*/
     /*border: red solid 1px;*/
     position: absolute;
+    display: flex;
+    flex-direction: column;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    background-color: #fff;
     padding: 1vw;
     border-radius: 1vw;
 }
@@ -107,10 +108,27 @@ body {
 .loginContainer md-outlined-text-field {
     width: 100%;
     margin-bottom: 1vw;
+    margin-top: 1vw;
+    --md-outlined-text-field-hover-outline-color: #fff;
+    --md-outlined-text-field-outline-color: #fff;
+    --md-outlined-text-field-label-text-color: #fff;
+    --md-outlined-text-field-hover-label-text-color: #fff;
+    --md-outlined-text-field-input-text-color: #fff;
+    --md-outlined-text-field-hover-input-text-color: #fff;
+    --md-outlined-text-field-focus-input-text-color: #fff;
+}
+
+.loginContainer md-outlined-text-field md-icon {
+    color: #fff;
 }
 
 .loginContainer md-filled-button {
     width: 100%;
+}
+
+.loginContainer md-filled-button:hover {
+    transform: scale(1.015);
+    transition: 0.3s;
 }
 
 .aiPageBox {
@@ -151,9 +169,9 @@ body {
     transform: translate(-50%, 0);
     width: 60vmax;
     z-index: 10;
-    --md-filled-button-container-color: #fff;
-    --md-filled-button-label-text-color: #333333;
-    --md-filled-button-hover-label-text-color: #333333;
+    --md-filled-button-container-color: #74C7D3;
+    --md-filled-button-label-text-color: #fff;
+    --md-filled-button-hover-label-text-color: #fff;
 }
 
 .aiPageContainer md-filled-button {
@@ -181,6 +199,10 @@ body {
     --md-filled-text-field-active-indicator-color: #fff;
     --md-filled-text-field-hover-active-indicator-color: #fff;
     --md-filled-text-field-focus-active-indicator-color: #fff;
+}
+
+.formPageContainer md-outlined-text-field md-icon {
+    color: #fff;
 }
 
 .searchField md-filled-text-field {
@@ -216,6 +238,7 @@ body {
 
 .detailEdLevel p {
     margin: 0.1vw;
+    margin-right: 0.5vw;
     padding: 0.3vw;
     border-radius: 1vw;
     background-color: #74C7D3;
@@ -264,6 +287,12 @@ body {
 
 .detailName {
     background-color: #74C7D3;
+    width: 100%;
+    text-align: center;
+}
+
+.adminName {
+    background-color: #FECB2E;
     width: 100%;
     text-align: center;
 }
@@ -348,9 +377,9 @@ body {
     transform: translate(-50%, 0);
     width: 60vmax;
     z-index: 10;
-    --md-filled-button-container-color: #fff;
-    --md-filled-button-label-text-color: #333333;
-    --md-filled-button-hover-label-text-color: #333333;
+    --md-filled-button-container-color: #74C7D3;
+    --md-filled-button-label-text-color: #fff;
+    --md-filled-button-hover-label-text-color: #fff;
 }
 
 .formPageContainer h2, p {
