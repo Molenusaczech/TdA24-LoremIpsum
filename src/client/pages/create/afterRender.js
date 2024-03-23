@@ -5,8 +5,11 @@ import {
     renderInstructions,
     renderAgenda,
     renderLinks,
-    renderGallery
+    renderGallery,
+    renderTool
 } from "./renderer.js";
+
+import { linkClick } from "../../routing.js";
 
 let objective = [];
 let edLevels = [];
@@ -15,6 +18,7 @@ let instructions = [];
 let agenda = [];
 let links = [];
 let galleries = [];
+let tools = [];
 
 function updateObjectives() {
     document.getElementById("objectiveInput").value = "";
@@ -167,6 +171,46 @@ function updateGalleries() {
 
 }
 
+function updateTools() {
+    document.getElementById("toolInput").value = "";
+
+    document.getElementById("toolList").innerHTML = tools.map((obj, index) => {
+        return renderTool(obj, index);
+    }).join("");
+
+    tools.forEach((obj, index) => {
+        document.querySelector(`[data-tool="${index}"]`).addEventListener("click", () => {
+            console.log("click");
+
+            tools = tools.filter((item, i) => i !== index);
+            updateTools();
+        });
+    });
+
+}
+
+function parseGalleryImages() {
+    let newGalleries = [];
+
+    galleries.forEach((gallery) => {
+        let newGallery = {
+            title: gallery.title,
+            images: []
+        };
+
+        gallery.images.forEach((img) => {
+            newGallery.images.push({
+                lowRes: "https://resize.sardo.work/?imageUrl="+img+"&width=200&height=200&quality=90",
+                highRes: img
+            });
+        });
+
+        newGalleries.push(newGallery);
+    });
+    
+    return newGalleries;
+}
+
 function createAfter() {
     // Do something after the activity is rendered
     document.getElementById("backButton").addEventListener("click", () => {
@@ -242,10 +286,54 @@ function createAfter() {
         let galleryTitleInput = document.getElementById("galleryTitleInput").value;
 
         galleries.push({
-            name: galleryTitleInput,
+            title: galleryTitleInput,
             images: []
         });
         updateGalleries();
+    });
+
+    document.getElementById("addTool").addEventListener("click", () => {
+        let toolInput = document.getElementById("toolInput").value;
+
+        tools.push(toolInput);
+        updateTools();
+    });
+
+    document.getElementById("submitActivity").addEventListener("click", async () => {
+        let title = document.getElementById("titleInput").value;
+        let description = document.getElementById("descriptionInput").value;
+        //let duration = document.getElementById("durationInput").value;
+        let structure = document.getElementById("structureInput").value;
+        let minLenght = document.getElementById("minLenghtInput").value;
+        let maxLenght = document.getElementById("maxLenghtInput").value;
+        let objective = document.getElementById("objectiveInput").value;
+
+        let response = await fetch("/api/createActivity", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "activityName": title,
+                "objectives": objective,
+                "lengthMin": minLenght,
+                "lengthMax": maxLenght,
+                "classStructure": structure,
+                "description": "gghkgkgkh",
+                "edLevel": edLevels,
+                "tools": tools,
+                "homePreparation": prep,
+                "instructions": instructions,
+                "agenda": agenda,
+                "links": links,
+                "gallery": parseGalleryImages()
+              })
+        }).then(response => {
+            return response.json();
+        });
+        console.log(response);
+        // http://localhost:8080/aktivita/55c78822-8d2f-4c2e-bde0-104544cd2dba
+        linkClick("/aktivita/"+response.response.uuid);
     });
 
 }

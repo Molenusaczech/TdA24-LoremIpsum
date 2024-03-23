@@ -25,23 +25,23 @@ function renderCreate() {
         <img src="${pageTitleIcon}" alt="IkonaTitle" class="mainTitleIcon">
         <h1 class="pageTitle">Vytvořit aktivitu</h1>
         
-        <md-outlined-text-field label="Jméno aktivity" id="(jmeno)">
+        <md-outlined-text-field label="Jméno aktivity" id="titleInput">
             <md-icon slot="leading-icon">person</md-icon>
         </md-outlined-text-field>
-        <md-outlined-text-field label="Minimální délka" id="(delka min)">
+        <md-outlined-text-field label="Minimální délka" id="minLenghtInput">
             <md-icon slot="leading-icon">person</md-icon>
         </md-outlined-text-field>
-        <md-outlined-text-field label="Maximální délka" id="(delka max)">
+        <md-outlined-text-field label="Maximální délka" id="maxLenghtInput">
             <md-icon slot="leading-icon">person</md-icon>
         </md-outlined-text-field>
-        <md-outlined-text-field label="Struktura aktivity" id="(struktura)">
+        <md-outlined-text-field label="Struktura aktivity" id="structureInput">
             <md-icon slot="leading-icon">person</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field
             type="textarea"
             label="Popisek aktivity"
             class="bookTextbox"
-            id="(Popisek)"
+            id="descriptionInput"
             rows="3">
         </md-outlined-text-field>
 
@@ -72,6 +72,21 @@ function renderCreate() {
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
             <md-filled-button class="createButton" id="addEdLevel">+</md-filled-button>
+
+        </div>
+
+        <div class="createTools">
+
+        <h2 class="inputsTitle">Nástroje</h2>
+
+             <div id="toolList">
+        
+             </div>
+
+            <md-outlined-text-field label="Nástroj" id="toolInput">
+                <md-icon slot="leading-icon">person</md-icon>
+            </md-outlined-text-field>
+            <md-filled-button class="createButton" id="addTool">+</md-filled-button>
 
         </div>
 
@@ -184,7 +199,7 @@ function renderCreate() {
         <md-filled-button class="createButton" id="addGallery">+</md-filled-button>
 
 
-        <md-filled-button class="createButton" id="(Vytvoř aktivitu)">Rezervovat</md-filled-button>
+        <md-filled-button class="createButton" id="submitActivity">Rezervovat</md-filled-button>
 
     </div>
 
@@ -255,7 +270,7 @@ function renderLinks(link, index) {
 function renderGallery(gallery, index) {
     return /*html*/`
     <div class="task">
-        <p>${gallery.name}</p>
+        <p>${gallery.title}</p>
         <md-icon class="deleteGallery" data-gallery="${index}">delete</md-icon>
 
         <div class="createGallerySub">
@@ -286,6 +301,15 @@ function renderImage(image, index, galleryIndex) {
     `;
 }
 
+function renderTool(tool, index) {
+    return /*html*/`
+    <div class="task">
+        <p>${tool}</p>
+        <md-icon class="deleteTool" data-tool="${index}">delete</md-icon>
+    </div>
+    `;
+}
+
 export { 
     renderCreate, 
     renderTask, 
@@ -294,5 +318,6 @@ export {
     renderInstructions,
     renderAgenda,
     renderLinks,
-    renderGallery
+    renderGallery,
+    renderTool
 };
