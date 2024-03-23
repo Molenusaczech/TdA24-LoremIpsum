@@ -12,7 +12,7 @@ function renderAdmin() {
       <div class=pageTopBack>
           <div class="pageTopRow">
               <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
-              <h1>Project <span class="blueText">AMOS</span></h1>
+              <h1>Projekt <span class="blueText">AMOS</span></h1>
               <div class="pageTopRowAdmin">
                   dadad
               </div>

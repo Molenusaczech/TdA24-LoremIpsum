@@ -15,7 +15,7 @@ function renderGrfMain(activities) {
                 <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
                 <h1>Projekt <span class="blueText">AMOS</span></h1>
                 <div class="pageTopRowAdmin">
-                    Přihlásit se
+                    <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
                 </div>
             </div>
             <hr>
@@ -57,9 +57,63 @@ function renderActivity(activity) {
         <div class="activityCardDesc">
             <p>${activity.description}</p>
         </div>
+        <h2>Úroveň vzdělání</h2>
+        <div class="detailEdLevel">
+            ${activity.edLevel.map(renderEdLevel).join("")}
+        </div>
+
+        <h2>Cíle</h2>
+        <div class="detailEdLevel">
+            ${activity.objectives.map(editGoals).join("")}
+        </div>
+
+        <h2>Nástroje</h2>
+        <div class="detailEdLevel">
+            ${activity.tools.map(renderTool).join("")}
+        </div>
+
+        <h2>Galerie</h2>
+        <div class="detailGallery">
+            ${activity.gallery.map(renderGallery).join("")}
+        </div>
     </div>
     `;
 
+}
+
+function renderEdLevel(edLvl) {
+    return /*html*/`
+    <p>${edLvl}</p>
+    `;
+}
+
+function editGoals(goal) {
+return /*html*/`
+<p>${goal}</p>
+`;
+}
+
+function renderTool(tool) {
+return /*html*/`
+<p>${tool}</p>
+`;
+}
+
+function renderGallery(gallery) {
+    return /*html*/`
+    <div class="detailGallerySub">
+      <h2>${gallery.title}</h2>
+      <div class="detailGalleryImages">
+        ${gallery.images.map(renderImage).join("")}
+      </div>
+    </div>
+    `;
+}
+
+function renderImage(image) {
+return /*html*/`
+<img src="${image.highRes}">
+`;
 }
 
 export { renderGrfMain };
