@@ -128,7 +128,7 @@ function renderPage(currentUrl) {
         changeFavicon(faviconUrl);
         document.title = "Administrace";
 
-        fetch("/api/activity/")
+        fetch("/api/activityAll/")
             .then(response => {
                 return response.json();
             })
