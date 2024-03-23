@@ -15,7 +15,7 @@ function renderActivityDetail(activity) {
               <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
               <h1>Projekt <span class="blueText">AMOS</span></h1>
               <div class="pageTopRowAdmin">
-                  dadad
+                <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
               </div>
           </div>
           <hr>
@@ -27,15 +27,20 @@ function renderActivityDetail(activity) {
         
         <h1 class="detailName">${activity.title}</h1>
 
+        <div class="detailPageTop">
+          <h2 class="yellowText">Shrnutí pomocí AI</h2>
+          <p>blablabla</p>
+        </div>
+
         <div class="detailSide">
           <div class="detailLeft">
 
-            <h2>Popis</h2>
+            <h2 class="yellowText">Popis</h2>
             <div class="detailDesc">${activity.description}</div>
-            <h2>Struktura</h2>
+            <h2 class="yellowText">Struktura</h2>
             <div class="detailSubDesc">${activity.classStructure}</div>
 
-            <h2>Čas</h2>
+            <h2 class="yellowText">Čas</h2>
             <div class="detailTime">
               <md-icon>schedule</md-icon>
               <div class="detailTimeSubContainer">
@@ -44,22 +49,22 @@ function renderActivityDetail(activity) {
               </div>
             </div>
 
-            <h2>Úroveň vzdělání</h2>
+            <h2 class="yellowText">Úroveň vzdělání</h2>
             <div class="detailEdLevel">
               ${activity.edLevel.map(renderEdLevel).join("")}
             </div>
 
-            <h2>Cíle</h2>
+            <h2 class="yellowText">Cíle</h2>
             <div class="detailEdLevel">
               ${activity.objectives.map(editGoals).join("")}
             </div>
 
-            <h2>Nástroje</h2>
+            <h2 class="yellowText">Nástroje</h2>
             <div class="detailEdLevel">
               ${activity.tools.map(renderTool).join("")}
             </div>
 
-            <h2>Odkazy</h2>
+            <h2 class="yellowText">Odkazy</h2>
             <div class="detailLinks">
               ${activity.links.map(renderLink).join("")}
             </div>
@@ -68,27 +73,34 @@ function renderActivityDetail(activity) {
 
           <div class="detailRight">
             <div class="detailHomePrep">
-              <h1>Domácí příprava</h1>
+              <h2>Domácí příprava</h2>
               
               ${activity.homePreparation.map(renderHomePrep).join("")}
 
             </div>
+          </div>
+        </div>
+
+        <div class="detailSideBot">
+          <div class="detailLeftBot">
             <div class="detailHomePrep">
-              <h1>Instrukce</h1>
+              <h2>Instrukce</h2>
               
               ${activity.instructions.map(renderHomePrep).join("")}
               
             </div>
+          </div>
+          <div class="detailRightBot">
             <div class="detailHomePrep">
-              <h1>Agenda</h1>
-              
+              <h2>Agenda</h2>
+            
               ${activity.agenda.map(renderHomePrep).join("")}
 
             </div>
           </div>
         </div>
 
-        <h1>Galerie</h1>
+        <h2 class="yellowText">Galerie</h2>
         <div class="detailGallery">
         ${activity.gallery.map(renderGallery).join("")}
         </div>

@@ -91,6 +91,10 @@ body {
     color: #74C7D3;
 }
 
+.yellowText {
+    color: #FECB2E;
+}
+
 .loginContainer {
     /*display: flex;*/
     /*border: red solid 1px;*/
@@ -279,10 +283,6 @@ body {
     border: none;
 }
 
-.detailHomePrepSubTitle {
-    font-size: 1.5vw;
-}
-
 .detailTimeSubContainer p {
     color: #fff;
 }
@@ -291,7 +291,7 @@ body {
     color: #fff;
 }
 
-.detailHomePrep h1, p{
+.detailHomePrep h2, p{
     color: #333333;
     margin-top: 0vw;
     margin-bottom: 0vw;
@@ -305,6 +305,36 @@ body {
 
 .detailSide {
     display: flex;
+}
+
+.detailSideBot {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detailRightBot {
+    width: 49%;
+}
+
+.detailLeftBot {
+    width: 49%;
+}
+
+.detailGallerySub {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.detailGalleryImages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5vw;
+    margin-bottom: 2vw;
+}
+
+.detailGalleryImages img {
+    width: 30%;
 }
 
 .detailName {
@@ -351,6 +381,16 @@ body {
     transition: 0.3s;
 }
 
+.loginButton {
+    justify-self: center;
+    align-self: center;
+}
+
+.loginButton:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
 .createButtonFin {
     margin-top: 2vw;
     margin-bottom: 2vw;
@@ -365,6 +405,10 @@ body {
 .createButtonFin:hover {
     transform: scale(1.05);
     transition: 0.3s;
+}
+
+.task p {
+    color: #fff;
 }
 
 .deleteTask{
@@ -407,6 +451,65 @@ body {
 .formPageContainer h2, p {
     font-weight: 100;
     color: #fff;
+}
+
+.activityCard {
+    background-color: #fff;
+    padding: 1vw;
+    border-radius: 1vw;
+    margin-bottom: 1vw;
+}
+
+.activityCard .detailEdLevel p {
+    margin: 0.1vw;
+    margin-right: 0.5vw;
+    padding: 0.3vw;
+    padding-left: 1vw;
+    background-color: #74C7D3;
+    color: #fff;
+    font-weight: 100;
+    transition: 0.2s;
+    font-size: 1vw;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 0.2vw;
+    margin-top: 0.2vw;
+}
+
+.activityCard h1, p, h2 {
+    color: #333333;
+    margin: 0vw;
+    margin-top: 1vw;
+}
+
+.activityCardTopRight {
+    display: flex;
+}
+
+.activityCardTopRight p {
+    margin-left: 1vw;
+    justify-content: center;
+}
+
+.activityCardTopRight md-icon {
+    color: #74C7D3;
+    --md-icon-size: 3vw;
+}
+
+.detailPageTop p {
+    color: #fff;
+}
+
+.detailGallerySub h2 {
+    color: #fff;
+}
+
+.activityCard .detailGallerySub h2 {
+    color: #333333;
+}
+
+.inputsTitle {
+    margin-top: 1vw;
 }
 
 @media screen and (max-width: 700px) {

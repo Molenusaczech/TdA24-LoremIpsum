@@ -12,9 +12,9 @@ function renderCreate() {
         <div class=pageTopBack>
             <div class="pageTopRow">
                 <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
-                <h1>Project <span class="blueText">AMOS</span></h1>
+                <h1>Projekt <span class="blueText">AMOS</span></h1>
                 <div class="pageTopRowAdmin">
-                    dadad
+                    <md-filled-button class="loginButton" id="loginButton">Přihlásit se</md-filled-button>
                 </div>
             </div>
             <hr>
@@ -26,16 +26,16 @@ function renderCreate() {
         <h1 class="pageTitle">Vytvořit aktivitu</h1>
         
         <md-outlined-text-field label="Jméno aktivity" id="titleInput">
-            <md-icon slot="leading-icon">Ink-Highlighter</md-icon>
+            <md-icon slot="leading-icon">edit</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field label="Minimální délka" id="minLenghtInput">
-            <md-icon slot="leading-icon">person</md-icon>
+            <md-icon slot="leading-icon">schedule</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field label="Maximální délka" id="maxLenghtInput">
-            <md-icon slot="leading-icon">person</md-icon>
+            <md-icon slot="leading-icon">schedule</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field label="Struktura aktivity" id="structureInput">
-            <md-icon slot="leading-icon">person</md-icon>
+            <md-icon slot="leading-icon">edit</md-icon>
         </md-outlined-text-field>
         <md-outlined-text-field
             type="textarea"
@@ -54,9 +54,9 @@ function renderCreate() {
             </div>
 
             <md-outlined-text-field label="Úloha" id="objectiveInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
-            <p><md-filled-button class="createButton" id="addObjective">+</md-filled-button></p>
+            <md-filled-button class="createButton" id="addObjective">+</md-filled-button>
 
         </div>
 
@@ -69,9 +69,9 @@ function renderCreate() {
              </div>
 
             <md-outlined-text-field label="Vzdělání" id="edLevelInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">school</md-icon>
             </md-outlined-text-field>
-            <p><md-filled-button class="createButton" id="addEdLevel">+</md-filled-button></p>
+            <md-filled-button class="createButton" id="addEdLevel">+</md-filled-button>
 
         </div>
 
@@ -84,7 +84,7 @@ function renderCreate() {
              </div>
 
             <md-outlined-text-field label="Nástroj" id="toolInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">build</md-icon>
             </md-outlined-text-field>
             <md-filled-button class="createButton" id="addTool">+</md-filled-button>
 
@@ -99,10 +99,10 @@ function renderCreate() {
              </div>
     
             <md-outlined-text-field label="Název" id="prepTitleInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field label="WARN -PŘELOŽIT DO ČEŠTINY-" id="prepWarnInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">error</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field
                 type="textarea"
@@ -112,7 +112,7 @@ function renderCreate() {
                 rows="3">
             </md-outlined-text-field>
 
-            <p><md-filled-button class="createButton" id="addPrep">+</md-filled-button></p>
+            <md-filled-button class="createButton" id="addPrep">+</md-filled-button>
 
 
         </div>
@@ -125,10 +125,10 @@ function renderCreate() {
             <div id="instrList"> </div>
 
             <md-outlined-text-field label="Název" id="instructionTitleInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field label="WARN -PŘELOŽIT DO ČEŠTINY-" id="instructionWarnInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">error</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field
                 type="textarea"
@@ -138,7 +138,7 @@ function renderCreate() {
                 rows="3">
             </md-outlined-text-field>
 
-            <p><md-filled-button class="createButton" id="addInstr">+</md-filled-button></p>
+            <md-filled-button class="createButton" id="addInstr">+</md-filled-button>
 
         </div>
 
@@ -149,10 +149,10 @@ function renderCreate() {
             <div id="agendaList"> </div>
 
             <md-outlined-text-field label="Délka trvání" id="agendaDurationInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">schedule</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field label="Název" id="agendaTitleInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field
                 type="textarea"
@@ -162,7 +162,7 @@ function renderCreate() {
                 rows="3">
             </md-outlined-text-field>
 
-            <p><md-filled-button class="createButton" id="addAgenda">+</md-filled-button></p>
+            <md-filled-button class="createButton" id="addAgenda">+</md-filled-button>
 
 
         </div>
@@ -174,13 +174,13 @@ function renderCreate() {
             <div id="linkList"> </div>
 
             <md-outlined-text-field label="URL" id="linkUrlInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">link</md-icon>
             </md-outlined-text-field>
             <md-outlined-text-field label="Název" id="linkTitleInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
 
-            <p><md-filled-button class="createButton" id="addLink">+</md-filled-button></p>
+            <md-filled-button class="createButton" id="addLink">+</md-filled-button>
 
 
         </div>
@@ -192,11 +192,11 @@ function renderCreate() {
             <div id="galleryList"> </div>
 
             <md-outlined-text-field label="Název galerie" id="galleryTitleInput">
-                <md-icon slot="leading-icon">person</md-icon>
+                <md-icon slot="leading-icon">edit</md-icon>
             </md-outlined-text-field>
-        </div>
 
-        <p><md-filled-button class="createButton" id="addGallery">+</md-filled-button></p>
+            <md-filled-button class="createButton" id="addGallery">+</md-filled-button>
+        </div>
 
 
         <md-filled-button class="createButtonFin" id="submitActivity">Vytvořit ke schválení</md-filled-button>
@@ -283,7 +283,7 @@ function renderGallery(gallery, index) {
                     <md-icon slot="leading-icon">person</md-icon>
                 </md-outlined-text-field>
 
-                <p><md-filled-button class="createButton" data-galleryButton="${index}">+</md-filled-button></p>
+                <md-filled-button class="createButton" data-galleryButton="${index}">+</md-filled-button>
 
             </div>
     </div>
