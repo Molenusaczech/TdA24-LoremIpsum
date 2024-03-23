@@ -9,6 +9,7 @@ function parseActivity(activity, isAll = false) {
     let newActivity = {
         uuid: activity.uuid,
         title: activity.activityName,
+        activityName: activity.activityName,
         lengthMin: activity.lengthMin,
         lengthMax: activity.lengthMax,
         description: activity.description,
@@ -167,7 +168,7 @@ async function createActivity(input, isServer = false) {
         agenda: JSON.stringify(input.agenda),
         links: JSON.stringify(input.links),
         galleries: JSON.stringify(input.gallery),
-        summary: "WIP"
+        summary: "Popis je právě generován umělou inteligencí. Prosím počkejte."
     });
 
     /*let activity = await Activity.create({
