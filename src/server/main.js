@@ -272,7 +272,7 @@ app.post("/api/activity", cors(), async (req, res) => {
 
   let resp = await createActivity(input, true);
 
-  res.send({ response: resp });
+  res.send(resp);
 });
 
 app.get("/api/activity/:uuid", cors(), async (req, res) => {

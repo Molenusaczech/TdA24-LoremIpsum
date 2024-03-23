@@ -1,0 +1,913 @@
+[
+    {
+        "uuid": "16566cfe-1e3e-4b72-bb9c-cceb95dd1c50",
+        "title": "Chatovací stanoviště",
+        "lengthMin": 45,
+        "lengthMax": 45,
+        "description": "Rotační výuková aktivita zaměřená na vzájemné učení mezi studenty, ideální pro detailní pochopení učiva z různých úhlů pohledu.",
+        "classStructure": "Group",
+        "objectives": [
+            "Rozvoj komunikace a spolupráce.",
+            "Podněcování vzájemného učení mezi studenty.",
+            "Kritické myšlení a aplikace učiva v různých kontextech."
+        ],
+        "edLevel": [
+            "secondarySchool",
+            "highSchool"
+        ],
+        "tools": [
+            "Stopky pro měření času.",
+            "4 panely či papíry A3/A2 s otázkami/úkoly.",
+            "Listy papíru A4 pro poznámky studentů.",
+            "Kartičky s čísly na rozdělení třídy."
+        ],
+        "homePreparation": [
+            {
+                "title": "Připravte 6 stanovišť s panelovými úkoly ve třídě.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Vytvořte různorodé úkoly nebo otázky zaměřené na zvolené téma učiva.",
+                "warn": null,
+                "note": null
+            }
+        ],
+        "instructions": [
+            {
+                "title": "Každá skupina má 3 minuty na řešení úkolů na každém stanovišti.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Vyhodnocení: Učitel vybere studenta ze skupiny pro prezentaci řešení.",
+                "warn": null,
+                "note": "Zaměřte se na zpětnou vazbu a diskusi o představených řešeních."
+            },
+            {
+                "title": "Rozdělte třídu do čtveřic, každá skupina začíná na jiném stanovišti.",
+                "warn": null,
+                "note": "Ujistěte se, že skupiny jsou vyvážené podle schopností studentů."
+            },
+            {
+                "title": "Po 3 minutách se skupiny přesunou na další stanoviště.",
+                "warn": null,
+                "note": "Zajistěte plynulý přesun bez rušení ostatních skupin."
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 3,
+                "title": "Stanoviště 5 - řešení úkolu",
+                "description": null
+            },
+            {
+                "duration": 5,
+                "title": "Úvod a rozdělení do skupin",
+                "description": null
+            },
+            {
+                "duration": 3,
+                "title": "Stanoviště 1 - řešení úkolu",
+                "description": null
+            },
+            {
+                "duration": 3,
+                "title": "Stanoviště 3 - řešení úkolu",
+                "description": null
+            },
+            {
+                "duration": 3,
+                "title": "Stanoviště 4 - řešení úkolu",
+                "description": null
+            },
+            {
+                "duration": 10,
+                "title": "Závěrečná diskuse a zpětná vazba",
+                "description": null
+            },
+            {
+                "duration": 10,
+                "title": "Vyhodnocení a prezentace řešení skupin",
+                "description": null
+            },
+            {
+                "duration": 3,
+                "title": "Stanoviště 6 - řešení úkolu",
+                "description": null
+            },
+            {
+                "duration": 3,
+                "title": "Stanoviště 2 - řešení úkolu",
+                "description": null
+            }
+        ],
+        "links": [
+            {
+                "title": null,
+                "url": null
+            },
+            {
+                "title": null,
+                "url": null
+            },
+            {
+                "title": null,
+                "url": null
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Nápady na témata",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://files.catbox.moe/imbnj8.png",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uuid": "97701eb6-ab49-43fe-a217-df4ecce3ef8a",
+        "title": "Ďáblův advokát",
+        "lengthMin": 45,
+        "lengthMax": 45,
+        "description": "Hra na dáblova advokáta prověřuje schopnost kriticky přemýšlet. Děti se učí argumentovat i bránit se demagogickým tvrzením.",
+        "classStructure": "Group",
+        "objectives": [
+            "Prověření chápání zvoleného tématu a jeho interpretace studenty.",
+            "Procvičování komunikace a kritického myšlení."
+        ],
+        "edLevel": [
+            "highSchool"
+        ],
+        "tools": [
+            "Kartičky s čísly na rozdělení třídy",
+            "Listy papíru A4 na poznámky pro ďáblovy advokáty",
+            "Seznam témat pro argumentační duely",
+            "Stopky pro měření času"
+        ],
+        "homePreparation": [
+            {
+                "title": "Připravte témata pro diskuse, která se vztahují k zákazům nebo obecným pravidlům.",
+                "warn": null,
+                "note": null
+            }
+        ],
+        "instructions": [
+            {
+                "title": "Ve druhé fázi probíhají debatní duely mezi trojicemi.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Rozdělte třídu do větších skupin po šesti, následně na trojice.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Ve třetí fázi si trojice prohodí role.",
+                "warn": null,
+                "note": null
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 5,
+                "title": "Výběr témat a příprava argumentů",
+                "description": null
+            },
+            {
+                "duration": 10,
+                "title": "První kolo debatních duelů",
+                "description": null
+            },
+            {
+                "duration": 5,
+                "title": "Závěrečná diskuse a reflexe všech témat",
+                "description": null
+            },
+            {
+                "duration": 10,
+                "title": "Hodnocení a zpětná vazba",
+                "description": null
+            },
+            {
+                "duration": 10,
+                "title": "Prohození rolí a druhé kolo duelů",
+                "description": null
+            },
+            {
+                "duration": 5,
+                "title": "Úvod a rozdělení do skupin",
+                "description": null
+            }
+        ],
+        "links": [
+            {
+                "title": null,
+                "url": null
+            },
+            {
+                "title": null,
+                "url": null
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Nápady na témata",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/q/200",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    }
+                ]
+            },
+            {
+                "title": "Doprovodné obrázky",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/q/200",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uuid": "7b645537-7936-4750-bb5d-bb8ffb5668ae",
+        "title": "Generátor otázek",
+        "lengthMin": 30,
+        "lengthMax": 45,
+        "description": "Cílem aktivity je naučit se správně a jednoznačně formulovat otázky. Děti procvičují především komunikaci a týmovou spolupráci.",
+        "classStructure": "Group",
+        "objectives": [
+            "Děti se učí správně a jednoznačně ptát, současně procvičují spolupráci.",
+            "Vybrané téma se procvičí tím, že se na něj studenti doptávají - vymýšlejí nejlepší otázky."
+        ],
+        "edLevel": [
+            "highSchool",
+            "primarySchool",
+            "secondarySchool"
+        ],
+        "tools": [
+            "Listy A4/A5 pro sepsání pěti otázek",
+            "Větší listy (A3) pro sepsání finálního výběru otázek",
+            "Stopky",
+            "Kartičky s čísly",
+            "Lepidlo",
+            "Nastříhané proužky papíru (10 ks jedna sada)"
+        ],
+        "homePreparation": [
+            {
+                "title": "Příprava kartiček s čísly pro rozdělení třídy do skupin s pomocí.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Příprava papírů formátu A4 pro každý 3členný tým a A3 pro každý 6členný tým.",
+                "warn": null,
+                "note": null
+            }
+        ],
+        "instructions": [
+            {
+                "title": "Vybrané otázky se zapisují na papír A3 a vystavují na tabuli.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Druhé kolo: Šestice mají 10 minut na výběr otázek pro prezentaci.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "První kolo: Trojice mají 5 minut na sepsání 5 otázek.",
+                "warn": null,
+                "note": "Učitel proces sleduje a koriguje."
+            },
+            {
+                "title": "Rozdělte třídu na skupiny po 3 a vysvětlete téma a proces formulace otázek.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Trojice libovolně pospojujeme do šestic a vytvoříme nové týmy.",
+                "warn": null,
+                "note": null
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 5,
+                "title": "Společný výber top 10 otázek",
+                "description": null
+            },
+            {
+                "duration": 5,
+                "title": "Trojice sepisují 5 otázek",
+                "description": null
+            },
+            {
+                "duration": 10,
+                "title": "Studenti navzájem hodnotí otázky, vybírají nejlepší",
+                "description": null
+            },
+            {
+                "duration": 10,
+                "title": "Úvod, rozdělení do skupin, vysvětlení, jak pracovat",
+                "description": null
+            },
+            {
+                "duration": 15,
+                "title": "Spojení do šestic, vybrání otázek k prezentaci ostatním",
+                "description": null
+            }
+        ],
+        "links": [
+            {
+                "title": null,
+                "url": null
+            },
+            {
+                "title": null,
+                "url": null
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Materiál k přípravě",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/200/300",
+                        "highRes": "https://picsum.photos/1920/1080"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/200/300",
+                        "highRes": "https://picsum.photos/1920/1080"
+                    }
+                ]
+            },
+            {
+                "title": "Ukázka aktivity",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/200/300",
+                        "highRes": "https://picsum.photos/1920/1080"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/200/300",
+                        "highRes": "https://picsum.photos/1920/1080"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/200/300",
+                        "highRes": "https://picsum.photos/1920/1080"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uuid": "d5c5c294-fa17-4469-bc5d-c6fff9ad6bf7",
+        "title": "Spontánní prezentace",
+        "lengthMin": 45,
+        "lengthMax": 45,
+        "description": "Cílem je posílit prezentační dovednosti dětí, slovní zásobu a vyjadřování. Důraz je kladen na zpětnou vazbu, komunikaci a kritické myšlení.",
+        "classStructure": "Group",
+        "objectives": [
+            "Rozvíjet komunikaci a kritické myšlení.",
+            "Učit se vybírat klíčová fakta a skládat je logicky do prezentace.",
+            "Procvičit prezentační dovednosti, slovní zásobu a vyjadřování."
+        ],
+        "edLevel": [
+            "highSchool",
+            "secondarySchool",
+            "primarySchool"
+        ],
+        "tools": [
+            "Listy A4 pro osnovu prezentace",
+            "Kartičky s čísly na rozdělení třídy",
+            "Mobily nebo tablety (pokud jsou k dispozici)"
+        ],
+        "homePreparation": [
+            {
+                "title": "Připravte listy A4 pro každý tým a rozdělte témata na podtémata pro každý tým.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Připravte kartičky s čísly pro rozdělení třídy do skupin.",
+                "warn": null,
+                "note": null
+            }
+        ],
+        "instructions": [
+            {
+                "title": "Úkol týmů je shrnout téma do stručné minutové prezentace.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Upozorněte týmy, že není jasné, kdo bude téma prezentovat až do začátku prezentace.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Týmy dostanou časový limit 3 minuty na sestavení prezentace.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Rozdělte třídu na týmy po čtyřech a přidělte týmům témata.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Výstup prezentace bude součástí 'mozaiky', pokračuje další skupina se svým tématem.",
+                "warn": null,
+                "note": null
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 5,
+                "title": "Vyhodnocení a závěrečná reflexe.",
+                "description": null
+            },
+            {
+                "duration": 10,
+                "title": "Druhá fáze prezentace každým týmem.",
+                "description": null
+            },
+            {
+                "duration": 3,
+                "title": "Příprava týmů na prezentace.",
+                "description": null
+            },
+            {
+                "duration": 5,
+                "title": "Přidělení témat týmům.",
+                "description": null
+            },
+            {
+                "duration": 10,
+                "title": "Společná diskuse a hodnocení prezentací.",
+                "description": null
+            },
+            {
+                "duration": 10,
+                "title": "Úvod a rozdělení do týmů.",
+                "description": null
+            },
+            {
+                "duration": 15,
+                "title": "Diskuze a příprava na druhou fázi prezentace.",
+                "description": null
+            },
+            {
+                "duration": 10,
+                "title": "První fáze prezentace každým týmem.",
+                "description": null
+            }
+        ],
+        "links": [
+            {
+                "title": null,
+                "url": null
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Nápady na témata",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/q/200",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uuid": "a37d3f41-7599-4d1d-b6b8-e9e53dca79f4",
+        "title": "Vodpadkáč-ball",
+        "lengthMin": 45,
+        "lengthMax": 45,
+        "description": "Snadná hra, která kombinuje vědomostní soutěž se sportovním výkonem. Důraz je kladen na spolupráci.",
+        "classStructure": "Group",
+        "objectives": [
+            "Zvolené téma probere formou hry, která kombinuje kvíz se sportovním výkonem.",
+            "Procvičování týmové spolupráce a komunikace."
+        ],
+        "edLevel": [
+            "secondarySchool",
+            "primarySchool"
+        ],
+        "tools": [
+            "Odpadkový koš",
+            "Výsledková tabule",
+            "15 - 20 otázek na zvolené téma",
+            "Papíry A4, klidně už použité, z jedné strany popsané",
+            "Barevná izolepa pro označení míst, z nichž se bude házet na koš"
+        ],
+        "homePreparation": [
+            {
+                "title": "Připravte odpadkový koš a značky pro hody za 1 a 2 body.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Připravte 15 - 20 otázek na vybrané téma.",
+                "warn": null,
+                "note": null
+            }
+        ],
+        "instructions": [
+            {
+                "title": "Položte otázku, nechejte týmy debatovat a zapsat odpověď.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Upozorněte týmy na pravidla pro střelbu a hodnocení.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Při správné odpovědi následuje střelba na koš.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Rozdělte třídu na skupiny po 4 a vysvětlete pravidla hry.",
+                "warn": null,
+                "note": null
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 5,
+                "title": "Reflexe a zpětná vazba",
+                "description": null
+            },
+            {
+                "duration": 5,
+                "title": "Úvod a vysvětlení pravidel",
+                "description": null
+            },
+            {
+                "duration": 5,
+                "title": "Finální kolo otázek a střelby",
+                "description": null
+            },
+            {
+                "duration": 2,
+                "title": "Střelba na koš po první sérii otázek",
+                "description": null
+            },
+            {
+                "duration": 2,
+                "title": "První série otázek",
+                "description": null
+            },
+            {
+                "duration": 2,
+                "title": "Střelba na koš po druhé sérii otázek",
+                "description": null
+            },
+            {
+                "duration": 2,
+                "title": "Střelba na koš po třetí sérii otázek",
+                "description": null
+            },
+            {
+                "duration": 5,
+                "title": "Rozdělení do týmů a příprava hřiště",
+                "description": null
+            },
+            {
+                "duration": 5,
+                "title": "Závěrečné hodnocení a diskuse",
+                "description": null
+            },
+            {
+                "duration": 2,
+                "title": "Třetí série otázek",
+                "description": null
+            },
+            {
+                "duration": 2,
+                "title": "Druhá série otázek",
+                "description": null
+            }
+        ],
+        "links": [
+            {
+                "title": null,
+                "url": null
+            },
+            {
+                "title": null,
+                "url": null
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Ukázky aktivit",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/q/200",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    }
+                ]
+            },
+            {
+                "title": "Nápady na témata",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/q/200",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uuid": "e3b0c442-5b8b-47ba-9d8a-e4d3d2f3d974",
+        "title": "Tisková konference",
+        "lengthMin": 25,
+        "lengthMax": 40,
+        "description": "Studenti formou hry na novináře a experty na tiskovou konferenci – novinářské redakce „grilují“ tým expertů. Expertní tým za správné odpovědi získává body.",
+        "classStructure": "Group",
+        "objectives": [
+            "Procvičit dovednost formulovat správně otázky, abych se dozvěděl požadovanou informaci.",
+            "Procvičit učivo / informace, které souvisí s probranou či v budoucnu probíranou látkou / učivem."
+        ],
+        "edLevel": [
+            "highSchool",
+            "secondarySchool"
+        ],
+        "tools": [
+            "Losovací sada",
+            "Stopky",
+            "Vytištěné pracovní listy"
+        ],
+        "homePreparation": [
+            {
+                "title": "Sestavit „vodítka“ – tzn. 2-3 otázky, které studentům pomohou lépe pochopit, jaké typy otázek tvořit.",
+                "warn": "Doporučeno v případě, že cílová skupina je mladší třída.",
+                "note": null
+            },
+            {
+                "title": "Sestavit seznam témat pro experty (1-5 témat)",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Vytisknout „vodítkové“ otázky na papír, případně předepsat na flipchart.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Nasdílet témata studentům – ideálně v předchozí hodině, minimálně 1 den předem.",
+                "warn": null,
+                "note": null
+            }
+        ],
+        "instructions": [
+            {
+                "title": "Učitel zahájí TK a vyzve prvního novináře, aby položil otázku",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Před zahájením TK vysvětlete postup kladení otázek",
+                "warn": null,
+                "note": "Jste v roli moderátora (rozhodce) – posuzujete relevantnost otázky"
+            },
+            {
+                "title": "Zadejte téma, ke kterému novináři vytvoří otázky, experti si připraví odpovědi.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Rozdělte třídu na skupiny po 4 (novinářské redakce) a jednu skupinu expertů.",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Učitel zvolí konkrétního experta, spouští 30 sekundový limit",
+                "warn": null,
+                "note": null
+            },
+            {
+                "title": "Expert zodpoví otázku",
+                "warn": null,
+                "note": "Učitel posoudí správnost a věcnost odpovědi. Zapisuje info, zda otázka zodpovězena či nezodpovězena"
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 10,
+                "title": "Tisková konference 2",
+                "description": "Rotace na pozici týmů a expertů"
+            },
+            {
+                "duration": 5,
+                "title": "Příprava otázek a odpovědí",
+                "description": "Redakce si připravuje otázky, na které se budou ptát expertů."
+            },
+            {
+                "duration": 10,
+                "title": "Tisková konference 1",
+                "description": "Průběh a moderace"
+            },
+            {
+                "duration": 3,
+                "title": "Rozdělení do skupin",
+                "description": null
+            },
+            {
+                "duration": 2,
+                "title": "Zadání pro novinářské redakce a experty",
+                "description": null
+            },
+            {
+                "duration": 5,
+                "title": "Zpětná vazba a vyhodnocení",
+                "description": null
+            }
+        ],
+        "links": [
+            {
+                "title": null,
+                "url": null
+            },
+            {
+                "title": null,
+                "url": null
+            },
+            {
+                "title": null,
+                "url": null
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Příprava",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/e/200",
+                        "highRes": "https://picsum.photos/seed/e/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/a/200",
+                        "highRes": "https://picsum.photos/seed/a/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/g/200",
+                        "highRes": "https://picsum.photos/seed/g/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/f/200",
+                        "highRes": "https://picsum.photos/seed/f/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/c/200",
+                        "highRes": "https://picsum.photos/seed/c/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/b/200",
+                        "highRes": "https://picsum.photos/seed/b/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/d/200",
+                        "highRes": "https://picsum.photos/seed/d/1200"
+                    }
+                ]
+            },
+            {
+                "title": "Postup",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/j/200",
+                        "highRes": "https://picsum.photos/seed/j/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/k/200",
+                        "highRes": "https://picsum.photos/seed/k/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/l/200",
+                        "highRes": "https://picsum.photos/seed/l/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/o/200",
+                        "highRes": "https://picsum.photos/seed/o/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/i/200",
+                        "highRes": "https://picsum.photos/seed/i/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/m/200",
+                        "highRes": "https://picsum.photos/seed/m/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/p/200",
+                        "highRes": "https://picsum.photos/seed/p/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/h/200",
+                        "highRes": "https://picsum.photos/seed/h/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/n/200",
+                        "highRes": "https://picsum.photos/seed/n/1200"
+                    }
+                ]
+            }
+        ]
+    }
+]

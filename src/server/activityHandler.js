@@ -1,17 +1,9 @@
 import {
-    Activity,
-    Objective,
-    EdLevel,
-    Tool,
-    HomePreparation,
-    Instruction,
-    Agenda,
-    Link,
-    Gallery,
-    Image
+    Activity
 } from "./dbModels.js"
 
 function parseActivity(activity) {
+
     let newActivity = {
         uuid: activity.uuid,
         title: activity.activityName,
@@ -29,19 +21,29 @@ function parseActivity(activity) {
         gallery: []
     };
 
-    for (let obj of activity.Objectives) {
+    /*let objectives = JSON.parse(activity.objectives) || [];
+    for (let obj of objectives) {
         newActivity.objectives.push(obj.objectiveName);
-    }
+    }*/
 
-    for (let edLevel of activity.EdLevels) {
+    activity.objectives ??= "[]";
+    JSON.parse(activity.objectives).forEach(obj => {
+        console.log(obj);
+        newActivity.objectives.push(obj);
+    });
+
+    /*let edLevels = JSON.parse(activity.edLevel) || [];
+    for (let edLevel of edLevels) {
         newActivity.edLevel.push(edLevel.levelName);
     }
 
-    for (let tool of activity.Tools) {
+    let tools = JSON.parse(activity.tools) || [];
+    for (let tool of tools) {
         newActivity.tools.push(tool.toolName);
     }
 
-    for (let prep of activity.HomePreparations) {
+    let homePreparations = JSON.parse(activity.homePreparation) || [];
+    for (let prep of homePreparations) {
         newActivity.homePreparation.push({
             title: prep.title,
             warn: prep.warn,
@@ -86,7 +88,74 @@ function parseActivity(activity) {
         }
 
         newActivity.gallery.push(galleryObj);
+    }*/
+
+    activity.edLevel ??= "[]";
+    JSON.parse(activity.edLevel).forEach(edLevel => {
+
+        newActivity.edLevel.push(edLevel);
+    });
+
+    activity.tools ??= "[]";
+    JSON.parse(activity.tools).forEach(tool => {
+        newActivity.tools.push(tool);
+    });
+
+    activity.homePreparation ??= "[]";
+    JSON.parse(activity.homePreparation).forEach(prep => {
+        newActivity.homePreparation.push({
+            title: prep.title,
+            warn: prep.warn,
+            note: prep.note
+        });
+    });
+
+    activity.instructions ??= "[]";
+    JSON.parse(activity.instructions).forEach(instr => {
+        newActivity.instructions.push({
+            title: instr.title,
+            warn: instr.warn,
+            note: instr.note
+        });
+    });
+
+    activity.agenda ??= "[]";
+    JSON.parse(activity.agenda).forEach(agenda => {
+        newActivity.agenda.push({
+            duration: agenda.duration,
+            title: agenda.title,
+            description: agenda.description
+        });
+    });
+
+    activity.links ??= "[]";
+    JSON.parse(activity.links).forEach(link => {
+        newActivity.links.push({
+            title: link.title,
+            url: link.url
+        });
     }
+    );
+
+    activity.galleries ??= "[]";
+    JSON.parse(activity.galleries).forEach(gallery => {
+        let galleryObj = {
+            title: gallery.title,
+            images: []
+        };
+
+        gallery.images ??= "[]";
+        gallery.images.forEach(img => {
+            galleryObj.images.push({
+                title: img.title,
+                lowRes: img.lowRes,
+                highRes: img.highRes
+            });
+        });
+
+        newActivity.gallery.push(galleryObj);
+    });
+
 
     return newActivity;
 }
@@ -95,21 +164,10 @@ async function getActivity(uuid) {
     let activity = await Activity.findOne({
         where: {
             uuid: uuid
-        },
-        include: [
-            Objective,
-            EdLevel,
-            Tool,
-            HomePreparation,
-            Instruction,
-            Agenda,
-            Link,
-            {
-                model: Gallery,
-                include: Image
-            }
-        ]
+        }
     });
+
+    console.log(JSON.parse(activity.tools)[0]);
 
     //return activity;
 
@@ -121,6 +179,26 @@ async function createActivity(input, isServer = false) {
     //console.log(input);
 
     let activity = await Activity.create({
+        uuid: input.uuid,
+        activityName: input.title,
+        lengthMin: input.lengthMin,
+        lengthMax: input.lengthMax,
+        description: input.description,
+        classStructure: input.classStructure,
+        description: input.description,
+        isVerified: isServer,
+        objectives: JSON.stringify(input.objectives),
+        edlevels: JSON.stringify(input.edLevel),
+        tools: JSON.stringify(input.tools),
+        homePreparation: JSON.stringify(input.homePreparation),
+        instructions: JSON.stringify(input.instructions),
+        agenda: JSON.stringify(input.agenda),
+        links: JSON.stringify(input.links),
+        galleries: JSON.stringify(input.gallery)
+    });
+
+    /*let activity = await Activity.create({
+        uuid: input.uuid,
         activityName: input.activityName,
         lengthMin: input.lengthMin,
         lengthMax: input.lengthMax,
@@ -229,7 +307,7 @@ async function createActivity(input, isServer = false) {
         }
 
         activity.addGallery(galleryObj);
-    }
+    }*/
 
     return getActivity(activity.uuid);
 }
@@ -240,39 +318,12 @@ async function getAllActivities(isAdmin = false) {
 
     if (!isAdmin) {
         activities = await Activity.findAll({
-            include: [
-                Objective,
-                EdLevel,
-                Tool,
-                HomePreparation,
-                Instruction,
-                Agenda,
-                Link,
-                {
-                    model: Gallery,
-                    include: Image
-                }
-            ],
             where: {
                 isVerified: true
             }
         });
     } else {
-        activities = await Activity.findAll({
-            include: [
-                Objective,
-                EdLevel,
-                Tool,
-                HomePreparation,
-                Instruction,
-                Agenda,
-                Link,
-                {
-                    model: Gallery,
-                    include: Image
-                }
-            ]
-        });
+        activities = await Activity.findAll({});
     }
 
     let newActivities = [];

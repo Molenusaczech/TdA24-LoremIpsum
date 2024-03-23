@@ -1,737 +1,1329 @@
 [
     {
-        "title_before": "Bc.",
-        "first_name": "Petr",
-        "middle_name": "D.",
-        "last_name": "Novák",
-        "title_after": "MBA",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Plzeň",
-        "claim": "Kreativita je cestou k úspěchu.",
-        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
-        "tags": [
+        "uuid": "2e42980b-dd3b-46b4-8d1b-3dc1f1d19a0f",
+        "title": "hjhjh",
+        "lengthMin": 5,
+        "lengthMax": 10,
+        "description": "gghkgkgkh",
+        "classStructure": "All",
+        "objectives": [
+            "jhhjj",
+            "jhjhjh"
+        ],
+        "edLevel": [],
+        "tools": [
+            "ghgkhgk",
+            "poohhghg"
+        ],
+        "homePreparation": [
             {
-                "name": "Řízení"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             },
             {
-                "name": "Prezentace"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             }
         ],
-        "price_per_hour": 640,
-        "contact": {
-            "telephone_numbers": [
-                "+420 226 948 227",
-                "+420 284 795 550"
-            ],
-            "emails": [
-                "3357bee7-365c-46a5-a514-8e4d5b834594@yahoo.com"
-            ]
-        }
-    },
-    {
-        "title_before": "",
-        "first_name": "Jakub",
-        "middle_name": "Lynn",
-        "last_name": "Gindl",
-        "title_after": "",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Praha",
-        "claim": "Inovace jsou klíčem k úspěchu.",
-        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
-        "tags": [
+        "instructions": [
             {
-                "name": "Řízení"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             },
             {
-                "name": "Kreativita"
-            },
-            {
-                "name": "Management"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             }
         ],
-        "price_per_hour": 700,
-        "contact": {
-            "telephone_numbers": [
-                "+420 751 297 176"
-            ],
-            "emails": [
-                "11580b28-a522-4184-aca1-0420870003e1@gmail.com"
-            ]
-        }
-    },
-    {
-        "title_before": "",
-        "first_name": "Martin",
-        "middle_name": "Ray",
-        "last_name": "Gindl",
-        "title_after": "Ph.D",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Praha",
-        "claim": "Znalost trhu je základ úspěchu.",
-        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
-        "tags": [
+        "agenda": [
             {
-                "name": "Inovace"
+                "duration": "<integer>",
+                "title": "<string>",
+                "description": "<string>"
+            },
+            {
+                "duration": "<integer>",
+                "title": "<string>",
+                "description": "<string>"
             }
         ],
-        "price_per_hour": 880,
-        "contact": {
-            "telephone_numbers": [
-                "+420 106 756 854",
-                "+420 857 687 561"
-            ],
-            "emails": [
-                "aae23f29-fdc7-4992-894f-65ff1262e509@gmail.com"
-            ]
-        }
-    },
-    {
-        "title_before": "Mgr.",
-        "first_name": "David",
-        "middle_name": "",
-        "last_name": "Gindl",
-        "title_after": null,
-        "picture_url": "https://picsum.photos/200",
-        "location": "Ostrava",
-        "claim": "Inovace jsou klíčem k úspěchu.",
-        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
-        "tags": [
+        "links": [
             {
-                "name": "Prezentace"
+                "title": "<string>",
+                "url": "<string>"
             },
             {
-                "name": "Management"
+                "title": "<string>",
+                "url": "<string>"
             }
         ],
-        "price_per_hour": 540,
-        "contact": {
-            "telephone_numbers": [
-                "+420 109 458 746",
-                "+420 498 108 976"
-            ],
-            "emails": [
-                "04411a48-77eb-42e1-8703-61ac0f82f870@gmail.com"
-            ]
-        }
+        "gallery": []
     },
     {
-        "title_before": "Bc.",
-        "first_name": "David",
-        "middle_name": null,
-        "last_name": "Gindl",
-        "title_after": null,
-        "picture_url": "https://picsum.photos/200",
-        "location": "Brno",
-        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
-        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
-        "tags": [
+        "uuid": "294a3da7-70b4-4a53-bbde-7499787fa92a",
+        "title": "hjhjh",
+        "lengthMin": 5,
+        "lengthMax": 10,
+        "description": "gghkgkgkh",
+        "classStructure": "All",
+        "objectives": [
+            "jhhjj",
+            "jhjhjh"
+        ],
+        "edLevel": [],
+        "tools": [
+            "ghgkhgk",
+            "poohhghg"
+        ],
+        "homePreparation": [
             {
-                "name": "Management"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             },
             {
-                "name": "Prezentace"
-            },
-            {
-                "name": "Řízení"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             }
         ],
-        "price_per_hour": 900,
-        "contact": {
-            "telephone_numbers": [
-                "+420 976 651 514",
-                "+420 779 650 404"
-            ],
-            "emails": [
-                "84580cac-a253-44af-af94-2d819a0b9d81@seznam.cz"
-            ]
-        }
-    },
-    {
-        "title_before": null,
-        "first_name": "Jakub",
-        "middle_name": null,
-        "last_name": "Rajnoha",
-        "title_after": null,
-        "picture_url": "https://picsum.photos/200",
-        "location": null,
-        "claim": null,
-        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
-        "tags": [
+        "instructions": [
             {
-                "name": "Prezentace"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             },
             {
-                "name": "Marketing"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             }
         ],
-        "price_per_hour": 960,
-        "contact": {
-            "telephone_numbers": [
-                "+420 447 464 238"
-            ],
-            "emails": [
-                "8b16e85d-1d00-406d-af42-9e3970c1f86d@seznam.cz"
-            ]
-        }
-    },
-    {
-        "title_before": "",
-        "first_name": "Martin",
-        "middle_name": "",
-        "last_name": "Novák",
-        "title_after": "Ph.D",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Praha",
-        "claim": "Kreativita je cestou k úspěchu.",
-        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
-        "tags": [],
-        "price_per_hour": 360,
-        "contact": {
-            "telephone_numbers": [
-                "+420 471 198 736",
-                "+420 210 995 719"
-            ],
-            "emails": [
-                "f4bdbfe9-49c9-4232-94be-6b4117d0663f@seznam.cz"
-            ]
-        }
-    },
-    {
-        "title_before": "",
-        "first_name": "Martin",
-        "middle_name": "",
-        "last_name": "Kocich",
-        "title_after": "",
-        "picture_url": "https://picsum.photos/200",
-        "location": "",
-        "claim": "",
-        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
-        "tags": [
+        "agenda": [
             {
-                "name": "Kreativita"
+                "duration": "<integer>",
+                "title": "<string>",
+                "description": "<string>"
+            },
+            {
+                "duration": "<integer>",
+                "title": "<string>",
+                "description": "<string>"
             }
         ],
-        "price_per_hour": 220,
-        "contact": {
-            "telephone_numbers": [
-                "+420 924 868 423",
-                "+420 506 102 207"
-            ],
-            "emails": [
-                "6287efbc-c856-4854-a9da-dfc5a25ec0d1@seznam.cz"
-            ]
-        }
-    },
-    {
-        "title_before": "Bc.",
-        "first_name": null,
-        "middle_name": "Lynn",
-        "last_name": null,
-        "title_after": "",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Plzeň",
-        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
-        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
-        "tags": [
+        "links": [
             {
-                "name": "Prezentace"
+                "title": "<string>",
+                "url": "<string>"
             },
             {
-                "name": "Finance"
+                "title": "<string>",
+                "url": "<string>"
             }
         ],
-        "price_per_hour": 720,
-        "contact": {
-            "telephone_numbers": [
-                "+420 695 475 499"
-            ],
-            "emails": [
-                "d3801c7a-a928-42c4-82b8-606b98968471@seznam.cz"
-            ]
-        }
+        "gallery": [
+            {
+                "title": "<string>",
+                "images": [
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    },
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    }
+                ]
+            },
+            {
+                "title": "<string>",
+                "images": [
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    },
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    }
+                ]
+            }
+        ]
     },
     {
-        "title_before": null,
-        "first_name": "David",
-        "middle_name": null,
-        "last_name": "Novák",
-        "title_after": "MBA",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Plzeň",
-        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
-        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
-        "tags": [
+        "uuid": "3155742c-9885-4e1c-8762-ec58478155f5",
+        "title": "hjhjh",
+        "lengthMin": 5,
+        "lengthMax": 10,
+        "description": "gghkgkgkh",
+        "classStructure": "All",
+        "objectives": [
+            "jhhjj",
+            "jhjhjh"
+        ],
+        "edLevel": [],
+        "tools": [
+            "ghgkhgk",
+            "poohhghg"
+        ],
+        "homePreparation": [
             {
-                "name": "Management"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             },
             {
-                "name": "Kreativita"
-            },
-            {
-                "name": "Inovace"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             }
         ],
-        "price_per_hour": 880,
-        "contact": {
-            "telephone_numbers": [
-                "+420 433 527 527",
-                "+420 824 206 343"
-            ],
-            "emails": [
-                "64af2a51-ed7e-4f3f-9802-ddb195decf12@seznam.cz"
-            ]
-        }
-    },
-    {
-        "title_before": "Dr.",
-        "first_name": "Petr",
-        "middle_name": null,
-        "last_name": "Rajnoha",
-        "title_after": null,
-        "picture_url": "https://picsum.photos/200",
-        "location": "Ostrava",
-        "claim": "Kreativita je cestou k úspěchu.",
-        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
-        "tags": [
+        "instructions": [
             {
-                "name": "Řízení"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             },
             {
-                "name": "Finance"
-            },
-            {
-                "name": "Marketing"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             }
         ],
-        "price_per_hour": 220,
-        "contact": {
-            "telephone_numbers": [
-                "+420 699 578 900"
-            ],
-            "emails": [
-                "79c7c26a-dfe8-4d23-98eb-11fb98b8823d@outlook.com"
-            ]
-        }
-    },
-    {
-        "title_before": "Ing.",
-        "first_name": "Jakub",
-        "middle_name": null,
-        "last_name": "Kříž",
-        "title_after": "M.Sc",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Ostrava",
-        "claim": "Kreativita je cestou k úspěchu.",
-        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
-        "tags": [
+        "agenda": [
             {
-                "name": "Finance"
+                "duration": "<integer>",
+                "title": "<string>",
+                "description": "<string>"
             },
             {
-                "name": "Řízení"
+                "duration": "<integer>",
+                "title": "<string>",
+                "description": "<string>"
             }
         ],
-        "price_per_hour": 920,
-        "contact": {
-            "telephone_numbers": [
-                "+420 417 172 303"
-            ],
-            "emails": [
-                "f99e102f-3823-4786-8845-7d501c4260ae@seznam.cz"
-            ]
-        }
-    },
-    {
-        "title_before": "Mgr.",
-        "first_name": "Martin",
-        "middle_name": "",
-        "last_name": "Kříž",
-        "title_after": "MBA",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Plzeň",
-        "claim": "Vedení týmu vyžaduje empatii a strategii.",
-        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
-        "tags": [
+        "links": [
             {
-                "name": "Řízení"
+                "title": "<string>",
+                "url": "<string>"
             },
             {
-                "name": "Prezentace"
-            },
-            {
-                "name": "Inovace"
+                "title": "<string>",
+                "url": "<string>"
             }
         ],
-        "price_per_hour": 660,
-        "contact": {
-            "telephone_numbers": [
-                "+420 776 621 577",
-                "+420 811 304 692"
-            ],
-            "emails": [
-                "6b5990b3-e7c7-4be7-bb8b-f670853a8a29@gmail.com"
-            ]
-        }
-    },
-    {
-        "title_before": "",
-        "first_name": "Vítězslav",
-        "middle_name": "Lynn",
-        "last_name": "Novák",
-        "title_after": "Ph.D",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Brno",
-        "claim": "Vedení týmu vyžaduje empatii a strategii.",
-        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
-        "tags": [
+        "gallery": [
             {
-                "name": "Marketing"
+                "title": "<string>",
+                "images": [
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    },
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    }
+                ]
             },
             {
-                "name": "Kreativita"
+                "title": "<string>",
+                "images": [
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    },
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uuid": "83d24c83-fcfb-42dd-9ed4-5dfd5ab5bb7f",
+        "title": "hjhjh",
+        "lengthMin": 5,
+        "lengthMax": 10,
+        "description": "gghkgkgkh",
+        "classStructure": "All",
+        "objectives": [
+            "jhhjj",
+            "jhjhjh"
+        ],
+        "edLevel": [],
+        "tools": [
+            "ghgkhgk",
+            "poohhghg"
+        ],
+        "homePreparation": [
+            {
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
+            },
+            {
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             }
         ],
-        "price_per_hour": 880,
-        "contact": {
-            "telephone_numbers": [
-                "+420 316 914 169",
-                "+420 491 802 433"
-            ],
-            "emails": [
-                "219089eb-8bb1-4d90-9e32-e0efd2435d64@gmail.com"
-            ]
-        }
-    },
-    {
-        "title_before": "Dr.",
-        "first_name": "Martin",
-        "middle_name": "Ray",
-        "last_name": "Kříž",
-        "title_after": "M.Sc",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Ostrava",
-        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
-        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
-        "tags": [
+        "instructions": [
             {
-                "name": "Řízení"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             },
             {
-                "name": "Kreativita"
-            },
-            {
-                "name": "Management"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             }
         ],
-        "price_per_hour": 200,
-        "contact": {
-            "telephone_numbers": [
-                "+420 127 562 696",
-                "+420 321 570 536"
-            ],
-            "emails": [
-                "015aff44-8b57-423d-a032-f9d2c39f23ad@seznam.cz"
-            ]
-        }
-    },
-    {
-        "title_before": "Dr.",
-        "first_name": "Matyáš",
-        "middle_name": "Ray",
-        "last_name": "Novák",
-        "title_after": "MBA",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Praha",
-        "claim": "Inovace jsou klíčem k úspěchu.",
-        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
-        "tags": [],
-        "price_per_hour": 700,
-        "contact": {
-            "telephone_numbers": [
-                "+420 542 951 607"
-            ],
-            "emails": [
-                "4e123059-a6d8-4583-b60b-feaae85cd1aa@seznam.cz"
-            ]
-        }
-    },
-    {
-        "title_before": "",
-        "first_name": "Vítězslav",
-        "middle_name": "",
-        "last_name": "Kocich",
-        "title_after": "",
-        "picture_url": "https://picsum.photos/200",
-        "location": "",
-        "claim": "",
-        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
-        "tags": [
+        "agenda": [
             {
-                "name": "Marketing"
+                "duration": "<integer>",
+                "title": "<string>",
+                "description": "<string>"
             },
             {
-                "name": "Management"
-            },
-            {
-                "name": "Leadership"
+                "duration": "<integer>",
+                "title": "<string>",
+                "description": "<string>"
             }
         ],
-        "price_per_hour": 300,
-        "contact": {
-            "telephone_numbers": [
-                "+420 374 898 835",
-                "+420 750 201 324"
-            ],
-            "emails": [
-                "18e69164-3209-4d60-81d2-14d4bc4e85f1@seznam.cz"
-            ]
-        }
-    },
-    {
-        "title_before": "Bc.",
-        "first_name": null,
-        "middle_name": "Lynn",
-        "last_name": null,
-        "title_after": "Ph.D",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Brno",
-        "claim": "Inovace jsou klíčem k úspěchu.",
-        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
-        "tags": [
+        "links": [
             {
-                "name": "Prezentace"
+                "title": "<string>",
+                "url": "<string>"
             },
             {
-                "name": "Management"
+                "title": "<string>",
+                "url": "<string>"
+            }
+        ],
+        "gallery": [
+            {
+                "title": "<string>",
+                "images": [
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    },
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    }
+                ]
             },
             {
-                "name": "Řízení"
+                "title": "<string>",
+                "images": [
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    },
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    }
+                ]
             }
-        ],
-        "price_per_hour": 340,
-        "contact": {
-            "telephone_numbers": [
-                "+420 360 858 882"
-            ],
-            "emails": [
-                "34e7ccb4-4c49-48e8-aa46-4f22b1699a31@outlook.com"
-            ]
-        }
+        ]
     },
     {
-        "title_before": "",
-        "first_name": "Petr",
-        "middle_name": "",
-        "last_name": "Kocich",
-        "title_after": null,
-        "picture_url": "https://picsum.photos/200",
-        "location": "Brno",
-        "claim": "Zkušenosti vedou k efektivitě.",
-        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
-        "tags": [
+        "uuid": "0b3a740e-d0d3-40a6-8ae4-1f1bb4a69050",
+        "title": "hjhjh",
+        "lengthMin": 5,
+        "lengthMax": 10,
+        "description": "gghkgkgkh",
+        "classStructure": "All",
+        "objectives": [
+            "jhhjj",
+            "jhjhjh"
+        ],
+        "edLevel": [],
+        "tools": [
+            "ghgkhgk",
+            "poohhghg"
+        ],
+        "homePreparation": [
             {
-                "name": "Leadership"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             },
             {
-                "name": "Řízení"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
+            }
+        ],
+        "instructions": [
+            {
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             },
             {
-                "name": "Inovace"
+                "title": "<string>",
+                "warn": "<string>",
+                "note": "<string>"
             }
         ],
-        "price_per_hour": 320,
-        "contact": {
-            "telephone_numbers": [
-                "+420 629 715 368"
-            ],
-            "emails": [
-                "8e93543b-830a-4937-9306-a9a8469514a6@outlook.com"
-            ]
-        }
-    },
-    {
-        "title_before": "Bc.",
-        "first_name": "David",
-        "middle_name": "Lynn",
-        "last_name": "Gindl",
-        "title_after": "Ph.D",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Plzeň",
-        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
-        "bio": "<b>Vedení týmu</b> vyžaduje <i>empatii</i> a <i>strategii</i>.",
-        "tags": [
+        "agenda": [
             {
-                "name": "Prezentace"
+                "duration": "<integer>",
+                "title": "<string>",
+                "description": "<string>"
             },
             {
-                "name": "Finance"
+                "duration": "<integer>",
+                "title": "<string>",
+                "description": "<string>"
+            }
+        ],
+        "links": [
+            {
+                "title": "<string>",
+                "url": "<string>"
             },
             {
-                "name": "Inovace"
+                "title": "<string>",
+                "url": "<string>"
             }
         ],
-        "price_per_hour": 780,
-        "contact": {
-            "telephone_numbers": [
-                "+420 109 230 570",
-                "+420 158 319 599"
-            ],
-            "emails": [
-                "526a6675-aa19-4289-927b-d85430503d30@outlook.com"
-            ]
-        }
-    },
-    {
-        "title_before": "Ing.",
-        "first_name": "Matyáš",
-        "middle_name": "Ray",
-        "last_name": "Novák",
-        "title_after": "",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Ostrava",
-        "claim": "Zkušenosti vedou k efektivitě.",
-        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
-        "tags": [
+        "gallery": [
             {
-                "name": "Inovace"
+                "title": "<string>",
+                "images": [
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    },
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    }
+                ]
             },
             {
-                "name": "Marketing"
+                "title": "<string>",
+                "images": [
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    },
+                    {
+                        "lowRes": "<string>",
+                        "highRes": "<string>"
+                    }
+                ]
             }
+        ]
+    },
+    {
+        "uuid": "16566cfe-1e3e-4b72-bb9c-cceb95dd1c50",
+        "title": "Chatovací stanoviště",
+        "lengthMin": 45,
+        "lengthMax": 45,
+        "description": "Rotační výuková aktivita zaměřená na vzájemné učení mezi studenty, ideální pro detailní pochopení učiva z různých úhlů pohledu.",
+        "classStructure": "Group",
+        "objectives": [
+            "Podněcování vzájemného učení mezi studenty.",
+            "Rozvoj komunikace a spolupráce.",
+            "Kritické myšlení a aplikace učiva v různých kontextech."
         ],
-        "price_per_hour": 260,
-        "contact": {
-            "telephone_numbers": [
-                "+420 161 171 570"
-            ],
-            "emails": [
-                "c7eddf09-cd06-4e8a-bc8a-a84b4876786d@outlook.com"
-            ]
-        }
-    },
-    {
-        "title_before": null,
-        "first_name": "Martin",
-        "middle_name": "Ray",
-        "last_name": "Rajnoha",
-        "title_after": "",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Plzeň",
-        "claim": "Inovace jsou klíčem k úspěchu.",
-        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
-        "tags": [
-            {
-                "name": "Marketing"
-            }
+        "edLevel": [],
+        "tools": [
+            "4 panely či papíry A3/A2 s otázkami/úkoly.",
+            "Listy papíru A4 pro poznámky studentů.",
+            "Kartičky s čísly na rozdělení třídy.",
+            "Stopky pro měření času."
         ],
-        "price_per_hour": 520,
-        "contact": {
-            "telephone_numbers": [
-                "+420 863 137 301",
-                "+420 959 516 313"
-            ],
-            "emails": [
-                "a376ee3e-7f17-47e4-8631-ac4d5912d4c5@seznam.cz"
-            ]
-        }
-    },
-    {
-        "title_before": "Bc.",
-        "first_name": "Matyáš",
-        "middle_name": "",
-        "last_name": "Kříž",
-        "title_after": null,
-        "picture_url": "https://picsum.photos/200",
-        "location": "Praha",
-        "claim": "Bez dobré prezentace je i nejlepší myšlenka k ničemu.",
-        "bio": "<b>Zkušenosti</b> vedou k <i>efektivitě</i>.",
-        "tags": [
+        "homePreparation": [
             {
-                "name": "Inovace"
-            }
-        ],
-        "price_per_hour": 660,
-        "contact": {
-            "telephone_numbers": [
-                "+420 452 669 204"
-            ],
-            "emails": [
-                "f49c5ab1-e584-4739-9816-6405398efa2e@yahoo.com"
-            ]
-        }
-    },
-    {
-        "title_before": "Dr.",
-        "first_name": "Matyáš",
-        "middle_name": "Ray",
-        "last_name": "Caras",
-        "title_after": "M.Sc",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Ostrava",
-        "claim": "Efektivní řízení týmu zvyšuje produktivitu.",
-        "bio": "<b>Kreativní myšlení</b> je cestou <i>k úspěchu</i>.",
-        "tags": [],
-        "price_per_hour": 960,
-        "contact": {
-            "telephone_numbers": [
-                "+420 520 616 914"
-            ],
-            "emails": [
-                "f49e805f-91ed-41b6-9634-63f83f16fc75@yahoo.com"
-            ]
-        }
-    },
-    {
-        "title_before": "",
-        "first_name": "Matyáš",
-        "middle_name": "",
-        "last_name": "Kříž",
-        "title_after": "",
-        "picture_url": "https://picsum.photos/200",
-        "location": "",
-        "claim": "",
-        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
-        "tags": [
-            {
-                "name": "Management"
+                "title": "Připravte 6 stanovišť s panelovými úkoly ve třídě."
             },
             {
-                "name": "Finance"
+                "title": "Vytvořte různorodé úkoly nebo otázky zaměřené na zvolené téma učiva."
             }
         ],
-        "price_per_hour": 560,
-        "contact": {
-            "telephone_numbers": [
-                "+420 401 139 866"
-            ],
-            "emails": [
-                "46ad8c85-f425-4468-a212-5295a800664d@gmail.com"
-            ]
-        }
+        "instructions": [
+            {
+                "title": "Rozdělte třídu do čtveřic, každá skupina začíná na jiném stanovišti.",
+                "note": "Ujistěte se, že skupiny jsou vyvážené podle schopností studentů."
+            },
+            {
+                "title": "Každá skupina má 3 minuty na řešení úkolů na každém stanovišti."
+            },
+            {
+                "title": "Po 3 minutách se skupiny přesunou na další stanoviště.",
+                "note": "Zajistěte plynulý přesun bez rušení ostatních skupin."
+            },
+            {
+                "title": "Vyhodnocení: Učitel vybere studenta ze skupiny pro prezentaci řešení.",
+                "note": "Zaměřte se na zpětnou vazbu a diskusi o představených řešeních."
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 5,
+                "title": "Úvod a rozdělení do skupin"
+            },
+            {
+                "duration": 3,
+                "title": "Stanoviště 1 - řešení úkolu"
+            },
+            {
+                "duration": 3,
+                "title": "Stanoviště 2 - řešení úkolu"
+            },
+            {
+                "duration": 3,
+                "title": "Stanoviště 3 - řešení úkolu"
+            },
+            {
+                "duration": 3,
+                "title": "Stanoviště 4 - řešení úkolu"
+            },
+            {
+                "duration": 3,
+                "title": "Stanoviště 5 - řešení úkolu"
+            },
+            {
+                "duration": 3,
+                "title": "Stanoviště 6 - řešení úkolu"
+            },
+            {
+                "duration": 10,
+                "title": "Vyhodnocení a prezentace řešení skupin"
+            },
+            {
+                "duration": 10,
+                "title": "Závěrečná diskuse a zpětná vazba"
+            }
+        ],
+        "links": [
+            {
+                "title": "Vytváření interaktivních aktivit",
+                "url": "https://learningapps.org/"
+            },
+            {
+                "title": "Detailní studie",
+                "url": "https://www.air.org/sites/default/files/Station-Rotation-Practitioner-Brief-Final-July-2020.pdf"
+            },
+            {
+                "title": "Inspirace pro témata",
+                "url": "https://files.catbox.moe/v9r141.mov"
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Nápady na témata",
+                "images": [
+                    {
+                        "lowRes": "https://files.catbox.moe/imbnj8.png",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    }
+                ]
+            }
+        ]
     },
     {
-        "title_before": null,
-        "first_name": "Jakub",
-        "middle_name": "Ray",
-        "last_name": "Gindl",
-        "title_after": "M.Sc",
-        "picture_url": "https://picsum.photos/200",
-        "location": "Praha",
-        "claim": "Efektivní řízení týmu zvyšuje produktivitu.",
-        "bio": "<b>Formátovaný text</b> s <i>bezpečnými</i> tagy.",
-        "tags": [
+        "uuid": "97701eb6-ab49-43fe-a217-df4ecce3ef8a",
+        "title": "Ďáblův advokát",
+        "lengthMin": 45,
+        "lengthMax": 45,
+        "description": "Hra na dáblova advokáta prověřuje schopnost kriticky přemýšlet. Děti se učí argumentovat i bránit se demagogickým tvrzením.",
+        "classStructure": "Group",
+        "objectives": [
+            "Prověření chápání zvoleného tématu a jeho interpretace studenty.",
+            "Procvičování komunikace a kritického myšlení."
+        ],
+        "edLevel": [],
+        "tools": [
+            "Seznam témat pro argumentační duely",
+            "Listy papíru A4 na poznámky pro ďáblovy advokáty",
+            "Kartičky s čísly na rozdělení třídy",
+            "Stopky pro měření času"
+        ],
+        "homePreparation": [
             {
-                "name": "Finance"
+                "title": "Připravte témata pro diskuse, která se vztahují k zákazům nebo obecným pravidlům."
             }
         ],
-        "price_per_hour": 280,
-        "contact": {
-            "telephone_numbers": [
-                "+420 693 442 998"
-            ],
-            "emails": [
-                "eb3b62b0-251e-4e68-a331-2cf6445e3e6e@yahoo.com"
-            ]
-        }
+        "instructions": [
+            {
+                "title": "Rozdělte třídu do větších skupin po šesti, následně na trojice."
+            },
+            {
+                "title": "Ve druhé fázi probíhají debatní duely mezi trojicemi."
+            },
+            {
+                "title": "Ve třetí fázi si trojice prohodí role."
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 5,
+                "title": "Úvod a rozdělení do skupin"
+            },
+            {
+                "duration": 5,
+                "title": "Výběr témat a příprava argumentů"
+            },
+            {
+                "duration": 10,
+                "title": "První kolo debatních duelů"
+            },
+            {
+                "duration": 10,
+                "title": "Prohození rolí a druhé kolo duelů"
+            },
+            {
+                "duration": 5,
+                "title": "Závěrečná diskuse a reflexe všech témat"
+            },
+            {
+                "duration": 10,
+                "title": "Hodnocení a zpětná vazba"
+            }
+        ],
+        "links": [
+            {
+                "title": "Demagogie",
+                "url": "https://cs.wikipedia.org/wiki/Demagogie"
+            },
+            {
+                "title": "Logical falacies",
+                "url": "https://yourlogicalfallacyis.com/"
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Nápady na témata",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/q/200",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    }
+                ]
+            },
+            {
+                "title": "Doprovodné obrázky",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/q/200",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uuid": "7b645537-7936-4750-bb5d-bb8ffb5668ae",
+        "title": "Generátor otázek",
+        "lengthMin": 30,
+        "lengthMax": 45,
+        "description": "Cílem aktivity je naučit se správně a jednoznačně formulovat otázky. Děti procvičují především komunikaci a týmovou spolupráci.",
+        "classStructure": "Group",
+        "objectives": [
+            "Vybrané téma se procvičí tím, že se na něj studenti doptávají - vymýšlejí nejlepší otázky.",
+            "Děti se učí správně a jednoznačně ptát, současně procvičují spolupráci."
+        ],
+        "edLevel": [],
+        "tools": [
+            "Listy A4/A5 pro sepsání pěti otázek",
+            "Větší listy (A3) pro sepsání finálního výběru otázek",
+            "Nastříhané proužky papíru (10 ks jedna sada)",
+            "Stopky",
+            "Kartičky s čísly",
+            "Lepidlo"
+        ],
+        "homePreparation": [
+            {
+                "title": "Příprava kartiček s čísly pro rozdělení třídy do skupin s pomocí."
+            },
+            {
+                "title": "Příprava papírů formátu A4 pro každý 3členný tým a A3 pro každý 6členný tým."
+            }
+        ],
+        "instructions": [
+            {
+                "title": "Rozdělte třídu na skupiny po 3 a vysvětlete téma a proces formulace otázek."
+            },
+            {
+                "title": "První kolo: Trojice mají 5 minut na sepsání 5 otázek.",
+                "note": "Učitel proces sleduje a koriguje."
+            },
+            {
+                "title": "Trojice libovolně pospojujeme do šestic a vytvoříme nové týmy."
+            },
+            {
+                "title": "Druhé kolo: Šestice mají 10 minut na výběr otázek pro prezentaci."
+            },
+            {
+                "title": "Vybrané otázky se zapisují na papír A3 a vystavují na tabuli."
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 10,
+                "title": "Úvod, rozdělení do skupin, vysvětlení, jak pracovat"
+            },
+            {
+                "duration": 5,
+                "title": "Trojice sepisují 5 otázek"
+            },
+            {
+                "duration": 15,
+                "title": "Spojení do šestic, vybrání otázek k prezentaci ostatním"
+            },
+            {
+                "duration": 10,
+                "title": "Studenti navzájem hodnotí otázky, vybírají nejlepší"
+            },
+            {
+                "duration": 5,
+                "title": "Společný výber top 10 otázek"
+            }
+        ],
+        "links": [
+            {
+                "title": "Random Question Generator",
+                "url": "https://randomquestionmaker.com/"
+            },
+            {
+                "title": "How to focus on a certain problem",
+                "url": "https://www.youtube.com/watch?v=rFf_w-bucNE"
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Ukázka aktivity",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/200/300",
+                        "highRes": "https://picsum.photos/1920/1080"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/200/300",
+                        "highRes": "https://picsum.photos/1920/1080"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/200/300",
+                        "highRes": "https://picsum.photos/1920/1080"
+                    }
+                ]
+            },
+            {
+                "title": "Materiál k přípravě",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/200/300",
+                        "highRes": "https://picsum.photos/1920/1080"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/200/300",
+                        "highRes": "https://picsum.photos/1920/1080"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uuid": "d5c5c294-fa17-4469-bc5d-c6fff9ad6bf7",
+        "title": "Spontánní prezentace",
+        "lengthMin": 45,
+        "lengthMax": 45,
+        "description": "Cílem je posílit prezentační dovednosti dětí, slovní zásobu a vyjadřování. Důraz je kladen na zpětnou vazbu, komunikaci a kritické myšlení.",
+        "classStructure": "Group",
+        "objectives": [
+            "Procvičit prezentační dovednosti, slovní zásobu a vyjadřování.",
+            "Rozvíjet komunikaci a kritické myšlení.",
+            "Učit se vybírat klíčová fakta a skládat je logicky do prezentace."
+        ],
+        "edLevel": [],
+        "tools": [
+            "Listy A4 pro osnovu prezentace",
+            "Kartičky s čísly na rozdělení třídy",
+            "Mobily nebo tablety (pokud jsou k dispozici)"
+        ],
+        "homePreparation": [
+            {
+                "title": "Připravte kartičky s čísly pro rozdělení třídy do skupin."
+            },
+            {
+                "title": "Připravte listy A4 pro každý tým a rozdělte témata na podtémata pro každý tým."
+            }
+        ],
+        "instructions": [
+            {
+                "title": "Rozdělte třídu na týmy po čtyřech a přidělte týmům témata."
+            },
+            {
+                "title": "Upozorněte týmy, že není jasné, kdo bude téma prezentovat až do začátku prezentace."
+            },
+            {
+                "title": "Úkol týmů je shrnout téma do stručné minutové prezentace."
+            },
+            {
+                "title": "Týmy dostanou časový limit 3 minuty na sestavení prezentace."
+            },
+            {
+                "title": "Výstup prezentace bude součástí 'mozaiky', pokračuje další skupina se svým tématem."
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 10,
+                "title": "Úvod a rozdělení do týmů."
+            },
+            {
+                "duration": 5,
+                "title": "Přidělení témat týmům."
+            },
+            {
+                "duration": 3,
+                "title": "Příprava týmů na prezentace."
+            },
+            {
+                "duration": 10,
+                "title": "První fáze prezentace každým týmem."
+            },
+            {
+                "duration": 15,
+                "title": "Diskuze a příprava na druhou fázi prezentace."
+            },
+            {
+                "duration": 10,
+                "title": "Druhá fáze prezentace každým týmem."
+            },
+            {
+                "duration": 10,
+                "title": "Společná diskuse a hodnocení prezentací."
+            },
+            {
+                "duration": 5,
+                "title": "Vyhodnocení a závěrečná reflexe."
+            }
+        ],
+        "links": [
+            {
+                "title": "Japonské prezentační dovednosti",
+                "url": "https://www.knihovny.cz/Record/caslin.SKC01-006439498?sid=8453341"
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Nápady na témata",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/q/200",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uuid": "a37d3f41-7599-4d1d-b6b8-e9e53dca79f4",
+        "title": "Vodpadkáč-ball",
+        "lengthMin": 45,
+        "lengthMax": 45,
+        "description": "Snadná hra, která kombinuje vědomostní soutěž se sportovním výkonem. Důraz je kladen na spolupráci.",
+        "classStructure": "Group",
+        "objectives": [
+            "Zvolené téma probere formou hry, která kombinuje kvíz se sportovním výkonem.",
+            "Procvičování týmové spolupráce a komunikace."
+        ],
+        "edLevel": [],
+        "tools": [
+            "15 - 20 otázek na zvolené téma",
+            "Papíry A4, klidně už použité, z jedné strany popsané",
+            "Odpadkový koš",
+            "Barevná izolepa pro označení míst, z nichž se bude házet na koš",
+            "Výsledková tabule"
+        ],
+        "homePreparation": [
+            {
+                "title": "Připravte odpadkový koš a značky pro hody za 1 a 2 body."
+            },
+            {
+                "title": "Připravte 15 - 20 otázek na vybrané téma."
+            }
+        ],
+        "instructions": [
+            {
+                "title": "Rozdělte třídu na skupiny po 4 a vysvětlete pravidla hry."
+            },
+            {
+                "title": "Upozorněte týmy na pravidla pro střelbu a hodnocení."
+            },
+            {
+                "title": "Položte otázku, nechejte týmy debatovat a zapsat odpověď."
+            },
+            {
+                "title": "Při správné odpovědi následuje střelba na koš."
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 5,
+                "title": "Úvod a vysvětlení pravidel"
+            },
+            {
+                "duration": 5,
+                "title": "Rozdělení do týmů a příprava hřiště"
+            },
+            {
+                "duration": 2,
+                "title": "První série otázek"
+            },
+            {
+                "duration": 2,
+                "title": "Střelba na koš po první sérii otázek"
+            },
+            {
+                "duration": 2,
+                "title": "Druhá série otázek"
+            },
+            {
+                "duration": 2,
+                "title": "Střelba na koš po druhé sérii otázek"
+            },
+            {
+                "duration": 2,
+                "title": "Třetí série otázek"
+            },
+            {
+                "duration": 2,
+                "title": "Střelba na koš po třetí sérii otázek"
+            },
+            {
+                "duration": 5,
+                "title": "Finální kolo otázek a střelby"
+            },
+            {
+                "duration": 5,
+                "title": "Závěrečné hodnocení a diskuse"
+            },
+            {
+                "duration": 5,
+                "title": "Reflexe a zpětná vazba"
+            }
+        ],
+        "links": [
+            {
+                "title": "Kvízy",
+                "url": "https://kahoot.com/"
+            },
+            {
+                "title": "Týmová spolupráce ve hrách",
+                "url": "https://www.facebook.com/groups/teambuildinggames"
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Nápady na témata",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/q/200",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    }
+                ]
+            },
+            {
+                "title": "Ukázky aktivit",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/q/200",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uuid": "e3b0c442-5b8b-47ba-9d8a-e4d3d2f3d974",
+        "title": "Tisková konference",
+        "lengthMin": 25,
+        "lengthMax": 40,
+        "description": "Studenti formou hry na novináře a experty na tiskovou konferenci – novinářské redakce „grilují“ tým expertů. Expertní tým za správné odpovědi získává body.",
+        "classStructure": "Group",
+        "objectives": [
+            "Procvičit dovednost formulovat správně otázky, abych se dozvěděl požadovanou informaci.",
+            "Procvičit učivo / informace, které souvisí s probranou či v budoucnu probíranou látkou / učivem."
+        ],
+        "edLevel": [],
+        "tools": [
+            "Stopky",
+            "Losovací sada",
+            "Vytištěné pracovní listy"
+        ],
+        "homePreparation": [
+            {
+                "title": "Sestavit seznam témat pro experty (1-5 témat)"
+            },
+            {
+                "title": "Nasdílet témata studentům – ideálně v předchozí hodině, minimálně 1 den předem."
+            },
+            {
+                "title": "Sestavit „vodítka“ – tzn. 2-3 otázky, které studentům pomohou lépe pochopit, jaké typy otázek tvořit.",
+                "warn": "Doporučeno v případě, že cílová skupina je mladší třída."
+            },
+            {
+                "title": "Vytisknout „vodítkové“ otázky na papír, případně předepsat na flipchart."
+            }
+        ],
+        "instructions": [
+            {
+                "title": "Rozdělte třídu na skupiny po 4 (novinářské redakce) a jednu skupinu expertů."
+            },
+            {
+                "title": "Zadejte téma, ke kterému novináři vytvoří otázky, experti si připraví odpovědi."
+            },
+            {
+                "title": "Před zahájením TK vysvětlete postup kladení otázek",
+                "note": "Jste v roli moderátora (rozhodce) – posuzujete relevantnost otázky"
+            },
+            {
+                "title": "Učitel zahájí TK a vyzve prvního novináře, aby položil otázku"
+            },
+            {
+                "title": "Učitel zvolí konkrétního experta, spouští 30 sekundový limit"
+            },
+            {
+                "title": "Expert zodpoví otázku",
+                "note": "Učitel posoudí správnost a věcnost odpovědi. Zapisuje info, zda otázka zodpovězena či nezodpovězena"
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 3,
+                "title": "Rozdělení do skupin"
+            },
+            {
+                "duration": 2,
+                "title": "Zadání pro novinářské redakce a experty"
+            },
+            {
+                "duration": 5,
+                "title": "Příprava otázek a odpovědí",
+                "description": "Redakce si připravuje otázky, na které se budou ptát expertů."
+            },
+            {
+                "duration": 10,
+                "title": "Tisková konference 1",
+                "description": "Průběh a moderace"
+            },
+            {
+                "duration": 10,
+                "title": "Tisková konference 2",
+                "description": "Rotace na pozici týmů a expertů"
+            },
+            {
+                "duration": 5,
+                "title": "Zpětná vazba a vyhodnocení"
+            }
+        ],
+        "links": [
+            {
+                "title": "Časomíry – různé formáty a možnosti pro měření času",
+                "url": "https://tourdeapp.cz/o-nas"
+            },
+            {
+                "title": "Pracovní list pro novinářskou redakci / tým expertů",
+                "url": "https://tourdeapp.cz/podminky"
+            },
+            {
+                "title": "Přehled témat pro tvorbu otázek jednotlivými novinářskými redakcemi",
+                "url": "https://tourdeapp.cz/materialy/102"
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Příprava",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/a/200",
+                        "highRes": "https://picsum.photos/seed/a/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/b/200",
+                        "highRes": "https://picsum.photos/seed/b/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/c/200",
+                        "highRes": "https://picsum.photos/seed/c/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/d/200",
+                        "highRes": "https://picsum.photos/seed/d/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/e/200",
+                        "highRes": "https://picsum.photos/seed/e/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/f/200",
+                        "highRes": "https://picsum.photos/seed/f/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/g/200",
+                        "highRes": "https://picsum.photos/seed/g/1200"
+                    }
+                ]
+            },
+            {
+                "title": "Postup",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/h/200",
+                        "highRes": "https://picsum.photos/seed/h/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/i/200",
+                        "highRes": "https://picsum.photos/seed/i/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/j/200",
+                        "highRes": "https://picsum.photos/seed/j/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/k/200",
+                        "highRes": "https://picsum.photos/seed/k/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/l/200",
+                        "highRes": "https://picsum.photos/seed/l/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/m/200",
+                        "highRes": "https://picsum.photos/seed/m/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/n/200",
+                        "highRes": "https://picsum.photos/seed/n/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/o/200",
+                        "highRes": "https://picsum.photos/seed/o/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/p/200",
+                        "highRes": "https://picsum.photos/seed/p/1200"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "uuid": "d7b6e46a-f6e5-4b9a-9ccb-955ad9f0764e",
+        "title": "Obrázková návodka",
+        "lengthMin": 35,
+        "lengthMax": 35,
+        "description": "V aktivite 'Obrázková návodka' studenti sestavují návodky pomocí vizuálních prostredku k vysvetlení ruzných postupu nebo principu.",
+        "classStructure": "Group",
+        "objectives": [
+            "Naucit se sestavovat instrukce pomocí obrazu",
+            "Strukturovat predávanou informaci",
+            "Pracovat s logickou stavbou na sebe navazujících informací",
+            "Dávkovat míru detailu v instrukcích"
+        ],
+        "edLevel": [],
+        "tools": [
+            "Seznam témat pro tvorbu návodky",
+            "Papíry A4 (15 listu)",
+            "Fixy / markery",
+            "Casomíra",
+            "Post-it papírky",
+            "Lepicí štítky malé / plastelína (patafix)",
+            "Flipchartový papír",
+            "Stojan na flipchart"
+        ],
+        "homePreparation": [
+            {
+                "title": "Príprava instrukcí a materiálu pro zkušební návodka 'jak uvarit caj'",
+                "note": "Pripravte jednoduché a srozumitelné instrukce."
+            },
+            {
+                "title": "Príprava post-it papírku nebo papíru na záznam poznámek k návodkám"
+            },
+            {
+                "title": "Príprava seznamu bodu pro hodnocení kvality a srozumitelnosti návodek"
+            }
+        ],
+        "instructions": [
+            {
+                "title": "Tvorba návodky 'jak uvarit caj' ve dvojicích",
+                "note": "Zamerte se na jednoduchost a srozumitelnost návodek pro osoby bez predchozích znalostí."
+            },
+            {
+                "title": "Pripravit návodky na urceném míste"
+            },
+            {
+                "title": "Diskuse o tvorbe a prezentace návodky"
+            },
+            {
+                "title": "Volitelný krok: simulace podle návodky",
+                "note": "Tento krok je volitelný. Umožnuje studentum lépe porozumet praktickému využití návodek."
+            },
+            {
+                "title": "Vytvorení a prezentace predmetové návodky"
+            }
+        ],
+        "agenda": [
+            {
+                "duration": 2,
+                "title": "Úvod a rozdelení do skupin"
+            },
+            {
+                "duration": 3,
+                "title": "Instrukce k fázi 1: zkušební návodka 'jak se varí caj?'",
+                "description": "Vysvetlení základu tvorby návodek a jejich duležitosti."
+            },
+            {
+                "duration": 3,
+                "title": "Tvorba zkušební návodky (skupiny)"
+            },
+            {
+                "duration": 3,
+                "title": "Prezentace zkušebních návodek",
+                "description": "Studenti predstavují své návodky a sdílejí myšlenky za jejich návrhem."
+            },
+            {
+                "duration": 5,
+                "title": "Simulace cinnosti zachycené v návodce",
+                "description": "Skupiny prakticky demonstrují, jak by návodka byla použita v reálném scénári."
+            },
+            {
+                "duration": 5,
+                "title": "Tvorba predmetové návodky"
+            },
+            {
+                "duration": 5,
+                "title": "Prezentace návodek"
+            },
+            {
+                "duration": 5,
+                "title": "Zpetná vazba a vyhodnocení"
+            }
+        ],
+        "links": [
+            {
+                "title": "Inspirace: Tom Wujec",
+                "url": "https://www.tomwujec.com"
+            },
+            {
+                "title": "Jak vytvorit efektivní návodku",
+                "url": "https://youtu.be/_vS_b7cJn2A"
+            }
+        ],
+        "gallery": [
+            {
+                "title": "Ukázky obrázku",
+                "images": [
+                    {
+                        "lowRes": "https://picsum.photos/seed/q/200",
+                        "highRes": "https://picsum.photos/seed/q/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/r/200",
+                        "highRes": "https://picsum.photos/seed/r/1200"
+                    },
+                    {
+                        "lowRes": "https://picsum.photos/seed/s/200",
+                        "highRes": "https://picsum.photos/seed/s/1200"
+                    }
+                ]
+            }
+        ]
     }
 ]
