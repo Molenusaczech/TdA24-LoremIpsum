@@ -36,8 +36,9 @@ function renderGrfMain(activities) {
                 ${activities.map(renderActivity).join("")}
             </div>
 
-            <md-filled-button class="mainButton" id="createButton">Vytvořit aktivitu</md-filled-button>
-
+            <div class="aiButtonContainer">
+                <md-filled-button class="mainButton" id="createButton">Vytvořit aktivitu</md-filled-button>
+            </div>
         </div>
 
     </div>

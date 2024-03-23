@@ -178,14 +178,20 @@ body {
     --md-filled-button-hover-label-text-color: #fff;
 }
 
-.aiPageContainer md-filled-button {
+.aiButtonContainer {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+}
+
+.aiButtonContainer md-filled-button {
     margin-top: 2vw;
     justify-self: center;
     align-self: center;
     width: 30%;
 }
 
-.aiPageContainer md-filled-button:hover {
+.aiButtonContainer md-filled-button:hover {
     transform: scale(1.05);
     transition: 0.3s;
 }
@@ -209,14 +215,20 @@ body {
     color: #fff;
 }
 
-.searchField md-filled-text-field {
-    width: 60%;
+.searchField {
+    display: flex;
+    justify-content: center;
 }
 
-.aiPageContainer .searchField .searchButton md-filled-button {
+.searchField md-filled-text-field {
+    width: 80%;
+}
+
+.searchField md-filled-button {
     justify-self: center;
     align-self: center;
     width: 20%;
+    margin-right: 0.2vw;
 }
 
 .detailTime {
@@ -469,7 +481,7 @@ body {
 
 .activityCard {
     background-color: #fff;
-    padding: 1vw;
+    padding: 2vw;
     border-radius: 1vw;
     margin-bottom: 1vw;
 }
