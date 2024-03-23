@@ -77,7 +77,7 @@ function renderPage(currentUrl) {
                 //detailAfter();
 
                 document.getElementById("mainPage").innerHTML = renderGrfMain(data);
-                grfMainAfter();
+                grfMainAfter(data);
             });
 
             /*

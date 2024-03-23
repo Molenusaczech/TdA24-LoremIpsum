@@ -1,7 +1,7 @@
 import { linkClick } from "../../routing";
 
 
-function grfMainAfter() {
+function grfMainAfter(activities) {
 
 
 
@@ -11,6 +11,12 @@ function grfMainAfter() {
 
     document.getElementById("backButton").addEventListener("click", () => {
         linkClick("/");
+    });
+
+    activities.forEach(activity => {
+        document.querySelector(`[data-activityId="${activity.uuid}"]`).addEventListener("click", () => {
+            linkClick("/aktivita/" + activity.uuid);
+        });
     });
 
 }
