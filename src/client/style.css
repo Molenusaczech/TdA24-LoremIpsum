@@ -38,8 +38,8 @@ body {
 }
 
 .pageTop hr {
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
     height: 0.2vw;
     border-radius: 1vw;
     background-color: #fff;
@@ -51,12 +51,12 @@ body {
 }
 
 .pageTopRow h1 {
-    width: 78%;
+    width: 130%;
     text-align: center;
     background-color: #292d2f;
     font-family: "Lalezar";
     font-weight: 100;
-    font-size: 4vw;
+    font-size: 2.5vw;
     margin: -1vw;
 }
 
@@ -65,19 +65,21 @@ body {
 }
 
 .mainTitleIcon {
-    width: 100%;
-    height: 100%;
-    margin-top: 15%;
+    width: 90%;
+    height: 90%;
+    margin-top: 8%;
+    align-self: center;
 }
-
 
 .backButton {
     width: 6vmax;
     padding: 2vmax;
+    margin-top: -1vw;
+    margin-bottom: -1vw;
     transition: 0.2s;
     z-index: 100;
     cursor: pointer;
-    width: 7%;
+    width: 5%;
 }
 
 .backButton:hover {
@@ -166,12 +168,14 @@ body {
     transition: 0.3s;
 }
 
+.aiPageContainer h2, h1 {
+    font-weight: 100;
+}
+
 .searchField {
     background-color: #fff;
-    border-radius: 3vw;
-    margin-top: 2vw;
+    margin-top: 3vw;
     margin-bottom: 2vw;
-    padding: 1vw;
     --md-filled-text-field-container-color: #fff;
     --md-filled-text-field-container-hover-color: #fff;
     --md-filled-text-field-active-indicator-color: #fff;
@@ -185,12 +189,12 @@ body {
 
 .detailTime {
     display: flex;
-    width: 33%;
+    width: 35%;
     justify-self: center;
 }
 
 .detailTime md-icon {
-    width: 33%;
+    width: 35%;
     color: #74C7D3;
     --md-icon-size: 4.5vw;
 }
@@ -205,12 +209,16 @@ body {
     margin-left: 1vw;
 }
 
+.detailEdLevel {
+    margin-top: 1vw;
+    display: flex;
+}
+
 .detailEdLevel p {
     margin: 0.1vw;
-    margin-top: 2vw;
     padding: 0.3vw;
     border-radius: 1vw;
-    background-color: #FECB2E;
+    background-color: #74C7D3;
     color: #fff;
     font-weight: 100;
     transition: 0.2s;
@@ -222,11 +230,132 @@ body {
 }
 
 .detailLeft {
-    width: 70%
+    width: 60%
 }
 
 .detailRight {
-    width: 30%
+    width: 40%
+}
+
+.detailHomePrep {
+    background-color: #fff;
+    padding: 0.6vw;
+    border-radius: 1vw;
+    margin-top: 2vw;
+}
+
+.detailTimeSubContainer p {
+    color: #fff;
+}
+
+.detailLinks p {
+    color: #fff;
+}
+
+.detailHomePrep h1, p{
+    color: #333333;
+    margin-top: 0vw;
+    margin-bottom: 0vw;
+}
+
+.detailSide {
+    display: flex;
+}
+
+.detailName {
+    background-color: #74C7D3;
+    width: 100%;
+    text-align: center;
+}
+
+.detailHomePrepSubText {
+    margin-left: 1vw;
+}
+
+.formPageContainer md-outlined-text-field {
+    --md-outlined-text-field-hover-outline-color: #fff;
+    --md-outlined-text-field-outline-color: #fff;
+    --md-outlined-text-field-label-text-color: #fff;
+    --md-outlined-text-field-hover-label-text-color: #fff;
+    --md-outlined-text-field-input-text-color: #fff;
+    --md-outlined-text-field-hover-input-text-color: #fff;
+    --md-outlined-text-field-focus-input-text-color: #fff;
+    margin-top: 1vw;
+    margin-right: 1vw;
+}
+
+.formPageContainer md-outlined-text-field md-icon {
+    color: #fff;
+}
+
+.formPageContainer .createButton {
+    margin-top: 2vw;
+    justify-self: center;
+    align-self: center;
+    width: 1%;
+}
+
+.formPageContainer .createButton:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.createButtonFin {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    justify-self: center;
+    align-self: center;
+    width: 50%;
+    --md-filled-button-container-color: #74C7D3;
+    --md-filled-button-label-text-color: #fff;
+    --md-filled-button-hover-label-text-color: #fff;
+}
+
+.createButtonFin:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.deleteTask{
+    margin-top: 0.3vw;
+    margin-left: 2vw;
+    --md-icon-size: 1.5vw;
+}
+
+.deleteTask:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.deleteTaskLong{
+    margin-top: 0.3vw;
+    --md-icon-size: 1.5vw;
+}
+
+.deleteTaskLong:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.formPageContainer {
+    /*display: flex;*/
+    /*border: red solid 1px;*/
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 5vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 60vmax;
+    z-index: 10;
+    --md-filled-button-container-color: #fff;
+    --md-filled-button-label-text-color: #333333;
+    --md-filled-button-hover-label-text-color: #333333;
+}
+
+.formPageContainer h2, p {
+    font-weight: 100;
+    color: #fff;
 }
 
 @media screen and (max-width: 700px) {

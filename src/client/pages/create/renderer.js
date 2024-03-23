@@ -21,7 +21,7 @@ function renderCreate() {
         </div>
     </div>
 
-    <div class="aiPageContainer">
+    <div class="formPageContainer">
         <img src="${pageTitleIcon}" alt="IkonaTitle" class="mainTitleIcon">
         <h1 class="pageTitle">Vytvořit aktivitu</h1>
         
@@ -47,7 +47,7 @@ function renderCreate() {
 
         <div class="createObjective">
 
-            <h2 class="inputsTitle">Podúlohy aktivity</h2>
+            <h2 class="inputsTitle">Cíle</h2>
 
             <div id="objectiveList">
             
@@ -56,7 +56,7 @@ function renderCreate() {
             <md-outlined-text-field label="Úloha" id="objectiveInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
-            <md-filled-button class="createButton" id="addObjective">+</md-filled-button>
+            <p><md-filled-button class="createButton" id="addObjective">+</md-filled-button></p>
 
         </div>
 
@@ -71,7 +71,7 @@ function renderCreate() {
             <md-outlined-text-field label="Vzdělání" id="edLevelInput">
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
-            <md-filled-button class="createButton" id="addEdLevel">+</md-filled-button>
+            <p><md-filled-button class="createButton" id="addEdLevel">+</md-filled-button></p>
 
         </div>
 
@@ -97,7 +97,7 @@ function renderCreate() {
                 rows="3">
             </md-outlined-text-field>
 
-            <md-filled-button class="createButton" id="addPrep">+</md-filled-button>
+            <p><md-filled-button class="createButton" id="addPrep">+</md-filled-button></p>
 
 
         </div>
@@ -123,7 +123,7 @@ function renderCreate() {
                 rows="3">
             </md-outlined-text-field>
 
-            <md-filled-button class="createButton" id="addInstr">+</md-filled-button>
+            <p><md-filled-button class="createButton" id="addInstr">+</md-filled-button></p>
 
         </div>
 
@@ -147,7 +147,7 @@ function renderCreate() {
                 rows="3">
             </md-outlined-text-field>
 
-            <md-filled-button class="createButton" id="addAgenda">+</md-filled-button>
+            <p><md-filled-button class="createButton" id="addAgenda">+</md-filled-button></p>
 
 
         </div>
@@ -165,7 +165,7 @@ function renderCreate() {
                 <md-icon slot="leading-icon">person</md-icon>
             </md-outlined-text-field>
 
-            <md-filled-button class="createButton" id="addLink">+</md-filled-button>
+            <p><md-filled-button class="createButton" id="addLink">+</md-filled-button></p>
 
 
         </div>
@@ -181,10 +181,10 @@ function renderCreate() {
             </md-outlined-text-field>
         </div>
 
-        <md-filled-button class="createButton" id="addGallery">+</md-filled-button>
+        <p><md-filled-button class="createButton" id="addGallery">+</md-filled-button></p>
 
 
-        <md-filled-button class="createButton" id="(Vytvoř aktivitu)">Rezervovat</md-filled-button>
+        <p><md-filled-button class="createButtonFin" id="(Vytvoř aktivitu)">Vytvořit ke schválení</md-filled-button></p>
 
     </div>
 
@@ -194,8 +194,7 @@ function renderCreate() {
 function renderTask(name) {
     return /*html*/`
     <div class="task">
-        <p>${name}</p>
-        <md-icon class="deleteTask" data-task="${name}">delete</md-icon>
+        <p>${name}<md-icon class="deleteTask" data-task="${name}">delete</md-icon></p>
     </div>
     `;
 }
@@ -203,8 +202,7 @@ function renderTask(name) {
 function renderEdLevel(name) {
     return /*html*/`
     <div class="task">
-        <p>${name}</p>
-        <md-icon class="deleteEdLevel" data-edLevel="${name}">delete</md-icon>
+        <p>${name}<md-icon class="deleteTask" data-edLevel="${name}">delete</md-icon></p>
     </div>
     `;
 }
@@ -215,7 +213,7 @@ function renderPrep(prep, index) {
         <p>${prep.title}</p>
         <p>${prep.warn}</p>
         <p>${prep.note}</p>
-        <md-icon class="deletePrep" data-prep="${index}">delete</md-icon>
+        <md-icon class="deleteTaskLong" data-prep="${index}">delete</md-icon>
     </div>
     `;
 }
@@ -226,7 +224,7 @@ function renderInstructions(instr, index) {
         <p>${instr.title}</p>
         <p>${instr.warn}</p>
         <p>${instr.note}</p>
-        <md-icon class="deleteInstr" data-instr="${index}">delete</md-icon>
+        <md-icon class="deleteTaskLong" data-instr="${index}">delete</md-icon>
     </div>
     `;
 }
@@ -237,7 +235,7 @@ function renderAgenda(agenda, index) {
         <p>${agenda.duration}</p>
         <p>${agenda.title}</p>
         <p>${agenda.description}</p>
-        <md-icon class="deleteAgenda" data-agenda="${index}">delete</md-icon>
+        <md-icon class="deleteTaskLong" data-agenda="${index}">delete</md-icon>
     </div>
     `;
 }
@@ -247,7 +245,7 @@ function renderLinks(link, index) {
     <div class="task">
         <p>${link.title}</p>
         <p>${link.url}</p>
-        <md-icon class="deleteLink" data-link="${index}">delete</md-icon>
+        <md-icon class="deleteTaskLong" data-link="${index}">delete</md-icon>
     </div>
     `;
 }
@@ -255,8 +253,7 @@ function renderLinks(link, index) {
 function renderGallery(gallery, index) {
     return /*html*/`
     <div class="task">
-        <p>${gallery.name}</p>
-        <md-icon class="deleteGallery" data-gallery="${index}">delete</md-icon>
+        <p>${gallery.name}<md-icon class="deleteTask" data-gallery="${index}">delete</md-icon></p>
 
         <div class="createGallerySub">
     
@@ -270,7 +267,7 @@ function renderGallery(gallery, index) {
                     <md-icon slot="leading-icon">person</md-icon>
                 </md-outlined-text-field>
 
-                <md-filled-button class="createButton" data-galleryButton="${index}">+</md-filled-button>
+                <p><md-filled-button class="createButton" data-galleryButton="${index}">+</md-filled-button></p>
 
             </div>
     </div>

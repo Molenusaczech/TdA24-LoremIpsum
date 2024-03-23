@@ -15,7 +15,7 @@ function renderGrfMain() {
                 <img src="${whiteLogo}" alt="Logo" class="backButton" id="backButton">
                 <h1>Projekt <span class="blueText">AMOS</span></h1>
                 <div class="pageTopRowAdmin">
-                    dadad
+                    Přihlásit se
                 </div>
             </div>
             <hr>
@@ -27,7 +27,7 @@ function renderGrfMain() {
 
             <div class="searchField">
                 <md-filled-text-field label="Hledat aktivity" id="aiPromt" class="bookTextbox">
-                    <md-icon slot="leading-icon">psychology</md-icon>
+                    <md-icon slot="leading-icon">search</md-icon>
                 </md-filled-text-field>
             </div>
 
